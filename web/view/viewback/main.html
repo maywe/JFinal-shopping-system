@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>MI2-网站后台管理系统</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+    <link href="../../css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <!--
+    <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    -->
+    <link href="../../css/jquery.bootstraptree.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+    <link href="../../css/themes/default/style.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="../../css/ie.css" />
+    <script type="text/javascript" charset="utf-8" src="../../js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- 左边固定导航条 开始-->
+    <nav class="navbar-default navbar-static-side-left animated fadeInLeft themes-nav" role="navigation">
+        <i id="nav_close" data-toggle="tooltip" data-placement="bottom" data-original-title="隐藏" class="glyphicon glyphicon-backward pull-right text-primary m-r-xs m-t-xs cursor-pointer"></i>
+        <div class="slimScrollDiv">
+            <div class="nav-header themes-nav-header">
+                <div class="dropdown">
+                    <span>
+                        <img alt="image" class="img-circle" width="66" height="66" src="../../imgs/logo_me.jpg">
+                    </span>
+                    <div data-toggle="dropdown" class="dropdown-toggle">
+                        <label class="block m-t-xs nav-label">
+                            <strong class="text-warning">陈明武</strong>
+                        </label>
+                        <label class="text-muted block m-t-xs text-warning nav-label cursor-pointer">
+                            超级管理员<b class="caret"></b>
+                        </label>
+                    </div>
+                    <ul class="dropdown-menu animated fadeInRight" style="border-radius: 0;z-index:110;">
+                        <li>
+                            <a class="J_menuItem" href="form_avatar.html" data-index="0">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                                修改头像
+                            </a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="profile.html" data-index="1">
+                                <i class="glyphicon glyphicon-user"></i>
+                                个人资料
+                            </a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="mailbox.html" data-index="2">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                修改密码
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html" class="label-danger">
+                                <i class="glyphicon glyphicon-off"></i>
+                                安全退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="myTree" class="nav-body myTree themes-nav-body"></div>
+        </div>
+    </nav>
+    <nav class="navbar-static-side-left navbar-static-side-left-2 text-center animated fadeInLeft themes-nav">
+        <i id="nav_open" data-toggle="tooltip" data-placement="bottom" data-original-title="显示" class="glyphicon glyphicon-forward text-primary m-t-lg cursor-pointer"></i>
+    </nav>
+    <!-- 左边固定导航条 结束-->
+
+    <!-- 中间内容 开始-->
+    <div id="container_content" class="container-content">
+        <div class="content-head">
+
+        </div>
+        <div class="container-fluid content-body">
+            <ul id="myTab" class="nav nav-tabs">
+                <li>
+                    <button>
+                        <i class="glyphicon glyphicon-backward"></i>
+                    </button>
+                </li>
+                <li class="active">
+                    <a href="#home" data-toggle="tab">
+                        <i class="glyphicon glyphicon-home"></i>
+                        主页
+                    </a>
+                </li>
+                <li><a href="#myHome" data-toggle="tab">MyHome</a></li>
+                <li class="dropdown">
+                    <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">
+                        DropDown
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                        <li><a href="#fat" tabindex="-1" data-toggle="tab">@fat</a></li>
+                        <li><a href="#mdo" tabindex="-1" data-toggle="tab">@mdo</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div id="my_tab_content" class="tab-content my-tab-content">
+                <div id="home" class="tab-pane animated fadeInRight active">
+                    <p>
+                        @home
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                    </p>
+                </div>
+                <div id="myHome" class="tab-pane animated fadeInRight">
+                    <p>
+                        @myHome
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                    </p>
+                </div>
+                <div id="fat" class="tab-pane animated fadeInRight">
+                    <p>
+                        @fat
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                    </p>
+                </div>
+                <div id="mdo" class="tab-pane animated fadeInRight">
+                    <p>
+                        @mdo
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                        到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大到第三代十八大
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中间内容 结束-->
+
+    <!--底部固定内容 开始-->
+    <footer class="navbar-fixed-bottom footer">
+        <div class="pull-right">
+            <label class="label-info">
+                © 2015-2017
+                <a href="#" target="_blank">cmw's blog</a>
+            </label>
+        </div>
+    </footer>
+    <!--底部固定内容 结束-->
+
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/angular.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.bootstraptree.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        //1、获得jsonData数据
+        var jsonData = eval('[{"id":"4","pid":"1","name":"大家电"},{"id":"5","pid":"1","name":"生活电器"},{"id":"1","pid":"0","name":"家用电器"},{"id":"2","pid":"0","name":"服饰"},{"id":"3","pid":"0","name":"化妆"},{"id":"7","pid":"4","name":"空调"},{"id":"8","pid":"4","name":"冰箱"},{"id":"9","pid":"4","name":"洗衣机"},{"id":"10","pid":"4","name":"热水器"},{"id":"11","pid":"3","name":"面部护理"},{"id":"12","pid":"3","name":"口腔护理"},{"id":"13","pid":"2","name":"男装"},{"id":"14","pid":"2","name":"女装"},{"id":"15","pid":"7","name":"海尔空调"},{"id":"16","pid":"7","name":"美的空调"},{"id":"19","pid":"5","name":"加湿器"},{"id":"20","pid":"5","name":"电熨斗"}]');
+        //2、json格式转树状结构
+        var jsonTreeData = transData(jsonData, 'id', 'pid', 'children');
+
+        var myTreeObj = $("#myTree");
+        myTreeObj.bootstraptree({
+            jsonTreeData:jsonTreeData,
+            click:function(a){
+                //刷新自定义滚动条
+                $("#myTree").mCustomScrollbar("update");
+                if(!$(a).attr("hasChild")){
+                    alert($(a).attr("rel"));
+                }
+            }
+        });
+
+        //创建自定义滚动条
+        myTreeObj.mCustomScrollbar({
+            scrollButtons:{
+                enable:true
+            },
+            theme:"light-thick"
+        });
+
+        //开启工具提示插件
+        $("[data-toggle='tooltip']").tooltip();
+
+        $('#nav_open').click(function(){
+            $(this).parent('nav').css('display','none');
+            $('#nav_close').parent('nav').css('display','block');
+            $('#container_content').css('paddingLeft','250px');
+        });
+        $('#nav_close').click(function(){
+            $(this).parent('nav').css('display','none');
+            $('#nav_open').parent('nav').css('display','block');
+            $('#container_content').css('paddingLeft','40px');
+        });
+    });
+</script>
+</body>
+</html>

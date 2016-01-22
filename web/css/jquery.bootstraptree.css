@@ -1,0 +1,33 @@
+@charset "utf-8";
+/**
+ * Created by CMW on 2016-01-19.
+ */
+.myTree{
+    background: rgb(47,64,80);
+}
+/* 菜单 */
+.myTree ul{
+    padding-left:18px;
+}
+.myTree ul:first-child{
+    padding:0;
+}
+/* 菜单项 */
+.myTree ul li{
+    cursor:pointer;
+}
+.myTree ul li>a{
+    height: 35px;
+    line-height: 35px;
+    font-size:14px;
+    padding:0 18px;
+    text-align: left;
+}
+.myTree ul li>a:hover{
+    background: rgb(38,57,73);
+}
+.myTree ul li>a>span{
+    line-height: 35px;
+}
+
+

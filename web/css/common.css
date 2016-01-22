@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    font: 14px/1.5 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+}
+.cursor-pointer{
+    cursor: pointer !important;
+}
+a{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+.block{
+    display: block;
+}
+
+.p-l-xs{
+    padding-left: 5px;
+}
+.p-l{
+    padding-left: 10px;
+}
+.p-l-lg{
+    padding-left: 15px;
+}
+
+.m-t-xs{
+    margin-top: 5px;
+}
+.m-t{
+    margin-top: 10px;
+}
+.m-t-lg{
+    margin-top: 15px;
+}
+
+.m-l-xs{
+    margin-left: 5px;
+}
+.m-l{
+    margin-left: 10px;
+}
+.m-l-lg{
+    margin-left: 15px;
+}
+
+.m-r-xs{
+    margin-right: 5px;
+}
+.m-r{
+    margin-right: 10px;
+}
+.m-r-lg{
+    margin-right: 15px;
+}
+
+.m-b-xs{
+    margin-bottom: 5px;
+}
+.m-b{
+    margin-bottom: 10px;
+}
+.m-b-lg{
+    margin-bottom: 15px;
+}

@@ -1,0 +1,245 @@
+int height_offset = random(0, 600);
+
+void setup()
+{
+	size(2000, 1200);
+	noLoop();
+}
+
+void draw()
+{
+	layer_count = Math.round(random(3, 20));
+	
+	circle_count = 0;
+	cross_count = 0;
+	group_count = 0;
+	
+	max_layers = Math.round(layer_count/4);
+	max_group_layers = Math.round(random(max_layers, max_layers * 2));
+	
+	var available_layers = new ArrayList();
+	available_layers.add('circles');
+	available_layers.add('crosses');
+	available_layers.add('circle_groups');
+	
+	while (available_layers.length > 0) {
+		
+		int draw = available_layers[Math.round(random(0, available_layers.length-1))];
+		
+		if (draw == 'circles') {
+			if (circle_count <= max_layers) {
+				drawCircles();
+				circle_count++;
+				if (circle_count == max_layers) available_layers.remove(available_layers.indexOf('circles'));
+			}
+		} else if (draw == 'crosses') {
+			if (cross_count <= max_layers) {
+				drawCrosses();
+				cross_count++;
+				if (cross_count == max_layers) available_layers.remove(available_layers.indexOf('crosses'));
+			}
+		} else if (draw == 'circle_groups') {
+			if (group_count <= max_group_layers) {
+				new CircleGroup();
+				group_count++;
+				if (group_count == max_group_layers) available_layers.remove(available_layers.indexOf('circle_groups'));
+			}
+		}
+	}
+}
+
+float randomX()
+{
+	return random(0, width);
+}
+
+float randomY()
+{
+	return random(0, height);
+}
+
+float validateX(x, size, boundary)
+{
+	int left_bound = 0;
+	int right_bound = width;
+	
+	if (boundary) {
+		left_bound = left_bound + boundary;
+		right_bound = right_bound - boundary;
+	}
+	
+	int minimum = Math.ceil(left_bound+(size/2));
+	int maximum = Math.floor(right_bound-(size/2));
+	
+	if (x < minimum) x = minimum;
+	if (x > maximum) x = maximum;
+	return x;
+}
+
+float validateY(y, size, boundary)
+{
+	int bottom_bound = height;
+	if (boundary) {
+		bottom_bound = height - boundary;
+	}
+	
+	bottom_bound = bottom_bound - height_offset;
+	int maximum = Math.floor(bottom_bound-(size/2));
+	
+	if (y > maximum) y = maximum;
+	return y;
+}
+
+color[] randomColours()
+{
+	color[] colours = new color[2];
+	int light = Math.round(random(0, random(1, 20)));
+	
+	if (light == 1) {
+		int diff = Math.round(random(10, 35));
+		colours[0] = color(random(180, 220));
+		colours[1] = color(77+diff, 115+diff, 127+diff);
+	} else {
+		int diff = Math.round(random(0, 25));
+		colours[0] = color(random(0, 70));
+		colours[1] = color(77-diff, 115-diff, 127-diff);
+	}
+	return colours;
+}
+
+void drawCircles() {
+	
+	int circle_count = random(0, 200);
+	
+	for (int i=1; i < circle_count; i++) {
+		
+		color[] colours = randomColours();
+		stroke(colours[0]);
+		fill(colours[1]);
+
+		int size = random(3, 50);
+		
+		circle(validateX(randomX(), size, random(0, 400)), validateY(randomY(), size, random(0, 400)), size);
+	}
+}
+
+void drawCrosses() {
+	
+	noStroke();
+	int cross_count = random(0, 40);
+	
+	for (int i=1; i <= cross_count; i++) {
+		
+		int size = random(6, 80);
+		int thick = size/6;
+		int x = validateX(randomX(), size, random(0, 400));
+		int y = validateY(randomY(), size, random(0, 400));
+		
+		pushMatrix();
+		
+		translate(x, y);
+		rotate(random(-1, 1)+TWO_PI/360);
+		translate(-x, -y);
+		
+		color[] colours = randomColours();
+		fill(colours[0]);
+		cross(x, y, size, size, thick);
+		
+		popMatrix();
+	}
+}
+
+void circle(x, y, size)
+{
+	ellipse(x, y, size, size);
+}
+
+void cross(x, y, width, height, thickness) {
+	
+	float arm_width = (width/2);
+	float arm_height = (height/2);
+	
+	beginShape();
+		
+		// Right Arm
+		vertex(x+(thickness/2), y-(thickness/2));
+		vertex(x+arm_width, y-(thickness/2));
+		vertex(x+arm_width, y+(thickness/2));
+		vertex(x+(thickness/2), y+(thickness/2));
+		
+		// Bottom Arm
+		vertex(x+(thickness/2), y+arm_height);
+		vertex(x-(thickness/2), y+arm_height);
+		vertex(x-(thickness/2), y+(thickness/2));
+		
+		// Left Arm
+		vertex(x-arm_width, y+(thickness/2));
+		vertex(x-arm_width, y-(thickness/2));
+		vertex(x-(thickness/2), y-(thickness/2));
+		
+		// Top Arm
+		vertex(x-(thickness/2), y-arm_height);
+		vertex(x+(thickness/2), y-arm_height);
+		
+	endShape(CLOSE);
+}
+
+class CircleGroup
+{
+	ArrayList circles;
+	
+	CircleGroup ()
+	{	
+		circles = new ArrayList();
+		
+		color[] colours = randomColours();
+		
+		noStroke();
+		fill(colours[0]); draw();
+		fill(colours[1]); redraw();
+	}
+	
+	void draw()
+	{	
+		for (int i=0; i < random(2, 30); i++) {
+			
+			if (circles.size() == 0) {
+				
+				size = random(120, 350);
+				x = validateX(randomX(), size, 200);
+				y = validateY(randomY(), size, 600);
+				
+			} else {
+				
+				base_circle = circles[Math.round(random(0, (circles.size()-1)))];
+				
+				size = random(120, 350);
+				angle = random(0, 360);
+				diff = random((base_circle[2]/20+size/2), (base_circle[2]/2+size/2)-(base_circle[2]/10));
+				
+				x = validateX((base_circle[0] + diff * cos(angle)), size);
+				y = validateY((base_circle[1] + diff * sin(angle)), size);
+			}
+			
+			addCircle(x, y, size);
+			circle(x, y, size);
+		}
+	}
+	
+	void redraw()
+	{
+		for (int i=0; i <= circles.size()-1; i++) {
+			base_circle = circles[i];
+			circle(base_circle[0], base_circle[1], base_circle[2]-2);
+		}
+	}
+	
+	void addCircle(x, y, size)
+	{
+		int[] circle = new int[3];
+		circle[0] = x;
+		circle[1] = y;
+		circle[2] = size;
+		circles.add(circle);
+	}
+}

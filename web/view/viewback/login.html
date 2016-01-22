@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>MI2-后台登录</title>
+  	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+  	<link href="../../css/login_back.css" rel="stylesheet">
+</head>
+<body>
+	<div class="login">
+		<div class="login-head">
+			<img src="../../imgs/logo_me.jpg" width="120" height="120" alt="" class="img-circle">
+		</div>
+		<form class="form-login" role="form">
+			<input name="username" type="email" class="form-control" placeholder="用户名" required autofocus />
+			<input name="password" type="password" class="form-control" placeholder="密码" required />
+			<button class="btn btn-lg btn-warning btn-block" type="submit">立即登录</button>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" class="" value="remember-me">记住密码
+				</label>
+				<label id="err-info" class="err-info" style="float: right;">用户名或密码不正确!</label>
+			</div>
+		</form>
+	</div>
+	<!-- 绘制气泡 -->
+	<div class="background">
+		<canvas id="abstract" width="2000" height="1000" datasrc="../../js/abstract.pjs"></canvas>
+	</div>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/processing-0-6-packed.js"></script>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="../../css/ie.css" />
+<script type="text/javascript" charset="utf-8" src="../../js/html5shiv.js"></script>
+<![endif]-->
+</body>
+</html>

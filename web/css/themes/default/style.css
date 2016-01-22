@@ -1,0 +1,39 @@
+@charset "utf-8";
+/*
+    rgb(47,64,80)  rgb(38,57,73)
+    rgb(0,51,102)  rgb(0,102,204) rgb(0,102,102)
+*/
+/* 滚动条的宽度 */
+::-webkit-scrollbar{width:10px;}
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track{background-color:rgb(47,64,80);}
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb{background-color:rgb(38,57,73);}
+::-webkit-scrollbar-thumb:hover {background-color:rgb(38,57,73);}
+::-webkit-scrollbar-thumb:active {background-color:rgb(38,57,73);}
+/* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {background-color: rgb(47,64,80);}
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {background-color: rgb(47,64,80);}
+
+
+.themes-nav{
+    background: rgb(47,64,80);
+}
+.themes-nav-header{
+    background: rgb(38,57,73);
+}
+.themes-nav-body{
+    scrollbar-arrow-color: rgb(47,64,80);           /*三角箭头的颜色*/
+    scrollbar-face-color: rgb(38,57,73);            /*立体滚动条的颜色*/
+    scrollbar-3dlight-color: rgb(47,64,80);         /*立体滚动条亮边的颜色*/
+    scrollbar-highlight-color:rgb(47,64,80);        /*滚动条空白部分的颜色*/
+    scrollbar-shadow-color: rgb(47,64,80);          /*立体滚动条阴影的颜色*/
+    scrollbar-darkshadow-color: rgb(47,64,80);      /*立体滚动条强阴影的颜色*/
+    scrollbar-track-color: rgb(47,64,80);           /*立体滚动条背景颜色*/
+    scrollbar-base-color:rgb(47,64,80);             /*滚动条的基本颜色*/
+    /*Cursor:url(mouse.cur);  自定义个性鼠标*/
+}
+.themes-nav-body ul.nav li:hover{
+    background: rgb(38,57,73);
+}
