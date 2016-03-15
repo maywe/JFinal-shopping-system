@@ -1,4 +1,4 @@
-package com.mi2.ctrl.ctrl_viewfront;
+package com.mi2.ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseController;
@@ -7,6 +7,6 @@ import com.base.ctrl.BaseController;
 public class IndexCtrl extends BaseController {
 
 	public void index(){
-		this.render("view/viewback/login.html");
+		this.render(VIEW_BACK_PATH+"/login.html");
 	}
 }

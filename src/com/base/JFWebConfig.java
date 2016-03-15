@@ -9,9 +9,11 @@ import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
+import com.jfinal.plugin.activerecord.ModelRecordElResolver;
 import com.jfinal.plugin.activerecord.dialect.OracleDialect;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
+import com.mi2.interceptor.MyTxByMethodRegexInterceptor;
 import com.mi2.model._MappingKit;
 import org.apache.log4j.Logger;
 
@@ -93,10 +95,15 @@ public class JFWebConfig extends JFinalConfig {
 		
 		// 配置ActiveRecord插件
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
+		//设置事务级别(jfinal2.2事务级别为4，oracle不支持4)
+		arp.setTransactionLevel(2);
+		//显示执行的sql语句
+		arp.setShowSql(true);
 		me.add(arp);
 		arp.setDialect(new OracleDialect());
         // 配置属性名(字段名)大小写不敏感容器工厂
-        arp.setContainerFactory(new CaseInsensitiveContainerFactory());
+        arp.setContainerFactory(new CaseInsensitiveContainerFactory(true));
+		//arp.setContainerFactory(new PropertyNameContainerFactory());
 		// 所有映射配置在 MappingKit 中搞定
 		_MappingKit.mapping(arp);
 	}
@@ -106,7 +113,8 @@ public class JFWebConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configInterceptor(Interceptors me) {
-	
+		//方法事务拦截
+		me.add(new MyTxByMethodRegexInterceptor("((?!.*Request.*).*save.*|(?!.*Request.*).*update.*|(?!.*Request.*).*add.*|(?!.*Request.*).*delete.*)"));
 	}
 
 	/**
@@ -116,10 +124,10 @@ public class JFWebConfig extends JFinalConfig {
 	public void configHandler(Handlers me) {
 	    //该处理器将request.getContextPath()存储在root中，可以解决路径问题
 	  	me.add(new ContextPathHandler("root"));
-	  	//通过.action后缀访问后台方法
-	  	me.add(new FakeStaticHandler(".action"));
 	  	//通过.json后缀访问后台链接
-	  	me.add(new FakeStaticHandler(".json"));
+	  	//me.add(new FakeStaticHandler(".json"));
+		//通过.action后缀访问后台方法
+		me.add(new FakeStaticHandler(".action"));
 	}
 	
 	/**
@@ -130,6 +138,8 @@ public class JFWebConfig extends JFinalConfig {
 	 */
 	@Override
 	public void afterJFinalStart() {
+		//设置jsp取值方法，这种是当做map类型的取值，而不是当做bean
+		ModelRecordElResolver.setResolveBeanAsModel(true);
 		super.afterJFinalStart();
 		System.out.println("JFinal启动后启动自动调度线程！");
 	}

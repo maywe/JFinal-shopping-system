@@ -75,8 +75,7 @@ public class IdGeneraterUtil {
      * 将数转为任意进制 
      * @param num 
      * @param base 进制
-     * @param s_运算字符串
-     * @return 
+     * @return
      */  
     public String toX(Long num,int base,String s_){
         StringBuffer str = new StringBuffer();  

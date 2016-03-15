@@ -22,7 +22,7 @@ public class JsonUtil {
 		isList = true;
 		jsonBuf = new StringBuffer();
 		jsonBuf.append("[");
-		for (int i=0;i<recordList.size();i++){
+		for (int i=0,size=recordList.size();i<size;i++){
 			Record record = recordList.get(i);
 			if (i>0){
 				jsonBuf.append(",");
