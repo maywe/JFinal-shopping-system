@@ -1,0 +1,316 @@
+Table: GOODS
+---------------------+---------------+------+-----+---------+---------
+ Field               | Type          | Null | Key | Default | Remarks 
+---------------------+---------------+------+-----+---------+---------
+ GOODS_ID            | NUMBER(10)    | NO   | PRI |         |         
+ GOODS_TOTAL_ID      | NUMBER(10)    | YES  |     |         |         
+ GOODS_NAME          | VARCHAR2(32)  | NO   |     |         |         
+ GOODS_PRICE         | NUMBER(12,2)  | NO   |     |         |         
+ GOODS_STOCK         | NUMBER(10)    | NO   |     |         |         
+ GOODS_SALES_NUM     | NUMBER(10)    | NO   |     |         |         
+ GOODS_PARAMETERS    | CLOB(4000)    | NO   |     |         |         
+ GOODS_PREVIEW_IMAGE | VARCHAR2(400) | NO   |     |         |         
+---------------------+---------------+------+-----+---------+---------
+
+Table: GOODS_ADDRIBUTE
+----------------------+--------------+------+-----+---------+---------
+ Field                | Type         | Null | Key | Default | Remarks 
+----------------------+--------------+------+-----+---------+---------
+ GOODS_ADDRIBUTE_ID   | NUMBER(10)   | NO   | PRI |         |         
+ GOODS_ID             | NUMBER(10)   | YES  |     |         |         
+ GOODS_ADDRIBUTE_NAME | VARCHAR2(64) | NO   |     |         |         
+----------------------+--------------+------+-----+---------+---------
+
+Table: GOODS_ADDRIBUTE_VAL
+--------------------------+--------------+------+-----+---------+---------
+ Field                    | Type         | Null | Key | Default | Remarks 
+--------------------------+--------------+------+-----+---------+---------
+ GOODS_ADDRIBUTE_VAL_ID   | NUMBER(10)   | NO   | PRI |         |         
+ GOODS_ADDRIBUTE_ID       | NUMBER(10)   | YES  |     |         |         
+ GOODS_ADDRIBUTE_VAL_NAME | VARCHAR2(64) | NO   |     |         |         
+--------------------------+--------------+------+-----+---------+---------
+
+Table: GOODS_ASSESS
+-------------------+---------------+------+-----+---------+---------
+ Field             | Type          | Null | Key | Default | Remarks 
+-------------------+---------------+------+-----+---------+---------
+ GOODS_ASSESS_ID   | NUMBER(10)    | NO   | PRI |         |         
+ ORDERS_DETAILS_ID | NUMBER(10)    | YES  |     |         |         
+ ASSESS_CONTENT    | VARCHAR2(400) | YES  |     |         |         
+-------------------+---------------+------+-----+---------+---------
+
+Table: GOODS_IMAGES
+------------------------+---------------+------+-----+---------+---------
+ Field                  | Type          | Null | Key | Default | Remarks 
+------------------------+---------------+------+-----+---------+---------
+ GOODS_IMAGES_ID        | NUMBER(10)    | NO   | PRI |         |         
+ GOODS_FATHER_IMAGES_ID | NUMBER(10)    | YES  |     |         |         
+ GOODS_ID               | NUMBER(10)    | YES  |     |         |         
+ GOODS_IMAGES_URI       | VARCHAR2(400) | NO   |     |         |         
+------------------------+---------------+------+-----+---------+---------
+
+Table: GOODS_TOTAL_TYPE
+-------------------------+------------+------+-----+---------+---------
+ Field                   | Type       | Null | Key | Default | Remarks 
+-------------------------+------------+------+-----+---------+---------
+ GOODS_TOTAL_ID          | NUMBER(10) | NO   | PRI |         |         
+ PHONE_TYPE_ID           | NUMBER(10) | YES  |     |         |         
+ LIFE_TYPE_ID            | NUMBER(10) | YES  |     |         |         
+ PHONE_ACCESSORY_TYPE_ID | NUMBER(10) | YES  |     |         |         
+-------------------------+------------+------+-----+---------+---------
+
+Table: PHONE_ACCESSORY_TYPE
+--------------------------------+--------------+------+-----+---------+---------
+ Field                          | Type         | Null | Key | Default | Remarks 
+--------------------------------+--------------+------+-----+---------+---------
+ PHONE_ACCESSORY_TYPE_ID        | NUMBER(10)   | NO   | PRI |         |         
+ PHONE_ACCESSORY_FATHER_TYPE_ID | NUMBER(10)   | YES  |     |         |         
+ PHONE_ACCESSORY_TYPE_NAME      | VARCHAR2(64) | NO   |     |         |         
+--------------------------------+--------------+------+-----+---------+---------
+
+Table: PHONE_LIFE_TYPE
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ LIFE_TYPE_ID   | NUMBER(10)   | NO   | PRI |         |         
+ LIFE_TYPE_NAME | VARCHAR2(64) | NO   |     |         |         
+----------------+--------------+------+-----+---------+---------
+
+Table: PHONE_MODEL
+------------------+--------------+------+-----+---------+---------
+ Field            | Type         | Null | Key | Default | Remarks 
+------------------+--------------+------+-----+---------+---------
+ PHONE_MODEL_ID   | NUMBER(10)   | NO   | PRI |         |         
+ PHONE_TYPE_ID    | NUMBER(10)   | YES  |     |         |         
+ PHONE_MODEL_NAME | VARCHAR2(32) | NO   |     |         |         
+------------------+--------------+------+-----+---------+---------
+
+Table: PHONE_SETMEAL
+--------------------+--------------+------+-----+---------+---------
+ Field              | Type         | Null | Key | Default | Remarks 
+--------------------+--------------+------+-----+---------+---------
+ PHONE_SETMEAL_ID   | NUMBER(10)   | NO   | PRI |         |         
+ PHONE_TYPE_ID      | NUMBER(10)   | YES  |     |         |         
+ PHONE_SETMEAL_NAME | VARCHAR2(64) | NO   |     |         |         
+ SETMEAL_GOODS_NUM  | NUMBER(10)   | NO   |     |         |         
+ SETMEAL_PRICE      | NUMBER(10,2) | NO   |     |         |         
+--------------------+--------------+------+-----+---------+---------
+
+Table: PHONE_SETMEAL_DETAIL
+-------------------------+------------+------+-----+---------+---------
+ Field                   | Type       | Null | Key | Default | Remarks 
+-------------------------+------------+------+-----+---------+---------
+ PHONE_SETMEAL_DETAIL_ID | NUMBER(10) | NO   | PRI |         |         
+ PHONE_SETMEAL_ID        | NUMBER(10) | YES  |     |         |         
+ GOODS_ID                | NUMBER(10) | YES  |     |         |         
+ GOODS_NUM               | NUMBER(10) | NO   |     |         |         
+-------------------------+------------+------+-----+---------+---------
+
+Table: PHONE_TYPE
+----------------------+--------------+------+-----+---------+---------
+ Field                | Type         | Null | Key | Default | Remarks 
+----------------------+--------------+------+-----+---------+---------
+ PHONE_TYPE_ID        | NUMBER(10)   | NO   | PRI |         |         
+ PHONE_FATHER_TYPE_ID | NUMBER(10)   | YES  |     |         |         
+ PHONE_TYPE_NAME      | VARCHAR2(64) | NO   |     |         |         
+----------------------+--------------+------+-----+---------+---------
+
+Table: PHONE_VERSION
+--------------------+--------------+------+-----+---------+---------
+ Field              | Type         | Null | Key | Default | Remarks 
+--------------------+--------------+------+-----+---------+---------
+ PHONE_VERSION_ID   | NUMBER(10)   | NO   | PRI |         |         
+ PHONE_MODEL_ID     | NUMBER(10)   | YES  |     |         |         
+ PHONE_VERSION_NAME | VARCHAR2(32) | NO   |     |         |         
+ PHONE_FORMER_PRICE | NUMBER(10,2) | NO   |     |         |         
+ PHONE_NOW_PRICE    | NUMBER(10,2) | NO   |     |         |         
+--------------------+--------------+------+-----+---------+---------
+
+Table: SYS_POWER
+---------------------+---------------+------+-----+---------+---------
+ Field               | Type          | Null | Key | Default | Remarks 
+---------------------+---------------+------+-----+---------+---------
+ SYS_POWER_ID        | NUMBER(10)    | NO   | PRI |         |         
+ SYS_FATHER_POWER_ID | NUMBER(10)    | YES  |     |         |         
+ SYS_POWER_NAME      | VARCHAR2(64)  | NO   |     |         |         
+ SYS_POWER_DESCRIBE  | VARCHAR2(400) | YES  |     |         |         
+ RESOURCE_URL        | VARCHAR2(400) | NO   |     |         |         
+---------------------+---------------+------+-----+---------+---------
+
+Table: SYS_POWER_AND_ROLE_MAP
+--------------+------------+------+-----+---------+---------
+ Field        | Type       | Null | Key | Default | Remarks 
+--------------+------------+------+-----+---------+---------
+ SYS_POWER_ID | NUMBER(10) | NO   | PRI |         |         
+ SYS_ROLE_ID  | NUMBER(10) | NO   | PRI |         |         
+--------------+------------+------+-----+---------+---------
+
+Table: SYS_ROLE
+-------------------+---------------+------+-----+---------+---------
+ Field             | Type          | Null | Key | Default | Remarks 
+-------------------+---------------+------+-----+---------+---------
+ SYS_ROLE_ID       | NUMBER(10)    | NO   | PRI |         |         
+ SYS_ROLE_NAME     | VARCHAR2(64)  | NO   |     |         |         
+ SYS_ROLE_DESCRIBE | VARCHAR2(400) | YES  |     |         |         
+-------------------+---------------+------+-----+---------+---------
+
+Table: USERS_BACKSTAGE
+--------------------+--------------+------+-----+---------+---------
+ Field              | Type         | Null | Key | Default | Remarks 
+--------------------+--------------+------+-----+---------+---------
+ USERS_BACKSTAGE_ID | NUMBER(10)   | NO   | PRI |         |         
+ SYS_ROLE_ID        | NUMBER(10)   | YES  |     |         |         
+ SYS_USER_NAME      | VARCHAR2(32) | NO   |     |         |         
+ SYS_USER_PASSWORD  | VARCHAR2(32) | NO   |     |         |         
+ NAME               | VARCHAR2(32) | NO   |     |         |         
+ SEX                | VARCHAR2(4)  | NO   |     |         |         
+ TELEPHONE          | VARCHAR2(11) | NO   |     |         |         
+ EMAIL              | VARCHAR2(64) | NO   |     |         |         
+ BIRTHDAY           | DATE(7)      | YES  |     |         |         
+ NICKNAME           | VARCHAR2(32) | YES  |     |         |         
+--------------------+--------------+------+-----+---------+---------
+
+Table: USERS_CITY
+-----------------+---------------+------+-----+---------+---------
+ Field           | Type          | Null | Key | Default | Remarks 
+-----------------+---------------+------+-----+---------+---------
+ USERS_CITY_ID   | NUMBER(10)    | NO   | PRI |         |         
+ FATHER_CITY_ID  | NUMBER(10)    | YES  |     |         |         
+ USERS_CITY_NAME | VARCHAR2(200) | NO   |     |         |         
+-----------------+---------------+------+-----+---------+---------
+
+Table: USERS_DELIVERY_ADDRESS
+---------------------------+---------------+------+-----+---------+---------
+ Field                     | Type          | Null | Key | Default | Remarks 
+---------------------------+---------------+------+-----+---------+---------
+ USERS_DELIVERY_ADDRESS_ID | NUMBER(10)    | NO   | PRI |         |         
+ USERS_CITY_ID             | NUMBER(10)    | YES  |     |         |         
+ USER_FRONT_ID             | NUMBER(10)    | YES  |     |         |         
+ NAME                      | VARCHAR2(32)  | NO   |     |         |         
+ TELEPHONE                 | VARCHAR2(11)  | NO   |     |         |         
+ POSTALCODE                | VARCHAR2(16)  | NO   |     |         |         
+ STREET                    | VARCHAR2(200) | YES  |     |         |         
+ ADDRESS_LABEL             | VARCHAR2(32)  | YES  |     |         |         
+---------------------------+---------------+------+-----+---------+---------
+
+Table: USERS_FRONT
+---------------+--------------+------+-----+---------+---------
+ Field         | Type         | Null | Key | Default | Remarks 
+---------------+--------------+------+-----+---------+---------
+ USER_FRONT_ID | NUMBER(10)   | NO   | PRI |         |         
+ LOGIN_NAME    | VARCHAR2(32) | NO   |     |         |         
+ PASSWORD      | VARCHAR2(32) | NO   |     |         |         
+ USER_STATUS   | NUMBER(1)    | NO   |     |         |         
+---------------+--------------+------+-----+---------+---------
+
+Table: USERS_FRONT_DETAILED
+---------------+---------------+------+-----+---------+---------
+ Field         | Type          | Null | Key | Default | Remarks 
+---------------+---------------+------+-----+---------+---------
+ USER_FRONT_ID | NUMBER(10)    | NO   | PRI |         |         
+ NAME          | VARCHAR2(32)  | YES  |     |         |         
+ SEX           | VARCHAR2(4)   | YES  |     |         |         
+ TELEPHONE     | VARCHAR2(11)  | YES  |     |         |         
+ EMAIL         | VARCHAR2(64)  | YES  |     |         |         
+ BIRTHDAY      | DATE(7)       | YES  |     |         |         
+ NICKNAME      | VARCHAR2(32)  | YES  |     |         |         
+ IMG           | VARCHAR2(200) | YES  |     |         |         
+---------------+---------------+------+-----+---------+---------
+
+Table: USERS_ORDERS
+-----------------+---------------+------+-----+---------+---------
+ Field           | Type          | Null | Key | Default | Remarks 
+-----------------+---------------+------+-----+---------+---------
+ ORDERS_ID       | NUMBER(10)    | NO   | PRI |         |         
+ USER_FRONT_ID   | NUMBER(10)    | YES  |     |         |         
+ USER_ORDERS_ID  | NUMBER(10)    | NO   |     |         |         
+ ORDERS_TIME     | DATE(7)       | NO   |     |         |         
+ ORDERS_ADDRESS  | VARCHAR2(500) | NO   |     |         |         
+ TELEPHONE       | VARCHAR2(20)  | NO   |     |         |         
+ GOODS_SUM       | NUMBER(10)    | NO   |     |         |         
+ SUM_MONEY       | NUMBER(12,2)  | NO   |     |         |         
+ ORDERS_STATUS   | NUMBER(2)     | NO   |     |         |         
+ DISCOUNT_AMOUNT | NUMBER(12,2)  | YES  |     |         |         
+ GOODS_FREIGHT   | NUMBER(12,2)  | YES  |     |         |         
+ PAYMENT_MONEY   | NUMBER(12,2)  | YES  |     |         |         
+ NAME            | VARCHAR2(30)  | YES  |     |         |         
+-----------------+---------------+------+-----+---------+---------
+
+Table: USERS_ORDERS_DETAIL
+-------------------+--------------+------+-----+---------+---------
+ Field             | Type         | Null | Key | Default | Remarks 
+-------------------+--------------+------+-----+---------+---------
+ ORDERS_DETAILS_ID | NUMBER(10)   | NO   | PRI |         |         
+ GOODS_ID          | NUMBER(10)   | YES  |     |         |         
+ ORDERS_ID         | NUMBER(10)   | YES  |     |         |         
+ COST_NUM          | NUMBER(10)   | NO   |     |         |         
+ COST_PRICE        | NUMBER(10,2) | NO   |     |         |         
+ PHONE_VERSION_ID  | NUMBER(10)   | YES  |     |         |         
+-------------------+--------------+------+-----+---------+---------
+
+Table: USERS_SHOPPINGCAR
+-------------------+------------+------+-----+---------+---------
+ Field             | Type       | Null | Key | Default | Remarks 
+-------------------+------------+------+-----+---------+---------
+ USERS_SHOPPING_ID | NUMBER(10) | NO   | PRI |         |         
+ USER_FRONT_ID     | NUMBER(10) | YES  |     |         |         
+ GOODS_ID          | NUMBER(10) | YES  |     |         |         
+ SHOPPING_NUM      | NUMBER(10) | YES  |     |         |         
+ SHOPPING_TIME     | DATE(7)    | YES  |     |         |         
+ PHONE_VERSION_ID  | NUMBER(10) | YES  |     |         |         
+-------------------+------------+------+-----+---------+---------
+
+Table: MILIFE_VIEW
+---------------------+---------------+------+-----+---------+---------
+ Field               | Type          | Null | Key | Default | Remarks 
+---------------------+---------------+------+-----+---------+---------
+ GOODS_ID            | NUMBER(10)    | NO   |     |         |         
+ GOODS_TOTAL_ID      | NUMBER(10)    | YES  |     |         |         
+ GOODS_NAME          | VARCHAR2(32)  | NO   |     |         |         
+ GOODS_PRICE         | NUMBER(12,2)  | NO   |     |         |         
+ GOODS_STOCK         | NUMBER(10)    | NO   |     |         |         
+ GOODS_SALES_NUM     | NUMBER(10)    | NO   |     |         |         
+ GOODS_PREVIEW_IMAGE | VARCHAR2(400) | NO   |     |         |         
+ LIFE_TYPE_ID        | NUMBER(10)    | YES  |     |         |         
+ LIFE_TYPE_NAME      | VARCHAR2(64)  | NO   |     |         |         
+ GOODS_IMAGES_ID     | NUMBER(10)    | YES  |     |         |         
+---------------------+---------------+------+-----+---------+---------
+
+Table: MIPHONEACCESSORY_VIEW
+---------------------------+---------------+------+-----+---------+---------
+ Field                     | Type          | Null | Key | Default | Remarks 
+---------------------------+---------------+------+-----+---------+---------
+ GOODS_ID                  | NUMBER(10)    | NO   |     |         |         
+ GOODS_TOTAL_ID            | NUMBER(10)    | YES  |     |         |         
+ GOODS_NAME                | VARCHAR2(32)  | NO   |     |         |         
+ GOODS_PRICE               | NUMBER(12,2)  | NO   |     |         |         
+ GOODS_STOCK               | NUMBER(10)    | NO   |     |         |         
+ GOODS_SALES_NUM           | NUMBER(10)    | NO   |     |         |         
+ GOODS_PREVIEW_IMAGE       | VARCHAR2(400) | NO   |     |         |         
+ PHONE_ACCESSORY_TYPE_ID   | NUMBER(10)    | YES  |     |         |         
+ PHONE_ACCESSORY_TYPE_NAME | VARCHAR2(64)  | NO   |     |         |         
+ GOODS_IMAGES_ID           | NUMBER(10)    | YES  |     |         |         
+---------------------------+---------------+------+-----+---------+---------
+
+Table: MIPHONE_VIEW
+--------------------------+---------------+------+-----+---------+---------
+ Field                    | Type          | Null | Key | Default | Remarks 
+--------------------------+---------------+------+-----+---------+---------
+ GOODS_ID                 | NUMBER(10)    | NO   |     |         |         
+ PHONE_TYPE_NAME          | VARCHAR2(64)  | NO   |     |         |         
+ GOODS_NAME               | VARCHAR2(32)  | NO   |     |         |         
+ PHONE_MODEL_NAME         | VARCHAR2(32)  | YES  |     |         |         
+ PHONE_VERSION_NAME       | VARCHAR2(32)  | YES  |     |         |         
+ PHONE_FORMER_PRICE       | NUMBER(10,2)  | YES  |     |         |         
+ PHONE_NOW_PRICE          | NUMBER(10,2)  | YES  |     |         |         
+ GOODS_STOCK              | NUMBER(10)    | NO   |     |         |         
+ GOODS_SALES_NUM          | NUMBER(10)    | NO   |     |         |         
+ GOODS_PARAMETERS         | CLOB(4000)    | NO   |     |         |         
+ PHONE_VERSION_ID         | NUMBER(10)    | YES  |     |         |         
+ GOODS_PREVIEW_IMAGE      | VARCHAR2(400) | NO   |     |         |         
+ GOODS_ADDRIBUTE_ID       | NUMBER(10)    | YES  |     |         |         
+ GOODS_ADDRIBUTE_NAME     | VARCHAR2(64)  | YES  |     |         |         
+ GOODS_ADDRIBUTE_VAL_ID   | NUMBER(10)    | YES  |     |         |         
+ GOODS_ADDRIBUTE_VAL_NAME | VARCHAR2(64)  | YES  |     |         |         
+--------------------------+---------------+------+-----+---------+---------
+
