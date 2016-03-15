@@ -1,0 +1,81 @@
+/*表格框 start*/
+.my-tab-pane{
+    width: 100%;
+    height: 100%;
+}
+.portlet{
+    height: 100%;
+    /*box-shadow: 2px 3px 5px rgba(0,0,0,0.4);*/
+}
+.portlet-title{
+    padding:1px;
+    height:32px;
+    line-height:31px;
+    width:100%;
+}
+.portlet-box{
+    width:100%;
+    height:100%;
+    padding:0;
+    margin-bottom: 50px;
+    overflow-y: auto;
+}
+.portlet-box th{
+    font-weight: bold;
+}
+.portlet-box td,.portlet-box th{
+    text-align: center;
+}
+/*表格框 end*/
+
+/* 分页样式 start*/
+.pageFooter{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+}
+.pagination-select{
+    float:left;
+    padding: 5px;
+}
+.pagination-box{
+    float: right;
+}
+.my-pagination{
+    margin: 0;
+    border-bottom-width: 0 !important;
+}
+.select-pagesize{
+    display: inline;
+}
+.goto-input{
+    display: inline-block;
+    padding: 2px 2px 1px 2px !important;
+    margin: 0 !important;
+}
+.goto-input>input{
+    height: 25px;
+    width: 40px;
+}
+/* 分页样式 end*/
+
+
+/* 弹出框样式 start*/
+.modal-content .modal-header {
+    padding: 8px;
+}
+.modal-content .modal-body{
+    padding-bottom: 0;
+}
+.modal-content .modal-body th{
+    text-align: right;
+    vertical-align: middle;
+}
+.modal-content .modal-body th,.modal-content .modal-body td{
+    padding: 3px;
+}
+.modal-content .modal-footer {
+    padding: 5px;
+    text-align: center;
+}
+/* 弹出框样式 end*/

@@ -1,0 +1,109 @@
+@charset "utf-8";
+@blue_color_1: rgb(38,57,73);
+@blue_color_2: rgb(47,64,80);
+@blue_color_3: rgb(217,231,242);
+@blue_color_4: rgb(243,248,252);
+@blue_color_5: rgb(51,122,183);
+@orange_color_1:orange;
+@white_color_1:rgb(255,255,255);
+@gray_color_1:#ddd;
+@gray_color_2:rgb(235,235,235);
+
+.themes{
+    background: @blue_color_2;
+}
+.themes-nav{
+    background: @blue_color_2;
+}
+.themes-nav-header{
+    background: @blue_color_1;
+}
+.themes-nav-body ul.nav li div{
+    color: @blue_color_5;
+}
+.themes-content-head{
+    background-color: @blue_color_1;
+}
+.themes-content-head ul.nav>li{
+    border-right: 1px solid @orange_color_1;
+}
+.themes-content-head ul.nav>li>div{
+    color: @blue_color_5;
+}
+.themes-content-head h2.mi2-title{
+    color: @orange_color_1;
+}
+.themes-content-head ul.nav li>a:hover{
+    background: @blue_color_2;
+}
+.themes-myTree ul li>a:hover{
+    background: @blue_color_1;
+}
+.themes-content-body ul.nav li>a{
+    background: @blue_color_4;
+    color: @blue_color_2;
+    border-left: 1px solid @blue_color_3;
+    border-top: 1px solid @blue_color_3;
+    border-right: 1px solid @blue_color_3;
+}
+.themes-content-body ul{
+    border-bottom: 1px solid @blue_color_3;
+}
+.themes-content-body ul.nav li>a:hover{
+    background: @blue_color_3;
+}
+.themes-content-body ul.nav li.active>a{
+    background: @white_color_1;
+    font-weight: bold;
+}
+.themes-content-body ul.nav li>button{
+    background: @blue_color_4;
+    color: @blue_color_2;
+    border: 1px solid @blue_color_3;
+    border-bottom: none;
+}
+.themes-content-body ul.nav li:hover>button{
+    background: @blue_color_3;
+    font-weight: bold;
+}
+.themes-my-tab-content{
+    /*
+    border-left: 1px solid @blue_color_3;
+    border-bottom: 1px solid @blue_color_3;
+    border-right: 1px solid @blue_color_3;
+    */
+}
+
+.themes-footer{
+    background: @blue_color_2;
+}
+.themes-footer label{
+    color:@white_color_1;
+    font-weight: bold;
+}
+.themes-footer a{
+    color:@orange_color_1;
+    font-weight: bold;
+}
+
+/* 主容器样式 */
+.themes-portlet-title{
+    background: @gray_color_1;
+}
+.themes-portlet-box th{
+    background: @gray_color_2;
+}
+.themes-pageFooter{
+    background: @gray_color_1;
+}
+
+/* 弹出框样式 */
+.themes-modal-content .modal-header{
+    background: url("../../../images/diatopbk.png") repeat;
+}
+.themes-modal-content .modal-header .close{
+    color: red;
+}
+.themes-modal-content .modal-body{
+    background: url("../../../images/diabk.png") repeat;
+}

@@ -5,36 +5,70 @@
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>MI2-后台登录</title>
-  	<link href="../../css/bootstrap.min.css" rel="stylesheet">
-  	<link href="../../css/login_back.css" rel="stylesheet">
+  	<link href="../../css/common/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/common/toastr.min.css" rel="stylesheet">
+	<link href="../../css/common/common.css" rel="stylesheet">
+  	<link href="../../css/viewback/login.css" rel="stylesheet">
 </head>
 <body>
+	<div id="alert_background" class="alert-background">
+		<img style="vertical-align:middle;" src="../../images/loading.gif">
+	</div>
 	<div class="login">
 		<div class="login-head">
-			<img src="../../imgs/logo_me.jpg" width="120" height="120" alt="" class="img-circle">
+			<img id="sysImg" src="../../images/avatar-160.png" width="120" height="120" alt="" class="img-circle">
 		</div>
-		<form class="form-login" role="form">
-			<input name="username" type="email" class="form-control" placeholder="用户名" required autofocus />
-			<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<form id="form_login" class="form-login" role="form" method="post" onsubmit="return login()">
+			<input value="admin@163.com" name="usersBackstage.sys_user_name" type="email" class="form-control" placeholder="用户名" required autofocus />
+			<input value="123456" name="usersBackstage.sys_user_password" type="password" class="form-control" placeholder="密码" required />
+
 			<button class="btn btn-lg btn-warning btn-block" type="submit">立即登录</button>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" class="" value="remember-me">记住密码
+					<input name="remember_me" type="checkbox" value="remember_me">记住密码
 				</label>
-				<label id="err-info" class="err-info" style="float: right;">用户名或密码不正确!</label>
+				<label id="err-info" class="err-info"></label>
 			</div>
 		</form>
 	</div>
 	<!-- 绘制气泡 -->
 	<div class="background">
-		<canvas id="abstract" width="2000" height="1000" datasrc="../../js/abstract.pjs"></canvas>
+		<canvas id="abstract" width="2000" height="1000" datasrc="../../js/common/abstract.pjs"></canvas>
 	</div>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/processing-0-6-packed.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/common/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/common/processing-0-6-packed.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/common/toastr.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/viewback/core.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/viewback/core-ajax.js"></script>
 <!--[if IE]>
-<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="../../css/ie.css" />
-<script type="text/javascript" charset="utf-8" src="../../js/html5shiv.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="../../css/common/ie.css"/>
+<script type="text/javascript" charset="utf-8" src="../../js/common/html5shiv.min.js"></script>
 <![endif]-->
+<script type="text/javascript">
+	$(function(){
+		var sysUserName = getCookie('sysUserName');
+		var sysUserPassword = getCookie('sysUserPassword');
+		var sysImg = getCookie('sysImg');
+		if(sysUserName==null||sysUserPassword==null||sysImg==null){
+			return;
+		}
+		$('input[name="usersBackstage.sys_user_name"]').val(sysUserName);
+		$('input[name="usersBackstage.sys_user_password"]').val(sysUserPassword);
+		$('#sysImg').attr('src',getLocationUrl()+sysImg);
+	});
+	function login(){
+		var param = $('#form_login').formToJson();
+		call('/loginCtrl/loginInBack',param,function(data){
+			if(data.errorCode==0){
+				toastr.success(data.errorMessage);
+				window.location.href=getLocationUrl()+'/mainCtrl/goViewBack.action';
+			}else{
+				toastr.error(data.errorMessage);
+			}
+		});
+		return false;
+	}
+</script>
 </body>
 </html>

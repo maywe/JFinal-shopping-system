@@ -1,0 +1,61 @@
+body {
+    color: rgba(255,255,255,0.8);
+    background: #024e70 url(../../images/bg.gif) no-repeat 50% 0;
+    font: 15px/24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+}
+
+.err-code {
+    font-size: 650px;
+    position: absolute;
+    top: -220px;
+    left: 50%;
+    margin-left: -530px;
+    width: 960px;
+    z-index: -1;
+    color: rgba(255,255,255,0.2);
+    font-family: LeagueGothicRegular, Impact, "Arial Narrow", Arial, sans-serif;
+}
+
+.background {
+    min-width:100%;
+    max-width:100%;
+    min-height:100%;
+    max-height:100%;
+    margin:0 auto;
+    position:fixed;
+    top:0; z-index:-1;
+    overflow:hidden;
+}
+.background canvas {
+    width:200%;
+    height:200%;
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-1000px;
+    opacity:0.3;
+}
+
+.button{
+    cursor: pointer;
+    width: 148px;
+    height: 38px;
+    border-radius: 0;
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    font: 14px/1.5 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+    line-height: 38px;
+    background: rgb(35,150,175);
+}
+.button:hover{
+    background: rgb(255,74,0);
+    color: #FFFFFF;
+}
+.hint-info{
+    margin: 20% auto;
+    text-align: center;
+    font: 14px/1.5 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+}
