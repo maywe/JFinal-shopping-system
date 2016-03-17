@@ -1,6 +1,6 @@
 package com.base;
 
-import com.base.util.RouteBindUtil;
+import com.base.plugin.MyRouteBind;
 import com.jfinal.config.*;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.handler.FakeStaticHandler;
@@ -70,8 +70,9 @@ public class JFWebConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configRoute(Routes me) {
-		RouteBindUtil.add(me,dbProp);
-		log.debug("====configRoute====");
+		log.debug("==== add configRoute start====");
+		MyRouteBind.add(me,dbProp);
+		log.debug("==== add configRoute end====");
 	}
 
 	/**

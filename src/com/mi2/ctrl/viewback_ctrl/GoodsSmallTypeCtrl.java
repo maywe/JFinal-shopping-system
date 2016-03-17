@@ -2,7 +2,6 @@ package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseController;
-import com.base.ctrl.IMethodController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -17,21 +16,21 @@ import com.mi2.model.GoodsSmallType;
  */
 @RouteBind(path="/goodsSmallTypeCtrl")
 @Before(LoginBackInterceptor.class)
-public class GoodsSmallTypeCtrl extends BaseController implements IMethodController {
+public class GoodsSmallTypeCtrl extends BaseController {
 
     @Override
     public void showRequest() {
         this.setAttr("command","showRequest");
         GoodsSmallType goodsSmallType = this.getModel(GoodsSmallType.class);
         this.setAttr("goodsSmallType", GoodsSmallType.dao.findById(goodsSmallType.getGoodsSmallTypeId()));
-        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(null));
+        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(new GoodsBigType()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsSmallTypeDialog.jsp");
     }
 
     @Override
     public void addRequest() {
         this.setAttr("command","addRequest");
-        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(null));
+        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(new GoodsBigType()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsSmallTypeDialog.jsp");
     }
 
@@ -45,7 +44,7 @@ public class GoodsSmallTypeCtrl extends BaseController implements IMethodControl
     @Override
     public void updateRequest() {
         this.setAttr("command","updateRequest");
-        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(null));
+        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(new GoodsBigType()));
         GoodsSmallType goodsSmallType = this.getModel(GoodsSmallType.class);
         this.setAttr("goodsSmallType", GoodsSmallType.dao.findById(goodsSmallType.getGoodsSmallTypeId()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsSmallTypeDialog.jsp");
@@ -79,7 +78,7 @@ public class GoodsSmallTypeCtrl extends BaseController implements IMethodControl
         GoodsSmallType goodsSmallType = this.getModel(GoodsSmallType.class);
         Page pageUtil = GoodsSmallType.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),goodsSmallType);
         this.setAttr("goodsSmallType",goodsSmallType);
-        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(null));
+        this.setAttr("goodsBigTypeList", GoodsBigType.dao.getAllData(new GoodsBigType()));
         this.setAttr(PAGE_UTIL,pageUtil);
         this.renderJsp(VIEW_BACK_PATH+"/goodsManage/goodsSmallTypeList.jsp");
     }

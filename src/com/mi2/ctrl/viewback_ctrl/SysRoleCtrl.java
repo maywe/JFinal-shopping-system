@@ -2,7 +2,6 @@ package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseController;
-import com.base.ctrl.IMethodController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.JsonKit;
@@ -21,7 +20,7 @@ import java.util.List;
  */
 @RouteBind(path="/sysRoleCtrl")
 @Before(LoginBackInterceptor.class)
-public class SysRoleCtrl extends BaseController implements IMethodController {
+public class SysRoleCtrl extends BaseController {
 
     @Override
     public void showRequest() {
@@ -35,7 +34,7 @@ public class SysRoleCtrl extends BaseController implements IMethodController {
     @Override
     public void addRequest() {
         this.setAttr("command","addRequest");
-        this.setAttr("sysMenuList",JsonKit.toJson(SysMenu.dao.getAllData(null)));
+        this.setAttr("sysMenuList",JsonKit.toJson(SysMenu.dao.getAllData(new SysMenu())));
         this.render(VIEW_BACK_PATH+"/sysManage/sysRoleDialog.jsp");
     }
 
@@ -95,7 +94,7 @@ public class SysRoleCtrl extends BaseController implements IMethodController {
     //转换系统菜单，体现当前用户可以使用哪些菜单
     private String getSysMenuList(BigDecimal roleGroupId){
         //系统菜单数据
-        List<SysMenu> sysMenuList = SysMenu.dao.getAllData(null);
+        List<SysMenu> sysMenuList = SysMenu.dao.getAllData(new SysMenu());
         //用户菜单数据
         List<SysMenu> usersMenuList = SysMenu.dao.getUserMenuList(roleGroupId);
         for(int i=0,sysSize=sysMenuList.size();i<sysSize;i++){

@@ -13,9 +13,9 @@ import com.mi2.model.GoodsAddribute;
  *
  * @author ChenMW 2016-03-14 22:52
  */
-@RouteBind(path="/goodsAddributeCtrl")
+@RouteBind(path="/phoneGoodsCtrl")
 @Before(LoginBackInterceptor.class)
-public class GoodsAddributeCtrl extends BaseController {
+public class PhoneGoodsCtrl extends BaseController {
 
     @Override
     public void showRequest() {
@@ -55,25 +55,14 @@ public class GoodsAddributeCtrl extends BaseController {
 
     @Override
     public Boolean deleteData() {
-        try{
-            new GoodsAddribute()._setAttrs(this.getModel(GoodsAddribute.class)).delete();
-            this.renderJson(new ErrorVo(0,"删除商品属性成功!"));
-            return true;
-        }catch (Exception e){
-            e.printStackTrace();
-            this.renderJson(new ErrorVo(1,"删除失败，商品属性正在使用，不能删除!"));
-            if(logger.isDebugEnabled()){
-                logger.debug("删除失败，商品属性正在使用，不能删除!",e);
-            }
-            return false;
-        }
+       return null;
     }
 
     @Override
     public void getDataByPage() {
         GoodsAddribute goodsAddribute = this.getModel(GoodsAddribute.class);
-        this.setAttr("goodsAddribute",goodsAddribute);
         Page pageUtil = GoodsAddribute.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),goodsAddribute);
+        this.setAttr("goodsAddribute",goodsAddribute);
         this.setAttr(PAGE_UTIL,pageUtil);
         this.renderJsp(VIEW_BACK_PATH+"/goodsManage/goodsAddributeList.jsp");
     }

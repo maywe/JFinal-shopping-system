@@ -3,10 +3,10 @@ package com.base.annotation;
 import java.lang.annotation.*;
 
 /**
- * Route 绑定Controller注解<br>
+ * Route 绑定Controller注解
  * 在controller上使用
- * @author 刘声凤
- *  2012-9-4 上午11:48:26
+ * @author ChenMW
+ *  2016-02-04 上午11:48:26
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
@@ -17,11 +17,11 @@ public @interface RouteBind {
 	/**视图所在目录*/
 	String viewPath() default "";
 	/**名称*/
-	String name()default "";
+	String name() default "";
 	/**系统名称*/
 	String sys() default "";
 	/**模块*/
-	String model()default "";
+	String model() default "";
 	/**编码 5位编码 可用于绑定权限*/
 	String code()default "";
 }

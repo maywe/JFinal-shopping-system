@@ -2,7 +2,6 @@ package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseController;
-import com.base.ctrl.IMethodController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -17,13 +16,13 @@ import com.mi2.model.UsersBackstage;
  */
 @RouteBind(path="/sysUserCtrl")
 @Before(LoginBackInterceptor.class)
-public class SysUserCtrl extends BaseController implements IMethodController {
+public class SysUserCtrl extends BaseController {
 
     @Override
     public void showRequest() {
         this.setAttr("command","showRequest");
         UsersBackstage usersBackstage = this.getModel(UsersBackstage.class);
-        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(null));
+        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(new SysRoleGroup()));
         this.setAttr("usersBackstage",UsersBackstage.dao.findById(usersBackstage.getUsersBackstageId()));
         this.render(VIEW_BACK_PATH+"/sysManage/sysUserDialog.jsp");
     }
@@ -31,7 +30,7 @@ public class SysUserCtrl extends BaseController implements IMethodController {
     @Override
     public void addRequest() {
         this.setAttr("command","addRequest");
-        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(null));
+        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(new SysRoleGroup()));
         this.setAttr("usersBackstage",this.getModel(UsersBackstage.class));
         this.render(VIEW_BACK_PATH+"/sysManage/sysUserDialog.jsp");
     }
@@ -48,7 +47,7 @@ public class SysUserCtrl extends BaseController implements IMethodController {
         this.setAttr("command","updateRequest");
         UsersBackstage usersBackstage = this.getModel(UsersBackstage.class);
         this.setAttr("usersBackstage",UsersBackstage.dao.findById(usersBackstage.getUsersBackstageId()));
-        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(null));
+        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(new SysRoleGroup()));
         this.render(VIEW_BACK_PATH+"/sysManage/sysUserDialog.jsp");
     }
 
@@ -82,7 +81,7 @@ public class SysUserCtrl extends BaseController implements IMethodController {
         Page pageUtil = UsersBackstage.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),usersBackstage);
         this.setAttr("usersBackstage",usersBackstage);
         this.setAttr(PAGE_UTIL,pageUtil);
-        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(null));
+        this.setAttr("sysRoleGroupList",SysRoleGroup.dao.getAllData(new SysRoleGroup()));
         this.renderJsp(VIEW_BACK_PATH+"/sysManage/sysUserList.jsp");
     }
 

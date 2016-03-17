@@ -2,7 +2,6 @@ package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseController;
-import com.base.ctrl.IMethodController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -17,21 +16,21 @@ import com.mi2.model.GoodsAddributeVal;
  */
 @RouteBind(path="/goodsAddributeValCtrl")
 @Before(LoginBackInterceptor.class)
-public class GoodsAddributeValCtrl extends BaseController implements IMethodController {
+public class GoodsAddributeValCtrl extends BaseController {
 
     @Override
     public void showRequest() {
         this.setAttr("command","showRequest");
         GoodsAddributeVal goodsAddributeVal = this.getModel(GoodsAddributeVal.class);
         this.setAttr("goodsAddributeVal", GoodsAddributeVal.dao.findById(goodsAddributeVal.getGoodsAddributeValId()));
-        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(null));
+        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(new GoodsAddribute()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsAddributeValDialog.jsp");
     }
 
     @Override
     public void addRequest() {
         this.setAttr("command","addRequest");
-        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(null));
+        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(new GoodsAddribute()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsAddributeValDialog.jsp");
     }
 
@@ -45,7 +44,7 @@ public class GoodsAddributeValCtrl extends BaseController implements IMethodCont
     @Override
     public void updateRequest() {
         this.setAttr("command","updateRequest");
-        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(null));
+        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(new GoodsAddribute()));
         GoodsAddributeVal goodsAddributeVal = this.getModel(GoodsAddributeVal.class);
         this.setAttr("goodsAddributeVal", GoodsAddributeVal.dao.findById(goodsAddributeVal.getGoodsAddributeValId()));
         this.render(VIEW_BACK_PATH+"/goodsManage/goodsAddributeValDialog.jsp");
@@ -79,7 +78,7 @@ public class GoodsAddributeValCtrl extends BaseController implements IMethodCont
         GoodsAddributeVal goodsAddributeVal = this.getModel(GoodsAddributeVal.class);
         Page pageUtil = GoodsAddributeVal.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),goodsAddributeVal);
         this.setAttr("goodsAddributeVal",goodsAddributeVal);
-        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(null));
+        this.setAttr("goodsAddributeList", GoodsAddribute.dao.getAllData(new GoodsAddribute()));
         this.setAttr(PAGE_UTIL,pageUtil);
         this.renderJsp(VIEW_BACK_PATH+"/goodsManage/goodsAddributeValList.jsp");
     }

@@ -1,6 +1,7 @@
-package com.base.util;
+package com.base.plugin;
 
 import com.base.annotation.RouteBind;
+import com.base.util.ClassSearcherUtil;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.Prop;
 
@@ -8,16 +9,16 @@ import java.io.File;
 import java.util.List;
 
 /**
- * Routes 工具类 自动绑定Controller
+ * Routes 工具类 自动绑定Controller 插件
  */
-public class RouteBindUtil{
+public class MyRouteBind {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void add(Routes me,Prop dbProp){
 		List<Class<?>> list= ClassSearcherUtil.findClass("/com/mi2/ctrl",dbProp);
 		if(list!=null&&!list.isEmpty()){
 			for(Class clz:list){
-				RouteBind rb=(RouteBind)clz.getAnnotation(RouteBind.class);
+				RouteBind rb = (RouteBind)clz.getAnnotation(RouteBind.class);
 				if(rb!=null){
 					String clzDir=(new File(clz.getResource("").getPath())).getName();
 					if("ctrl".equals(clzDir)){
@@ -33,5 +34,4 @@ public class RouteBindUtil{
 			}
 		}
 	}
-	
 }

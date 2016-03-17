@@ -24,7 +24,7 @@ public class LoginCtrl extends BaseController{
             return;
         }
         if(usersBackstageList.get(0).getSysUserPassword().equals(usersBackstage.getSysUserPassword())){
-            if(!usersBackstageList.get(0).getSTATUS().equals("0")){
+            if(!usersBackstageList.get(0).getStatus().equals("0")){
                 this.renderJson(new ErrorVo(2,"该用户已被冻结,请联系客服!"));
                 return;
             }
@@ -45,4 +45,43 @@ public class LoginCtrl extends BaseController{
         this.renderJson(new ErrorVo(99,"退出登录成功!"));
     }
 
+    @Override
+    public void showRequest() {
+
+    }
+
+    @Override
+    public void addRequest() {
+
+    }
+
+    @Override
+    public Boolean addData() {
+        return null;
+    }
+
+    @Override
+    public void updateRequest() {
+
+    }
+
+    @Override
+    public Boolean updateData() {
+        return null;
+    }
+
+    @Override
+    public Boolean deleteData() {
+        return null;
+    }
+
+    @Override
+    public void getDataByPage() {
+
+    }
+
+    @Override
+    public void getAllData() {
+
+    }
 }

@@ -1,4 +1,9 @@
-package com.mi2;
+package com.test;
+
+import com.mi2.model.Goods;
+
+import java.lang.reflect.Field;
+import java.util.List;
 
 /**
  * 测试类
@@ -22,6 +27,7 @@ public class Test {
         System.out.println("deleteAequest".matches(regex));
         */
 
+        /*
         Boolean bo1 = false;
         Boolean bo2 = null;
         String str = null;
@@ -29,9 +35,28 @@ public class Test {
         test(bo1);
         test(bo2);
         test(str);
+
+        MyBaseModelGenerator m = new MyBaseModelGenerator("","");
+        MyBaseModelGenerator m2 = new MyBaseModelGenerator("","","");
+*/
+        getAllData(null);
     }
 
     public static void test (Object obj){
         System.out.println(obj instanceof Boolean);
+    }
+
+
+    public static List<Goods> getAllData(Goods t){
+
+        try {
+            t.getClass().newInstance();
+            t.getClass().getDeclaredFields();
+            Field field = t.getClass().getField("TABLE_NAME");
+            System.out.println(field.get(t));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

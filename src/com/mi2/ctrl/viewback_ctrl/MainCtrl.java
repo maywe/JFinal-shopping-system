@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RouteBind(path="/mainCtrl")
 @Before(LoginBackInterceptor.class)
-public class MainCtrl extends BaseController{
+public class MainCtrl extends BaseController {
 
     //进入后台
     public void goViewBack(){
@@ -26,7 +26,7 @@ public class MainCtrl extends BaseController{
         if("remember_me".equals(usersBackstage.getStr("remember_me"))) {
             this.setCookie("sysUserName",usersBackstage.getSysUserName(),1000,"/");
             this.setCookie("sysUserPassword",usersBackstage.getSysUserPassword(),1000,"/");
-            this.setCookie("sysImg",usersBackstage.getIMG(),1000,"/");
+            this.setCookie("sysImg",usersBackstage.getImg(),1000,"/");
         }
         this.render(VIEW_BACK_PATH+"/main.html");
     }
@@ -41,5 +41,45 @@ public class MainCtrl extends BaseController{
         data.put("usersBackstage",usersBackstage);
         data.put("userMenuList",userMenuList);
         this.renderJson(data);
+    }
+
+    @Override
+    public void showRequest() {
+
+    }
+
+    @Override
+    public void addRequest() {
+
+    }
+
+    @Override
+    public Boolean addData() {
+        return null;
+    }
+
+    @Override
+    public void updateRequest() {
+
+    }
+
+    @Override
+    public Boolean updateData() {
+        return null;
+    }
+
+    @Override
+    public Boolean deleteData() {
+        return null;
+    }
+
+    @Override
+    public void getDataByPage() {
+
+    }
+
+    @Override
+    public void getAllData() {
+
     }
 }
