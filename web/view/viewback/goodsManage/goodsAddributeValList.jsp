@@ -47,7 +47,7 @@
                     <c:forEach items="${pageUtil.list}" var="gav" varStatus="status">
                         <tr>
                             <td>${status.count}</td>
-                            <td>${gav.goods_addribute_val_name}</td>
+                            <td style="color:${(gav.goods_addribute_id!=1 and gav.goods_addribute_id!=21)?'':gav.goods_addribute_val_name=='白色'?'':gav.goods_color_code};">${gav.goods_addribute_val_name}</td>
                             <td>${gav.goods_addribute_name}</td>
                             <td>
                                 <a data-whatever="查看商品属性值" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeValCtrl/showRequest.action?goodsAddributeVal.goods_addribute_val_id=${gav.goods_addribute_val_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">

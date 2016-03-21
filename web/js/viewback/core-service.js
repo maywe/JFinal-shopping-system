@@ -12,7 +12,7 @@ function hideModal() {
 function disabledDialogForm(dialogFormId){
     var dialogFormObj = $('#'+dialogFormId);
     dialogFormObj.parent().find('[name]').attr('disabled',true);
-    dialogFormObj.parent().next('div.modal-footer').children().eq(1).attr('disabled',true);
+    dialogFormObj.find('div.modal-footer').children().eq(1).attr('disabled',true);
 }
 
 //3、删除记录提示框

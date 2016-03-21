@@ -15,6 +15,15 @@ public abstract class BaseController extends Controller {
 	public static final String VIEW_FRONT_PATH = "/view/viewfront";
 	public static final String LOGIN_FRONT_USER = "";
 
+	//上传下载路径
+	public static final String UPLOAD_PATH = "/upload";
+	public static final String DOWNLOAD_PATH = "/download";
+
+	//商品图片
+	public static final String UPLOAD_IMAGES_PHONE_PATH = "/images/phone";
+	public static final String UPLOAD_IMAGES_PHONE_ACCESSORIES_PATH = "/images/phone_accessories";
+	public static final String UPLOAD_IMAGES_LIFE_PATH = "/images/life";
+
 	public static final String PAGE_UTIL = "pageUtil";
 
 	protected Logger logger = Logger.getLogger(this.getClass());

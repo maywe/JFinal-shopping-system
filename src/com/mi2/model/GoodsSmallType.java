@@ -19,7 +19,14 @@ public class GoodsSmallType extends BaseGoodsSmallType<GoodsSmallType> {
 	public List<GoodsSmallType> getAllData(GoodsSmallType goodsSmallType) {
 		StringBuilder sbSql = new StringBuilder();
 		sbSql.append("select * from goods_small_type gst where 1=1 ");
-		return this.find(sbSql.toString());
+		ArrayList<Object> values = new ArrayList<>();
+		if(goodsSmallType!=null&&!goodsSmallType.getAttrs().isEmpty()){
+			if(goodsSmallType.getGoodsBigTypeId()!=null){
+				sbSql.append(" and gst.goods_big_type_id=?");
+				values.add(goodsSmallType.getGoodsBigTypeId());
+			}
+		}
+		return this.find(sbSql.toString(),values.toArray());
 	}
 
 	@Override

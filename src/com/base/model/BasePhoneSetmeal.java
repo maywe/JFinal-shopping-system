@@ -20,12 +20,12 @@ public abstract class BasePhoneSetmeal<M extends BasePhoneSetmeal<M>> extends Ba
 		return get("PHONE_SETMEAL_ID");
 	}
 
-	public void setGoodsId(java.math.BigDecimal goodsId) {
-		set("GOODS_ID", goodsId);
+	public void setGoodsSmallTypeId(java.math.BigDecimal goodsSmallTypeId) {
+		set("GOODS_SMALL_TYPE_ID", goodsSmallTypeId);
 	}
 
-	public java.math.BigDecimal getGoodsId() {
-		return get("GOODS_ID");
+	public java.math.BigDecimal getGoodsSmallTypeId() {
+		return get("GOODS_SMALL_TYPE_ID");
 	}
 
 	public void setPhoneSetmealName(java.lang.String phoneSetmealName) {
@@ -50,6 +50,14 @@ public abstract class BasePhoneSetmeal<M extends BasePhoneSetmeal<M>> extends Ba
 
 	public java.math.BigDecimal getSetmealPrice() {
 		return get("SETMEAL_PRICE");
+	}
+
+	public void setSaveMoney(java.math.BigDecimal saveMoney) {
+		set("SAVE_MONEY", saveMoney);
+	}
+
+	public java.math.BigDecimal getSaveMoney() {
+		return get("SAVE_MONEY");
 	}
 
 }

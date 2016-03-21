@@ -12,12 +12,12 @@ public abstract class BasePhoneVersion<M extends BasePhoneVersion<M>> extends Ba
 
 	public final static String SQL = "SELECT * FROM PHONE_VERSION WHERE 1=1 ";
 
-	public void setPhoneVersionId(java.math.BigDecimal phoneVersionId) {
-		set("PHONE_VERSION_ID", phoneVersionId);
+	public void setPhoneGoodsId(java.math.BigDecimal phoneGoodsId) {
+		set("PHONE_GOODS_ID", phoneGoodsId);
 	}
 
-	public java.math.BigDecimal getPhoneVersionId() {
-		return get("PHONE_VERSION_ID");
+	public java.math.BigDecimal getPhoneGoodsId() {
+		return get("PHONE_GOODS_ID");
 	}
 
 	public void setGoodsAddributeValId(java.math.BigDecimal goodsAddributeValId) {
@@ -28,12 +28,12 @@ public abstract class BasePhoneVersion<M extends BasePhoneVersion<M>> extends Ba
 		return get("GOODS_ADDRIBUTE_VAL_ID");
 	}
 
-	public void setPhoneModelId(java.math.BigDecimal phoneModelId) {
-		set("PHONE_MODEL_ID", phoneModelId);
+	public void setModelId(java.math.BigDecimal modelId) {
+		set("MODEL_ID", modelId);
 	}
 
-	public java.math.BigDecimal getPhoneModelId() {
-		return get("PHONE_MODEL_ID");
+	public java.math.BigDecimal getModelId() {
+		return get("MODEL_ID");
 	}
 
 	public void setPhoneFormerPrice(java.math.BigDecimal phoneFormerPrice) {
@@ -50,6 +50,30 @@ public abstract class BasePhoneVersion<M extends BasePhoneVersion<M>> extends Ba
 
 	public java.math.BigDecimal getPhoneNowPrice() {
 		return get("PHONE_NOW_PRICE");
+	}
+
+	public void setPhoneStock(java.math.BigDecimal phoneStock) {
+		set("PHONE_STOCK", phoneStock);
+	}
+
+	public java.math.BigDecimal getPhoneStock() {
+		return get("PHONE_STOCK");
+	}
+
+	public void setPhoneSalesNum(java.math.BigDecimal phoneSalesNum) {
+		set("PHONE_SALES_NUM", phoneSalesNum);
+	}
+
+	public java.math.BigDecimal getPhoneSalesNum() {
+		return get("PHONE_SALES_NUM");
+	}
+
+	public void setPhonePreviewImage(java.lang.String phonePreviewImage) {
+		set("PHONE_PREVIEW_IMAGE", phonePreviewImage);
+	}
+
+	public java.lang.String getPhonePreviewImage() {
+		return get("PHONE_PREVIEW_IMAGE");
 	}
 
 }

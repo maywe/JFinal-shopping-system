@@ -42,11 +42,17 @@ a:active{
 .padding8{
     padding:8px;
 }
+.p-t-0{
+    padding-top: 0 !important;
+}
 .p-t-1{
     padding-top: 1px;
 }
 .p-r-0{
-    padding-right: 0px;
+    padding-right: 0;
+}
+.p-r-xs{
+    padding-right: 5px;
 }
 .p-l-xs{
     padding-left: 5px;
@@ -57,7 +63,19 @@ a:active{
 .p-l-lg{
     padding-left: 15px;
 }
+.p-b-xs{
+    padding-bottom: 5px;
+}
+.p-b{
+    padding-bottom: 10px;
+}
+.p-b-lg{
+    padding-bottom: 15px;
+}
 
+.margin0{
+    margin: 0;
+}
 .m-t-xs{
     margin-top: 5px;
 }

@@ -36,4 +36,12 @@ public abstract class BaseGoodsAddributeVal<M extends BaseGoodsAddributeVal<M>> 
 		return get("GOODS_ADDRIBUTE_VAL_NAME");
 	}
 
+	public void setGoodsColorCode(java.lang.String goodsColorCode) {
+		set("GOODS_COLOR_CODE", goodsColorCode);
+	}
+
+	public java.lang.String getGoodsColorCode() {
+		return get("GOODS_COLOR_CODE");
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.base;
 
+import com.base.ctrl.BaseController;
 import com.base.plugin.MyRouteBind;
 import com.jfinal.config.*;
 import com.jfinal.ext.handler.ContextPathHandler;
@@ -53,10 +54,10 @@ public class JFWebConfig extends JFinalConfig {
 		//me.setFreeMarkerViewExtension(".html");
 		
 		//设置默认的文件下载的地址
-		me.setBaseDownloadPath(PathKit.getWebRootPath() +"/download");
+		me.setBaseDownloadPath(PathKit.getWebRootPath() + BaseController.DOWNLOAD_PATH);
 		
 		//设置上传文件默认保存的目录
-		me.setBaseUploadPath(PathKit.getWebRootPath() +"/upload");
+		me.setBaseUploadPath(PathKit.getWebRootPath() + BaseController.UPLOAD_PATH);
 		
 		//设置url参数的分隔符http://localhost/blog/1-3(ID=1，页码=3)
 		//me.setUrlParaSeparator("-");

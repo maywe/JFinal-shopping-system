@@ -10,9 +10,9 @@
     <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品属性</span>
 </div>
-<div class="modal-body">
-    <form id="goodsAddributeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsAddributeSubmit(this)">
-        <input value="${goodsAddribute.goods_addribute_id}" name="goodsAddribute.goods_addribute_id" type="hidden">
+<form id="goodsAddributeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsAddributeSubmit(this)">
+    <div class="modal-body">
+       <input value="${goodsAddribute.goods_addribute_id}" name="goodsAddribute.goods_addribute_id" type="hidden">
         <div class="tab-pane active">
             <table class="table dialog-table">
                 <tr>
@@ -23,18 +23,18 @@
                 </tr>
             </table>
         </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
-        <i class="glyphicon glyphicon-remove font-size12"></i>
-        <span>关闭</span>
-    </button>
-    <button type="submit" form="goodsAddributeDialogFrom" class="btn btn-xs btn-info">
-        <i class="glyphicon glyphicon-ok font-size12"></i>
-        <span>提交</span>
-    </button>
-</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove font-size12"></i>
+            <span>关闭</span>
+        </button>
+        <button type="submit" class="btn btn-xs btn-info">
+            <i class="glyphicon glyphicon-ok font-size12"></i>
+            <span>提交</span>
+        </button>
+    </div>
+</form>
 <script type="text/javascript">
     $(function(){
         var command = '${command}';

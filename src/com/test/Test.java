@@ -39,7 +39,20 @@ public class Test {
         MyBaseModelGenerator m = new MyBaseModelGenerator("","");
         MyBaseModelGenerator m2 = new MyBaseModelGenerator("","","");
 */
-        getAllData(null);
+        //getAllData(null);
+
+        String str = "2";
+        Goods g = new Goods();
+        g.setGoodsName("fff");
+        testStr(str,g);
+        System.out.println(str);
+        System.out.println(g.getGoodsName());
+    }
+
+
+    public static void testStr(String str,Goods g){
+        str = "123";
+        g.setGoodsName("2222");
     }
 
     public static void test (Object obj){

@@ -20,22 +20,6 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 		return get("GOODS_BIGL_TYPE_NAME");
 	}
 
-	public void setGoodsSmallTypeName(java.lang.String goodsSmallTypeName) {
-		set("GOODS_SMALL_TYPE_NAME", goodsSmallTypeName);
-	}
-
-	public java.lang.String getGoodsSmallTypeName() {
-		return get("GOODS_SMALL_TYPE_NAME");
-	}
-
-	public void setGoodsId(java.math.BigDecimal goodsId) {
-		set("GOODS_ID", goodsId);
-	}
-
-	public java.math.BigDecimal getGoodsId() {
-		return get("GOODS_ID");
-	}
-
 	public void setGoodsSmallTypeId(java.math.BigDecimal goodsSmallTypeId) {
 		set("GOODS_SMALL_TYPE_ID", goodsSmallTypeId);
 	}
@@ -44,52 +28,28 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 		return get("GOODS_SMALL_TYPE_ID");
 	}
 
-	public void setGoodsName(java.lang.String goodsName) {
-		set("GOODS_NAME", goodsName);
+	public void setGoodsBigTypeId(java.math.BigDecimal goodsBigTypeId) {
+		set("GOODS_BIG_TYPE_ID", goodsBigTypeId);
 	}
 
-	public java.lang.String getGoodsName() {
-		return get("GOODS_NAME");
+	public java.math.BigDecimal getGoodsBigTypeId() {
+		return get("GOODS_BIG_TYPE_ID");
 	}
 
-	public void setGoodsFormerPrice(java.math.BigDecimal goodsFormerPrice) {
-		set("GOODS_FORMER_PRICE", goodsFormerPrice);
+	public void setGoodsSmallTypeName(java.lang.String goodsSmallTypeName) {
+		set("GOODS_SMALL_TYPE_NAME", goodsSmallTypeName);
 	}
 
-	public java.math.BigDecimal getGoodsFormerPrice() {
-		return get("GOODS_FORMER_PRICE");
+	public java.lang.String getGoodsSmallTypeName() {
+		return get("GOODS_SMALL_TYPE_NAME");
 	}
 
-	public void setGoodsNewPrice(java.math.BigDecimal goodsNewPrice) {
-		set("GOODS_NEW_PRICE", goodsNewPrice);
+	public void setPhoneModelId(java.math.BigDecimal phoneModelId) {
+		set("PHONE_MODEL_ID", phoneModelId);
 	}
 
-	public java.math.BigDecimal getGoodsNewPrice() {
-		return get("GOODS_NEW_PRICE");
-	}
-
-	public void setGoodsStock(java.math.BigDecimal goodsStock) {
-		set("GOODS_STOCK", goodsStock);
-	}
-
-	public java.math.BigDecimal getGoodsStock() {
-		return get("GOODS_STOCK");
-	}
-
-	public void setGoodsSalesNum(java.math.BigDecimal goodsSalesNum) {
-		set("GOODS_SALES_NUM", goodsSalesNum);
-	}
-
-	public java.math.BigDecimal getGoodsSalesNum() {
-		return get("GOODS_SALES_NUM");
-	}
-
-	public void setGoodsPreviewImage(java.lang.String goodsPreviewImage) {
-		set("GOODS_PREVIEW_IMAGE", goodsPreviewImage);
-	}
-
-	public java.lang.String getGoodsPreviewImage() {
-		return get("GOODS_PREVIEW_IMAGE");
+	public java.math.BigDecimal getPhoneModelId() {
+		return get("PHONE_MODEL_ID");
 	}
 
 	public void setPhoneModelName(java.lang.String phoneModelName) {
@@ -98,6 +58,14 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 
 	public java.lang.String getPhoneModelName() {
 		return get("PHONE_MODEL_NAME");
+	}
+
+	public void setPhoneVersionId(java.math.BigDecimal phoneVersionId) {
+		set("PHONE_VERSION_ID", phoneVersionId);
+	}
+
+	public java.math.BigDecimal getPhoneVersionId() {
+		return get("PHONE_VERSION_ID");
 	}
 
 	public void setPhoneVersionName(java.lang.String phoneVersionName) {
@@ -124,4 +92,42 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 		return get("PHONE_NOW_PRICE");
 	}
 
+	public void setPhoneStock(java.math.BigDecimal phoneStock) {
+		set("PHONE_STOCK", phoneStock);
+	}
+
+	public java.math.BigDecimal getPhoneStock() {
+		return get("PHONE_STOCK");
+	}
+
+	public void setPhoneSalesNum(java.math.BigDecimal phoneSalesNum) {
+		set("PHONE_SALES_NUM", phoneSalesNum);
+	}
+
+	public java.math.BigDecimal getPhoneSalesNum() {
+		return get("PHONE_SALES_NUM");
+	}
+
+	public void setPhonePreviewImage(java.lang.String phonePreviewImage) {
+		set("PHONE_PREVIEW_IMAGE", phonePreviewImage);
+	}
+
+	public java.lang.String getPhonePreviewImage() {
+		return get("PHONE_PREVIEW_IMAGE");
+	}
+
+	public void setPhoneGoodsId(java.math.BigDecimal phoneGoodsId) {
+		set("PHONE_GOODS_ID", phoneGoodsId);
+	}
+
+	public java.math.BigDecimal getPhoneGoodsId() {
+		return get("PHONE_GOODS_ID");
+	}
+
+	public java.math.BigDecimal getModelId() {
+		return get("MODEL_ID");
+	}
+	public void setModelId(java.math.BigDecimal modelId) {
+		set("MODEL_ID",modelId);
+	}
 }

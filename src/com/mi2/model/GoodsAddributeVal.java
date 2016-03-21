@@ -17,8 +17,15 @@ public class GoodsAddributeVal extends BaseGoodsAddributeVal<GoodsAddributeVal> 
 	@Override
 	public List<GoodsAddributeVal> getAllData(GoodsAddributeVal goodsAddributeVal) {
 		StringBuilder sbSql = new StringBuilder();
-		sbSql.append("select * from goods_addribute_val gav where 1=1 ");
-		return this.find(sbSql.toString());
+		sbSql.append("select gav.*,ga.goods_addribute_name from goods_addribute ga,goods_addribute_val gav where ga.goods_addribute_id=gav.goods_addribute_id ");
+		ArrayList<Object> values = new ArrayList<>();
+		if(goodsAddributeVal!=null&&!goodsAddributeVal.getAttrs().isEmpty()){
+			if(goodsAddributeVal.getGoodsAddributeId()!=null){
+				sbSql.append(" and ga.goods_addribute_id=?");
+				values.add(goodsAddributeVal.getGoodsAddributeId());
+			}
+		}
+		return this.find(sbSql.toString(),values.toArray());
 	}
 
 	@Override

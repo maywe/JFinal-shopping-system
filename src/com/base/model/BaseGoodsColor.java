@@ -44,4 +44,12 @@ public abstract class BaseGoodsColor<M extends BaseGoodsColor<M>> extends BaseMo
 		return get("GOODS_COLOR_IMG_URL");
 	}
 
+	public void setPhoneGoodsId(java.math.BigDecimal phoneGoodsId) {
+		set("PHONE_GOODS_ID", phoneGoodsId);
+	}
+
+	public java.math.BigDecimal getPhoneGoodsId() {
+		return get("PHONE_GOODS_ID");
+	}
+
 }

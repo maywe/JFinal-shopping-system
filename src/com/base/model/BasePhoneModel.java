@@ -12,12 +12,12 @@ public abstract class BasePhoneModel<M extends BasePhoneModel<M>> extends BaseMo
 
 	public final static String SQL = "SELECT * FROM PHONE_MODEL WHERE 1=1 ";
 
-	public void setPhoneModelId(java.math.BigDecimal phoneModelId) {
-		set("PHONE_MODEL_ID", phoneModelId);
+	public void setModelId(java.math.BigDecimal modelId) {
+		set("MODEL_ID", modelId);
 	}
 
-	public java.math.BigDecimal getPhoneModelId() {
-		return get("PHONE_MODEL_ID");
+	public java.math.BigDecimal getModelId() {
+		return get("MODEL_ID");
 	}
 
 	public void setGoodsAddributeValId(java.math.BigDecimal goodsAddributeValId) {
@@ -28,12 +28,12 @@ public abstract class BasePhoneModel<M extends BasePhoneModel<M>> extends BaseMo
 		return get("GOODS_ADDRIBUTE_VAL_ID");
 	}
 
-	public void setGoodsId(java.math.BigDecimal goodsId) {
-		set("GOODS_ID", goodsId);
+	public void setGoodsSmallTypeId(java.math.BigDecimal goodsSmallTypeId) {
+		set("GOODS_SMALL_TYPE_ID", goodsSmallTypeId);
 	}
 
-	public java.math.BigDecimal getGoodsId() {
-		return get("GOODS_ID");
+	public java.math.BigDecimal getGoodsSmallTypeId() {
+		return get("GOODS_SMALL_TYPE_ID");
 	}
 
 }

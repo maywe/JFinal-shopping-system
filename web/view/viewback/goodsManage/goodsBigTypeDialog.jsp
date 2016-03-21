@@ -10,8 +10,8 @@
     <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品大类型</span>
 </div>
-<div class="modal-body">
-    <form id="goodsBigTypeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsBigTypeSubmit(this)">
+<form id="goodsBigTypeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsBigTypeSubmit(this)">
+    <div class="modal-body">
         <input value="${goodsBigType.goods_big_type_id}" name="goodsBigType.goods_big_type_id" type="hidden">
         <div class="tab-pane active">
             <table class="table dialog-table">
@@ -23,18 +23,19 @@
                 </tr>
             </table>
         </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
-        <i class="glyphicon glyphicon-remove font-size12"></i>
-        <span>关闭</span>
-    </button>
-    <button type="submit" form="goodsBigTypeDialogFrom" class="btn btn-xs btn-info">
-        <i class="glyphicon glyphicon-ok font-size12"></i>
-        <span>提交</span>
-    </button>
-</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove font-size12"></i>
+            <span>关闭</span>
+        </button>
+        <button type="submit" class="btn btn-xs btn-info">
+            <i class="glyphicon glyphicon-ok font-size12"></i>
+            <span>提交</span>
+        </button>
+    </div>
+</form>
+
 <script type="text/javascript">
     $(function(){
         var command = '${command}';

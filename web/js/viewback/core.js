@@ -91,12 +91,14 @@ $.fn.formToJson = function() {
                 }
             } else {
                 if (values[elementName] == undefined) {
-                    if (typeof ($(this).attr('isDate')) != 'undefined') {
-                        values[elementName] = element.value.trim();
-                    } else if (typeof ($(this).attr('isNum')) != 'undefined') {
-                        values[elementName] = element.value.trim();
-                    } else {
-                        values[elementName] = element.value.trim();
+                    if(element.type!='file'){
+                        if (typeof ($(this).attr('isDate')) != 'undefined') {
+                            values[elementName] = element.value.trim();
+                        } else if (typeof ($(this).attr('isNum')) != 'undefined') {
+                            values[elementName] = element.value.trim();
+                        } else {
+                            values[elementName] = element.value.trim();
+                        }
                     }
                 } else {
                     values[elementName] = values[elementName] + ',' + element.value.trim();

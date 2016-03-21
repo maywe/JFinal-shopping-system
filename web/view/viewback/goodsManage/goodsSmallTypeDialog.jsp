@@ -10,8 +10,9 @@
     <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品小类型</span>
 </div>
-<div class="modal-body">
-    <form id="goodsSmallTypeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsSmallTypeSubmit(this)">
+
+<form id="goodsSmallTypeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsSmallTypeSubmit(this)">
+    <div class="modal-body">
         <input value="${goodsSmallType.goods_small_type_id}" name="goodsSmallType.goods_small_type_id" type="hidden">
         <div class="tab-pane active">
             <table class="table dialog-table">
@@ -34,18 +35,18 @@
                 </tr>
             </table>
         </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
-        <i class="glyphicon glyphicon-remove font-size12"></i>
-        <span>关闭</span>
-    </button>
-    <button type="submit" form="goodsSmallTypeDialogFrom" class="btn btn-xs btn-info">
-        <i class="glyphicon glyphicon-ok font-size12"></i>
-        <span>提交</span>
-    </button>
-</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove font-size12"></i>
+            <span>关闭</span>
+        </button>
+        <button type="submit" class="btn btn-xs btn-info">
+            <i class="glyphicon glyphicon-ok font-size12"></i>
+            <span>提交</span>
+        </button>
+    </div>
+</form>
 <script type="text/javascript">
     $(function(){
         var command = '${command}';
