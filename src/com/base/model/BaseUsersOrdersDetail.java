@@ -52,12 +52,28 @@ public abstract class BaseUsersOrdersDetail<M extends BaseUsersOrdersDetail<M>> 
 		return get("COST_PRICE");
 	}
 
-	public void setPhoneVersionId(java.math.BigDecimal phoneVersionId) {
-		set("PHONE_VERSION_ID", phoneVersionId);
+	public void setPhoneGoodsId(java.math.BigDecimal phoneGoodsId) {
+		set("PHONE_GOODS_ID", phoneGoodsId);
 	}
 
-	public java.math.BigDecimal getPhoneVersionId() {
-		return get("PHONE_VERSION_ID");
+	public java.math.BigDecimal getPhoneGoodsId() {
+		return get("PHONE_GOODS_ID");
+	}
+
+	public void setGoodsColorCode(java.lang.String goodsColorCode) {
+		set("GOODS_COLOR_CODE", goodsColorCode);
+	}
+
+	public java.lang.String getGoodsColorCode() {
+		return get("GOODS_COLOR_CODE");
+	}
+
+	public void setGoodsColorImgUrl(java.lang.String goodsColorImgUrl) {
+		set("GOODS_COLOR_IMG_URL", goodsColorImgUrl);
+	}
+
+	public java.lang.String getGoodsColorImgUrl() {
+		return get("GOODS_COLOR_IMG_URL");
 	}
 
 }

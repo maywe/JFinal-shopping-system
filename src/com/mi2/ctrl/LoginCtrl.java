@@ -44,44 +44,4 @@ public class LoginCtrl extends BaseController{
         this.getSession().invalidate();
         this.renderJson(new ErrorVo(99,"退出登录成功!"));
     }
-
-    @Override
-    public void showRequest() {
-
-    }
-
-    @Override
-    public void addRequest() {
-
-    }
-
-    @Override
-    public Boolean addData() {
-        return null;
-    }
-
-    @Override
-    public void updateRequest() {
-
-    }
-
-    @Override
-    public Boolean updateData() {
-        return null;
-    }
-
-    @Override
-    public Boolean deleteData() {
-        return null;
-    }
-
-    @Override
-    public void getDataByPage() {
-
-    }
-
-    @Override
-    public void getAllData() {
-
-    }
 }

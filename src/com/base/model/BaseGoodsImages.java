@@ -28,12 +28,12 @@ public abstract class BaseGoodsImages<M extends BaseGoodsImages<M>> extends Base
 		return get("GOODS_FATHER_IMAGES_ID");
 	}
 
-	public void setGoodsId(java.math.BigDecimal goodsId) {
-		set("GOODS_ID", goodsId);
+	public void setGoodsColorId(java.math.BigDecimal goodsColorId) {
+		set("GOODS_COLOR_ID", goodsColorId);
 	}
 
-	public java.math.BigDecimal getGoodsId() {
-		return get("GOODS_ID");
+	public java.math.BigDecimal getGoodsColorId() {
+		return get("GOODS_COLOR_ID");
 	}
 
 	public void setGoodsImagesUri(java.lang.String goodsImagesUri) {

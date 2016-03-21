@@ -1,6 +1,7 @@
 package com.mi2.model;
 
 import com.base.model.BasePhoneModel;
+import com.jfinal.plugin.activerecord.Page;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,37 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class PhoneModel extends BasePhoneModel<PhoneModel> {
 	public static final PhoneModel dao = new PhoneModel();
+
+	@Override
+	public Page<PhoneModel> getAllDataByPage(int pageNumber, int pageSize, PhoneModel t) {
+		StringBuilder sbSql = new StringBuilder();
+		sbSql.append("from goods_small_type gst,phone_model pm,goods_addribute_val gav where gst.goods_big_type_id=1 and gst.goods_small_type_id=pm.goods_small_type_id and pm.goods_addribute_val_id=gav.goods_addribute_val_id");
+		ArrayList<Object> values = new ArrayList<>();
+		if(t!=null&&!t.getAttrs().isEmpty()){
+			if(t.getGoodsSmallTypeId()!=null){
+				sbSql.append(" and pm.goods_small_type_id=?");
+				values.add(t.getGoodsSmallTypeId());
+			}
+		}
+		return this.paginate(pageNumber,pageSize,"select gst.goods_big_type_id, gst.goods_small_type_name,pm.*,gav.goods_addribute_val_name",sbSql.toString(),values.toArray());
+	}
+
+	/**
+	 * 判断该类型、手机型号是否改变，如果改变则判断是否存在，如果不存在就需要新增
+	   先判断该型号是否存在,如果存在就用原来的
+	 * 获取手机型号，将不存在的型号新增
+	 * @param t 	手机型号参数
+	 * @return  	返回
+     */
+	public PhoneModel getPhoneModel(PhoneModel t){
+		PhoneModel phoneModel = this.findById(t);
+		if(null==phoneModel){
+			phoneModel = new PhoneModel();
+			t.setModelId(null);
+			phoneModel._setAttrs(t).save();
+		}
+		return phoneModel;
+	}
 
 	public PhoneModel findById(PhoneModel phoneModel) {
 		List<PhoneModel> phoneModelList = this.getAllData(phoneModel);

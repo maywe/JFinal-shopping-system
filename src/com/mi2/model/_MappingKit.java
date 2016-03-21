@@ -38,7 +38,7 @@ public class _MappingKit {
 		arp.addMapping("USERS_ORDERS", "ORDERS_ID", UsersOrders.class);
 		arp.addMapping("USERS_ORDERS_DETAIL", "ORDERS_DETAILS_ID", UsersOrdersDetail.class);
 		arp.addMapping("USERS_SHOPPINGCAR", "USERS_SHOPPING_ID", UsersShoppingcar.class);
-		arp.addMapping("PHONE_GOODS_VIEW", PhoneGoodsView.class);
+		arp.addMapping("PHONE_GOODS_VIEW",PhoneGoodsView.class);
 	}
 }
 

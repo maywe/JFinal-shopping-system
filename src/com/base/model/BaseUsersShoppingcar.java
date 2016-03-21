@@ -52,12 +52,12 @@ public abstract class BaseUsersShoppingcar<M extends BaseUsersShoppingcar<M>> ex
 		return get("SHOPPING_TIME");
 	}
 
-	public void setPhoneVersionId(java.math.BigDecimal phoneVersionId) {
-		set("PHONE_VERSION_ID", phoneVersionId);
+	public void setPhoneGoodsId(java.math.BigDecimal phoneGoodsId) {
+		set("PHONE_GOODS_ID", phoneGoodsId);
 	}
 
-	public java.math.BigDecimal getPhoneVersionId() {
-		return get("PHONE_VERSION_ID");
+	public java.math.BigDecimal getPhoneGoodsId() {
+		return get("PHONE_GOODS_ID");
 	}
 
 }

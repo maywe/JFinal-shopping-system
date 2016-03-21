@@ -1,7 +1,7 @@
 package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
-import com.base.ctrl.BaseController;
+import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -16,7 +16,7 @@ import com.mi2.model.UsersBackstage;
  */
 @RouteBind(path="/sysUserCtrl")
 @Before(LoginBackInterceptor.class)
-public class SysUserCtrl extends BaseController {
+public class SysUserCtrl extends BaseViewBackController {
 
     @Override
     public void showRequest() {

@@ -44,6 +44,14 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 		return get("GOODS_SMALL_TYPE_NAME");
 	}
 
+	public void setModelId(java.math.BigDecimal modelId) {
+		set("MODEL_ID", modelId);
+	}
+
+	public java.math.BigDecimal getModelId() {
+		return get("MODEL_ID");
+	}
+
 	public void setPhoneModelId(java.math.BigDecimal phoneModelId) {
 		set("PHONE_MODEL_ID", phoneModelId);
 	}
@@ -124,10 +132,4 @@ public abstract class BasePhoneGoodsView<M extends BasePhoneGoodsView<M>> extend
 		return get("PHONE_GOODS_ID");
 	}
 
-	public java.math.BigDecimal getModelId() {
-		return get("MODEL_ID");
-	}
-	public void setModelId(java.math.BigDecimal modelId) {
-		set("MODEL_ID",modelId);
-	}
 }

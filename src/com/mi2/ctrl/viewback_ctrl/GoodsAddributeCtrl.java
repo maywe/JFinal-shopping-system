@@ -1,7 +1,7 @@
 package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
-import com.base.ctrl.BaseController;
+import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
@@ -15,7 +15,7 @@ import com.mi2.model.GoodsAddribute;
  */
 @RouteBind(path="/goodsAddributeCtrl")
 @Before(LoginBackInterceptor.class)
-public class GoodsAddributeCtrl extends BaseController {
+public class GoodsAddributeCtrl extends BaseViewBackController {
 
     @Override
     public void showRequest() {

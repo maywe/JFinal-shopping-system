@@ -1,7 +1,7 @@
 package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
-import com.base.ctrl.BaseController;
+import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Db;
@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RouteBind(path="/phoneGoodsCtrl")
 @Before(LoginBackInterceptor.class)
-public class PhoneGoodsCtrl extends BaseController {
+public class PhoneGoodsCtrl extends BaseViewBackController {
 
     @Override
     public void showRequest() {
@@ -48,36 +48,31 @@ public class PhoneGoodsCtrl extends BaseController {
 
     @Override
     public Boolean addData() {
-        //拿到上传的文件列表
+        //1、拿到上传的文件列表、手机型号/手机版本
         List<UploadFile> uploadFileList = getFiles(UPLOAD_IMAGES_PHONE_PATH);
-        //手机型号/手机版本
         PhoneModel phoneModel = getModel(PhoneModel.class);
         PhoneVersion phoneVersion = getModel(PhoneVersion.class);
 
-        //验证该类型、型号、版本的手机是否已经存在
+        //2、验证该类型、型号、版本的手机是否已经存在
         if(this.validatePhoneGoodsIsExist(phoneModel,phoneVersion)){
             this.renderJson(new ErrorVo(1,"您填写的手机类型，型号，版本所对应的手机信息已经存在!您不需要再添加了"));
             return false;
         }
 
-        //手机型号保存
-        //先判断该型号是否存在,如果存在就用原来的
-        PhoneModel phoneModelNew = PhoneModel.dao.findById(phoneModel);
-        if(null==phoneModelNew){
-            phoneModelNew = new PhoneModel();
-            phoneModelNew._setAttrs(phoneModel).save();
-        }
-        //解析上传的文件，获取上传的颜色的图片信息
+        //3、获取手机型号，先判断该型号是否存在,如果存在就用原来的，如果不存在就需要新增
+        PhoneModel phoneModelNew = phoneModel.getPhoneModel(phoneModel);
+
+        //4、解析上传的文件，获取上传的颜色的图片信息
         List<Record> phoneColorList = getGoodsColorList(phoneVersion,uploadFileList);
-        //手机版本保存
+
+        //5、手机版本保存
         phoneVersion.setModelId(phoneModelNew.getModelId());
         phoneVersion._setAttrs(phoneVersion).save();
 
-        //手机颜色图片
+        //6、批量保存手机颜色图片信息
         for(int i=0,size=phoneColorList.size();i<size;i++){
             phoneColorList.get(i).set("PHONE_GOODS_ID",phoneVersion.getPhoneGoodsId());
         }
-        //批量保存手机颜色图片信息
         if(phoneColorList.size()>0){
             Db.batchSave(GoodsColor.TABLE_NAME,phoneColorList,phoneColorList.size());
         }
@@ -89,11 +84,9 @@ public class PhoneGoodsCtrl extends BaseController {
     public void updateRequest() {
         this.commonRequest();
         this.setAttr("command","updateRequest");
-
         PhoneGoodsView phoneGoodsView = this.getModel(PhoneGoodsView.class);
         this.setAttr("phoneGoodsView",PhoneGoodsView.dao.findById(phoneGoodsView.getPhoneGoodsId()));
-
-        //查询属于该一版本的颜色图片
+        //查询属于该手机版本的颜色图片
         GoodsColor goodsColor = new GoodsColor();
         goodsColor.setPhoneGoodsId(phoneGoodsView.getPhoneGoodsId());
         this.setAttr("privatePhoneColorList",GoodsColor.dao.getAllData(goodsColor));
@@ -102,27 +95,23 @@ public class PhoneGoodsCtrl extends BaseController {
 
     @Override
     public Boolean updateData() {
-        //手机型号/手机版本
+        //1、获取手机型号/手机版本
         PhoneModel phoneModel = getModel(PhoneModel.class);
         PhoneVersion phoneVersion = getModel(PhoneVersion.class);
 
-        //验证该类型、型号、版本的手机是否已经存在
+        //2、验证该类型、型号、版本的手机是否已经存在
         if(this.validatePhoneGoodsIsExist(phoneModel,phoneVersion)){
             this.renderJson(new ErrorVo(1,"您填写的手机类型，型号，版本所对应的手机信息已经存在!"));
             return false;
         }
 
-        //判断该类型、手机版本是否改变，如果改变则判断是否存在，如果不存在就需要新增
-        //先判断该型号是否存在,如果存在就用原来的
-        PhoneModel phoneModelNew = PhoneModel.dao.findById(phoneModel);
-        if(null==phoneModelNew){
-            phoneModelNew = new PhoneModel();
-            phoneModel.setModelId(null);
-            phoneModelNew._setAttrs(phoneModel).save();
-        }
+        //3、获取手机型号，先判断该型号是否存在,如果存在就用原来的，如果不存在就需要新增
+        PhoneModel phoneModelNew = phoneModel.getPhoneModel(phoneModel);
 
+        //4、保存手机版本信息
         phoneVersion.setModelId(phoneModelNew.getModelId());
         phoneVersion._setAttrs(phoneVersion).update();
+
         this.renderJson(new ErrorVo(0,"修改手机商品成功!"));
         return true;
     }
@@ -131,42 +120,35 @@ public class PhoneGoodsCtrl extends BaseController {
      * 存在文件时更新手机商品
      */
     public Boolean updateFilesData() {
-        //拿到上传的文件列表
+        //1、获取上传的文件列表、手机型号/手机版本
         List<UploadFile> uploadFileList = getFiles(UPLOAD_IMAGES_PHONE_PATH);
-        //手机型号/手机版本
         PhoneModel phoneModel = getModel(PhoneModel.class);
         PhoneVersion phoneVersion = getModel(PhoneVersion.class);
 
-        //验证该类型、型号、版本的手机是否已经存在
+        //2、验证该类型、型号、版本的手机是否已经存在
         if(this.validatePhoneGoodsIsExist(phoneModel,phoneVersion)){
             this.renderJson(new ErrorVo(1,"您填写的手机类型，型号，版本所对应的手机信息已经存在!"));
             return false;
         }
 
-        //判断该类型、手机型号是否改变，如果改变则判断是否存在，如果不存在就需要新增
-        //先判断该型号是否存在,如果存在就用原来的
-        PhoneModel phoneModelNew = PhoneModel.dao.findById(phoneModel);
-        if(null==phoneModelNew){
-            phoneModelNew = new PhoneModel();
-            phoneModel.setModelId(null);
-            phoneModelNew._setAttrs(phoneModel).save();
-        }
+        //3、获取手机型号，先判断该型号是否存在,如果存在就用原来的，如果不存在就需要新增
+        PhoneModel phoneModelNew = phoneModel.getPhoneModel(phoneModel);
 
-        //解析上传的文件，获取上传的颜色的图片信息
+        //4、解析上传的文件，获取上传的颜色的图片信息
         List<Record> phoneColorList = this.getGoodsColorList(phoneVersion,uploadFileList);
 
-        //手机版本更新
+        //5、手机版本更新
         phoneVersion.setModelId(phoneModelNew.getModelId());
         phoneVersion._setAttrs(phoneVersion).update();
 
-        //手机颜色图片
+        //6、批量保存手机颜色图片信息
         for(int i=0,size=phoneColorList.size();i<size;i++){
             phoneColorList.get(i).set("PHONE_GOODS_ID",phoneVersion.getPhoneGoodsId());
         }
-        //批量保存手机颜色图片信息
         if(phoneColorList.size()>0){
             new GoodsColor().batchUpdateGoodsColor(phoneColorList,true);
         }
+
         this.renderJson(new ErrorVo(0,"修改手机商品成功!"));
         return true;
     }
@@ -275,4 +257,5 @@ public class PhoneGoodsCtrl extends BaseController {
             return PhoneGoodsView.dao.getAllData(pgv).size() > 0;
         }
     }
+
 }

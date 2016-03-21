@@ -1,7 +1,7 @@
 package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
-import com.base.ctrl.BaseController;
+import com.base.ctrl.BaseViewBackController;
 import com.jfinal.aop.Before;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.SysMenu;
@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RouteBind(path="/mainCtrl")
 @Before(LoginBackInterceptor.class)
-public class MainCtrl extends BaseController {
+public class MainCtrl extends BaseViewBackController {
 
     //进入后台
     public void goViewBack(){
