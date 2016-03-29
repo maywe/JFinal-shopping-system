@@ -8,7 +8,7 @@ import java.util.Date;
  * @author CMW
  *
  */
-public class DateUtil {
+public class DateUtils {
 
 	//时间格式:年
 	public static final String YEAR="yyyy";

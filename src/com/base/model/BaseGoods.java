@@ -76,4 +76,12 @@ public abstract class BaseGoods<M extends BaseGoods<M>> extends BaseModel<M> imp
 		return get("GOODS_PREVIEW_IMAGE");
 	}
 
+	public void setAdapterAllPhone(java.lang.String adapterAllPhone) {
+		set("ADAPTER_ALL_PHONE", adapterAllPhone);
+	}
+
+	public java.lang.String getAdapterAllPhone() {
+		return get("ADAPTER_ALL_PHONE");
+	}
+
 }

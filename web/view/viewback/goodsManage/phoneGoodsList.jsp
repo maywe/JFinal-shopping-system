@@ -34,7 +34,7 @@
                             <option ${phoneGoodsView.phone_version_id==pv.goods_addribute_val_id?"selected":""} value="${pv.goods_addribute_val_id}">${pv.goods_addribute_val_name}</option>
                         </c:forEach>
                     </select>
-                    <a data-whatever="增加手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/addRequest.action" data-target="#pop_modal" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="增加手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/addRequest.action" data-target="#pop_modal_lg" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -74,11 +74,11 @@
                             <td>${pgv.phone_now_price}</td>
                             <td><img alt="手机预览图" width="25" height="25" src="${pageContext.request.contextPath}${pgv.phone_preview_image}"/></td>
                             <td>
-                                <a data-whatever="查看手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/showRequest.action?phoneGoodsView.phone_goods_id=${pgv.phone_goods_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/showRequest.action?phoneGoodsView.phone_goods_id=${pgv.phone_goods_id}" data-target="#pop_modal_lg" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/updateRequest.action?phoneGoodsView.phone_goods_id=${pgv.phone_goods_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/updateRequest.action?phoneGoodsView.phone_goods_id=${pgv.phone_goods_id}" data-target="#pop_modal_lg" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

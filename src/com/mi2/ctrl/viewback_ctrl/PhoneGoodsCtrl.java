@@ -90,7 +90,7 @@ public class PhoneGoodsCtrl extends BaseViewBackController {
         GoodsColor goodsColor = new GoodsColor();
         goodsColor.setPhoneGoodsId(phoneGoodsView.getPhoneGoodsId());
         this.setAttr("privatePhoneColorList",GoodsColor.dao.getAllData(goodsColor));
-       this.render(VIEW_BACK_PATH+"/goodsManage/phoneGoodsDialog.jsp");
+        this.render(VIEW_BACK_PATH+"/goodsManage/phoneGoodsDialog.jsp");
     }
 
     @Override

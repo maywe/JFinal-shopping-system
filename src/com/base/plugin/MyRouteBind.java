@@ -1,7 +1,7 @@
 package com.base.plugin;
 
 import com.base.annotation.RouteBind;
-import com.base.util.ClassSearcherUtil;
+import com.base.util.ClassSearcherUtils;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.Prop;
 
@@ -15,7 +15,7 @@ public class MyRouteBind {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void add(Routes me,Prop dbProp){
-		List<Class<?>> list= ClassSearcherUtil.findClass("/com/mi2/ctrl",dbProp);
+		List<Class<?>> list= ClassSearcherUtils.findClass("/com/mi2/ctrl",dbProp);
 		if(list!=null&&!list.isEmpty()){
 			for(Class clz:list){
 				RouteBind rb = (RouteBind)clz.getAnnotation(RouteBind.class);

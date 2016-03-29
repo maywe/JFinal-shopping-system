@@ -16,14 +16,27 @@ public class GoodsSmallType extends BaseGoodsSmallType<GoodsSmallType> {
 
 
 	@Override
-	public List<GoodsSmallType> getAllData(GoodsSmallType goodsSmallType) {
+	public List<GoodsSmallType> getAllData(GoodsSmallType t) {
 		StringBuilder sbSql = new StringBuilder();
 		sbSql.append("select * from goods_small_type gst where 1=1 ");
 		ArrayList<Object> values = new ArrayList<>();
-		if(goodsSmallType!=null&&!goodsSmallType.getAttrs().isEmpty()){
-			if(goodsSmallType.getGoodsBigTypeId()!=null){
+		if(t!=null&&!t.getAttrs().isEmpty()){
+			if(t.getGoodsBigTypeId()!=null){
 				sbSql.append(" and gst.goods_big_type_id=?");
-				values.add(goodsSmallType.getGoodsBigTypeId());
+				values.add(t.getGoodsBigTypeId());
+			}
+		}
+		return this.find(sbSql.toString(),values.toArray());
+	}
+
+	public List<GoodsSmallType> getNotPhoneAllData(GoodsSmallType t) {
+		StringBuilder sbSql = new StringBuilder();
+		sbSql.append("select * from goods_small_type gst where gst.goods_big_type_id<>1 ");
+		ArrayList<Object> values = new ArrayList<>();
+		if(t!=null&&!t.getAttrs().isEmpty()){
+			if(t.getGoodsBigTypeId()!=null){
+				sbSql.append(" and gst.goods_big_type_id=?");
+				values.add(t.getGoodsBigTypeId());
 			}
 		}
 		return this.find(sbSql.toString(),values.toArray());

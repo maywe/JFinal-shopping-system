@@ -18,7 +18,7 @@
             <table class="table dialog-table">
                 <tr>
                     <th style="width: 80px;"><span class="must-msg">*&nbsp;</span>手机类别:</th>
-                    <td>
+                    <td style="width: 210px;">
                         <select name="phoneModel.goods_small_type_id" class="form-control" required="required">
                             <option value="">--请选择--</option>
                             <c:forEach items="${goodsSmallTypeList}" var="gst">
@@ -28,7 +28,7 @@
                     </td>
 
                     <th style="width: 100px;"><span class="must-msg">*&nbsp;</span>手机型号:</th>
-                    <td>
+                    <td style="width: 210px;">
                         <select name="phoneModel.goods_addribute_val_id" class="form-control" required>
                             <option value="">--请选择--</option>
                             <c:forEach items="${phoneModelList}" var="pm">
@@ -36,10 +36,9 @@
                             </c:forEach>
                         </select>
                     </td>
-                </tr>
-                <tr>
-                    <th><span class="must-msg">*&nbsp;</span>手机版本:</th>
-                    <td>
+
+                    <th style="width: 80px;"><span class="must-msg">*&nbsp;</span>手机版本:</th>
+                    <td style="width: 210px;">
                         <select name="phoneVersion.goods_addribute_val_id" class="form-control" required>
                             <option value="">--请选择--</option>
                             <c:forEach items="${phoneVersionList}" var="pv">
@@ -47,13 +46,13 @@
                             </c:forEach>
                         </select>
                     </td>
-
+                </tr>
+                <tr>
                     <th><span class="must-msg">*&nbsp;</span>库存总量:</th>
                     <td>
                         <input value="${phoneGoodsView.phone_stock}" name="phoneVersion.phone_stock" type="text" class="form-control" placeholder="库存总量" required="required" pattern="^\d{1,10}$">
                     </td>
-                </tr>
-                <tr>
+
                     <th><span class="must-msg">*&nbsp;</span>已售数量:</th>
                     <td>
                         <input readonly value="${empty phoneGoodsView.phone_sales_num?0:phoneGoodsView.phone_sales_num}" name="phoneVersion.phone_sales_num" type="text" class="form-control" placeholder="已售数量" required="required">
@@ -85,7 +84,7 @@
                 <div class="tab-pane active">
                     <table class="table dialog-table">
                         <c:forEach items="${phoneColorList}" var="pc" varStatus="status">
-                            <c:if test="${(status.count+1)%2==0}">
+                            <c:if test="${(status.count)%3==1}">
                                 <tr>
                             </c:if>
                             <c:set var="isExistColor" value="0"> </c:set>
@@ -112,7 +111,7 @@
                                 <td><input disabled id="goods_color_img_url${pc.goods_addribute_val_id}" name="goods_color_img_url${pc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
                                 <td><img width="35" height="35" alt="手机颜色图片" src="${pageContext.request.contextPath}/images/avatar-160.png"></td>
                             </c:if>
-                            <c:if test="${(status.count+1)%2==1||status.last}">
+                            <c:if test="${(status.count)%3==0||status.last}">
                                 </tr>
                             </c:if>
                         </c:forEach>

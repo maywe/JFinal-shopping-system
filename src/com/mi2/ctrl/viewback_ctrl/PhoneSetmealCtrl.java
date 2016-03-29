@@ -8,8 +8,11 @@ import com.jfinal.plugin.activerecord.Page;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.GoodsSmallType;
 import com.mi2.model.PhoneSetmeal;
+import com.mi2.model.PhoneSetmealDetail;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 手机套餐管理
@@ -25,6 +28,10 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
         this.setAttr("command","showRequest");
         PhoneSetmeal phoneSetmeal = PhoneSetmeal.dao.findById(this.getModel(PhoneSetmeal.class).getPhoneSetmealId());
         this.setAttr("phoneSetmeal", phoneSetmeal);
+
+        PhoneSetmealDetail psd = new PhoneSetmealDetail();
+        psd.setPhoneSetmealId(phoneSetmeal.getPhoneSetmealId());
+        this.setAttr("phoneSetmealGoodsList",PhoneSetmealDetail.dao.getAllData(psd));
 
         //手机类型
         GoodsSmallType goodsSmallType = new GoodsSmallType();
@@ -46,8 +53,24 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
 
     @Override
     public Boolean addData() {
-        PhoneSetmeal phoneSetmeal = new PhoneSetmeal();
-        phoneSetmeal._setAttrs(this.getModel(PhoneSetmeal.class)).save();
+        //1、获取套餐基本信息和套餐详情信息
+        PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
+        //2、解析信息保存套餐基本信息
+        long goodsNumSum = 0;
+        double goodsNewPriceSum = 0;
+        for(Map<String,String> map : phoneSetmealGoodsList){
+            int goodsNum = Integer.parseInt(map.get("goods_num"));
+            double goodsNewPrice = Double.valueOf(map.get("goods_new_price"));
+            goodsNumSum += goodsNum;
+            goodsNewPriceSum += goodsNum*goodsNewPrice;
+        }
+        phoneSetmeal.setSetmealGoodsNum(BigDecimal.valueOf(goodsNumSum));
+        phoneSetmeal.setSaveMoney(BigDecimal.valueOf(goodsNewPriceSum).subtract(phoneSetmeal.getSetmealPrice()));
+        phoneSetmeal.save();
+        //3、更新套餐详情信息
+        new PhoneSetmealDetail().batchSave(phoneSetmeal.getPhoneSetmealId(),phoneSetmealGoodsList);
+
         this.renderJson(new ErrorVo(0,"新增手机套餐成功!"));
         return true;
     }
@@ -57,6 +80,11 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
         PhoneSetmeal phoneSetmeal = PhoneSetmeal.dao.findById(this.getModel(PhoneSetmeal.class).getPhoneSetmealId());
         this.setAttr("phoneSetmeal", phoneSetmeal);
         this.setAttr("command","updateRequest");
+
+        PhoneSetmealDetail psd = new PhoneSetmealDetail();
+        psd.setPhoneSetmealId(phoneSetmeal.getPhoneSetmealId());
+        this.setAttr("phoneSetmealGoodsList",PhoneSetmealDetail.dao.getAllData(psd));
+
         //手机类型
         GoodsSmallType goodsSmallType = new GoodsSmallType();
         goodsSmallType.setGoodsBigTypeId(BigDecimal.valueOf(1));
@@ -67,15 +95,33 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
 
     @Override
     public Boolean updateData() {
-        PhoneSetmeal phoneSetmeal = new PhoneSetmeal();
-        phoneSetmeal._setAttrs(this.getModel(PhoneSetmeal.class)).update();
+        //1、获取套餐基本信息和套餐详情信息
+        PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
+        //2、解析信息更新套餐基本信息
+        long goodsNumSum = 0;
+        double goodsNewPriceSum = 0;
+        for(Map<String,String> map : phoneSetmealGoodsList){
+            int goodsNum = Integer.parseInt(map.get("goods_num"));
+            double goodsNewPrice = Double.valueOf(map.get("goods_new_price"));
+            goodsNumSum += goodsNum;
+            goodsNewPriceSum += goodsNum*goodsNewPrice;
+        }
+        phoneSetmeal.setSetmealGoodsNum(BigDecimal.valueOf(goodsNumSum));
+        phoneSetmeal.setSaveMoney(BigDecimal.valueOf(goodsNewPriceSum).subtract(phoneSetmeal.getSetmealPrice()));
+        phoneSetmeal.update();
+        //3、更新套餐详情信息
+        new PhoneSetmealDetail().batchUpdate(phoneSetmeal.getPhoneSetmealId(),phoneSetmealGoodsList);
+
         this.renderJson(new ErrorVo(0,"修改手机套餐成功!"));
         return true;
     }
 
     @Override
     public Boolean deleteData() {
-        this.getModel(PhoneSetmeal.class).delete();
+        PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        new PhoneSetmealDetail().batchDelete(phoneSetmeal.getPhoneSetmealId());
+        phoneSetmeal.delete();
         this.renderJson(new ErrorVo(0,"删除手机套餐成功!"));
         return true;
     }

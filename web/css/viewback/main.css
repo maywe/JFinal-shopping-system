@@ -25,6 +25,7 @@
 }
 .portlet-box td,.portlet-box th{
     text-align: center;
+    vertical-align: middle !important;
 }
 /*表格框 end*/
 
@@ -74,8 +75,34 @@
 .modal-content .modal-body th,.modal-content .modal-body td{
     padding: 3px;
 }
+.modal-content .modal-body .detail-table th{
+    font-weight: bold;
+}
+.modal-content .modal-body .detail-table th,.modal-content .modal-body .detail-table td{
+    text-align: center;
+    vertical-align: middle !important;
+}
+.modal-content .modal-body .pageFooter{
+    position: static;
+}
 .modal-content .modal-footer {
     padding: 5px;
     text-align: center;
 }
 /* 弹出框样式 end*/
+
+/* 数量设置插件样式 start*/
+.digital-setting{
+    width: 105px;
+    margin: 0 auto;
+}
+.digital-setting>span{
+    padding:5px 7px !important;
+    cursor: pointer;
+}
+.digital-setting>input{
+    text-align:center;
+    vertical-align: middle;
+    background: white !important;
+}
+/* 数量设置插件样式 end*/

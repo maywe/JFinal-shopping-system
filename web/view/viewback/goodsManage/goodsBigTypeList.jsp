@@ -15,7 +15,7 @@
                 <form id="goodsBigTypeListForm" class="form-inline" onsubmit="return false">
                     <label>商品大类型</label>
                     <input name="goodsBigType.goods_bigl_type_name" value="${goodsBigType.goods_bigl_type_name}" type="text" class="form-control input-sm" placeholder="商品大类型"/>
-                    <a data-whatever="增加商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="增加商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -41,11 +41,11 @@
                             <td>${status.count}</td>
                             <td>${gbt.goods_bigl_type_name}</td>
                             <td>
-                                <a data-whatever="查看商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/showRequest.action?goodsBigType.goods_big_type_id=${gbt.goods_big_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/showRequest.action?goodsBigType.goods_big_type_id=${gbt.goods_big_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/updateRequest.action?goodsBigType.goods_big_type_id=${gbt.goods_big_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改商品大类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsBigTypeCtrl/updateRequest.action?goodsBigType.goods_big_type_id=${gbt.goods_big_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

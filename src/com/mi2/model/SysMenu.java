@@ -1,7 +1,6 @@
 package com.mi2.model;
 
 import com.base.model.BaseSysMenu;
-import com.jfinal.plugin.activerecord.Page;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,10 +21,5 @@ public class SysMenu extends BaseSysMenu<SysMenu> {
 	public List<SysMenu> getAllData(SysMenu sysMenu) {
 		String sql = "select * from sys_menu where 1=1 ";
 		return this.find(sql);
-	}
-
-	@Override
-	public Page<SysMenu> getAllDataByPage(int pageNumber, int pageSize, SysMenu sysMenu) {
-		return null;
 	}
 }

@@ -25,6 +25,15 @@ public class GoodsColor extends BaseGoodsColor<GoodsColor> {
 	}
 
 	/**
+	 * 删除其他商品颜色图片信息
+	 * @param goodsId 其他商品id
+	 */
+	public int deleteOtherGoodsColor(BigDecimal goodsId){
+		String sql = "delete goods_color gc where gc.goods_id=?";
+		return Db.update(sql,goodsId);
+	}
+
+	/**
 	 * 批量更新商品图片信息
      */
 	public void batchUpdateGoodsColor(List<Record> goodsColorList,boolean isPhoneGoodsColorUpdate){
@@ -64,6 +73,10 @@ public class GoodsColor extends BaseGoodsColor<GoodsColor> {
 			if(t.getPhoneGoodsId()!=null){
 				sbSql.append(" and gc.phone_goods_id=?");
 				values.add(t.getPhoneGoodsId());
+			}
+			if(t.getGoodsId()!=null){
+				sbSql.append(" and gc.goods_id=?");
+				values.add(t.getGoodsId());
 			}
 		}
 		return this.find(sbSql.toString(),values.toArray());

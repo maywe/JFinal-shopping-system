@@ -16,6 +16,9 @@ body{
     text-align: center;
     vertical-align:middle;
 }
+.my-alert-background{
+    z-index: 1100 !important;
+}
 .alert-background img{
     margin-top: 20%;
     width:100px;

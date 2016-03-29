@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * 类查找
  */
-public class ClassSearcherUtil {
+public class ClassSearcherUtils {
 
-	private static Logger log=Logger.getLogger(ClassSearcherUtil.class);
+	private static Logger log=Logger.getLogger(ClassSearcherUtils.class);
 	/**
 	 * 递归查找文件
 	 * @param baseDirName
@@ -41,7 +41,7 @@ public class ClassSearcherUtil {
 					findFiles(f.getPath(),targetFileName,classFiles);
 				}else{
 					tempName = f.getName();
-					if (ClassSearcherUtil.wildcardMatch(targetFileName, tempName)) {
+					if (ClassSearcherUtils.wildcardMatch(targetFileName, tempName)) {
 						classFiles.add(f.getAbsoluteFile());
 					}
 				}
@@ -58,7 +58,7 @@ public class ClassSearcherUtil {
 	public static List<Class> findClasses(Class clazz,String strFilePath) {
 		List<Class> classList = new ArrayList<Class>();
 		if(StrKit.isBlank(strFilePath)) strFilePath="/";
-		URL classPathUrl = ClassSearcherUtil.class.getResource(strFilePath);
+		URL classPathUrl = ClassSearcherUtils.class.getResource(strFilePath);
 		List<File> classFileList=new ArrayList<File>();
 		findFiles(classPathUrl.getFile(), "*.class",classFileList);
 		for (File classFile : classFileList) {
@@ -78,7 +78,7 @@ public class ClassSearcherUtil {
 	@SuppressWarnings("rawtypes")
 	public static List<Class> findClasses(Prop dbProp) {
 		List<Class> classList = new ArrayList<Class>();
-		URL classPathUrl = ClassSearcherUtil.class.getResource("/");
+		URL classPathUrl = ClassSearcherUtils.class.getResource("/");
 		List<File> classFileList=new ArrayList<File>();
 		findFiles(classPathUrl.getFile(), "*.class",classFileList);
 		String package_=dbProp.get("package","");
@@ -108,7 +108,7 @@ public class ClassSearcherUtil {
 			strFilePath="/";
 		}
 		
-		URL classPathUrl= ClassSearcherUtil.class.getResource(strFilePath);
+		URL classPathUrl= ClassSearcherUtils.class.getResource(strFilePath);
 		List<File> classFileList=new ArrayList<File>();
 		findFiles(classPathUrl.getFile(), "*.class",classFileList);
 		String package_=dbProp.get("package","");

@@ -15,7 +15,7 @@
                 <form id="sysRoleListForm" class="form-inline" onsubmit="return false">
                     <label>角色名称</label>
                     <input name="sysRoleGroup.role_group_name" value="${sysRoleGroup.role_group_name}" type="text" class="form-control input-sm" placeholder="请输入角色名称"/>
-                    <a data-whatever="新增角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="新增角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -43,11 +43,11 @@
                             <td>${srg.role_group_name}</td>
                             <td>${srg.role_group_desc}</td>
                             <td>
-                                <a data-whatever="查看角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/showRequest.action?sysRoleGroup.role_group_id=${srg.role_group_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/showRequest.action?sysRoleGroup.role_group_id=${srg.role_group_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/updateRequest.action?sysRoleGroup.role_group_id=${srg.role_group_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改角色" data-toggle="modal" href="${pageContext.request.contextPath}/sysRoleCtrl/updateRequest.action?sysRoleGroup.role_group_id=${srg.role_group_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

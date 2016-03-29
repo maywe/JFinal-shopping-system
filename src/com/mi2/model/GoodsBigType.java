@@ -14,11 +14,17 @@ import java.util.List;
 public class GoodsBigType extends BaseGoodsBigType<GoodsBigType> {
 	public static final GoodsBigType dao = new GoodsBigType();
 
-	@Override
-	public List<GoodsBigType> getAllData(GoodsBigType goodsBigType) {
+	public List<GoodsBigType> getNotPhoneAllData(GoodsBigType t) {
 		StringBuilder sbSql = new StringBuilder();
-		sbSql.append("select * from goods_big_type gbt where 1=1 ");
-		return this.find(sbSql.toString());
+		sbSql.append("select * from goods_big_type gbt where gbt.goods_big_type_id<>1 ");
+		ArrayList<Object> values = new ArrayList<>();
+		if(t!=null&&!t.getAttrs().isEmpty()){
+			if(t.getGoodsBigTypeId()!=null){
+				sbSql.append(" and gbt.goods_big_type_id=?");
+				values.add(t.getGoodsBigTypeId());
+			}
+		}
+		return this.find(sbSql.toString(),values.toArray());
 	}
 
 	@Override

@@ -21,7 +21,7 @@
                         <option ${usersBackstage.status=="0"?"selected":""} value="0">正常</option>
                         <option ${usersBackstage.status=="1"?"selected":""} value="1">冻结</option>
                     </select>
-                    <a data-whatever="增加系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/addRequest.action" data-target="#pop_modal" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="增加系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/addRequest.action" data-target="#pop_modal" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -65,11 +65,11 @@
                             <td>${ub.nickname}</td>
                             <td>${ub.status=="0"?"正常":"冻结"}</td>
                             <td>
-                                <a data-whatever="查看系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/showRequest.action?usersBackstage.users_backstage_id=${ub.users_backstage_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/showRequest.action?usersBackstage.users_backstage_id=${ub.users_backstage_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/updateRequest.action?usersBackstage.users_backstage_id=${ub.users_backstage_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/updateRequest.action?usersBackstage.users_backstage_id=${ub.users_backstage_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

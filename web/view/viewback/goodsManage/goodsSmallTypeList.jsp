@@ -22,7 +22,7 @@
                             <option ${gbt.goods_big_type_id==goodsSmallType.goods_big_type_id?"selected":""} value="${gbt.goods_big_type_id}">${gbt.goods_bigl_type_name}</option>
                         </c:forEach>
                     </select>
-                    <a data-whatever="增加商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="增加商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -50,11 +50,11 @@
                             <td>${gst.goods_small_type_name}</td>
                             <td>${gst.goods_bigl_type_name}</td>
                             <td>
-                                <a data-whatever="查看商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/showRequest.action?goodsSmallType.goods_small_type_id=${gst.goods_small_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/showRequest.action?goodsSmallType.goods_small_type_id=${gst.goods_small_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/updateRequest.action?goodsSmallType.goods_small_type_id=${gst.goods_small_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/updateRequest.action?goodsSmallType.goods_small_type_id=${gst.goods_small_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

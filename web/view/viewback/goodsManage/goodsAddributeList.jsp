@@ -15,7 +15,7 @@
                 <form id="goodsAddributeListForm" class="form-inline" onsubmit="return false">
                     <label>商品属性</label>
                     <input name="goodsAddribute.goods_addribute_name" value="${goodsAddribute.goods_addribute_name}" type="text" class="form-control input-sm" placeholder="商品属性"/>
-                    <a data-whatever="增加商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
+                    <a data-backdrop="static" data-whatever="增加商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
                     </a>
@@ -41,11 +41,11 @@
                             <td>${status.count}</td>
                             <td>${ga.goods_addribute_name}</td>
                             <td>
-                                <a data-whatever="查看商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/showRequest.action?goodsAddribute.goods_addribute_id=${ga.goods_addribute_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="查看商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/showRequest.action?goodsAddribute.goods_addribute_id=${ga.goods_addribute_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>
                                     <span>查看</span>
                                 </a>
-                                <a data-whatever="修改商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/updateRequest.action?goodsAddribute.goods_addribute_id=${ga.goods_addribute_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
+                                <a data-backdrop="static" data-whatever="修改商品属性" data-toggle="modal" href="${pageContext.request.contextPath}/goodsAddributeCtrl/updateRequest.action?goodsAddribute.goods_addribute_id=${ga.goods_addribute_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-pencil font-size12"></i>
                                     <span>修改</span>
                                 </a>

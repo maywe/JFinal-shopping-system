@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 /**
  * 生成数据库表对象的工具
  */
-public class GeneratorUtil {
+public class GeneratorUtils {
 	
 	public static DataSource getDataSource() {
 		Prop p = PropKit.use("db.properties");

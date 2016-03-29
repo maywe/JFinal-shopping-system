@@ -1,7 +1,7 @@
 package com.base.interceptor;
 
 
-import com.base.util.IdGeneraterUtil;
+import com.base.util.IdGeneraterUtils;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 
@@ -9,7 +9,7 @@ import com.jfinal.aop.Invocation;
  * 基础拦截器父类
  */
 public abstract class BaseInterceptor implements Interceptor {
-	protected static IdGeneraterUtil idGenerater = new IdGeneraterUtil();
+	protected static IdGeneraterUtils idGenerater = new IdGeneraterUtils();
 	public void intercept(Invocation inv) {
 		doIntercept(inv);
 	}

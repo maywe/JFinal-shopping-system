@@ -1,5 +1,7 @@
 package com.base.util;
 
+import com.jfinal.plugin.activerecord.Model;
+
 import java.io.Reader;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
@@ -11,12 +13,16 @@ import java.util.Map;
  *
  * @author ChenMW 2016-03-03 9:39
  */
-public class BeanUtil {
+public class BeanUtils {
 
-    public static <T> T setMapValuesToBeanUtils(Map<String ,Object> paramValues, Class<T> cls) {
+    public static <T> T setMapValuesToModel(Class<T> cls,Map<String ,Object> paramValues) {
         try {
             //1、传入cls的类类型进行实例化
             T obj = cls.newInstance();
+            if (!(obj instanceof Model)) {
+                throw new IllegalArgumentException("getModel only support class of Model, using getBean for other class.");
+            }
+
             //2、获得该类所有的方法，并且遍历
             Method methods[] = cls.getSuperclass().getDeclaredMethods();
             //Method methods[] = cls.getMethods();
@@ -46,7 +52,7 @@ public class BeanUtil {
                         //通过 键（在这里就是列名）把相应的 值 取出（把列名所对应的值取出）
                         Object mapValue = null;
                         for(String key : paramValues.keySet()){
-                            if(mapKey.equals(key.replace("_",""))){
+                            if(mapKey.equals(key.replace("_","").toUpperCase())){
                                 mapValue = paramValues.get(key);
                                 break;
                             }
@@ -138,7 +144,7 @@ public class BeanUtil {
 
                                 if(mapValue instanceof String){
                                     if(mapValue.toString().matches("[0-9]{4}([ ]|[-])[0-1][0-9]([ ]|[-])[0-3][0-9]")){
-                                        m.invoke(obj, DateUtil.strToUtilDate(String.valueOf(mapValue), DateUtil.DATE));
+                                        m.invoke(obj, DateUtils.strToUtilDate(String.valueOf(mapValue), DateUtils.DATE));
                                     }
                                 }else if(mapValue instanceof java.util.Date){
                                     m.invoke(obj, mapValue);
@@ -154,7 +160,7 @@ public class BeanUtil {
                             }else if(methodParamTypeName.equals("java.sql.Date")){
                                 if(mapValue instanceof String){
                                     if(mapValue.toString().matches("[0-9]{4}([ ]|[-])[0-1][0-9]([ ]|[-])[0-3][0-9]")){
-                                        m.invoke(obj, DateUtil.strToSqlDate(String.valueOf(mapValue), DateUtil.DATE));
+                                        m.invoke(obj, DateUtils.strToSqlDate(String.valueOf(mapValue), DateUtils.DATE));
                                     }
                                 }else if(mapValue instanceof java.sql.Date){
                                     m.invoke(obj, mapValue);
@@ -173,7 +179,7 @@ public class BeanUtil {
                                     m.invoke(obj, mapValue);
                                 }
                                 if(mapValue instanceof java.sql.Date){
-                                    m.invoke(obj, DateUtil.strToSqlDate(String.valueOf(mapValue), DateUtil.DATE_TIME));
+                                    m.invoke(obj, DateUtils.strToSqlDate(String.valueOf(mapValue), DateUtils.DATE_TIME));
                                 }
                                 //当判断set方法参数的类型为boolean/java.lang.Boolean类型时
                             }else if(methodParamTypeName.equals("boolean") || methodParamTypeName.equals("java.lang.Boolean")){
@@ -199,4 +205,83 @@ public class BeanUtil {
         return null;
     }
 
+    public static <T> T setMapValuesToModel(Map<String,String> paramValues,Class<T> cls){
+        try{
+            //1、传入cls的类类型进行实例化
+            T obj = cls.newInstance();
+            if (!(obj instanceof Model)) {
+                throw new IllegalArgumentException("getModel only support class of Model, using getBean for other class.");
+            }
+            //2、获得该类所有的方法，并且遍历
+            Method methods[] = cls.getSuperclass().getDeclaredMethods();
+            //Method methods[] = cls.getDeclaredMethods();
+            for(Method m : methods){
+                //3、选出VO对象中set开头的方法
+                String methodName = m.getName();
+                if(methodName.startsWith("set")){
+                    /*
+                        确定方法的三个一致：参数个数，参数类型，参数顺序
+                        在反射调用方法，不能保证从Map中取出来的值与方法的参数类型完全一致，
+                        会产生argument type mismatch 参数类型不匹配的错误
+                        所以这里需要判断方法的参数类型，将Map中取出来的值转成匹配的数据类型
+                        m.invoke(obj, value);
+                    */
+                    //4、判断传入参数的个数和类型，保证合法参数正确的映射进VO对象
+                    Class parameterTypes[] = m.getParameterTypes();
+                    if(parameterTypes != null && parameterTypes.length == 1){
+                        String mapKey = methodName.replace("set","").toUpperCase();
+                        String mapValue = null;
+                        for(String key : paramValues.keySet()){
+                            if(mapKey.equals(key.replace("_","").toUpperCase())){
+                                mapValue = paramValues.get(key);
+                                break;
+                            }
+                        }
+                        String methodParamTypeName = parameterTypes[0].getName();
+                        if(mapValue != null){
+                            if(methodParamTypeName.equals("java.lang.String")){
+                                m.invoke(obj, mapValue);
+                            }else if(methodParamTypeName.equals("java.math.BigDecimal")){
+                                if(mapValue.matches("[0-9]+([.][0-9]+)?")){
+                                    m.invoke(obj, BigDecimal.valueOf(Long.valueOf(mapValue)));
+                                }
+                            }else if(methodParamTypeName.equals("int") || methodParamTypeName.equals("java.lang.Integer")){
+                                if(mapValue.matches("[0-9]+")){
+                                    m.invoke(obj, Integer.parseInt(mapValue));
+                                }
+                            }else if(methodParamTypeName.equals("double") || methodParamTypeName.equals("java.lang.Double")){
+                                if(mapValue.matches("[0-9]+([.][0-9]+)?")){
+                                    m.invoke(obj, Double.valueOf(mapValue));
+                                }
+                            }else if(methodParamTypeName.equals("float") || methodParamTypeName.equals("java.lang.Float")){
+                                if(mapValue.matches("[0-9]+([.][0-9]+)?")){
+                                    m.invoke(obj, Float.valueOf(mapValue));
+                                }
+                            }else if(methodParamTypeName.equals("java.util.Date")){
+                                if(mapValue.matches("[0-9]{4}([ ]|[-])[0-1][0-9]([ ]|[-])[0-3][0-9]")){
+                                    m.invoke(obj, DateUtils.strToUtilDate(mapValue, DateUtils.DATE));
+                                }
+                            }else if(methodParamTypeName.equals("java.sql.Date")){
+                                if(mapValue.matches("[0-9]{4}([ ]|[-])[0-1][0-9]([ ]|[-])[0-3][0-9]")){
+                                    m.invoke(obj, DateUtils.strToSqlDate(mapValue, DateUtils.DATE));
+                                }
+                            }else if(methodParamTypeName.equals("java.sql.Timestamp")){
+                                m.invoke(obj, DateUtils.strToSqlDate(mapValue, DateUtils.DATE_TIME));
+                            }else if(methodParamTypeName.equals("boolean") || methodParamTypeName.equals("java.lang.Boolean")){
+                                if (mapValue.equals("true")){
+                                    m.invoke(obj,true);
+                                }else if (mapValue.equals("false")){
+                                    m.invoke(obj,false);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return obj;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

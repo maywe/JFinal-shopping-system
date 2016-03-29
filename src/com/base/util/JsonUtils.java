@@ -4,21 +4,21 @@ import com.jfinal.plugin.activerecord.Record;
 
 import java.util.List;
 
-public class JsonUtil {
+public class JsonUtils {
 	
 	private StringBuffer jsonBuf;
 	private boolean isList = false;
 	
-	public JsonUtil(){
+	public JsonUtils(){
 		jsonBuf = new StringBuffer();
 	}
 	
-	public JsonUtil(String text){
+	public JsonUtils(String text){
 		jsonBuf = new StringBuffer(text);
 		jsonBuf.deleteCharAt(jsonBuf.length()-1);
 	}
 	
-	public JsonUtil(List<Record> recordList){
+	public JsonUtils(List<Record> recordList){
 		isList = true;
 		jsonBuf = new StringBuffer();
 		jsonBuf.append("[");

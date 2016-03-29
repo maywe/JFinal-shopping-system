@@ -17,6 +17,8 @@ public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("GOODS", "GOODS_ID", Goods.class);
+		// Composite Primary Key order: GOODS_ID,GOODS_SMALL_TYPE_ID
+		arp.addMapping("GOODS_ADAPTER_PHONE", "GOODS_ID,GOODS_SMALL_TYPE_ID", GoodsAdapterPhone.class);
 		arp.addMapping("GOODS_ADDRIBUTE", "GOODS_ADDRIBUTE_ID", GoodsAddribute.class);
 		arp.addMapping("GOODS_ADDRIBUTE_VAL", "GOODS_ADDRIBUTE_VAL_ID", GoodsAddributeVal.class);
 		arp.addMapping("GOODS_ASSESS", "GOODS_ASSESS_ID", GoodsAssess.class);

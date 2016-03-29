@@ -11,14 +11,14 @@ import java.util.Stack;
 /**
  * id生成器
  */
-public class IdGeneraterUtil {
+public class IdGeneraterUtils {
 	/**必须以0开始 62位无序*/
 	public static String s="0L1OCGypHdVm34hFeRr9KqoZcP7iw85znjgAkU62SJuDIYtbfBxWQMvEslaTNX";
 	/**必须以0开始 62位有序*/
 	public static String s1="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	/**必须以0开始 16进制*/
 	public static String s_16="01234567890ABCDEF";
-	public static IdGeneraterUtil me=new IdGeneraterUtil();
+	public static IdGeneraterUtils me=new IdGeneraterUtils();
 	/**id池*/
 	private static List<String> idPool=new ArrayList<String>();
 	public void initIdPool(){
@@ -112,6 +112,6 @@ public class IdGeneraterUtil {
     
     public void test(){
     	Long time1=System.nanoTime();
-    	System.out.println(IdGeneraterUtil.me.to62(9223372036854775807L)+"\n"+IdGeneraterUtil.me.timeTo62_fz()+"\n"+(System.nanoTime()-time1));
+    	System.out.println(IdGeneraterUtils.me.to62(9223372036854775807L)+"\n"+ IdGeneraterUtils.me.timeTo62_fz()+"\n"+(System.nanoTime()-time1));
     }
 }

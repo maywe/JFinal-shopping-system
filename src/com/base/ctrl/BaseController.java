@@ -1,8 +1,11 @@
 package com.base.ctrl;
 
+import com.base.util.BeanUtils;
 import com.jfinal.core.Controller;
 import com.jfinal.render.JsonRender;
 import org.apache.log4j.Logger;
+
+import java.util.*;
 
 
 /**
@@ -23,9 +26,8 @@ public abstract class BaseController extends Controller {
 	public static final String DOWNLOAD_PATH = "/download";
 
 	//4、商品图片保存路径
-	public static final String UPLOAD_IMAGES_PHONE_PATH = "/images/phone";
-	public static final String UPLOAD_IMAGES_PHONE_ACCESSORIES_PATH = "/images/phone_accessories";
-	public static final String UPLOAD_IMAGES_LIFE_PATH = "/images/life";
+	public static final String UPLOAD_IMAGES_PHONE_PATH = "/images/goods/phone";
+	public static final String UPLOAD_IMAGES_OTHER_PATH = "/images/goods/other";
 
 	//5、前后台分页参数
 	public static final String PAGE_UTIL = "pageUtil";
@@ -48,4 +50,47 @@ public abstract class BaseController extends Controller {
 			this.render(new JsonRender(json));
 		}
 	}
+
+	protected Map<Integer,Map<String, String>> getParaToMapList(String name){
+		Map<Integer,Map<String, String>> mapList = new HashMap<>();
+		Enumeration<String> e = this.getParaNames();
+		if (e.hasMoreElements()) {
+			while (e.hasMoreElements()) {
+				String ename = e.nextElement();
+				if (ename.startsWith(name)&&ename.contains("[")){
+					int index = Integer.parseInt(ename.substring(ename.indexOf("[")+1,ename.indexOf("]")));
+					String key = ename.substring(ename.lastIndexOf("[")+1,ename.lastIndexOf("]"));
+					String value = this.getPara(ename);
+					Map<String, String> map = mapList.get(index);
+					if(null==map || map.isEmpty()){
+						map = new HashMap<>();
+						map.put(key,value);
+						mapList.put(index,map);
+					}else{
+						mapList.get(index).put(key,value);
+					}
+				}
+			}
+		}
+		return mapList;
+	}
+
+	protected List<Map<String,String>> getParaToList(String name){
+		List<Map<String, String>> list = new ArrayList<>();
+		Map<Integer,Map<String, String>> mapList = this.getParaToMapList(name);
+		for(Map.Entry<Integer, Map<String, String>> entry : mapList.entrySet()){
+			list.add(entry.getValue());
+		}
+		return list;
+	}
+
+	protected <M> List<M> getParaToModelList(String name,Class<M> modelClass){
+		List<M> list = new ArrayList<>();
+		Map<Integer,Map<String, String>> mapList = this.getParaToMapList(name);
+		for (Map.Entry<Integer, Map<String, String>> entry : mapList.entrySet()) {
+			list.add(BeanUtils.setMapValuesToModel(entry.getValue(),modelClass));
+		}
+		return list;
+	}
 }
+

@@ -57,6 +57,9 @@ a:active{
 .p-l-xs{
     padding-left: 5px;
 }
+.p-l-0{
+    padding-left: 0;
+}
 .p-l{
     padding-left: 10px;
 }

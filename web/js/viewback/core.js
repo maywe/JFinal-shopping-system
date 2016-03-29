@@ -19,7 +19,10 @@ var initSeting = {
         tabsForwardId:'nav_forward',            //标签页右边滚动按钮id
         containerContentId:'container_content', //内容主容器id
         containerPagesId:'my_tab_content',      //业务页面主容器id
-        footerId:'footer'                       //底部容器id
+        footerId:'footer',                      //底部容器id
+
+        myPopModalLg:'my_pop_modal_lg',         //自定义弹出大模态框id
+        myAlertBackground:'my_alert_background' //自定义模态背景
     }
 }
 /** 用户相关公共变量* */
@@ -134,4 +137,27 @@ function getTargetUrl(pageId){
     }
     return targetUrl;
 }
+
+//7、隐藏bootstarp模态框
+function hideModal() {
+    $('#' + initSeting.ids.popModalLg + ',#' + initSeting.ids.popModal + ',#' + initSeting.ids.popModalSm).modal('hide');
+}
+
+//8、隐藏与显示自定义的模态框
+function showMyModel(parentModelId){
+    $('#'+initSeting.ids.myPopModalLg).parent().parent().show();
+    $('#'+initSeting.ids.myAlertBackground).show();
+    if(parentModelId){
+        $('#'+parentModelId).hide();
+    }
+}
+function hideMyModel(parentModelId){
+    $('#'+initSeting.ids.myPopModalLg).parent().parent().hide();
+    $('#'+initSeting.ids.myPopModalLg).empty();
+    $('#'+initSeting.ids.myAlertBackground).hide();
+    if(parentModelId){
+        $('#'+parentModelId).show();
+    }
+}
+
 
