@@ -6,14 +6,11 @@ package com.base.vo;
  * @author ChenMW 2016-02-22 14:04
  */
 public class ErrorVo {
-    private Integer errorCode;
 
+    private Integer errorCode;
     private String errorMessage;
 
-
-    public ErrorVo(){
-
-    }
+    public ErrorVo(){}
 
     public ErrorVo(Integer errorCode, String errorMessage) {
         this.errorCode = errorCode;

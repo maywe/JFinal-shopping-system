@@ -21,6 +21,7 @@
     <link href="../../css/common/toastr.min.css" rel="stylesheet">
     <link href="../../css/common/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="../../css/common/jquery.minicolors.css" rel="stylesheet">
+    <link href="../../css/common/cropper.min.css" rel="stylesheet">
 
     <link href="../../css/common/jquery.bootstraptree.css" rel="stylesheet">
     <link href="../../css/common/common.css" rel="stylesheet">
@@ -45,12 +46,14 @@
     <script type="text/javascript" charset="utf-8" src="../../js/common/bootstrap-datetimepicker.zh-CN.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/common/jquery.minicolors.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/common/ajaxfileupload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/common/cropper.min.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-ajax.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-pagination.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-tree.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-initui.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-imageCutOut.js"></script>
     <script type="text/javascript" charset="utf-8" src="../../js/viewback/core-service.js"></script>
 </head>
 <body>
@@ -107,19 +110,19 @@
                 </div>
                 <ul class="dropdown-menu animated fadeInRight">
                     <li>
-                        <a class="J_menuItem" href="form_avatar.html" data-index="0">
+                        <a data-backdrop="static" data-whatever="修改头像" data-toggle="modal" href="../sysUserCtrl/updateUserImageUploadRequest.action" data-target="#pop_modal_lg" data-index="0">
                             <i class="glyphicon glyphicon-pencil"></i>
                             修改头像
                         </a>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="profile.html" data-index="1">
+                        <a href="profile.html" data-index="1">
                             <i class="glyphicon glyphicon-user"></i>
                             个人资料
                         </a>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="mailbox.html" data-index="2">
+                        <a href="mailbox.html" data-index="2">
                             <i class="glyphicon glyphicon-lock"></i>
                             修改密码
                         </a>

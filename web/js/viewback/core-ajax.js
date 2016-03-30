@@ -113,7 +113,9 @@ function callSubmit(service,submitAreaId,breakAreaId,parameter){
         if(data.errorCode==0){
             toastr.success(data.errorMessage);
             hideModal();
-            paginationBreak(breakAreaId);
+            if(breakAreaId){
+                paginationBreak(breakAreaId);
+            }
         }else{
             toastr.error(data.errorMessage);
         }
@@ -217,7 +219,9 @@ function callBatchFileUploadSubmit(service,fileElementIdList,submitAreaId,breakA
         if(data.errorCode==0){
             toastr.success(data.errorMessage);
             hideModal();
-            paginationBreak(breakAreaId);
+            if(breakAreaId){
+                paginationBreak(breakAreaId);
+            }
         }else{
             toastr.error(data.errorMessage);
         }
