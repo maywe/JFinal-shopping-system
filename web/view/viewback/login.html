@@ -6,6 +6,8 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>MI2-后台登录</title>
   	<link href="../../css/common/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/common/font-awesome.min.css" rel="stylesheet">
+	<link href="../../css/common/awesome-bootstrap-checkbox.css" rel="stylesheet">
 	<link href="../../css/common/toastr.min.css" rel="stylesheet">
 	<link href="../../css/common/common.css" rel="stylesheet">
   	<link href="../../css/viewback/login.css" rel="stylesheet">
@@ -23,11 +25,9 @@
 			<input value="123456" name="usersBackstage.sys_user_password" type="password" class="form-control" placeholder="密码" required />
 
 			<button class="btn btn-lg btn-warning btn-block" type="submit">立即登录</button>
-			<div class="checkbox">
-				<label>
-					<input name="remember_me" type="checkbox" value="remember_me">记住密码
-				</label>
-				<label id="err-info" class="err-info"></label>
+			<div class="checkbox checkbox-info checkbox-inline" style="margin-top: 10px;">
+				<input style="vertical-align:middle;" name="remember_me" type="checkbox" value="remember_me">
+				<label>记住密码</label>
 			</div>
 		</form>
 	</div>

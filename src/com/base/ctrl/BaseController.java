@@ -29,6 +29,11 @@ public abstract class BaseController extends Controller {
 	public static final String UPLOAD_IMAGES_PHONE_PATH = "/images/goods/phone";
 	public static final String UPLOAD_IMAGES_OTHER_PATH = "/images/goods/other";
 
+	//5、用户图片保存路径
+	public static final String UPLOAD_IMAGES_USERS_BACK_PATH = "/images/users/back";
+	public static final String UPLOAD_IMAGES_USERS_FRONT_PATH = "/images/users/front";
+
+
 	//5、前后台分页参数
 	public static final String PAGE_UTIL = "pageUtil";
 	protected Integer pageNumber = 1;

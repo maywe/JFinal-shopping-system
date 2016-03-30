@@ -18,8 +18,13 @@
 .myTree ul li{
     cursor:pointer;
 }
+/*
 .myTree ul li>input{
     margin-top: 10px;
+    float: left;
+}
+*/
+.myTree ul li>div.checkbox{
     float: left;
 }
 .myTree ul li>a{

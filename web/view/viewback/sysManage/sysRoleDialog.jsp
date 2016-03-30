@@ -10,9 +10,10 @@
     <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加角色</span>
 </div>
-<div class="modal-body">
-    <form id="sysRoleDialogFrom" class="form-horizontal" role="form" onsubmit="return sysRoleSubmit(this)">
-        <input value="${sysRoleGroup.role_group_id}" name="sysRoleGroup.role_group_id" type="hidden">
+
+<form id="sysRoleDialogFrom" class="form-horizontal" role="form" onsubmit="return sysRoleSubmit(this)">
+    <input value="${sysRoleGroup.role_group_id}" name="sysRoleGroup.role_group_id" type="hidden">
+    <div class="modal-body">
         <div class="tab-pane active">
             <table class="table dialog-table">
                 <tr>
@@ -31,18 +32,19 @@
             <h4 class="p-l">权限列表:</h4>
             <div style="height: 300px;" id="myMenuTree" class="myTree p-l-lg"></div>
         </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
-        <i class="glyphicon glyphicon-remove font-size12"></i>
-        <span>关闭</span>
-    </button>
-    <button type="submit" form="sysRoleDialogFrom" class="btn btn-xs btn-info">
-        <i class="glyphicon glyphicon-ok font-size12"></i>
-        <span>提交</span>
-    </button>
-</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove font-size12"></i>
+            <span>关闭</span>
+        </button>
+        <button type="submit" form="sysRoleDialogFrom" class="btn btn-xs btn-info">
+            <i class="glyphicon glyphicon-ok font-size12"></i>
+            <span>提交</span>
+        </button>
+    </div>
+
+</form>
 <script type="text/javascript">
     $(function(){
         //获取菜单树

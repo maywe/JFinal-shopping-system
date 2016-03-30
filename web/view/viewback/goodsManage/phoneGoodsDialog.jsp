@@ -92,9 +92,10 @@
                                 <c:if test="${ppc.goods_addribute_val_id==pc.goods_addribute_val_id}">
                                     <c:set var="isExistColor" value="1"> </c:set>
                                     <th style="width: 80px;background: ${pc.goods_color_code};">
-                                        <label class="checkbox-inline p-t-0">
-                                            <input checked onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">${pc.goods_addribute_val_name}
-                                        </label>
+                                        <div class="checkbox checkbox-info checkbox-inline">
+                                            <input checked onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">
+                                            <label>${pc.goods_addribute_val_name}</label>
+                                        </div>
                                     </th>
                                     <!-- 该文件上传时，会把 goods_color_img_url(手机颜色图片)，和 goods_addribute_val_id(手机颜色id一起上传)-->
                                     <td><input disabled id="goods_color_img_url${pc.goods_addribute_val_id}" name="goods_color_img_url${pc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
@@ -103,9 +104,10 @@
                             </c:forEach>
                             <c:if test="${isExistColor==0}">
                                 <th style="width: 80px;background: ${pc.goods_color_code};">
-                                    <label class="checkbox-inline p-t-0">
-                                        <input onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">${pc.goods_addribute_val_name}
-                                    </label>
+                                    <div class="checkbox checkbox-info checkbox-inline">
+                                        <input onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">
+                                        <label>${pc.goods_addribute_val_name}</label>
+                                    </div>
                                 </th>
                                 <!-- 该文件上传时，会把 goods_color_img_url(手机颜色图片)，和 goods_addribute_val_id(手机颜色id一起上传)-->
                                 <td><input disabled id="goods_color_img_url${pc.goods_addribute_val_id}" name="goods_color_img_url${pc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>

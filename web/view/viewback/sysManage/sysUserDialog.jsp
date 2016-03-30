@@ -10,9 +10,10 @@
     <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加系统用户</span>
 </div>
-<div class="modal-body">
-    <form id="sysUserDialogFrom" class="form-horizontal" role="form" onsubmit="return sysUserSubmit(this)">
-        <input value="${usersBackstage.users_backstage_id}" name="usersBackstage.users_backstage_id" type="hidden">
+
+<form id="sysUserDialogFrom" class="form-horizontal" role="form" onsubmit="return sysUserSubmit(this)">
+    <input value="${usersBackstage.users_backstage_id}" name="usersBackstage.users_backstage_id" type="hidden">
+    <div class="modal-body">
         <div class="tab-pane active">
             <table class="table dialog-table">
                 <tr>
@@ -77,20 +78,31 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <th><span class="must-msg"></span>用户头像:</th>
+                    <td style="width: 200px;">
+                        <div class="input-group">
+                            <input id="usersBackstageImg" name="usersBackstageImg" type="file" class="form-control" placeholder="用户头像" accept="image/*">
+                            <span class="input-group-addon" style="padding: 1px 5px;">
+                                <img width="30" height="30" alt="用户头像图片" src="${pageContext.request.contextPath}${empty usersBackstage.img?"/images/avatar-160.png":usersBackstage.img}">
+                            </span>
+                        </div>
+                    </td>
+                </tr>
             </table>
         </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
-        <i class="glyphicon glyphicon-remove font-size12"></i>
-        <span>关闭</span>
-    </button>
-    <button type="submit" form="sysUserDialogFrom" class="btn btn-xs btn-info">
-        <i class="glyphicon glyphicon-ok font-size12"></i>
-        <span>提交</span>
-    </button>
-</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-xs btn-info" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove font-size12"></i>
+            <span>关闭</span>
+        </button>
+        <button type="submit" form="sysUserDialogFrom" class="btn btn-xs btn-info">
+            <i class="glyphicon glyphicon-ok font-size12"></i>
+            <span>提交</span>
+        </button>
+    </div>
+</form>
 <script type="text/javascript">
     $(function(){
         var command = '${command}';
@@ -107,11 +119,32 @@
     });
 
     function sysUserSubmit(form){
+        //拿到参数
+        var fileElementIdList=[];
+        var param = $(form).formToJson();
+        var usersBackstageImgObj = $('#usersBackstageImg');
+        if(usersBackstageImgObj.val()!='' && usersBackstageImgObj.val()!=undefined && usersBackstageImgObj.val() != null){
+            fileElementIdList.push('usersBackstageImg');
+        }
+        //默认存在文件上传
+        var isExistFile = true;
+        if(fileElementIdList.length==0){
+            isExistFile = false;
+        }
+
         var command = '${command}';
         if(command=='addRequest'){
-            callSubmit('/sysUserCtrl/addData',$(form).attr('id'),'sysUserListBox');
+            if(isExistFile){
+                callBatchFileUploadSubmit('/sysUserCtrl/addFilesData',fileElementIdList,null,'sysUserListBox',param);
+            }else{
+                callSubmit('/sysUserCtrl/addData',null,'sysUserListBox',param);
+            }
         }else if(command=='updateRequest'){
-            callSubmit('/sysUserCtrl/updateData',$(form).attr('id'),'sysUserListBox');
+            if(isExistFile){
+                callBatchFileUploadSubmit('/sysUserCtrl/updateFilesData',fileElementIdList,null,'sysUserListBox',param);
+            }else {
+                callSubmit('/sysUserCtrl/updateData', null,'sysUserListBox',param);
+            }
         }
         return false;
     }

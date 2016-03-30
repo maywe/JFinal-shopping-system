@@ -94,9 +94,10 @@
                                 <c:if test="${pgc.goods_addribute_val_id==gc.goods_addribute_val_id}">
                                     <c:set var="isExistColor" value="1"> </c:set>
                                     <th style="width: 80px;background: ${gc.goods_color_code};">
-                                        <label class="checkbox-inline p-t-0">
-                                            <input checked onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">${gc.goods_addribute_val_name}
-                                        </label>
+                                        <div class="checkbox checkbox-info checkbox-inline">
+                                            <input checked onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">
+                                            <label>${gc.goods_addribute_val_name}</label>
+                                        </div>
                                     </th>
                                     <!-- 该文件上传时，会把 goods_color_img_url(商品颜色图片)，和 goods_addribute_val_id(商品颜色id一起上传)-->
                                     <td><input disabled id="goods_color_img_url${gc.goods_addribute_val_id}" name="goods_color_img_url${gc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
@@ -105,9 +106,10 @@
                             </c:forEach>
                             <c:if test="${isExistColor==0}">
                                 <th style="width: 80px;background: ${gc.goods_color_code};">
-                                    <label class="checkbox-inline p-t-0">
-                                        <input onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">${gc.goods_addribute_val_name}
-                                    </label>
+                                    <div class="checkbox checkbox-info checkbox-inline">
+                                        <input onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">
+                                        <label>${gc.goods_addribute_val_name}</label>
+                                    </div>
                                 </th>
                                 <!-- 该文件上传时，会把 goods_color_img_url(商品颜色图片)，和 goods_addribute_val_id(商品颜色id一起上传)-->
                                 <td><input disabled id="goods_color_img_url${gc.goods_addribute_val_id}" name="goods_color_img_url${gc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
@@ -128,15 +130,17 @@
                         <c:forEach items="${privateGoodAdapterPhoneList}" var="pgp">
                             <c:if test="${pst.goods_small_type_id==pgp.goods_small_type_id}">
                                 <c:set var="isExistPhoneType" value="1"> </c:set>
-                                <label class="checkbox-inline p-t-0">
-                                    <input checked onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">${pst.goods_small_type_name}
-                                </label>
+                                <div class="checkbox checkbox-info checkbox-inline">
+                                    <input checked onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">
+                                    <label>${pst.goods_small_type_name}</label>
+                                </div>
                             </c:if>
                         </c:forEach>
                         <c:if test="${isExistPhoneType==0}">
-                            <label class="checkbox-inline p-t-0">
-                                <input onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">${pst.goods_small_type_name}
-                            </label>
+                            <div class="checkbox checkbox-info checkbox-inline">
+                                <input onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">
+                                <label>${pst.goods_small_type_name}</label>
+                            </div>
                         </c:if>
                     </c:forEach>
                 </div>
@@ -187,9 +191,8 @@
         });
         //拿到参数
         var param = $(form).formToJson();
-        console.log(param);
         var goods_preview_imageObj = $('#goods_preview_image');
-        if(goods_preview_imageObj.val()!="" && goods_preview_imageObj.val()!=undefined && goods_preview_imageObj.val() != null){
+        if(goods_preview_imageObj.val()!='' && goods_preview_imageObj.val()!=undefined && goods_preview_imageObj.val() != null){
             fileIds = 'goods_preview_image,'+fileIds;
         }
         //默认存在文件上传

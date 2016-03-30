@@ -1,80 +1,59 @@
-/*
----- RGBa Alternatives
-*/
-body,
-ul,
-ol {
-	color:#ccdce2;
+/* NAVBAR */
+
+/* !CPU HIGH, fix for IE6 shake when scroll */
+* html,* html body {
+	_background-image:url(about:blank);
+	_background-attachment:fixed;
 }
-a {
-	border-bottom-width:2px;
-	border-bottom-color:#34718c;
-	border-bottom-style:solid;
+/* !CPU HIGH, fix for IE6 not support fixed position */
+.navbar-fixed-top {
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+}
+/* !CPU HIGH, fix for IE6 not support fixed position */
+.navbar-fixed-bottom {
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
 }
 
-/*
----- Hide the Canvas Background
-*/
-#background {
-	display:none;
+/* DROPDOWN */
+.dropup,
+.dropdown {
+	*zoom:1;
 }
 
-/*
----- IMPORTANT Things
-*/
-article p.relative {
-	background-image:none !important;
+/* CLOSE */
+.close {
+	_font-size: 15px;
 }
 
-
-/*
----- IE6 PNG Fixes
-*/
-* html #brand a,
-* html #brand a:hover {
-	background-image:url(../../images/ie/criticalzero.gif);
-}
-* html header nav li {
-	background-image:url(../images/ie/nav.gif);
-}
-* html article .published_at,
-* html article p.readmore {
-	background-image:url(../images/ie/marker.gif);
-}
-* html footer #stats {
-	background-image:url(../images/ie/cz.gif);
-}
-* html #vault-header li {
-	background-image:url(../../images/ie/vault.gif);
-}
-* html img.frame {
-	display:none;
+.modal-header h3 {
+	*display: inline;
+	*zoom:1;
 }
 
-/*
----- Fix IE6 "Jumping"
-*/
-#posts li {
-	padding-top:0;
+/* MODALS */
+.modal-backdrop {
+	_position: absolute;
+	_top:0;
+	_margin-top:0;
+	_width:expression(eval(document.documentElement.scrollWidth));
+	_height:expression(eval(document.documentElement.scrollHeight));
 }
-.meta a,
-.meta li li a,
-.meta li li a:hover,
-.vault-list a {
-	display:block !important;
-	border:none !important;
-	padding:11px 2px 12px !important;
+.modal {
+	_position:absolute;
+	_top:0;
+	_margin-top:0;
+	_top:expression(eval(document.documentElement.scrollTop));
 }
-footer {
-	margin-bottom:0;
-	border-bottom:12px solid #024e70;
+.modal.fade.in {
+	_filter:alpha(opacity=100);
 }
-
-/*
----- Input Button
-*/
-form div.submit p input {
-	color:#069AB9 !important;
-	padding:20px 9px !important;
-	height:60px;
+.modal-backdrop {
+	_filter: alpha(opacity=80);
+}
+.modal-body {
+	_height:expression(this.scrollHeight>400?"400px" : "auto");
 }

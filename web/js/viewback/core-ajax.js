@@ -60,7 +60,7 @@ $.fn.callLoad = function(service,parameter,success,openProgressLoad){
         openProgressLoad = true;
     }
     var targetUrl = getLocationUrl() + service;
-    if(service.indexOf('.html')==-1 && service.indexOf('.jsp')==-1 && service.indexOf('.action')){
+    if(service.indexOf('.html')==-1 && service.indexOf('.jsp')==-1 && service.indexOf('.action')==-1){
         targetUrl = getLocationUrl() + service + '.action';
     }
     if (openProgressLoad) {

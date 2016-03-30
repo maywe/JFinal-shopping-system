@@ -156,14 +156,20 @@ public class GoodsCtrl extends BaseViewBackController{
     public void getLookupDataByPage() {
         Goods goods = getModel(Goods.class);
         goods.put("goods_big_type_id",this.getPara("goods_big_type_id"));
+        goods.put("phone_small_type_id",this.getPara("phone_small_type_id"));
         this.setAttr("goods",goods);
 
+        //只查出手机配件信息
         GoodsBigType goodsBigType = new GoodsBigType();
         goodsBigType.setGoodsBigTypeId(BigDecimal.valueOf(2));
         this.setAttr("goodsBigTypeList", GoodsBigType.dao.getNotPhoneAllData(goodsBigType));
         GoodsSmallType goodsSmallType = new GoodsSmallType();
         goodsSmallType.setGoodsBigTypeId(BigDecimal.valueOf(2));
         this.setAttr("goodsSmallTypeList", GoodsSmallType.dao.getNotPhoneAllData(goodsSmallType));
+
+        //查出手机类型信息
+        goodsSmallType.setGoodsBigTypeId(BigDecimal.valueOf(1));
+        this.setAttr("phoneSmallTypeList", GoodsSmallType.dao.getAllData(goodsSmallType));
 
         Page pageUtil = Goods.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),goods);
         this.setAttr(PAGE_UTIL,pageUtil);

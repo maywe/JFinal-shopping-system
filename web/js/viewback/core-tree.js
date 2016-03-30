@@ -29,7 +29,8 @@ $(function(){
                 for(var i=0;i<jsonTreeData.length;i++){
                     if(jsonTreeData[i]["children"]){
                         if(option.checkBox){
-                            tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            //tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            tmpStr = '<li><div class="checkbox checkbox-success checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }else{
                             tmpStr = '<li><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }
@@ -37,7 +38,8 @@ $(function(){
                         option.initTreeData(jsonTreeData[i]["children"]);
                     }else{
                         if(option.checkBox){
-                            tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            //tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            tmpStr = '<li><div class="checkbox checkbox-success checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }else {
                             tmpStr = '<li><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }
@@ -147,26 +149,34 @@ function transData(jsonData, id, pid, children){
 }
 
 //选中菜单方法
-function selectCheckBox(obj){
-    var bottomInputCheckboxs = $(obj).parent('li').next('ul').find('input[name="menu_id"]:checkbox');
-    var topUls = $(obj).parents('ul');
-    if($(obj).is(':checked')){
-        bottomInputCheckboxs.prop('checked',true);
-        topUls.each(function(){
-            $(this).prev('li').children('input[name="menu_id"]:checkbox').prop('checked',true);
+function selectCheckBox(inputCheckbox){
+    var $bottomInputCheckboxList = $(inputCheckbox).parent().parent('li').next('ul').find('input[name="menu_id"]:checkbox');
+    var $topUlList = $(inputCheckbox).parents('ul');
+    if($(inputCheckbox).is(':checked')){
+        $bottomInputCheckboxList.prop('checked',true);
+        $topUlList.each(function(){
+            $(this).prev('li').children('div.checkbox').children('input[name="menu_id"]:checkbox').prop('checked',true);
         });
     }else{
-        var temp = false;
-        $(obj).parent('li').parent('ul').children('li').each(function(){
-            if($(this).children('input[name="menu_id"]:checkbox').is(':checked')){
-                temp = true;
-            }
-        });
-        bottomInputCheckboxs.prop('checked',false);
-        if(!temp){
-            topUls.each(function(){
-                $(this).prev('li').children('input[name="menu_id"]:checkbox').prop('checked',false);
+        $bottomInputCheckboxList.prop('checked',false);
+        if(!isChildrenExistChecked($(inputCheckbox).parent().parent('li').parent('ul'))){
+            $topUlList.each(function(){
+                if(!isChildrenExistChecked($(this))){
+                    $(this).prev('li').children('div.checkbox').children('input[name="menu_id"]:checkbox').prop('checked',false);
+                }
             });
         }
     }
+}
+
+//查看子元素是否有选中的
+function isChildrenExistChecked($ul){
+    var isExistChecked = false;
+    $ul.children('li').each(function(){
+        if($(this).children('div.checkbox').children('input[name="menu_id"]:checkbox').is(':checked')){
+            isExistChecked = true;
+
+        }
+    });
+    return isExistChecked;
 }

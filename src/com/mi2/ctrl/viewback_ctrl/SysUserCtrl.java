@@ -5,6 +5,7 @@ import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.upload.UploadFile;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.SysRoleGroup;
 import com.mi2.model.UsersBackstage;
@@ -42,6 +43,15 @@ public class SysUserCtrl extends BaseViewBackController {
         return true;
     }
 
+    public Boolean addFilesData(){
+        UploadFile uploadFile = this.getFile("usersBackstageImg",UPLOAD_IMAGES_USERS_BACK_PATH);
+        UsersBackstage usersBackstage = getModel(UsersBackstage.class);
+        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
+        usersBackstage.save();
+        this.renderJson(new ErrorVo(0,"新增系统用户成功!"));
+        return true;
+    }
+
     @Override
     public void updateRequest() {
         this.setAttr("command","updateRequest");
@@ -54,7 +64,16 @@ public class SysUserCtrl extends BaseViewBackController {
     @Override
     public Boolean updateData() {
         new UsersBackstage()._setAttrs(this.getModel(UsersBackstage.class)).update();
-        this.renderJson(new ErrorVo(0,"更新角色成功!"));
+        this.renderJson(new ErrorVo(0,"更新系统用户成功!"));
+        return true;
+    }
+
+    public Boolean updateFilesData(){
+        UploadFile uploadFile = this.getFile("usersBackstageImg",UPLOAD_IMAGES_USERS_BACK_PATH);
+        UsersBackstage usersBackstage = getModel(UsersBackstage.class);
+        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
+        usersBackstage.update();
+        this.renderJson(new ErrorVo(0,"更新系统用户成功!"));
         return true;
     }
 

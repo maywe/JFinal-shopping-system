@@ -21,7 +21,7 @@
                     <tr>
                         <th style="width: 110px;"><span class="must-msg">*&nbsp;</span>所属手机类别:</th>
                         <td>
-                            <select name="phoneSetmeal.goods_small_type_id" class="form-control" required="required">
+                            <select id="phoneSmallTypeId" name="phoneSetmeal.goods_small_type_id" class="form-control" required="required">
                                 <option value="">--请选择--</option>
                                 <c:forEach items="${goodsSmallTypeList}" var="gst">
                                     <option ${phoneSetmeal.goods_small_type_id==gst.goods_small_type_id?"selected":""} value="${gst.goods_small_type_id}">${gst.goods_small_type_name}</option>
@@ -54,7 +54,7 @@
                             <th>数量(件)</th>
                             <th>预览图片</th>
                             <th>
-                                <button onclick="lookupBackPaginationBreak('my_pop_modal_lg','/goodsCtrl/getLookupDataByPage',1,'pop_modal')" class="btn btn-xs btn-info" type="button">
+                                <button onclick="lookupGoodsInfo()" class="btn btn-xs btn-info" type="button">
                                     <i class="glyphicon glyphicon-plus font-size12"></i>
                                     <span>新增</span>
                                 </button>
@@ -147,5 +147,15 @@
     //移除表的行
     function removeTableRow(removeBtn){
         $(removeBtn).parent('td').parent('tr').remove();
+    }
+
+    function lookupGoodsInfo(){
+        var goodsSmallTypeId = $('#phoneSmallTypeId').val();
+        if(goodsSmallTypeId==''){
+            toastr.info('请先选择所属手机类别!!');
+            return;
+        }
+        var service = '/goodsCtrl/getLookupDataByPage.action?phone_small_type_id='+goodsSmallTypeId;
+        lookupBackPaginationBreak('my_pop_modal_lg',service,1,'pop_modal');
     }
 </script>

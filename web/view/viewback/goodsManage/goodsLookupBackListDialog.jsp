@@ -21,6 +21,7 @@
                 </div>
                 <div class="col-xs-11 p-r-0">
                     <form id="goodsListForm" class="form-inline" onsubmit="return false">
+                        <%--
                         <label>商品大类别</label>
                         <select name="goods_big_type_id" class="form-control input-sm">
                             <option value="">所有</option>
@@ -28,11 +29,19 @@
                                 <option ${goods.goods_big_type_id==gbt.goods_big_type_id?"selected":""} value="${gbt.goods_big_type_id}">${gbt.goods_bigl_type_name}</option>
                             </c:forEach>
                         </select>
+                        --%>
                         <label>商品小类别</label>
                         <select name="goods.goods_small_type_id" class="form-control input-sm">
                             <option value="">所有</option>
                             <c:forEach items="${goodsSmallTypeList}" var="gst">
                                 <option ${goods.goods_small_type_id==gst.goods_small_type_id?"selected":""} value="${gst.goods_small_type_id}">${gst.goods_small_type_name}</option>
+                            </c:forEach>
+                        </select>
+                        <label>匹配机型</label>
+                        <select disabled name="phone_small_type_id" class="form-control input-sm">
+                            <option value="">所有</option>
+                            <c:forEach items="${phoneSmallTypeList}" var="pst">
+                                <option ${goods.phone_small_type_id==pst.goods_small_type_id?"selected":""} value="${pst.goods_small_type_id}">${pst.goods_small_type_name}</option>
                             </c:forEach>
                         </select>
                         <label>商品名称</label>

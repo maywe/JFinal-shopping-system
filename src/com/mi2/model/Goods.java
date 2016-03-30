@@ -54,6 +54,11 @@ public class Goods extends BaseGoods<Goods>{
 				sbSql.append(" and gst.goods_small_type_id=?");
 				values.add(t.getGoodsSmallTypeId());
 			}
+			//判断该商品是否匹配当前机型
+			if(StrKit.notBlank(t.getStr("phone_small_type_id"))){
+				sbSql.append(" and exists(select g.goods_id from goods_adapter_phone gap where gap.goods_id=g.goods_id and gap.goods_small_type_id=?)");
+				values.add(t.getStr("phone_small_type_id"));
+			}
 		}
 		return this.paginate(pageNumber,pageSize,"select gbt.*,gst.goods_small_type_name,g.* ",sbSql.toString(),values.toArray());
 	}
