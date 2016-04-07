@@ -7,7 +7,7 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <i class="glyphicon glyphicon-remove font-size16"></i>
     </button>
-    <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
+    <img alt="弹出框" src="../../../images/back/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品属性</span>
 </div>
 <form id="goodsAddributeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsAddributeSubmit(this)">

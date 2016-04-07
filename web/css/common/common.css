@@ -45,11 +45,17 @@ a:active{
 .p-t-0{
     padding-top: 0 !important;
 }
+.p-t{
+    padding-top: 10px;
+}
+.p-t-lg{
+    padding-top: 15px !important;
+}
 .p-t-1{
     padding-top: 1px;
 }
 .p-r-0{
-    padding-right: 0;
+    padding-right: 0 !important;
 }
 .p-r-xs{
     padding-right: 5px;
@@ -58,7 +64,7 @@ a:active{
     padding-left: 5px;
 }
 .p-l-0{
-    padding-left: 0;
+    padding-left: 0 !important;
 }
 .p-l{
     padding-left: 10px;
@@ -92,6 +98,9 @@ a:active{
     margin-top: 15px;
 }
 
+.m-l-0{
+    margin-left: 0;
+}
 .m-l-xs{
     margin-left: 5px;
 }
@@ -102,6 +111,9 @@ a:active{
     margin-left: 15px;
 }
 
+.m-r-0{
+    margin-right: 0;
+}
 .m-r-xs{
     margin-right: 5px;
 }
@@ -122,8 +134,7 @@ a:active{
     margin-bottom: 15px;
 }
 
-
 /* bootstrap样式修改*/
 .badge{
-    background: orange;
+    background: rgb(255,103,0);
 }

@@ -1,14 +1,14 @@
 /* 后台登录样式 */
 body {
   /*background:url(../imgs/login_bg_0.jpg) #f8f6e9;*/
-  background: #024e70 url(../../images/bg.gif) no-repeat 50% 0;
+  background: #024e70 url(../../images/back/bg.gif) no-repeat 50% 0;
   font: 14px/1.5 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
 }
 
 .login {
   width:477px;
   height:400px;
-  background:url(../../images/login_bg.png) no-repeat;
+  background:url(../../images/back/login_bg.png) no-repeat;
   position:absolute;
   top:50%;
   left:50%;
@@ -47,14 +47,14 @@ body {
 .form-login input[type="email"] {
   margin-bottom: 14px;
   border-radius: 0;
-  background: url(../../images/login_user.png) 0 0 #bdbdbd no-repeat;
+  background: url(../../images/back/login_user.png) 0 0 #bdbdbd no-repeat;
   padding-left:60px;
   color:#FFFFFF;
 }
 .form-login input[type="password"] {
   margin-bottom: 10px;
   border-radius: 0;
-  background: url(../../images/login_pas.png) 0 0 #bdbdbd no-repeat;
+  background: url(../../images/back/login_pas.png) 0 0 #bdbdbd no-repeat;
   padding-left:60px;
   color:#FFFFFF;
 }

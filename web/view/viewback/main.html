@@ -3,8 +3,9 @@
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="shortcut icon" type="image/ico" href="../../images/mi-logo-36.png">
     <title>MI2-网站后台管理系统</title>
     <link href="../../css/common/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/common/font-awesome.min.css" rel="stylesheet">
@@ -116,13 +117,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="profile.html" data-index="1">
+                        <a data-backdrop="static" data-whatever="个人资料" data-toggle="modal" href="../sysUserCtrl/updateUserPersonRequest.action" data-target="#pop_modal" data-index="1">
                             <i class="glyphicon glyphicon-user"></i>
                             个人资料
                         </a>
                     </li>
                     <li>
-                        <a href="mailbox.html" data-index="2">
+                        <a data-backdrop="static" data-whatever="修改密码" data-toggle="modal" href="../sysUserCtrl/updateUserPasswordRequest.action" data-target="#pop_modal_sm" data-index="2">
                             <i class="glyphicon glyphicon-lock"></i>
                             修改密码
                         </a>
@@ -279,7 +280,8 @@
         call('/mainCtrl/initViewBack', {}, function (data) {
             publicVar.usersBackstage=data.usersBackstage;
             $('#user_img').attr('src',getLocationUrl()+data.usersBackstage.img);
-            $('#nickname').text(data.usersBackstage.nickname);
+
+            $('#nickname').text(data.usersBackstage.nickname==null?data.usersBackstage.name:data.usersBackstage.nickname);
             $('#role_group_name').text(data.usersBackstage.role_group_name);
 
             //1、获得jsonData数据

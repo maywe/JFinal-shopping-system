@@ -21,9 +21,7 @@ public class ModelUtils {
      *
      */
     @SuppressWarnings("unchecked")
-    public static <T> List<T> batchInjectModel(
-            final HttpServletRequest request,
-            Class<? extends Model> modelClass, String prefix) {
+    public static <T> List<T> batchInjectModel(final HttpServletRequest request, Class<? extends Model> modelClass, String prefix) {
         List<T> modelList = new ArrayList<T>();
         int size = getArrayLength(request, prefix);
         for (int i = 0; i < size; i++) {
@@ -44,8 +42,7 @@ public class ModelUtils {
      *
      */
     @SuppressWarnings("unchecked")
-    public static Set<String> getArrayKeys(final HttpServletRequest request,
-                                           String prefix) {
+    public static Set<String> getArrayKeys(final HttpServletRequest request, String prefix) {
         Set<String> keys = new HashSet<String>();
         String arrayPrefix = prefix + "[";
         String key = null;
@@ -74,8 +71,7 @@ public class ModelUtils {
      * @date Feb 14, 2013
      *
      */
-    public static int getArrayLength(final HttpServletRequest request,
-                                     String prefix) {
+    public static int getArrayLength(final HttpServletRequest request, String prefix) {
         return getArrayKeys(request, prefix).size();
     }
 }

@@ -9,7 +9,7 @@
     <div class="portlet col-xs-12 padding0">
         <div class="portlet-title themes-portlet-title">
             <div class="col-xs-1 padding0">
-                <img alt="搜索" src="../../../images/search.png">
+                <img alt="搜索" src="../../../images/back/search.png">
             </div>
             <div class="col-xs-11 p-r-0">
                 <form id="goodsSmallTypeListForm" class="form-inline" onsubmit="return false">

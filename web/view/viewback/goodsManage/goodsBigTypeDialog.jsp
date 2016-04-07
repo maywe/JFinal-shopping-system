@@ -7,7 +7,7 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <i class="glyphicon glyphicon-remove font-size16"></i>
     </button>
-    <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
+    <img alt="弹出框" src="../../../images/back/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品大类型</span>
 </div>
 <form id="goodsBigTypeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsBigTypeSubmit(this)">

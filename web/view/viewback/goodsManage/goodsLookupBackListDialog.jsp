@@ -8,7 +8,7 @@
     <button type="button" class="close" onclick="hideMyModel('pop_modal')">
         <i class="glyphicon glyphicon-remove font-size16"></i>
     </button>
-    <img alt="弹出框" src="../../../images/diatopicon.png" style="vertical-align: middle">
+    <img alt="弹出框" src="../../../images/back/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">商品信息查找带回</span>
 </div>
 <div class="modal-body padding0" style="height: 360px;margin-bottom: 60px;">
@@ -17,7 +17,7 @@
         <div class="portlet col-xs-12 padding0">
             <div class="portlet-title themes-portlet-title">
                 <div class="col-xs-1 padding0">
-                    <img alt="搜索" src="../../../images/search.png">
+                    <img alt="搜索" src="../../../images/back/search.png">
                 </div>
                 <div class="col-xs-11 p-r-0">
                     <form id="goodsListForm" class="form-inline" onsubmit="return false">

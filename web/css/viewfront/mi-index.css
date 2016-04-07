@@ -1,0 +1,22 @@
+.carousel-left{
+    float: left;
+    width: 20%;
+    height: 560px;
+}
+.carousel-center{
+    float: left;
+    width: 80%;
+    height: 560px;
+}
+.myCarousel{
+    width: 100%;
+    height: 387px;
+    overflow: hidden;
+    margin-top: -1px;
+}
+.myCarousel-bottom{
+    padding-top: 3px;
+    width: 100%;
+    height: 172px;
+    margin: 0;
+}

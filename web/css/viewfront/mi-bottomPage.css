@@ -1,0 +1,147 @@
+.bottom-site{
+    margin-top: 30px;
+}
+.site-footer{
+    background: #ffffff;
+}
+.list-service{
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(230,230,230);
+}
+.list-service>li{
+    width: 20%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid rgb(245,245,245);
+}
+.list-service>li>a{
+    height: 34px;
+    display: block;
+    line-height: 34px;
+    position: relative;
+    font-size: 16px;
+}
+.list-service>li>a>span{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    left: 12%;
+}
+.list-service>li:hover>a{
+    color: rgb(255,103,0);
+    text-decoration: none;
+}
+.list-service>li:nth-child(1)>a>span{
+    background-image: url("../../images/front/i/kx-w.png");
+}
+.list-service>li:nth-child(2)>a>span{
+    background-image: url("../../images/front/i/qt-w.png");
+}
+.list-service>li:nth-child(3)>a>span{
+    background-image: url("../../images/front/i/sw-w.png");
+}
+.list-service>li:nth-child(4)>a>span{
+    background-image: url("../../images/front/i/by-w.png");
+}
+.list-service>li:nth-child(5){
+    border-right: none;
+}
+.list-service>li:nth-child(5)>a>span{
+    background-image: url("../../images/front/i/sh-w.png");
+}
+
+.list-service>li:hover:nth-child(1)>a>span{
+    background-image: url("../../images/front/i/kx-o.png");
+}
+.list-service>li:hover:nth-child(2)>a>span{
+    background-image: url("../../images/front/i/qt-o.png");
+}
+.list-service>li:hover:nth-child(3)>a>span{
+    background-image: url("../../images/front/i/sw-o.png");
+}
+.list-service>li:hover:nth-child(4)>a>span{
+    background-image: url("../../images/front/i/by-o.png");
+}
+.list-service>li:hover:nth-child(5)>a>span{
+    background-image: url("../../images/front/i/sh-o.png");
+}
+
+.footer-links{
+    width: 100%;
+    padding: 30px 20px;
+}
+.footer-links>dl.col-links{
+    float: left;
+    width: 16%;
+    text-align: left;
+}
+.footer-links>dl.col-links>dt{
+    padding: 10px 0;
+}
+.footer-links>dl.col-links>dd{
+    padding: 5px 0;
+}
+.footer-links>dl.col-links>dd:hover>a{
+    color: rgb(255,103,0);
+    text-decoration: none;
+}
+.footer-links>div.col-contact{
+    border-left: 1px solid rgb(245,245,245);
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+
+.footer-links>div.col-contact>p{
+    color: #8C8C8C;
+    font-size: 12px;
+}
+.footer-links>div.col-contact>p.phone{
+    color: rgb(255,103,0);
+    font-size: 24px;
+}
+.footer-links>div.col-contact>a{
+    border: 1px solid rgb(255,103,0);
+    color: rgb(255,103,0);
+    border-radius: 0;
+}
+.footer-links>div.col-contact>a:hover{
+    background: rgb(255,103,0);
+    color: #ffffff;
+}
+
+.site-info{
+    padding:20px 0 20px 50px;
+}
+.site-info>div{
+    float: left;
+    height: 36px;
+    margin-right: 10px;
+}
+.site-info>div.logo{
+    width: 36px;
+    background-image: url("../../images/mi-logo-36.png");
+}
+.site-info>div.info-text{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.site-info>div.info-text>p{
+    font-size: 12px;
+    margin: 0;
+    color: rgb(160,160,160);
+}
+.site-info>div.info-text>p a{
+    font-size: 12px;
+}
+.sep{
+    font-family: sans-serif;
+    margin: 0 0.20em;
+    color: rgb(230,230,230);
+}
+.site-info>div.info-links{
+    text-align: center;
+}

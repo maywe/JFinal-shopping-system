@@ -14,7 +14,7 @@ public class LoginBackInterceptor extends BaseInterceptor{
 
 	public void doIntercept(Invocation inv){
 		HttpSession session = inv.getController().getRequest().getSession(false);
-		if (session == null || session.getAttribute("usersBackstage") == null) {
+		if (null==session || null==session.getAttribute(BaseController.LOGIN_BACK_USER)) {
 			System.out.println("getActionKey="+inv.getControllerKey());
 			//判断请求是否是ajax请求
 			String requestType = inv.getController().getRequest().getHeader("X-Requested-With");

@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/* 登录样式 start */
+.login-container{
+    width: 860px;
+    height: 570px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+@media (max-width: 870px){
+    .login-container{
+        width: 400px;
+    }
+}
+.login-header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0 22px 0;
+}
+.login-input{
+    margin-bottom: 15px;
+}
+.login-input input{
+    width: 320px;
+    display: inline-block;
+}
+.other-type-context a{
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 28px;
+    background: rgb(148,148,148);
+    color: white;
+    margin: 0 15px;
+    padding-top: 5px;
+}
+
+.other-type-title {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    width: 320px;
+    margin: 0 auto;
+}
+.other-type-title legend {
+    color: #b0b0b0;
+    font-size: 14px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.other-type-context a.login-type-qq:hover{
+    background: rgb(2,136,209);
+}
+.other-type-context a.login-type-weibo:hover{
+    background: rgb(211,47,47);
+}
+.other-type-context a.login-type-weixin:hover{
+    background: rgb(14,203,25);
+}
+
+.other-operator-type{
+    padding-top: 50px;
+}
+.other-operator-type a{
+    font-size: 16px;
+    padding: 0 9px;
+    color: rgb(100,100,100);
+}
+.other-operator-type a:hover{
+    color:rgb(255,103,0);
+}
+.other-operator-type span{
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+.login-container-footer{
+    text-align: center;
+}
+.lang-select-list{
+    float:left;
+    position:relative;
+    left:50%;
+}
+.lang-select-list li{
+    float: left;
+    position:relative;
+    right:50%;
+}
+.lang-select-list li a{
+    font-size: 13px;
+    padding: 0 9px;
+    color: rgb(100,100,100);
+}
+.lang-select-list li a:hover{
+    color:rgb(255,103,0);
+}
+.lang-select-list li span{
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+.nf-intro{
+    font-size: 13px;
+    color: rgb(100,100,100);
+    text-align: center;
+}
+.nf-intro a{
+    color: rgb(100,100,100);
+}
+/* 登录样式 end */
+
+/* 注册样式 start */
+.register-input{
+    margin-bottom: 15px;
+}
+.register-input input{
+    width: 155px;
+    display: inline-block;
+}
+.image-code{
+    display: inline-block;
+    margin-left: 5px;
+    width: 155px;
+    height: 44px;
+    margin-top: -4px;
+    overflow: hidden;
+}
+.register-msg{
+    text-align: left;
+    width: 320px;
+    color: #9d9d9d;
+    margin: 10px  auto;
+}
+/* 注册样式 end */
