@@ -29,6 +29,7 @@ public class GoodsCtrl extends BaseViewBackController{
     @Override
     public void showRequest() {
         this.commonRequest();
+        this.setAttr("command","showRequest");
         //商品基本信息
         Goods goods = this.getModel(Goods.class);
         this.setAttr("goods",Goods.dao.findById(goods.getGoodsId()));

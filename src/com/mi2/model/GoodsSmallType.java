@@ -25,7 +25,11 @@ public class GoodsSmallType extends BaseGoodsSmallType<GoodsSmallType> {
 				sbSql.append(" and gst.goods_big_type_id=?");
 				values.add(t.getGoodsBigTypeId());
 			}
+			if(t.get("isUse",false)){
+				sbSql.append(" and exists(select pv.phone_goods_id from phone_model pm,phone_version pv where gst.goods_small_type_id=pm.goods_small_type_id and pm.model_id=pv.model_id) ");
+			}
 		}
+		sbSql.append(" order by gst.goods_small_type_name desc");
 		return this.find(sbSql.toString(),values.toArray());
 	}
 

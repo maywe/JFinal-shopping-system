@@ -52,7 +52,7 @@ public class PhoneModel extends BasePhoneModel<PhoneModel> {
 	@Override
 	public List<PhoneModel> getAllData(PhoneModel t) {
 		StringBuilder sbSql = new StringBuilder();
-		sbSql.append("select * from phone_model pm where 1=1 ");
+		sbSql.append("select pm.*,gav.goods_addribute_id,gav.goods_addribute_val_name,gav.goods_color_code from phone_model pm,goods_addribute_val gav where pm.goods_addribute_val_id = gav.goods_addribute_val_id ");
 		ArrayList<Object> values = new ArrayList<>();
 		if(t!=null&&!t.getAttrs().isEmpty()){
 			if(t.getGoodsSmallTypeId()!=null){
@@ -64,6 +64,7 @@ public class PhoneModel extends BasePhoneModel<PhoneModel> {
 				values.add(t.getGoodsAddributeValId());
 			}
 		}
+		sbSql.append(" order by goods_addribute_val_name");
 		return this.find(sbSql.toString(),values.toArray());
 	}
 }

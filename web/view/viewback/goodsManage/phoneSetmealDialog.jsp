@@ -11,7 +11,7 @@
     <img alt="弹出框" src="../../../images/back/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加手机套餐</span>
 </div>
-<form id="phoneSetmealDialogFrom" class="form-horizontal" role="form" onsubmit="return phoneSetmealSubmit(this)">
+<form id="phoneSetmealDialogForm" class="form-horizontal" role="form" onsubmit="return phoneSetmealSubmit(this)">
     <input value="${phoneSetmeal.phone_setmeal_id}" name="phoneSetmeal.phone_setmeal_id" type="hidden">
     <div class="modal-body">
         <div class="tab-pane active">
@@ -112,7 +112,7 @@
     $(function(){
         var command = '${command}';
         if(command=='showRequest'){
-            disabledDialogForm('phoneSetmealDialogFrom');
+            disabledDialogForm('phoneSetmealDialogForm');
         }
     });
 

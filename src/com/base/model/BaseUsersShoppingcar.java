@@ -60,4 +60,12 @@ public abstract class BaseUsersShoppingcar<M extends BaseUsersShoppingcar<M>> ex
 		return get("PHONE_GOODS_ID");
 	}
 
+	public void setGoodsColorId(java.math.BigDecimal goodsColorId) {
+		set("GOODS_COLOR_ID", goodsColorId);
+	}
+
+	public java.math.BigDecimal getGoodsColorId() {
+		return get("GOODS_COLOR_ID");
+	}
+
 }

@@ -10,7 +10,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 22;
+    z-index: 50;
 }
 .head li{
     font: 12px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
@@ -166,39 +166,34 @@ ul.head-right>li.dropdown:hover>ul{
     left: 20%;
     width: 80%;
     display: none;
+    background: white;
 }
 .goodsItem>li{
     float: left;
-    height:210px;
-    background: #ffffff;
-    border: 1px solid rgb(230,230,230);
-    border-top: 1px solid rgb(255,255,255);
-    border-left: none;
-    width: 50%;
+    height:230px;
+    width: 20%;
 }
 .goodsItem>li>a{
     display: block;
 }
-.goodsItem>li>a>div{
-    float: left;
-    padding:0 14px;
-}
 .goodsItem>li>a>div.goodsItem-img{
-    line-height: 200px;
+    margin-top: 35px;
+    border-right: 1px solid rgb(230,230,230);
+}
+.goodsItem>li:last-child>a>div.goodsItem-img{
+    border-right: none;
 }
 .goodsItem>li>a>div.goodsItem-desc{
-    padding-top: 40px;
-    padding-left: 0;
-    line-height: 40px;
-    text-align: left;
+    margin-top: 20px;
+    text-align: center;
 }
 .goodsItem>li>a>div.goodsItem-desc>span:first-child{
-    font-size: 28px;
+    font-size: 15px;
     color: #000000;
     font-weight: bold;
 }
 .goodsItem>li>a>div.goodsItem-desc>span:last-child{
-    color: rgb(255,74,0);
+    color: rgb(255,103,0);
 }
 
 /*商品详细列表*/
@@ -207,7 +202,7 @@ ul.head-right>li.dropdown:hover>ul{
     background:#FFF;
     z-index: 20;
     position: relative;
-    /*display: none;*/
+    display: none;
 }
 .goodsList>li{
     height: 70px;

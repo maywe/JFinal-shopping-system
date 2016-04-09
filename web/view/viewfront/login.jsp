@@ -32,12 +32,13 @@
             </div>
         </header>
         <div class="login-context">
-            <form class="form-login" role="form" method="post" onsubmit="return login()" action="${pageContext.request.contextPath}/loginCtrl/loginInFront.action">
+            <form class="form-login" role="form" method="post" action="${pageContext.request.contextPath}/loginCtrl/loginInFront.action">
                 <div class="login-input">
-                    <input name="usersFront.sys_user_name" type="email" class="form-control input-lg" placeholder="邮箱/手机号码/小米账号" required/>
+                    <input name="usersFront.login_name" type="email" class="form-control input-lg" placeholder="邮箱/手机号码/小米账号" required/>
                 </div>
                 <div class="login-input">
-                    <input name="usersFront.sys_user_password" type="password" class="form-control input-lg" placeholder="密码" required minlength="6"/>
+                    <input name="usersFront.password" type="password" class="form-control input-lg" placeholder="密码"
+                           required="required" pattern="^.{6,20}$" oninvalid="setCustomValidity('请填写密码6-20位!');" oninput="setCustomValidity('');">
                 </div>
                 <div class="login-input" style="padding-top: 15px;">
                     <input type="submit" class="btn btn-orange btn-lg" value="立即登录">
@@ -96,13 +97,10 @@
     $(function(){
         var errorMessage = '${errorMessage}';
         if(errorMessage){
-            toastr.error(errorMessage);
+            toastr.info(errorMessage);
         }
     });
 
-    function login(){
-        return true;
-    }
 </script>
 </body>
 </html>

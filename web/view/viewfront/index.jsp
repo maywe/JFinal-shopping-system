@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <link rel="shortcut icon" type="image/ico" href="../../images/mi-logo-36.png">
-    <title>MI2-主页展示</title>
+    <link rel="shortcut icon" type="image/ico" href="${pageContext.request.contextPath}/images/mi-logo-36.png">
+    <title>小米官网-主页展示</title>
     <link href="${pageContext.request.contextPath}/css/common/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/common.css" type="text/css" rel="stylesheet">
@@ -27,7 +27,7 @@
             <div class="carousel-left">&nbsp;</div>
             <div class="carousel-center">
                 <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
-                    <!-- 指示器 -->
+                    <!-- 轮播指示器 -->
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -39,6 +39,10 @@
                     <!-- 轮播内容 -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
+                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mi5.jpg" alt="小米手机5"></a>
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
                             <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-redmi3.jpg" alt="红米3"></a>
                             <div class="carousel-caption"></div>
                         </div>
@@ -51,16 +55,16 @@
                             <div class="carousel-caption"></div>
                         </div>
                         <div class="item">
-                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mifans.jpg" alt="米粉节 狂欢周"></a>
+                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mi4c.jpg" alt="小米4C"></a>
                             <div class="carousel-caption"></div>
                         </div>
                         <div class="item">
-                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mi4c.jpg" alt="小米4C"></a>
+                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-tv3s.jpg" alt="小米手机5"></a>
                             <div class="carousel-caption"></div>
                         </div>
                     </div>
 
-                    <!-- 控制器 -->
+                    <!-- 轮播控制器 -->
                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">上一页</span>
@@ -73,7 +77,7 @@
                 <div class="row myCarousel-bottom">
                     <div class="col-xs-4 text-left">
                         <a class="item" target="_blank" data-stat-pid="2_16_1_77" data-stat-aid="AA12528" href="//item.mi.com/buyphone/minote" data-stat-id="AA12528+2_16_1_77" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-AA12528+2_16_1_77', '//item.mi.com/buyphone/minote', 'pcpid']);">
-                            <img width="316" height="170" src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-bottom-minote.jpg" alt="小米Note">
+                            <img width="316" height="170" src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-bottom-minotegaddess.jpg" alt="小米Note">
                         </a>
                     </div>
                     <div class="col-xs-4 text-center">
@@ -101,6 +105,7 @@
 <![endif]-->
 <script type="text/javascript">
     $(function(){
+        $('#goodsList').css('display','block');
         $('#myCarousel').carousel({interval: 4000});
     });
 </script>

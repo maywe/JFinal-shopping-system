@@ -7,7 +7,6 @@ import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.StrKit;
 import com.jfinal.plugin.activerecord.tx.Tx;
-import com.jfinal.render.CaptchaRender;
 import com.mi2.model.UsersBackstage;
 import com.mi2.model.UsersFront;
 
@@ -59,7 +58,7 @@ public class LoginCtrl extends BaseController{
             this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");
             return;
         }
-        if(usersFrontList.get(0).getLoginName().equals(usersFront.getLoginName())){
+        if(usersFrontList.get(0).getPassword().equals(usersFront.getPassword())){
             if(!usersFrontList.get(0).getUserStatus().equals("0")){
                 this.setAttr("errorMessage","您的账户已被冻结,请联系客服!");
                 this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");
@@ -76,7 +75,7 @@ public class LoginCtrl extends BaseController{
     //4、前台安全退出
     public void loginOutFront(){
         this.getSession().setAttribute(LOGIN_FRONT_USER,null);
-        this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");
+        this.forwardAction("/");
     }
 
     //5、生成验证码
@@ -87,20 +86,26 @@ public class LoginCtrl extends BaseController{
     //6、用户注册
     @Before(Tx.class)
     public Boolean registerFrontUser(){
-        if(CaptchaRender.validate(this,"imageCodeVal")){
+        if(!MyCaptchaRender.validate(this,this.getPara("imageCodeVal"))){
             this.setAttr("errorMessage","验证码不正确!");
+            this.renderJsp(VIEW_FRONT_PATH+"/register.jsp");
             return false;
         }
         UsersFront usersFront = this.getModel(UsersFront.class);
         if(null==usersFront || StrKit.isBlank(usersFront.getLoginName())){
             this.setAttr("errorMessage","用户名不能为空!");
+            this.renderJsp(VIEW_FRONT_PATH+"/register.jsp");
             return false;
         }
         List<UsersFront> usersFrontList = UsersFront.dao.getAllData(usersFront);
         if(usersFrontList.size()>0){
             this.setAttr("errorMessage","该用户名已被注册!");
+            this.renderJsp(VIEW_FRONT_PATH+"/register.jsp");
             return false;
         }
+        usersFront.save();
+        this.setAttr("errorMessage","您的账户已注册成功,请登录!");
+        this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");
         return true;
     }
 }

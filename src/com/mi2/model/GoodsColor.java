@@ -67,7 +67,7 @@ public class GoodsColor extends BaseGoodsColor<GoodsColor> {
 	@Override
 	public List<GoodsColor> getAllData(GoodsColor t) {
 		StringBuilder sbSql = new StringBuilder();
-		sbSql.append("select * from goods_color gc where 1=1 ");
+		sbSql.append("select gc.*,gav.goods_addribute_id,gav.goods_addribute_val_name,gav.goods_color_code from goods_color gc,goods_addribute_val gav where gc.goods_addribute_val_id = gav.goods_addribute_val_id ");
 		ArrayList<Object> values = new ArrayList<>();
 		if(t!=null && !t.getAttrs().isEmpty()){
 			if(t.getPhoneGoodsId()!=null){
@@ -79,6 +79,7 @@ public class GoodsColor extends BaseGoodsColor<GoodsColor> {
 				values.add(t.getGoodsId());
 			}
 		}
+		sbSql.append(" order by gc.goods_color_id");
 		return this.find(sbSql.toString(),values.toArray());
 	}
 }

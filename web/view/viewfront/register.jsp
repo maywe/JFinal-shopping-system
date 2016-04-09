@@ -25,22 +25,24 @@
     <div class="login-container whiteColor-0">
         <header class="login-header">
             <div class="login-logo">
-                <a class="logo" title="小米官网" href="${pageContext.request.contextPath}"></a>
+                <a class="logo" title="小米官网" href="${pageContext.request.contextPath}/"></a>
             </div>
             <div class="login-title">
                 <h2>注册小米帐号</h2>
             </div>
         </header>
         <div class="login-context">
-            <form id="registerFrontUserForm" class="form-login" role="form" method="post" onsubmit="return register(this)">
+            <form id="registerFrontUserForm" class="form-login" role="form" method="post" action="${pageContext.request.contextPath}/loginCtrl/registerFrontUser.action">
                 <div class="login-input">
-                    <input name="usersFront.sys_user_name" type="email" class="form-control input-lg" placeholder="邮箱" required />
+                    <input name="usersFront.login_name" type="email" class="form-control input-lg" placeholder="邮箱" required="required">
                 </div>
                 <div class="login-input">
-                    <input name="usersFront.sys_user_password" type="password" class="form-control input-lg" placeholder="密码" required minlength="6"/>
+                    <input name="usersFront.password" type="password" class="form-control input-lg" placeholder="密码"
+                           required="required" pattern="^.{6,20}$" oninvalid="setCustomValidity('请填写密码6-20位!');" oninput="setCustomValidity('');">
                 </div>
                 <div class="register-input">
-                    <input name="imageCodeVal" type="text" class="form-control input-lg" placeholder="图片验证码" required/>
+                    <input name="imageCodeVal" type="text" class="form-control input-lg" placeholder="图片验证码"
+                           required="required" pattern="^[0-9a-zA-Z]{5}$" oninvalid="setCustomValidity('请填写验证码5位!');" oninput="setCustomValidity('');">
                     <img id="imageCode" onclick="changeImageCode()" class="image-code" src="${pageContext.request.contextPath}/loginCtrl/generatorCaptcha.action" alt="图片验证码" title="看不清换一张"/>
                 </div>
                 <div class="login-input" style="padding-top: 15px;">
@@ -85,19 +87,17 @@
     $(function(){
         var errorMessage = '${errorMessage}';
         if(errorMessage){
-            toastr.error(errorMessage);
+            toastr.info(errorMessage);
         }
     });
 
-    function register(form){
-        return true;
-    }
     function changeImageCode(){
         var $imageCode = $('#imageCode');
         $imageCode.attr('src','${pageContext.request.contextPath}/loginCtrl/generatorCaptcha.action'+new Date().getTime());
         $imageCode.prev('input[name="imageCodeVal"]').val("");
         $imageCode.prev('input[name="imageCodeVal"]').focus();
     }
+
 </script>
 </body>
 </html>

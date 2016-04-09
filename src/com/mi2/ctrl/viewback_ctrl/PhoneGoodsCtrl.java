@@ -249,7 +249,7 @@ public class PhoneGoodsCtrl extends BaseViewBackController {
         pgv.setPhoneVersionId(phoneVersion.getGoodsAddributeValId());
         PhoneGoodsView phoneGoodsView = PhoneGoodsView.dao.findById(phoneVersion.getPhoneGoodsId());
         if(null==phoneGoodsView){
-            return true;
+            return false;
         }
         if(phoneGoodsView.getGoodsSmallTypeId().compareTo(pgv.getGoodsSmallTypeId())==0 && phoneGoodsView.getPhoneModelId().compareTo(pgv.getPhoneModelId())==0 && phoneGoodsView.getPhoneVersionId().compareTo(pgv.getPhoneVersionId())==0){
             return false;

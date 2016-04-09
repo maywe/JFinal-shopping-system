@@ -19,7 +19,7 @@ public abstract class BaseController extends Controller {
 
 	//2、前后台用户登录用户信息Session名称
 	public static final String LOGIN_BACK_USER = "usersBackstage";
-	public static final String LOGIN_FRONT_USER = "";
+	public static final String LOGIN_FRONT_USER = "usersFront";
 
 	//3、前后台上传下载路径
 	public static final String UPLOAD_PATH = "/upload";

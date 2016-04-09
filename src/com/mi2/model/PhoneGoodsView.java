@@ -84,6 +84,10 @@ public class PhoneGoodsView extends BasePhoneGoodsView<PhoneGoodsView> {
 				sbSql.append(" and pgv.phone_version_id=?");
 				values.add(t.getPhoneVersionId());
 			}
+			if(t.getModelId()!=null){
+				sbSql.append(" and pgv.model_id=?");
+				values.add(t.getModelId());
+			}
 		}
 		return this.find(sbSql.toString(),values.toArray());
 	}

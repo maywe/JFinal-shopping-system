@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link href="${pageContext.request.contextPath}/css/viewfront/mi-topNavPage.css" type="text/css" rel="stylesheet">
 <header class="head">
     <div class="div-center-width-1290">
@@ -21,44 +24,46 @@
             <li><a href="#">Select Region</a></li>
         </ul>
 
-        <!--
+        <c:if test="${empty sessionScope.usersFront}">
             <ul class="nav navbar-nav navbar-right head-right">
-                <li><a href="${pageContext.request.contextPath}/viewfront/LoginFrontstage.jsp">登陆</a></li>
-                <li><a href="${pageContext.request.contextPath}/viewfront/RegisterFrontstage.jsp">注册</a></li>
+                <li><a href="${pageContext.request.contextPath}/view/viewfront/login.jsp">登陆</a></li>
+                <li><a class="p-r-0" href="${pageContext.request.contextPath}/view/viewfront/register.jsp">注册</a></li>
             </ul>
-        -->
-        <ul class="nav navbar-nav navbar-right head-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    欢迎您&nbsp;
-                    <span>月星流</span>&nbsp;
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li role="presentation">
-                        <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyCenter">
-                            个人中心
-                        </a>
-                    </li>
-                    <li role="presentation"><a href="#">我的收藏</a></li>
-                    <li role="presentation">
-                        <a href="${pageContext.request.contextPath}/servlet/LoginFrontstageAction?command=exit">
-                            退出登陆
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyOrder">
-                    我的订单
-                </a>
-            </li>
-            <li>
-                <a class="p-r-0" href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyNewManage">
-                    我的小米账户
-                </a>
-            </li>
-        </ul>
+        </c:if>
+        <c:if test="${not empty sessionScope.usersFront}">
+            <ul class="nav navbar-nav navbar-right head-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        欢迎您&nbsp;
+                        <span>${empty sessionScope.usersFront.nickname?sessionScope.usersFront.login_name:sessionScope.usersFront.nickname}</span>&nbsp;
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation">
+                            <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyCenter">
+                                个人中心
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#">我的收藏</a></li>
+                        <li role="presentation">
+                            <a href="${pageContext.request.contextPath}/loginCtrl/loginOutFront.action">
+                                退出登陆
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyOrder">
+                        我的订单
+                    </a>
+                </li>
+                <li>
+                    <a class="p-r-0" href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyNewManage">
+                        我的小米账户
+                    </a>
+                </li>
+            </ul>
+        </c:if>
     </div>
 </header>
 
@@ -99,44 +104,56 @@
                 <li>
                     <a href="#">&nbsp;&nbsp;&nbsp;全部商品分类</a>
                     <span></span>
-                    <ul class="goodsList">
+                    <ul id="goodsList" class="goodsList">
                         <li>
                             <a href="#">购买手机</a>
                             <div>
-                                <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=5">小米Note</a>&nbsp;
-                                <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=4">小米4</a>&nbsp;
-                                <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=7">红米</a>&nbsp;
-                                <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=8">红米Note</a>
+                                <a href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action?goodsSmallType.goods_small_type_id=23">小米5</a>&nbsp;
+                                <a href="${pageContext.request.contextPath}">小米Note</a>&nbsp;
+                                <a href="${pageContext.request.contextPath}">红米3</a>&nbsp;
+                                <a href="${pageContext.request.contextPath}">红米Note</a>
                             </div>
                             <ul>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=5">
+                                    <a href="${pageContext.request.contextPath}">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mi5bar80.jpg"/>
+                                        &nbsp;&nbsp;小米手机5
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mi4sbar80.jpg"/>
+                                        &nbsp;&nbsp;小米手机4S
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}">
                                         <img  src="${pageContext.request.contextPath}/images/front/nav/minote.jpg"/>
                                         &nbsp;&nbsp;小米Note
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=4">
+                                    <a href="${pageContext.request.contextPath}">
                                         <img  src="${pageContext.request.contextPath}/images/front/nav/mi4.jpg"/>
-                                        &nbsp;&nbsp;小米手机4
+                                        &nbsp;&nbsp;小米4
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=7">
-                                        <img  src="${pageContext.request.contextPath}/images/front/nav/redmi2.jpg"/>
-                                        &nbsp;&nbsp;红米手机2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=6">
-                                        <img  src="${pageContext.request.contextPath}/images/front/nav/redmi1s.jpg"/>
-                                        &nbsp;&nbsp;红米手机1S
+                                    <a href="${pageContext.request.contextPath}">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mi4c.jpg"/>
+                                        &nbsp;&nbsp;小米4C
                                     </a>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=8">
-                                        <img  src="${pageContext.request.contextPath}/images/front/nav/redminote.jpg"/>
-                                        &nbsp;&nbsp;红米Note
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/hongminote3.jpg"/>
+                                        &nbsp;&nbsp;红米Note3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/hongmi3.jpg"/>
+                                        &nbsp;&nbsp;红米手机3
                                     </a>
                                 </li>
                                 <li>
@@ -155,21 +172,33 @@
                                 <a href="#">小米平板</a>&nbsp;
                             </div>
                             <ul>
-                                <li><a href="#">
-                                    <img  src="${pageContext.request.contextPath}/images/front/nav/mitv.jpg"/>
-                                    &nbsp;&nbsp;小米电视2
-                                </a>
-                                </li>
                                 <li>
                                     <a href="#">
-                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mibox.jpg"/>
-                                        &nbsp;&nbsp;小米盒子
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mitv3-70.png"/>
+                                        &nbsp;&nbsp;小米电视3 70英寸
+                                    </a>
+                                <li>
+                                    <a href="#">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mitv3s-65.jpg"/>
+                                        &nbsp;&nbsp;小米电视3s 65英寸
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mipad.jpg"/>
-                                        &nbsp;&nbsp;小米平板
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/hezizengqiangban80side.jpg"/>
+                                        &nbsp;&nbsp;小米盒子3 增强版
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/hezis.jpg"/>
+                                        &nbsp;&nbsp;小米盒子3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img  src="${pageContext.request.contextPath}/images/front/nav/mipad2.png"/>
+                                        &nbsp;&nbsp;小米平板2
                                     </a>
                                 </li>
                             </ul>
@@ -332,32 +361,67 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">首页</a></li>
                 <li>
                     <a href="#">小米手机</a>
                     <div class="angle"></div>
                     <ul class="goodsItem" >
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=5">
+                            <a href="${pageContext.request.contextPath}">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-phone-minote.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mi5!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米Note</span><br>
-                                    <span>大屏旗舰,HiFi双卡双待</span><br>
-                                    <span>2200元起</span>
+                                    <span>小米手机5</span>
+                                    <br>
+                                    <span>1999元起</span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=4">
+                            <a href="${pageContext.request.contextPath}">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-phone-mi4.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mi4s!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米手机4</span><br>
-                                    <span>工艺和手感,超乎想象</span><br>
-                                    <span>1999元</span>
+                                    <span>小米手机4S</span>
+                                    <br>
+                                    <span>1699元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mi4c!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米手机4C</span>
+                                    <br>
+                                    <span>1099元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mi4!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米手机4</span>
+                                    <br>
+                                    <span>1299元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/minotepro!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米Note</span>
+                                    <br>
+                                    <span>1499元起</span>
                                 </div>
                             </a>
                         </li>
@@ -368,33 +432,175 @@
                     <div class="angle"></div>
                     <ul class="goodsItem">
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=7">
+                            <a href="${pageContext.request.contextPath}">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-phone-hongmi2.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hongmi3!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>红米手机2 4G版</span><br>
-                                    <span>64位性能/双4G/双卡双待</span><br>
-                                    <span>699元</span>
+                                    <span>红米手机3</span>
+                                    <br>
+                                    <span>699元起</span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=8">
+                            <a href="${pageContext.request.contextPath}">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-phone-note.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hongmi2!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>红米Note 4G版</span><br>
-                                    <span>工艺和手感,超乎想象</span><br>
-                                    <span>1999元</span>
+                                    <span>红米手机2</span>
+                                    <br>
+                                    <span>599元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hongmi2a!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>红米手机2A</span>
+                                    <br>
+                                    <span>特价499元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hongminote3!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>红米Note3</span>
+                                    <br>
+                                    <span>899元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hongminote!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>红米Note 电信版</span>
+                                    <br>
+                                    <span>699元起</span>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">小米平板</a></li>
-                <li><a href="#">小米电视</a></li>
+                <li>
+                    <a href="#">小米平板</a>
+                    <div class="angle"></div>
+                    <ul class="goodsItem">
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mipad2-64-win!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米平板2 64GB Windows版</span>
+                                    <br>
+                                    <span>1299元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mipad2-64!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米平板2 64GB</span>
+                                    <br>
+                                    <span>1299元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mipad2-16!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米平板2 16GB</span>
+                                    <br>
+                                    <span>999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">小米电视</a>
+                    <div class="angle"></div>
+                    <ul class="goodsItem">
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mitv3-70!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米电视3 70英寸</span>
+                                    <br>
+                                    <span>9999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mitv3s-65!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米电视3S 65英寸</span>
+                                    <br>
+                                    <span>8999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mitv3-60!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米电视3 60英寸</span>
+                                    <br>
+                                    <span>4999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mitv3-55!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米电视3 55英寸</span>
+                                    <br>
+                                    <span>3999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/mitv3s-48!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米电视3S 48英寸</span>
+                                    <br>
+                                    <span>1999元起</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#">盒子</a>
                     <div class="angle"></div>
@@ -402,53 +608,168 @@
                         <li>
                             <a href="#">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-phone-hezimini.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/hezi3s!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米盒子</span><br>
-                                    <span>全球最小全高清网络机顶盒</span><br>
-                                    <span>199元</span>
+                                    <span>小米盒子3 增强版</span>
+                                    <br>
+                                    <span>399元</span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=8">
+                            <a href="#">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/nav-hezis.jpg"/>
+                                    <img width="160" height="110" src="${pageContext.request.contextPath}/images/front/nav/hezi3.png"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米盒子 增强版</span><br>
-                                    <span>首款4K超高清机顶盒</span><br>
+                                    <span>小米盒子3</span>
+                                    <br>
                                     <span>299元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img width="160" height="110" src="${pageContext.request.contextPath}/images/front/nav/hezimini.png"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米盒子mini版</span>
+                                    <br>
+                                    <span>199元</span>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">路由器</a>
+                <li>
+                    <a href="#">路由器</a>
                     <div class="angle"></div>
                     <ul class="goodsItem">
                         <li>
                             <a href="#">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/T17FYvBXWT1RXrhCrK!160x160.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/miwifi!160x110.jpg"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米路由器</span><br>
-                                    <span>顶配双屏AC智能路由器内置1TB大硬盘</span><br>
-                                    <span>199元</span>
+                                    <span>全新小米路由器</span>
+                                    <br>
+                                    <span>699元</span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/servlet/FrontMiPhoneAction?command=shoppingMiPhone&goods_id=8">
+                            <a href="#">
                                 <div class="goodsItem-img">
-                                    <img src="${pageContext.request.contextPath}/images/front/nav/T1XsATBCLT1RXrhCrK!160x160.jpg"/>
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/miwifi-3!160x110.png"/>
                                 </div>
                                 <div class="goodsItem-desc">
-                                    <span>小米路由器 mini</span><br>
-                                    <span>主流双屏AC智能路由器性价比之王</span><br>
+                                    <span>小米路由器 3</span>
+                                    <br>
+                                    <span>149元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/miwifimini!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米路由器 mini</span>
+                                    <br>
                                     <span>129元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/miwifilite!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米路由器 青春版</span>
+                                    <br>
+                                    <span>79元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/miwifiExtension!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米WiFi放大器</span>
+                                    <br>
+                                    <span>39元</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">智能硬件</a>
+                    <div class="angle"></div>
+                    <ul class="goodsItem">
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/scooter!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>九号平衡车</span>
+                                    <br>
+                                    <span>1999元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/dianfanbao!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>米家压力IH电饭煲</span>
+                                    <br>
+                                    <span>999元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/air2!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>小米空气净化器 2</span>
+                                    <br>
+                                    <span>699元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/xiaoyi!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>摄像机</span>
+                                    <br>
+                                    <span>129元</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="goodsItem-img">
+                                    <img src="${pageContext.request.contextPath}/images/front/nav/scale!160x110.jpg"/>
+                                </div>
+                                <div class="goodsItem-desc">
+                                    <span>体重秤</span>
+                                    <br>
+                                    <span>99元</span>
                                 </div>
                             </a>
                         </li>

@@ -10,7 +10,7 @@
     <img alt="弹出框" src="../../../images/back/diatopicon.png" style="vertical-align: middle">
     <span class="modal-title font-size16">增加商品</span>
 </div>
-<form id="goodsDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsSubmit(this)" method="post" enctype="multipart/form-data">
+<form id="goodsDialogForm" class="form-horizontal" role="form" onsubmit="return goodsSubmit(this)" method="post" enctype="multipart/form-data">
     <div class="modal-body">
         <input value="${goods.goods_id}" name="goods.goods_id" type="hidden">
         <div class="tab-pane active">
@@ -162,7 +162,7 @@
     $(function(){
         var command = '${command}';
         if(command=='showRequest'){
-            disabledDialogForm('goodsDialogFrom');
+            disabledDialogForm('goodsDialogForm');
         }else if(command=='updateRequest'){
             var goods_preview_imageObj = $('#goods_preview_image');
             goods_preview_imageObj.removeAttr('required');
