@@ -32,6 +32,7 @@ public class _MappingKit {
 		arp.addMapping("PHONE_SETMEAL", "PHONE_SETMEAL_ID", PhoneSetmeal.class);
 		arp.addMapping("PHONE_SETMEAL_DETAIL", "PHONE_SETMEAL_DETAIL_ID", PhoneSetmealDetail.class);
 		arp.addMapping("PHONE_VERSION", "PHONE_GOODS_ID", PhoneVersion.class);
+		arp.addMapping("SHOPCAR_PHONE_SETMEAL_GOODS", "SHOPCAR_PHONE_SETMEAL_GOODS", ShopcarPhoneSetmealGoods.class);
 		arp.addMapping("SYS_MENU", "MENU_ID", SysMenu.class);
 		arp.addMapping("SYS_ROLE_GROUP", "ROLE_GROUP_ID", SysRoleGroup.class);
 		arp.addMapping("USERS_BACKSTAGE", "USERS_BACKSTAGE_ID", UsersBackstage.class);
@@ -40,7 +41,7 @@ public class _MappingKit {
 		arp.addMapping("USERS_ORDERS", "ORDERS_ID", UsersOrders.class);
 		arp.addMapping("USERS_ORDERS_DETAIL", "ORDERS_DETAILS_ID", UsersOrdersDetail.class);
 		arp.addMapping("USERS_SHOPPINGCAR", "USERS_SHOPPING_ID", UsersShoppingcar.class);
-		arp.addMapping("PHONE_GOODS_VIEW",PhoneGoodsView.class);
+		arp.addMapping("PHONE_GOODS_VIEW", "", PhoneGoodsView.class);
 	}
 }
 

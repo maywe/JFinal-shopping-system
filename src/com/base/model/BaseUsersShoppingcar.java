@@ -68,4 +68,12 @@ public abstract class BaseUsersShoppingcar<M extends BaseUsersShoppingcar<M>> ex
 		return get("GOODS_COLOR_ID");
 	}
 
+	public void setPhoneSetmealId(java.math.BigDecimal phoneSetmealId) {
+		set("PHONE_SETMEAL_ID", phoneSetmealId);
+	}
+
+	public java.math.BigDecimal getPhoneSetmealId() {
+		return get("PHONE_SETMEAL_ID");
+	}
+
 }

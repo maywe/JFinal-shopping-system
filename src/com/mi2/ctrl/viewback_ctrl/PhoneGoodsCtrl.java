@@ -112,6 +112,10 @@ public class PhoneGoodsCtrl extends BaseViewBackController {
         phoneVersion.setModelId(phoneModelNew.getModelId());
         phoneVersion._setAttrs(phoneVersion).update();
 
+        //5、批量保存手机颜色图片信息
+        String goodsAddributeValIds = this.getPara("goods_addribute_val_id");
+        new GoodsColor().updatePhoneGoodsColor(phoneVersion.getPhoneGoodsId(),goodsAddributeValIds);
+
         this.renderJson(new ErrorVo(0,"修改手机商品成功!"));
         return true;
     }
@@ -142,6 +146,8 @@ public class PhoneGoodsCtrl extends BaseViewBackController {
         phoneVersion._setAttrs(phoneVersion).update();
 
         //6、批量保存手机颜色图片信息
+        String goodsAddributeValIds = this.getPara("goods_addribute_val_id");
+        new GoodsColor().updatePhoneGoodsColor(phoneVersion.getPhoneGoodsId(),goodsAddributeValIds);
         for(int i=0,size=phoneColorList.size();i<size;i++){
             phoneColorList.get(i).set("PHONE_GOODS_ID",phoneVersion.getPhoneGoodsId());
         }

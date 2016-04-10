@@ -96,10 +96,13 @@ public class GoodsCtrl extends BaseViewBackController{
 
     @Override
     public Boolean updateData() {
-        //1、保存商品信息
+        //1、更新商品信息
         Goods goods = getModel(Goods.class);
         goods.update();
-        //2、保存商品适配的手机类型
+        //2、更新商品颜色信息
+        String goodsAddributeValIds = this.getPara("goods_addribute_val_id");
+        new GoodsColor().updateOtherGoodsColor(goods.getGoodsId(),goodsAddributeValIds);
+        //3、更新商品适配的手机类型
         String phoneSmallTypeIds = this.getPara("phone_small_type_ids");
         if(StrKit.notBlank(phoneSmallTypeIds)){
             new GoodsAdapterPhone().batchUpdate(goods.getGoodsId(),phoneSmallTypeIds);
@@ -117,6 +120,8 @@ public class GoodsCtrl extends BaseViewBackController{
         //3、修改商品信息
         goods.update();
         //4、批量修改商品颜色图片信息
+        String goodsAddributeValIds = this.getPara("goods_addribute_val_id");
+        new GoodsColor().updateOtherGoodsColor(goods.getGoodsId(),goodsAddributeValIds);
         for(int i=0,size=goodsColorList.size();i<size;i++){
             goodsColorList.get(i).set("GOODS_ID",goods.getGoodsId());
         }

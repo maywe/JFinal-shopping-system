@@ -57,11 +57,21 @@ public class GoodsColor extends BaseGoodsColor<GoodsColor> {
 		String sql = "update goods_color gc set gc.goods_color_img_url=? where gc.phone_goods_id=? and gc.goods_addribute_val_id=?";
 		return Db.update(sql,goodsColor.getGoodsColorImgUrl(),goodsColor.getPhoneGoodsId(),goodsColor.getGoodsAddributeValId())>0;
 	}
+	//更新手机商品颜色信息
+	public boolean updatePhoneGoodsColor(BigDecimal phoneGoodsId,String goodsAddributeValIds){
+		String sql = "delete goods_color gc where gc.phone_goods_id=? and gc.goods_addribute_val_id not in("+goodsAddributeValIds+")";
+		return Db.update(sql,phoneGoodsId)>0;
+	}
 
 	//更新其他商品颜色
 	public boolean updateOtherGoodsColor(GoodsColor goodsColor) {
 		String sql = "update goods_color gc set gc.goods_color_img_url=? where gc.goods_id=? and gc.goods_addribute_val_id=?";
 		return Db.update(sql,goodsColor.getGoodsColorImgUrl(),goodsColor.getGoodsId(),goodsColor.getGoodsAddributeValId())>0;
+	}
+	//更新其他商品颜色
+	public boolean updateOtherGoodsColor(BigDecimal goodsId,String goodsAddributeValIds){
+		String sql = "delete goods_color gc where gc.goods_id=? and gc.goods_addribute_val_id not in("+goodsAddributeValIds+")";
+		return Db.update(sql,goodsId)>0;
 	}
 
 	@Override

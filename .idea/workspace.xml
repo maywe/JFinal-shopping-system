@@ -1,84 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="实现后台用户个人资料管理，前台构架搭建，前台登录、注册、主页">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/carousel/mi-carousel-bottom-minotegaddess.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/carousel/mi-carousel-mi5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/carousel/mi-carousel-tv3s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/air2!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/dianfanbao!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hezi3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hezi3s!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hezimini.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hezis.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hezizengqiangban80side.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongmi2!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongmi2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongmi2a!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongmi3!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongmi3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongminote!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongminote3!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/hongminote3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/luyouqi-40.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4c!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4c.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4s!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4sbar80.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi5!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mi5bar80.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/minote!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/minotepro!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mipad2-16!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mipad2-64!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mipad2-64-win!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mipad2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3-55!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3-60!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3-60.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3-70!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3-70.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3s-43!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3s-48!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3s-65!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/mitv3s-65.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/miwifi!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/miwifi-3!160x110.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/miwifiExtension!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/miwifilite!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/miwifimini!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/scale!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/scooter!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/nav/xiaoyi!160x110.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/base/model/BaseGoodsAdapterPhone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-phonePurchase.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/front/nav/mi4.jpg" afterPath="$PROJECT_DIR$/web/images/front/nav/mi4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/front/nav/minote.jpg" afterPath="$PROJECT_DIR$/web/images/front/nav/minote.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="完善前台主页和开发手机商品购买功能">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/base/model/BaseShopcarPhoneSetmealGoods.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/model/ShopcarPhoneSetmealGoods.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" afterPath="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrdersDetail.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrdersDetail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/PhoneGoodsView.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/PhoneGoodsView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/PhoneModel.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/PhoneModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-bottomPage.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-bottomPage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/PhoneSetmeal.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/PhoneSetmeal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-common.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-topNavPage.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-topNavPage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/index.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/login.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/register.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/viewfront/mi-common.js" afterPath="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -116,33 +52,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/viewfront/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.142858">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phonePurchase.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phonePurchase.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.8">
-              <caret line="194" column="30" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
+            <state vertical-scroll-proportion="5.8868613">
+              <caret line="254" column="51" selection-start-line="254" selection-start-column="51" selection-end-line="254" selection-end-column="51" />
               <folding>
-                <marker date="1460219304673" expanded="true" signature="9812:9824" placeholder="..." />
+                <marker date="1460300751397" expanded="true" signature="11150:11162" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneratorUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/base/util/GeneratorUtils.java">
+      <file leaf-file-name="mi-common.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5497925">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.142858">
+              <caret line="51" column="12" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mi-common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/viewfront/mi-common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -151,8 +87,8 @@
       <file leaf-file-name="mi-phonePurchase.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-phonePurchase.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.285714">
-              <caret line="64" column="29" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="29" />
+            <state vertical-scroll-proportion="-56.25714">
+              <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -161,28 +97,18 @@
       <file leaf-file-name="PhonePurchaseCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.464286">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.821428">
+              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoodsColor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java">
+      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../../MyEclipse2014/binary/com.sun.java.jdk7.win32.x86_1.7.0.u45/src.zip!/java/sql/Date.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.821429">
-              <caret line="73" column="52" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneGoodsView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/PhoneGoodsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-40.67857">
-              <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="105" column="39" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -191,8 +117,30 @@
       <file leaf-file-name="GoodsSmallType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.214285">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsColor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6785715">
+              <caret line="38" column="65" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="65" />
+              <folding>
+                <element signature="e#264#291#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="123" column="88" selection-start-line="122" selection-start-column="8" selection-end-line="123" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -202,17 +150,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="165" column="76" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/PhoneModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.821428">
-              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+              <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -261,9 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/view/viewback/sysManage/sysUserImageUploadDialog.jsp" />
-        <option value="$PROJECT_DIR$/src/com/base/util/ModelUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/base/util/FileUtils.java" />
         <option value="$PROJECT_DIR$/web/view/viewback/sysManage/sysUserPersonDialog.jsp" />
         <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/SysUserCtrl.java" />
         <option value="$PROJECT_DIR$/web/view/viewback/sysManage/sysUserChangPasswordDialog.jsp" />
@@ -290,27 +225,30 @@
         <option value="$PROJECT_DIR$/web/view/viewfront/register.jsp" />
         <option value="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" />
         <option value="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java" />
         <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java" />
         <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp" />
         <option value="$PROJECT_DIR$/web/js/viewback/core.js" />
         <option value="$PROJECT_DIR$/web/view/viewfront/miPhonePurchase.jsp" />
-        <option value="$PROJECT_DIR$/web/css/viewfront/mi-common.css" />
         <option value="$PROJECT_DIR$/web/css/viewfront/mi-topNavPage.css" />
         <option value="$PROJECT_DIR$/web/css/viewfront/mi-bottomPage.css" />
         <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp" />
         <option value="$PROJECT_DIR$/web/view/viewfront/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/mi2/model/PhoneVersion.java" />
-        <option value="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
         <option value="$PROJECT_DIR$/web/js/viewfront/mi-phonePurchas.js" />
         <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" />
         <option value="$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java" />
         <option value="$PROJECT_DIR$/src/com/mi2/model/PhoneGoodsView.java" />
         <option value="$PROJECT_DIR$/src/com/mi2/model/PhoneModel.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java" />
         <option value="$PROJECT_DIR$/web/css/viewfront/mi-phonePurchase.css" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" />
+        <option value="$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/PhoneSetmeal.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java" />
+        <option value="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
+        <option value="$PROJECT_DIR$/web/css/viewfront/mi-common.css" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java" />
         <option value="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
       </list>
     </option>
@@ -421,7 +359,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewfront" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,54 +414,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mi2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1228,7 +1158,7 @@
       <workItem from="1459991491736" duration="22913000" />
       <workItem from="1460038415094" duration="10025000" />
       <workItem from="1460078009184" duration="19361000" />
-      <workItem from="1460121853499" duration="44340000" />
+      <workItem from="1460121853499" duration="71999000" />
     </task>
     <task id="LOCAL-00001" summary="我的web购物网站雏形">
       <created>1453388585979</created>
@@ -1332,11 +1262,17 @@
       <option name="project" value="LOCAL" />
       <updated>1460006353683</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="完善前台主页和开发手机商品购买功能">
+      <created>1460220485360</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1460220485360</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1045096000" />
+    <option name="totallyTimeSpent" value="1072755000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1353,7 +1289,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5067114" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15522876" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42156863" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.073529415" sideWeight="0.537065" order="7" side_tool="true" content_ui="tabs" />
@@ -1361,11 +1297,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37908497" sideWeight="0.48940998" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16503268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35130718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32626426" sideWeight="0.5030257" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25113463" sideWeight="0.48366013" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2881997" sideWeight="0.48366013" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.50970876" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1373,7 +1309,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5163399" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1633987" sideWeight="0.46293494" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6519608" sideWeight="0.46293494" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1411,7 +1347,8 @@
     <MESSAGE value="美化单选复选框，完善商品适配机型选择功能" />
     <MESSAGE value="实现图片剪裁上传，解码base64" />
     <MESSAGE value="实现后台用户个人资料管理，前台构架搭建，前台登录、注册、主页" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现后台用户个人资料管理，前台构架搭建，前台登录、注册、主页" />
+    <MESSAGE value="完善前台主页和开发手机商品购买功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善前台主页和开发手机商品购买功能" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1427,7 +1364,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="237" />
+      <option name="time" value="240" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1436,75 +1373,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseUsersFront.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35874438">
-          <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersFront.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6098081">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/plugin/MyCaptchaRender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9348371">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/ctrl/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/mi4c.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/mi4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/minote.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/redminote.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/scooter!160x110.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/front/nav/hezizengqiangban80side.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/images/front/nav/hezis.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1526,14 +1394,6 @@
     <entry file="file://$PROJECT_DIR$/out/artifacts/MI2_war_exploded/upload/images/goods/phone/mi5-bai.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71164024">
-          <caret line="169" column="35" selection-start-line="169" selection-start-column="35" selection-end-line="169" selection-end-column="35" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp">
@@ -1574,14 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62734586">
           <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.257143">
-          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1642,26 +1494,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewfront/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-67.6">
           <caret line="100" column="9" selection-start-line="97" selection-start-column="8" selection-end-line="100" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/viewfront/mi-common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1738,22 +1574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.214285">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33221477">
-          <caret line="689" column="17" selection-start-line="689" selection-start-column="17" selection-end-line="689" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mi2/model/PhoneModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.821428">
@@ -1762,10 +1582,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="76" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="76" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/util/GeneratorUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.11011236">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85945946">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="e#130#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/model/BasePhoneSetmeal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57975984">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33009708">
+          <caret line="689" column="17" selection-start-line="689" selection-start-column="17" selection-end-line="689" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/model/BasePhoneSetmealDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/PhoneSetmealDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/goodsList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="61.6">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6571429">
+          <caret line="109" column="108" selection-start-line="109" selection-start-column="86" selection-end-line="109" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/PhoneSetmeal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.142858">
+          <caret line="45" column="154" selection-start-line="45" selection-start-column="154" selection-end-line="45" selection-end-column="154" />
           <folding />
         </state>
       </provider>
@@ -1780,43 +1693,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsColor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.821429">
-          <caret line="73" column="52" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="52" />
+        <state vertical-scroll-proportion="-2.6785715">
+          <caret line="38" column="65" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="65" />
+          <folding>
+            <element signature="e#264#291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="88" selection-start-line="122" selection-start-column="8" selection-end-line="123" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneGoodsCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.464286">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/viewfront/mi-common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsSmallType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-phonePurchase.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.285714">
-          <caret line="64" column="29" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="29" />
+        <state vertical-scroll-proportion="-56.25714">
+          <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/common/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.16386555">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.142858">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../MyEclipse2014/binary/com.sun.java.jdk7.win32.x86_1.7.0.u45/src.zip!/java/sql/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="39" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.821428">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.8">
-          <caret line="194" column="30" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
+        <state vertical-scroll-proportion="5.8868613">
+          <caret line="254" column="51" selection-start-line="254" selection-start-column="51" selection-end-line="254" selection-end-column="51" />
           <folding>
-            <marker date="1460219304673" expanded="true" signature="9812:9824" placeholder="..." />
+            <marker date="1460300751397" expanded="true" signature="11150:11162" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/util/GeneratorUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5497925">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>

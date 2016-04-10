@@ -2,10 +2,7 @@ package com.mi2.ctrl.viewfront_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseViewFrontController;
-import com.mi2.model.GoodsColor;
-import com.mi2.model.GoodsSmallType;
-import com.mi2.model.PhoneGoodsView;
-import com.mi2.model.PhoneModel;
+import com.mi2.model.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,11 +15,20 @@ import java.util.List;
 public class PhonePurchaseCtrl extends BaseViewFrontController {
 
 	public void getPhoneSetmealDetailList(){
-
+		PhoneSetmealDetail phoneSetmealDetail = this.getModel(PhoneSetmealDetail.class);
+		List<PhoneSetmealDetail> PhoneSetmealDetailList = PhoneSetmealDetail.dao.getAllData(phoneSetmealDetail);
+		GoodsColor goodsColor = new GoodsColor();
+		for(int i=0,size=PhoneSetmealDetailList.size();i<size;i++){
+			goodsColor.setGoodsId(PhoneSetmealDetailList.get(i).getGoodsId());
+			PhoneSetmealDetailList.get(i).put("goodsColorList",GoodsColor.dao.getAllData(goodsColor));
+		}
+		this.renderJson(PhoneSetmealDetailList);
 	}
 
 	public void getPhoneSetmealList(){
-
+		PhoneSetmeal phoneSetmeal = getModel(PhoneSetmeal.class);
+		phoneSetmeal.put("isUse",true);
+		this.renderJson(PhoneSetmeal.dao.getAllData(phoneSetmeal));
 	}
 
 	public void getPhoneColorList(){
@@ -35,6 +41,7 @@ public class PhonePurchaseCtrl extends BaseViewFrontController {
 
 	public void initPhonePurchase(){
 		GoodsSmallType phoneSmallType = getModel(GoodsSmallType.class);
+		phoneSmallType = GoodsSmallType.dao.findById(phoneSmallType.getGoodsSmallTypeId());
 		if(null==phoneSmallType||null==phoneSmallType.getGoodsSmallTypeId()){
 			this.setAttr("errorMessage","你没有设置手机类型!");
 		}else{

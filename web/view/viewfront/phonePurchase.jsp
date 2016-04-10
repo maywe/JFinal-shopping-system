@@ -50,7 +50,7 @@
                     <div class="pro-info">
                         <div class="row pro-title clearfix margin0">
                             <div class="col-xs-8">
-                                <span class="pro-name">购买小米Note</span>
+                                <span class="pro-name">购买${phoneSmallType.goods_small_type_name}</span>
                                 <span class="pro-price">${phoneSmallType.phone_low_price}元起</span>
                             </div>
                             <div class="col-xs-4 pro-more">
@@ -77,33 +77,34 @@
                             <div id="J_choosePackage" class="pro-choose-step hide">
                                 <h4 class="step-title">4. 添加特惠配件套装</h4>
                                 <ul class="step-list clearfix">
-                                    <li onclick="getPhoneSetmealDetailList(this)" class="packageItem" title="必备套装 65元" data-node-id="1161400016">
-                                        必备套装<br>65元<i>省32元</i>
-                                    </li>
-                                    <li onclick="hidePackageListBox(this)" class="packageItem">
-                                        裸机<br><i>不享受优惠</i>
-                                    </li>
+                                    <%--
+                                    <li onclick="getPhoneSetmealDetailList(this)" class="packageItem" title="必备套装 65元" data-node-id="1161400016">必备套装<br>65元<i>省32元</i></li>
+                                    <li onclick="hidePackageListBox(this)" class="packageItem">裸机<br><i>不享受优惠</i></li>
+                                    --%>
                                 </ul>
                             </div>
                         </div>
                         <div id="J_packageListBox" class="package-list hide">
-                            <ul id="J_packageList" class="list clearfix">
+                            <ul class="list clearfix">
                                 <li class="item">
-                                    <div class="item-img">
-                                        <img alt="小米活塞耳机 基础版 银色" src="//i1.mifile.cn/a1/T1Ax_vB_Kv1RXrhCrK!140x140.jpg">
-                                    </div>
+                                    <div class="item-img"><img alt="小米活塞耳机 基础版 银色" src=""></div>
                                     <div class="item-title">小米活塞耳机 基础版 银色</div>
                                     <div class="item-versions">
-                                        <span class="active" data-title="小米活塞耳机 基础版 银色" data-node-id="2161200005" data-img="//i1.mifile.cn/a1/T1Ax_vB_Kv1RXrhCrK!140x140.jpg">
-                                            <img alt="" src="//i1.mifile.cn/a1/T1Ax_vB_Kv1RXrhCrK!14x14.jpg">
-                                        </span>
+                                        <span class="active" data-title="小米活塞耳机 基础版 银色" data-node-id="2161200005" data-img=""><img alt="" src=""></span>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div id="J_chooseResultMsg" class="choose-result-msg">
                             <span class="msg-tit">您选择了以下产品:</span>
-                            <p class="msg-bd">小米Note 标准版 双网通 16GB</p>
+                            <p class="msg-bd">
+                                <span class="select-phone-type">${phoneSmallType.goods_small_type_name}</span>&nbsp;
+                                <span class="select-phone-model"></span>
+                                <span class="select-phone-version"></span>
+                                <span class="select-phone-color"></span>
+                                <span class="select-phone-setmeal"></span>
+                                <span class="select-phone-price orangeColor"></span>
+                            </p>
                         </div>
                         <div id="J_chooseResult" class="pro-choose-result">
                             <button disabled class="btn btn-lg btn-orange">立即购买</button>
@@ -111,6 +112,18 @@
                     </div>
                 </div>
             </div>
+            <form id="phonePurchaseForm" class="hide">
+                <%--
+                    usersShoppingcar.phone_goods_id         手机商品id
+                    usersShoppingcar.goods_color_id         手机商品颜色id
+                    usersShoppingcar.phone_setmeal_id       手机套餐id
+                    phone_setmeal_goods_color_ids           手机套餐颜色id
+                --%>
+                <input type="hidden" name="usersShoppingcar.phone_goods_id">
+                <input type="hidden" name="usersShoppingcar.goods_color_id">
+                <input type="hidden" name="usersShoppingcar.phone_setmeal_id">
+                <input type="hidden" name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums">
+            </form>
         </div>
         <%@ include file="./include/mi-bottomPage.jsp" %>
     </div>
@@ -135,6 +148,7 @@
         $('#J_chooseColor').addClass('hide');
         $('#J_choosePackage').addClass('hide');
         $('#J_packageListBox').addClass('hide');
+        $('#J_chooseResultMsg').find('span.select-phone-model').text($(obj).text()+' ');
         $('#J_chooseResult>button').attr('disabled',true);
         activeFun(obj,'active');
 
@@ -147,7 +161,7 @@
             var chooseVersionUl = $('#J_chooseVersion>ul');
             chooseVersionUl.empty();
             for(var i in data){
-                chooseVersionUl.append('<li onclick="getPhoneColorList(this)" title="'+data[i].phone_version_name+'" data-node-id="'+data[i].phone_goods_id+'" data-index="2">'+data[i].phone_version_name+'</li>');
+                chooseVersionUl.append('<li onclick="getPhoneColorList(this)" title="'+data[i].phone_version_name+'" data-node-id="'+data[i].phone_goods_id+'" data-phone-price="'+data[i].phone_now_price+'" data-index="2">'+data[i].phone_version_name+'</li>');
             }
         },'json');
     }
@@ -156,11 +170,16 @@
         $('#J_chooseColor').removeClass('hide');
         $('#J_choosePackage').addClass('hide');
         $('#J_packageListBox').addClass('hide');
+        $('#J_chooseResultMsg').find('span.select-phone-version').text($(obj).text()+' ');
+        $('#J_chooseResultMsg').find('span.select-phone-price').text($(obj).data('phone-price')+'元 ');
         $('#J_chooseResult>button').attr('disabled',true);
         activeFun(obj,'active');
 
+        var phone_goods_id = $(obj).data('node-id');
+        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_goods_id"]').val(phone_goods_id);
+
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneColorList.action';
-        var param = {"goodsColor.phone_goods_id":$(obj).data('node-id')};
+        var param = {"goodsColor.phone_goods_id":phone_goods_id};
         $.post(targetUrl,param,function(data){
             var chooseColorUl = $('#J_chooseColor>ul');
             chooseColorUl.empty();
@@ -174,26 +193,87 @@
         $('#J_choosePackage').removeClass('hide');
         $('#J_packageListBox').addClass('hide');
         $('#J_proImg').attr('src',$(obj).data('img'));
+        $('#J_chooseResultMsg').find('span.select-phone-color').text($(obj).text()+' ');
         $('#J_chooseResult>button').attr('disabled',true);
         activeFun(obj,'active');
-        /*
-        var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl';
-        $.post(targetUrl,{},function(data){
-            activeFun(obj,'active');
+
+        $('#phonePurchaseForm').find('input[name="usersShoppingcar.goods_color_id"]').val($(obj).data('node-id'));
+
+        var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealList.action';
+        var param = {"phoneSetmeal.goods_small_type_id":"${phoneSmallType.goods_small_type_id}"};
+        $.post(targetUrl,param,function(data){
+            var choosePackageUl = $('#J_choosePackage>ul');
+            choosePackageUl.empty();
+            for(var i in data){
+                choosePackageUl.append('<li onclick="getPhoneSetmealDetailList(this)" class="packageItem" title="'+data[i].phone_setmeal_name+'" data-node-id="'+data[i].phone_setmeal_id+'">'+data[i].phone_setmeal_name+'<br>'+data[i].setmeal_price+'元<i>省'+data[i].save_money+'元</i></li>');
+            }
+            choosePackageUl.append('<li onclick="hidePackageListBox(this)" class="packageItem" data-node-id="">裸机<br><i>不享受优惠</i></li>');
         },'json');
-        */
     }
 
     function getPhoneSetmealDetailList(obj){
         $('#J_packageListBox').removeClass('hide');
+        $('#J_chooseResultMsg').find('span.select-phone-setmeal').text($(obj).text()+' ');
         $('#J_chooseResult>button').removeAttr('disabled');
         activeFun(obj,'active');
+
+        var phone_setmeal_id = $(obj).data('node-id');
+        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_setmeal_id"]').val(phone_setmeal_id);
+
+        var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealDetailList.action';
+        var param = {"phoneSetmealDetail.phone_setmeal_id":phone_setmeal_id};
+        $.post(targetUrl,param,function(data){
+            console.log(data);
+            var packageListUl = $('#J_packageListBox>ul');
+            var targetHtml;
+            var goodsColorList;
+            var phoneSetmeal_goodsIds_goodsColorIds_goodsNums='';
+            packageListUl.empty();
+            for(var i in data){
+                targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+data[i].goods_preview_image+'"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
+                goodsColorList = data[i].goodscolorlist;
+                for(var j in goodsColorList){
+                    if(j==0){
+                        targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
+                        if(i==data.length-1){
+                            phoneSetmeal_goodsIds_goodsColorIds_goodsNums += goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num;
+                        }else{
+                            phoneSetmeal_goodsIds_goodsColorIds_goodsNums += goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num+',';
+                        }
+                    }
+                    targetHtml += '<span onclick="selectPhoneSetmealImg(this)" class="'+(j==0?'active':'')+'" data-title="'+data[i].goods_name+' '+goodsColorList[j].goods_addribute_val_name+'" data-node-id="'+goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num+'" data-img="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"><img alt="'+data[i].goods_name+'" "'+goodsColorList[j].goods_addribute_val_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"></span>';
+                }
+                targetHtml += '</div></li>';
+                packageListUl.append(targetHtml);
+            }
+            $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums"]').val(phoneSetmeal_goodsIds_goodsColorIds_goodsNums);
+        },'json');
     }
 
     function hidePackageListBox(obj){
         $('#J_packageListBox').addClass('hide');
+        $('#J_chooseResultMsg').find('span.select-phone-setmeal').text('');
         $('#J_chooseResult>button').removeAttr('disabled');
         activeFun(obj,'active');
+        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_setmeal_id"]').val($(obj).data('node-id'));
+    }
+
+    function selectPhoneSetmealImg(obj){
+        var itemTitleDiv=$(obj).parent('div.item-versions').prev('div.item-title');
+        itemTitleDiv.text($(obj).data('title'));
+        itemTitleDiv.prev('div.item-img').children('img').attr('src',$(obj).data('img'));
+        activeFun(obj,'active');
+
+        var phoneSetmeal_goodsIds_goodsColorIds_goodsNums='';
+        var spanActiveList = $('#J_packageListBox').find('span.active');
+        spanActiveList.each(function(i){
+            if(i==spanActiveList.length-1){
+                phoneSetmeal_goodsIds_goodsColorIds_goodsNums+=$(this).data('node-id');
+            }else{
+                phoneSetmeal_goodsIds_goodsColorIds_goodsNums+=$(this).data('node-id')+',';
+            }
+        });
+        $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums"]').val(phoneSetmeal_goodsIds_goodsColorIds_goodsNums);
     }
 </script>
 </body>

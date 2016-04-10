@@ -49,6 +49,9 @@ ol,ul {
 .whiteColor-0{
     background: rgb(255,255,255);
 }
+.orangeColor{
+    color: rgb(255,103,0);
+}
 .logo{
     display: inline-block;
     width: 49px;
