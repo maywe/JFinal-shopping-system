@@ -13,8 +13,6 @@
             </div>
             <div class="col-xs-11 p-r-0">
                 <form id="goodsSmallTypeListForm" class="form-inline" onsubmit="return false">
-                    <label>商品小类型</label>
-                    <input name="goodsSmallType.goods_small_type_name" value="${goodsSmallType.goods_small_type_name}" type="text" class="form-control input-sm" placeholder="商品小类型"/>
                     <label>所属商品大类别</label>
                     <select name="goodsSmallType.goods_big_type_id" class="form-control input-sm">
                         <option value="">所有</option>
@@ -22,6 +20,8 @@
                             <option ${gbt.goods_big_type_id==goodsSmallType.goods_big_type_id?"selected":""} value="${gbt.goods_big_type_id}">${gbt.goods_bigl_type_name}</option>
                         </c:forEach>
                     </select>
+                    <label>商品小类型</label>
+                    <input name="goodsSmallType.goods_small_type_name" value="${goodsSmallType.goods_small_type_name}" type="text" class="form-control input-sm" placeholder="商品小类型"/>
                     <a data-backdrop="static" data-whatever="增加商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/addRequest.action" data-target="#pop_modal_sm" class="btn btn-xs btn-info pull-right" style="margin-top:3px;">
                         <i class="glyphicon glyphicon-plus font-size12"></i>
                         <span>新增</span>
@@ -38,8 +38,9 @@
                 <thead>
                     <tr>
                         <th>序号</th>
-                        <th>商品小类别名称</th>
-                        <th>所属商品大类别名称</th>
+                        <th>所属商品大类别</th>
+                        <th>商品小类别</th>
+                        <th>商品小类别描述</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -47,8 +48,9 @@
                     <c:forEach items="${pageUtil.list}" var="gst" varStatus="status">
                         <tr>
                             <td>${status.count}</td>
-                            <td>${gst.goods_small_type_name}</td>
                             <td>${gst.goods_bigl_type_name}</td>
+                            <td>${gst.goods_small_type_name}</td>
+                            <td>${gst.goods_small_type_remark}</td>
                             <td>
                                 <a data-backdrop="static" data-whatever="查看商品小类型" data-toggle="modal" href="${pageContext.request.contextPath}/goodsSmallTypeCtrl/showRequest.action?goodsSmallType.goods_small_type_id=${gst.goods_small_type_id}" data-target="#pop_modal_sm" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>

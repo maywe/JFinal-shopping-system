@@ -72,7 +72,7 @@
                             <td>${pgv.phone_sales_num}</td>
                             <td>${pgv.phone_former_price}</td>
                             <td>${pgv.phone_now_price}</td>
-                            <td><img alt="手机预览图" width="25" height="25" src="${pageContext.request.contextPath}${pgv.phone_preview_image}"/></td>
+                            <td><img alt="手机预览图" width="25" height="25" src="${pageContext.request.contextPath}${pgv.phone_preview_image}?width=25&height=25"/></td>
                             <td>
                                 <a data-backdrop="static" data-whatever="查看手机商品" data-toggle="modal" href="${pageContext.request.contextPath}/phoneGoodsCtrl/showRequest.action?phoneGoodsView.phone_goods_id=${pgv.phone_goods_id}" data-target="#pop_modal_lg" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>

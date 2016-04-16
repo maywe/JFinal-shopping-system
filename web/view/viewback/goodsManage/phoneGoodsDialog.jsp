@@ -73,7 +73,7 @@
                         <div class="input-group">
                             <input id="goods_preview_image" name="phone_preview_image" type="file" class="form-control" placeholder="手机预览图" accept="image/*" required>
                             <span class="input-group-addon" style="padding: 1px 5px;">
-                                <img width="30" height="30" alt="手机颜色图片" src="${pageContext.request.contextPath}${empty phoneGoodsView.phone_preview_image?"/images/avatar-160.png":phoneGoodsView.phone_preview_image}">
+                                <img width="30" height="30" alt="手机颜色图片" src="${pageContext.request.contextPath}${empty phoneGoodsView.phone_preview_image?"/images/avatar-160.png":phoneGoodsView.phone_preview_image}?width=30&height=30">
                             </span>
                         </div>
                     </td>
@@ -91,27 +91,27 @@
                             <c:forEach items="${privatePhoneColorList}" var="ppc">
                                 <c:if test="${ppc.goods_addribute_val_id==pc.goods_addribute_val_id}">
                                     <c:set var="isExistColor" value="1"> </c:set>
-                                    <th style="width: 80px;background: ${pc.goods_color_code};">
-                                        <div class="checkbox checkbox-info checkbox-inline">
+                                    <th style="width: 80px;color: ${pc.goods_addribute_val_name=='白色'?'':pc.goods_color_code};">
+                                        <div class="checkbox checkbox-orange checkbox-inline">
                                             <input checked onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">
                                             <label>${pc.goods_addribute_val_name}</label>
                                         </div>
                                     </th>
                                     <!-- 该文件上传时，会把 goods_color_img_url(手机颜色图片)，和 goods_addribute_val_id(手机颜色id一起上传)-->
                                     <td><input disabled id="goods_color_img_url${pc.goods_addribute_val_id}" name="goods_color_img_url${pc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
-                                    <td><img width="35" height="35" alt="手机颜色图片" src="${pageContext.request.contextPath}${ppc.goods_color_img_url}"></td>
+                                    <td><img width="35" height="35" alt="手机颜色图片" src="${pageContext.request.contextPath}${ppc.goods_color_img_url}?width=35&height=35"></td>
                                 </c:if>
                             </c:forEach>
                             <c:if test="${isExistColor==0}">
-                                <th style="width: 80px;background: ${pc.goods_color_code};">
-                                    <div class="checkbox checkbox-info checkbox-inline">
+                                <th style="width: 80px;color: ${pc.goods_addribute_val_name=='白色'?'':pc.goods_color_code};">
+                                    <div class="checkbox checkbox-orange checkbox-inline">
                                         <input onclick="selectPhoneColor(this)" name="goods_addribute_val_id" type="checkbox" value="${pc.goods_addribute_val_id}">
                                         <label>${pc.goods_addribute_val_name}</label>
                                     </div>
                                 </th>
                                 <!-- 该文件上传时，会把 goods_color_img_url(手机颜色图片)，和 goods_addribute_val_id(手机颜色id一起上传)-->
                                 <td><input disabled id="goods_color_img_url${pc.goods_addribute_val_id}" name="goods_color_img_url${pc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
-                                <td><img width="35" height="35" alt="手机颜色图片" src="${pageContext.request.contextPath}/images/avatar-160.png"></td>
+                                <td><img width="35" height="35" alt="手机颜色图片" src="${pageContext.request.contextPath}/images/avatar-160.png?width=35&height=35"></td>
                             </c:if>
                             <c:if test="${(status.count)%3==0||status.last}">
                                 </tr>

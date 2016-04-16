@@ -67,7 +67,7 @@ public class GoodsCtrl extends BaseViewBackController{
         if(goodsColorList.size()>0){
             Db.batchSave(GoodsColor.TABLE_NAME,goodsColorList,goodsColorList.size());
         }
-        //5、保存商品适配的手机类型
+        //5、批量保存商品适配的手机类型
         String phoneSmallTypeIds = this.getPara("phone_small_type_ids");
         if(StrKit.notBlank(phoneSmallTypeIds)){
             new GoodsAdapterPhone().batchSave(goods.getGoodsId(),phoneSmallTypeIds);
@@ -101,7 +101,9 @@ public class GoodsCtrl extends BaseViewBackController{
         goods.update();
         //2、更新商品颜色信息
         String goodsAddributeValIds = this.getPara("goods_addribute_val_id");
-        new GoodsColor().updateOtherGoodsColor(goods.getGoodsId(),goodsAddributeValIds);
+        if(StrKit.notBlank(goodsAddributeValIds)){
+            new GoodsColor().updateOtherGoodsColor(goods.getGoodsId(),goodsAddributeValIds);
+        }
         //3、更新商品适配的手机类型
         String phoneSmallTypeIds = this.getPara("phone_small_type_ids");
         if(StrKit.notBlank(phoneSmallTypeIds)){

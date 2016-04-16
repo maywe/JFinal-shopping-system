@@ -84,7 +84,7 @@
                         <div class="input-group">
                             <input id="usersBackstageImg" name="usersBackstageImg" type="file" class="form-control" placeholder="用户头像" accept="image/*">
                             <span class="input-group-addon" style="padding: 1px 5px;">
-                                <img width="30" height="30" alt="用户头像图片" src="${pageContext.request.contextPath}${empty usersBackstage.img?"/images/avatar-160.png":usersBackstage.img}">
+                                <img width="30" height="30" alt="用户头像图片" src="${pageContext.request.contextPath}${empty usersBackstage.img?"/images/avatar-160.png":usersBackstage.img}?width=30&height=30">
                             </span>
                         </div>
                     </td>

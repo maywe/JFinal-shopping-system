@@ -42,6 +42,10 @@ public class PhoneSetmeal extends BasePhoneSetmeal<PhoneSetmeal> {
 				sbSql.append(" and ps.goods_small_type_id=?");
 				values.add(t.getGoodsSmallTypeId());
 			}
+			if(StrKit.notBlank(t.getPhoneSetmealName())){
+				sbSql.append(" and ps.phone_setmeal_name = ?");
+				values.add(t.getPhoneSetmealName());
+			}
 			if(t.get("isUse",false)){
 				sbSql.append(" and exists(select psd.phone_setmeal_detail_id from phone_setmeal_detail psd where psd.phone_setmeal_id=ps.phone_setmeal_id)");
 			}

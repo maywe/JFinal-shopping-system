@@ -1,0 +1,38 @@
+/*头部样式*/
+.head{
+    min-width: 1200px;
+    margin:0 auto;
+    border-bottom:1px solid #DFDFDF;
+    width:100%;
+    height:40px;
+    background:rgb(51,51,51);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.head li{
+    font: 12px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+.head>div>ul>li>a{
+    padding: 10px;
+}
+.head>div>ul.head-right{
+    margin-right: 0;
+}
+ul.head-right>li.dropdown>ul{
+    text-align: center;
+    width: 100%;
+    margin-top: -3px;
+}
+ul.head-right>li.dropdown>ul a{
+    padding-left: 0;
+    padding-right: 0;
+}
+ul.head-right>li.dropdown:hover>ul{
+    display: block;
+}
+.nav>li>a:hover{
+    background-color: rgb(51,51,51);
+}
+

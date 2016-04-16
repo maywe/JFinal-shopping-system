@@ -13,6 +13,9 @@
 .font-size16{
     font-size: 16px;
 }
+.font-size24{
+    font-size: 24px;
+}
 .cursor-pointer{
     cursor: pointer !important;
 }
@@ -23,8 +26,19 @@ a:active{
     text-decoration: none;
 }
 
+.border-radius-0{
+    border-radius: 0 !important;
+}
+
 .block{
     display: block !important;
+}
+.display-table{
+    display: table;
+}
+.display-table-cell{
+    display: table-cell;
+    vertical-align: middle;
 }
 .none{
     display: none !important;
@@ -138,3 +152,19 @@ a:active{
 .badge{
     background: rgb(255,103,0);
 }
+
+/* 4、数量设置插件样式 start*/
+.digital-setting{
+    width: 105px;
+    margin: 0 auto;
+}
+.digital-setting>span{
+    padding:5px 7px !important;
+    cursor: pointer;
+}
+.digital-setting>input{
+    text-align:center;
+    vertical-align: middle;
+    background: white !important;
+}
+/* 4、数量设置插件样式 end*/

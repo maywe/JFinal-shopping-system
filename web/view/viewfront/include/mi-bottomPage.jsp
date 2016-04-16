@@ -1,15 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ChenMW
-  Date: 2016-04-05
-  Time: 15:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="${pageContext.request.contextPath}/css/viewfront/mi-bottomPage.css" type="text/css" rel="stylesheet">
 
 <div class="clearfix"></div>
-<div class="bottom-site">
+<div id="bottomSiteBox" class="bottom-site">
     <div class="site-footer">
         <div class="container-fluid myContainer-fluid">
             <div class="footer-service">

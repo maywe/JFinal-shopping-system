@@ -14,6 +14,7 @@ import com.jfinal.plugin.activerecord.ModelRecordElResolver;
 import com.jfinal.plugin.activerecord.dialect.OracleDialect;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
+import com.mi2.handler.StaticResHandler;
 import com.mi2.interceptor.MyTxByMethodRegexInterceptor;
 import com.mi2.model._MappingKit;
 import org.apache.log4j.Logger;
@@ -124,6 +125,8 @@ public class JFWebConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configHandler(Handlers me) {
+		//静态资源处理器
+		me.add(new StaticResHandler());
 	    //该处理器将request.getContextPath()存储在root中，可以解决路径问题
 	  	me.add(new ContextPathHandler("root"));
 	  	//通过.json后缀访问后台链接

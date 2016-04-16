@@ -17,7 +17,7 @@
         <div class="tab-pane active">
             <table class="table dialog-table">
                 <tr>
-                    <th><span class="must-msg">*&nbsp;</span>所属大类别:</th>
+                    <th style="width: 90px;"><span class="must-msg">*&nbsp;</span>所属大类别:</th>
                     <td>
                         <select name="goodsSmallType.goods_big_type_id" class="form-control" required="required">
                             <option value="">--请选择--</option>
@@ -31,6 +31,23 @@
                     <th><span class="must-msg">*&nbsp;</span>商品小类别:</th>
                     <td>
                         <input value="${goodsSmallType.goods_small_type_name}" name="goodsSmallType.goods_small_type_name" type="text" class="form-control" placeholder="商品小类别名称" required="required" maxlength="64">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span class="must-msg">&nbsp;</span>预览图片:</th>
+                    <td>
+                        <div class="input-group">
+                            <input id="goods_small_type_image" name="goods_small_type_image" type="file" class="form-control" placeholder="商品预览图" accept="image/*">
+                            <span class="input-group-addon" style="padding: 1px 5px;">
+                                <img width="30" height="30" alt="商品颜色图片" src="${pageContext.request.contextPath}${empty goodsSmallType.goods_small_type_image?"/images/avatar-160.png":goodsSmallType.goods_small_type_image}">
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span class="must-msg">&nbsp;</span>类别描述:</th>
+                    <td>
+                        <textarea maxlength="256" class="form-control" placeholder="商品小类别描述" name="goodsSmallType.goods_small_type_remark">${goodsSmallType.goods_small_type_remark}</textarea>
                     </td>
                 </tr>
             </table>
@@ -56,11 +73,30 @@
     });
 
     function goodsSmallTypeSubmit(form){
+        //拿到参数
+        var param = $(form).formToJson();
+        var goods_preview_imageObj = $('#goods_small_type_image');
+        //默认不存在文件上传
+        var isExistFile = false;
+        var fileElementIdList = new Array(1);
+        if(goods_preview_imageObj.val()!='' && goods_preview_imageObj.val()!=undefined && goods_preview_imageObj.val() != null){
+            fileElementIdList[0]= 'goods_small_type_image';
+            isExistFile = true;
+        }
+
         var command = '${command}';
         if(command=='addRequest'){
-            callSubmit('/goodsSmallTypeCtrl/addData',$(form).attr('id'),'goodsSmallTypeListBox');
+            if(isExistFile){
+                callBatchFileUploadSubmit('/goodsSmallTypeCtrl/addFilesData',fileElementIdList,null,'goodsSmallTypeListBox',param);
+            }else {
+                callSubmit('/goodsSmallTypeCtrl/addData', null, 'goodsSmallTypeListBox',param);
+            }
         }else if(command=='updateRequest'){
-            callSubmit('/goodsSmallTypeCtrl/updateData',$(form).attr('id'),'goodsSmallTypeListBox');
+            if(isExistFile){
+                callBatchFileUploadSubmit('/goodsSmallTypeCtrl/updateFilesData',fileElementIdList,null,'goodsSmallTypeListBox',param);
+            }else {
+                callSubmit('/goodsSmallTypeCtrl/updateData', null, 'goodsSmallTypeListBox',param);
+            }
         }
         return false;
     }

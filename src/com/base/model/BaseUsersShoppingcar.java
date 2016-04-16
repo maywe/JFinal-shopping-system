@@ -76,4 +76,36 @@ public abstract class BaseUsersShoppingcar<M extends BaseUsersShoppingcar<M>> ex
 		return get("PHONE_SETMEAL_ID");
 	}
 
+	public void setIsSelectPay(java.lang.String isSelectPay) {
+		set("IS_SELECT_PAY", isSelectPay);
+	}
+
+	public java.lang.String getIsSelectPay() {
+		return get("IS_SELECT_PAY");
+	}
+
+	public void setShoppingGoodsStatus(java.lang.String shoppingGoodsStatus) {
+		set("SHOPPING_GOODS_STATUS", shoppingGoodsStatus);
+	}
+
+	public java.lang.String getShoppingGoodsStatus() {
+		return get("SHOPPING_GOODS_STATUS");
+	}
+
+	public void setShoppingGoodsRemark(java.lang.String shoppingGoodsRemark) {
+		set("SHOPPING_GOODS_REMARK", shoppingGoodsRemark);
+	}
+
+	public java.lang.String getShoppingGoodsRemark() {
+		return get("SHOPPING_GOODS_REMARK");
+	}
+
+	public void setLastUpdateDate(java.util.Date lastUpdateDate) {
+		set("LAST_UPDATE_DATE", lastUpdateDate);
+	}
+
+	public java.util.Date getLastUpdateDate() {
+		return get("LAST_UPDATE_DATE");
+	}
+
 }

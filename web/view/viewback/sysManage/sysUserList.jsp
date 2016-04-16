@@ -64,7 +64,7 @@
                             <td>${ub.sex}</td>
                             <td>${ub.telephone}</td>
                             <td>${ub.nickname}</td>
-                            <td><img alt="用户头像" width="25" height="25" src="${pageContext.request.contextPath}${ub.img}"/></td>
+                            <td><img alt="用户头像" width="25" height="25" src="${pageContext.request.contextPath}${ub.img}?width=25&height=25"/></td>
                             <td>${ub.status=="0"?"正常":"冻结"}</td>
                             <td>
                                 <a data-backdrop="static" data-whatever="查看系统用户" data-toggle="modal" href="${pageContext.request.contextPath}/sysUserCtrl/showRequest.action?usersBackstage.users_backstage_id=${ub.users_backstage_id}" data-target="#pop_modal" class="btn btn-xs btn-info">

@@ -83,7 +83,7 @@
                                 <td>${data.goods_sales_num}</td>
                                 <td>${data.goods_former_price}</td>
                                 <td>${data.goods_new_price}</td>
-                                <td><img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${data.goods_preview_image}"/></td>
+                                <td><img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${data.goods_preview_image}?width=25&height=25"/></td>
                                 <td>
                                     <button onclick='lookupBackGoodsInfo(${dataJson})' class="btn btn-xs btn-info">
                                         <i class="glyphicon glyphicon-ok font-size12"></i>
@@ -121,7 +121,20 @@
 <script type="text/javascript">
     //选择带回商品信息
     function lookupBackGoodsInfo(goods){
-        $('#phoneSetmealGoodsBox').append('<tr goods=\''+JSON.stringify(goods)+'\'><td>'+goods.rownum_+'</td><td>'+goods.goods_name+'</td><td>'+goods.goods_stock+'</td><td>'+goods.goods_new_price+'</td><td><div class="input-group input-group-sm digital-setting"><span onclick="minusDigital(this)" class="input-group-addon">－</span><input value="1" type="text" class="form-control" required readonly><span onclick="plusDigital(this)" class="input-group-addon">＋</span></div></td><td><img alt="商品预览图" width="25" height="25" src="'+getLocationUrl()+goods.goods_preview_image+'"/></td><td><button onclick="removeTableRow(this)" type="button" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-floppy-remove font-size12"></i><span>删除</span></button></td></tr>');
+        var $phoneSetmealGoodsBox = $('#phoneSetmealGoodsBox');
+        var isNotExist = true;
+        $phoneSetmealGoodsBox.children('tr').each(function(i){
+            var goods_id = $(this).attr('goods_id');
+            if(goods.goods_id==goods_id){
+                var $input = $(this).find('input');
+                $input.val(Number($input.val())+1);
+                isNotExist = false;
+                return false;
+            }
+        });
+        if(isNotExist){
+            $phoneSetmealGoodsBox.append('<tr goods_id=\''+goods.goods_id+'\' goods=\''+JSON.stringify(goods)+'\'><td>'+goods.rownum_+'</td><td>'+goods.goods_name+'</td><td>'+goods.goods_stock+'</td><td>'+goods.goods_new_price+'</td><td><div class="input-group input-group-sm digital-setting"><span onclick="minusDigital(this)" class="input-group-addon">－</span><input value="1" type="text" class="form-control" required readonly><span onclick="plusDigital(this)" class="input-group-addon">＋</span></div></td><td><img alt="商品预览图" width="25" height="25" src="'+getLocationUrl()+goods.goods_preview_image+'?width=25&height=25"/></td><td><button onclick="removeTableRow(this)" type="button" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-floppy-remove font-size12"></i><span>删除</span></button></td></tr>');
+        }
         hideMyModel('pop_modal');
     }
 </script>

@@ -1,12 +1,14 @@
+/* 购买手机商品样式 start */
 .buy-choose-box{
     background: white;
 }
 .buy-choose-box>div.hd,.buy-choose-box>div.bd {
-    padding: 20px;
+    padding: 8px 0;
 }
 .pro-nav-bar{
     width: 100%;
     background: white;
+    padding: 0 20px;
 }
 .pro-nav-bar>li{
     width: 10%;
@@ -148,3 +150,73 @@
     border-radius: 0;
     width: 48%
 }
+/* 购买手机商品样式 end */
+
+/* 手机商品列表展示样式 start */
+.phone-goods-list-box{
+    width: 100%;
+    background: rgb(245,245,245);
+}
+.phone-goods-list-box .goods-list{
+    width: 100%;
+}
+.phone-goods-list-box .goods-list .goods-item-box{
+    width: 49%;
+    background: white;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    float: left;
+}
+.phone-goods-list-box .goods-list .goods-item-box:nth-child(odd){
+    margin-right: 1%;
+}
+.phone-goods-list-box .goods-list .goods-item-box:nth-child(even){
+    margin-left: 1%;
+}
+
+.phone-goods-list-box .goods-list .goods-item-box .goods-item-img>a{
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+}
+.phone-goods-list-box .goods-list .goods-item-box .goods-item-img>a>img{
+    width: 450px;
+    height: 450px;
+}
+
+.phone-goods-list-box .goods-item-other{
+    margin: 0 auto;
+    width: 500px;
+    height: 130px;
+    border-top: 1px solid rgb(225,225,225);
+}
+.phone-goods-list-box .goods-item-other>div{
+    padding: 20px 20px 20px 0;
+}
+.phone-goods-list-box .goods-item-other .goods-item-name{
+    color: #333;
+    font-size: 24px;
+}
+.phone-goods-list-box .goods-item-other .goods-item-price{
+    margin-left: 15px;
+    font-size: 24px;
+    color:rgb(255,103,0);
+}
+.phone-goods-list-box .goods-item-other .goods-item-price-desc{
+    color:rgb(255,103,0);
+}
+.phone-goods-list-box .goods-item-other .goods-item-desc>span{
+    color: #757575;
+}
+.phone-goods-list-box .goods-item-other .goods-item-btn{
+    padding: 30px 0 0 20px;
+}
+.phone-goods-list-box .goods-item-other .goods-item-btn .btn{
+    width:100%;
+    background: white;
+    border-radius: 0;
+}
+.phone-goods-list-box .goods-item-other .goods-item-btn .btn:hover{
+    background: rgb(255,74,0);
+}
+/* 手机商品列表展示样式 end */

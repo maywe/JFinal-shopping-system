@@ -66,7 +66,7 @@
                             <td>${data.goods_sales_num}</td>
                             <td>${data.goods_former_price}</td>
                             <td>${data.goods_new_price}</td>
-                            <td><img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${data.goods_preview_image}"/></td>
+                            <td><img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${data.goods_preview_image}?width=25&height=25"/></td>
                             <td>
                                 <a data-backdrop="static" data-whatever="查看商品" data-toggle="modal" href="${pageContext.request.contextPath}/goodsCtrl/showRequest.action?goods.goods_id=${data.goods_id}" data-target="#pop_modal_lg" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>

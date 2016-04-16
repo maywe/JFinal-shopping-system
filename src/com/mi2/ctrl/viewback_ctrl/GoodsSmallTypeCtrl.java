@@ -5,6 +5,7 @@ import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.upload.UploadFile;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.GoodsBigType;
 import com.mi2.model.GoodsSmallType;
@@ -41,6 +42,15 @@ public class GoodsSmallTypeCtrl extends BaseViewBackController {
         return true;
     }
 
+    public Boolean addFilesData() {
+        UploadFile uploadFile = this.getFile("goods_small_type_image",UPLOAD_IMAGES_PHONE_PATH);
+        GoodsSmallType goodsSmallType = this.getModel(GoodsSmallType.class);
+        goodsSmallType.setGoodsSmallTypeImage(UPLOAD_PATH + UPLOAD_IMAGES_PHONE_PATH + "/" + uploadFile.getFileName());
+        goodsSmallType.save();
+        this.renderJson(new ErrorVo(0,"新增小商品类型成功!"));
+        return true;
+    }
+
     @Override
     public void updateRequest() {
         this.setAttr("command","updateRequest");
@@ -53,6 +63,15 @@ public class GoodsSmallTypeCtrl extends BaseViewBackController {
     @Override
     public Boolean updateData() {
         new GoodsSmallType()._setAttrs(this.getModel(GoodsSmallType.class)).update();
+        this.renderJson(new ErrorVo(0,"修改小商品类型成功!"));
+        return true;
+    }
+
+    public Boolean updateFilesData() {
+        UploadFile uploadFile = this.getFile("goods_small_type_image",UPLOAD_IMAGES_PHONE_PATH);
+        GoodsSmallType goodsSmallType = this.getModel(GoodsSmallType.class);
+        goodsSmallType.setGoodsSmallTypeImage(UPLOAD_PATH + UPLOAD_IMAGES_PHONE_PATH + "/" + uploadFile.getFileName());
+        goodsSmallType.update();
         this.renderJson(new ErrorVo(0,"修改小商品类型成功!"));
         return true;
     }

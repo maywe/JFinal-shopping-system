@@ -60,4 +60,12 @@ public abstract class BasePhoneSetmeal<M extends BasePhoneSetmeal<M>> extends Ba
 		return get("SAVE_MONEY");
 	}
 
+	public void setSetmealPreviewImage(java.lang.String setmealPreviewImage) {
+		set("SETMEAL_PREVIEW_IMAGE", setmealPreviewImage);
+	}
+
+	public java.lang.String getSetmealPreviewImage() {
+		return get("SETMEAL_PREVIEW_IMAGE");
+	}
+
 }

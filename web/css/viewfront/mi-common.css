@@ -6,7 +6,7 @@
 }
 body.myBody{
     min-width: 1200px;
-    background: rgb(250,250,250);
+    background: rgb(245,245,245);
 }
 a{
     text-decoration:none;
@@ -15,6 +15,7 @@ a{
 a:hover{
     color: rgb(255,103,0);
     text-decoration: none;
+    cursor: pointer;
 }
 ol,ul {
     list-style: none;
@@ -26,6 +27,9 @@ ol,ul {
     padding-left: 0;
     padding-right: 0;
 }
+.row{
+    margin: 0;
+}
 .btn-orange{
     color: #fff;
     background-color: rgb(255,103,0);
@@ -35,6 +39,23 @@ ol,ul {
     color: #fff;
     background-color: rgb(255,74,0);
 }
+.btn-grey{
+    color: rgb(255,103,0);
+    background-color: rgb(245,245,245);
+    border-color: rgb(255,74,0);
+}
+.btn-grey:hover{
+    color: #fff;
+    background-color: rgb(255,74,0);
+}
+.btn-yellow{
+    color: #000;
+    background-color: rgb(255,219,61);
+    border-color: rgb(255,198,61);
+}
+.btn-yellow:hover{
+    background-color: rgb(255,198,61);
+}
 /* 2、改造bootstrap end */
 
 /* 3、自有公共样式 start*/
@@ -42,6 +63,7 @@ ol,ul {
     margin: 0 auto;
     max-width: 1290px;
     min-width: 1200px;
+    background: white;
 }
 .grayColor-1{
     background: rgb(245,245,245);
@@ -50,7 +72,7 @@ ol,ul {
     background: rgb(255,255,255);
 }
 .orangeColor{
-    color: rgb(255,103,0);
+    color: rgb(255,103,0) !important;
 }
 .logo{
     display: inline-block;
@@ -60,17 +82,44 @@ ol,ul {
     cursor: pointer;
     background: url("../../images/front/mi-logo-49.png") no-repeat rgb(255,103,0);
 }
+.logo-75{
+    width: 75px;
+    height: 75px;
+}
 
 .myContainer-context{
-     width:100%;
-     padding: 50px 0;
+    width:100%;
+    padding-bottom: 20px;
+    background: white;
+}
+.myContainer-context .myContainer-context-top-title{
+    width: 100%;
+    height: 110px;
+    border-bottom: 2px solid rgb(255,103,0);
+    margin-top: 40px;
 }
 
-.myContainer-context-zIndex23{
-    width:100%;
-    padding: 0 0 50px 0;
-    background: white;
-    position: relative;
-    z-index: 23;
+
+/* 路径导航样式 start*/
+.path-nav-box{
+    width: 100%;
+    background: rgb(245,245,245);
 }
+.path-nav-box .display-table{
+    height: 40px;
+}
+.path-nav-box .path-nav a{
+    color: #757575;
+    font-size: 12px;
+}
+.path-nav-box .path-nav span.step{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.path-nav-box .path-nav a:hover{
+    color: rgb(255,103,0);
+}
+/* 路径导航样式 end*/
+
 /* 3、自有公共样式 end*/
+

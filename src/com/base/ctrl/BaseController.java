@@ -37,7 +37,7 @@ public abstract class BaseController extends Controller {
 	//5、前后台分页参数
 	public static final String PAGE_UTIL = "pageUtil";
 	protected Integer pageNumber = 1;
-	protected Integer pageSize = 50;
+	protected Integer pageSize = 30;
 
 	//6、前后台日志记录
 	protected Logger logger = Logger.getLogger(this.getClass());

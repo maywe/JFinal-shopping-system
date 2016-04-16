@@ -31,13 +31,31 @@
 
                         <th style="width: 110px;"><span class="must-msg">*&nbsp;</span>手机套餐名称:</th>
                         <td>
+                            <select name="phoneSetmeal.phone_setmeal_name" class="form-control" required="required">
+                                <option value="">--请选择--</option>
+                                <option ${phoneSetmeal.phone_setmeal_name=="必备套餐"?"selected":""} value="必备套餐">必备套餐</option>
+                                <option ${phoneSetmeal.phone_setmeal_name=="实用套餐"?"selected":""} value="实用套餐">实用套餐</option>
+                                <option ${phoneSetmeal.phone_setmeal_name=="全能套餐"?"selected":""} value="全能套餐">全能套餐</option>
+                            </select>
+                            <%--
                             <input value="${phoneSetmeal.phone_setmeal_name}" name="phoneSetmeal.phone_setmeal_name" type="text" class="form-control" placeholder="手机套餐名称" required="required" maxlength="64">
+                            --%>
                         </td>
                     </tr>
                     <tr>
                         <th><span class="must-msg">*&nbsp;</span>当前套餐价格:</th>
                         <td>
                             <input value="${phoneSetmeal.setmeal_price}" name="phoneSetmeal.setmeal_price" type="text" class="form-control" placeholder="当前套餐总价" required="required" pattern="^\d+(\.\d+)?$">
+                        </td>
+
+                        <th><span class="must-msg">&nbsp;</span>套餐预览图片:</th>
+                        <td>
+                            <div class="input-group">
+                                <input id="setmeal_preview_image" name="setmeal_preview_image" type="file" class="form-control" placeholder="套餐预览图" accept="image/*">
+                                <span class="input-group-addon" style="padding: 1px 5px;">
+                                    <img width="30" height="30" alt="套餐预览图" src="${pageContext.request.contextPath}${empty phoneSetmeal.setmeal_preview_image?"/images/avatar-160.png":phoneSetmeal.setmeal_preview_image}">
+                                </span>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -66,7 +84,7 @@
                             <%
                                 pageContext.setAttribute("goodsJson", JsonKit.toJson(pageContext.getAttribute("goods")));
                             %>
-                            <tr goods='${goodsJson}'>
+                            <tr goods_id='${goods.goods_id}' goods='${goodsJson}'>
                                 <td>${status.count}</td>
                                 <td>${goods.goods_name}</td>
                                 <td>${goods.goods_stock}</td>
@@ -79,12 +97,13 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${goods.goods_preview_image}"/>
+                                    <img alt="商品预览图" width="25" height="25" src="${pageContext.request.contextPath}${goods.goods_preview_image}?width=25&height=25"/>
                                 </td>
                                 <td>
                                     <button onclick="removeTableRow(this)" type="button" class="btn btn-xs btn-info">
                                         <i class="glyphicon glyphicon-floppy-remove font-size12"></i>
-                                        <span>删除</span></button>
+                                        <span>删除</span>
+                                    </button>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -123,23 +142,46 @@
             return false;
         }
 
+        var setmeal_preview_imageObj = $('#setmeal_preview_image');
+        //默认不存在文件上传
+        var isExistFile = false;
+        var fileElementIdList = new Array(1);
+        if(setmeal_preview_imageObj.val()!='' && setmeal_preview_imageObj.val()!=undefined && setmeal_preview_imageObj.val() != null){
+            fileElementIdList[0]= 'setmeal_preview_image';
+            isExistFile = true;
+        }
+
         var phoneSetmealGoodsList = [];
         trList.each(function(){
             var phoneSetmealGoods = $.parseJSON($(this).attr('goods'));
             phoneSetmealGoods.goods_num = parseInt($(this).find('input').val());
-            phoneSetmealGoodsList.push(phoneSetmealGoods)
+            phoneSetmealGoodsList.push(phoneSetmealGoods);
         });
 
         var param = $(form).formToJson();
-        console.log(param);
-        console.log(phoneSetmealGoodsList);
-        param.phoneSetmealGoodsList = phoneSetmealGoodsList;
-        console.log(param);
+        if(isExistFile){
+            for(var index in phoneSetmealGoodsList){
+                for(var attrName in phoneSetmealGoodsList[index]){
+                    param['phoneSetmealGoodsList['+index+']['+attrName+']'] = phoneSetmealGoodsList[index][attrName];
+                }
+            }
+        }else{
+            param.phoneSetmealGoodsList = phoneSetmealGoodsList;
+        }
+
         var command = '${command}';
         if(command=='addRequest'){
-            callSubmit('/phoneSetmealCtrl/addData',null,'phoneSetmealListBox',param);
+            if(isExistFile){
+                callBatchFileUploadSubmit('/phoneSetmealCtrl/addFilesData',fileElementIdList,null,'phoneSetmealListBox',param);
+            }else {
+                callSubmit('/phoneSetmealCtrl/addData', null, 'phoneSetmealListBox', param);
+            }
         }else if(command=='updateRequest'){
-            callSubmit('/phoneSetmealCtrl/updateData',null,'phoneSetmealListBox',param);
+            if(isExistFile){
+                callBatchFileUploadSubmit('/phoneSetmealCtrl/updateFilesData',fileElementIdList,null,'phoneSetmealListBox',param);
+            }else{
+                callSubmit('/phoneSetmealCtrl/updateData',null,'phoneSetmealListBox',param);
+            }
         }
         return false;
     }

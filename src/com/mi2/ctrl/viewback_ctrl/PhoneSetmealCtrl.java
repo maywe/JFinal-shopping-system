@@ -5,6 +5,7 @@ import com.base.ctrl.BaseViewBackController;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.upload.UploadFile;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.GoodsSmallType;
 import com.mi2.model.PhoneSetmeal;
@@ -55,6 +56,44 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
     public Boolean addData() {
         //1、获取套餐基本信息和套餐详情信息
         PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        //判断该手机类型该套餐是否已经存在
+        List<PhoneSetmeal> PhoneSetmealList = PhoneSetmeal.dao.getAllData(phoneSetmeal);
+        if(PhoneSetmealList.size()>0){
+            this.renderJson(new ErrorVo(1,"该手机类型的该套餐已经存在了!"));
+            return false;
+        }
+        List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
+        //2、解析信息保存套餐基本信息
+        long goodsNumSum = 0;
+        double goodsNewPriceSum = 0;
+        for(Map<String,String> map : phoneSetmealGoodsList){
+            int goodsNum = Integer.parseInt(map.get("goods_num"));
+            double goodsNewPrice = Double.valueOf(map.get("goods_new_price"));
+            goodsNumSum += goodsNum;
+            goodsNewPriceSum += goodsNum*goodsNewPrice;
+        }
+        phoneSetmeal.setSetmealGoodsNum(BigDecimal.valueOf(goodsNumSum));
+        phoneSetmeal.setSaveMoney(BigDecimal.valueOf(goodsNewPriceSum).subtract(phoneSetmeal.getSetmealPrice()));
+        phoneSetmeal.save();
+        //3、更新套餐详情信息
+        new PhoneSetmealDetail().batchSave(phoneSetmeal.getPhoneSetmealId(),phoneSetmealGoodsList);
+
+        this.renderJson(new ErrorVo(0,"新增手机套餐成功!"));
+        return true;
+    }
+
+    public Boolean addFilesData() {
+        //0、接受上传的图片
+        UploadFile uploadFile = this.getFile("setmeal_preview_image",UPLOAD_IMAGES_OTHER_PATH);
+        //1、获取套餐基本信息和套餐详情信息
+        PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        //判断该手机类型该套餐是否已经存在
+        List<PhoneSetmeal> PhoneSetmealList = PhoneSetmeal.dao.getAllData(phoneSetmeal);
+        if(PhoneSetmealList.size()>0){
+            this.renderJson(new ErrorVo(1,"该手机类型的该套餐已经存在了!"));
+            return false;
+        }
+        phoneSetmeal.setSetmealPreviewImage(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
         List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
         //2、解析信息保存套餐基本信息
         long goodsNumSum = 0;
@@ -97,6 +136,48 @@ public class PhoneSetmealCtrl extends BaseViewBackController {
     public Boolean updateData() {
         //1、获取套餐基本信息和套餐详情信息
         PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        //判断该手机类型该套餐是否已经存在
+        List<PhoneSetmeal> PhoneSetmealList = PhoneSetmeal.dao.getAllData(phoneSetmeal);
+        if(PhoneSetmealList.size()>0){
+            if(PhoneSetmealList.get(0).getPhoneSetmealId().compareTo(phoneSetmeal.getPhoneSetmealId())!=0){
+                this.renderJson(new ErrorVo(1,"该手机类型的该套餐已经存在了!"));
+                return false;
+            }
+        }
+        List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
+        //2、解析信息更新套餐基本信息
+        long goodsNumSum = 0;
+        double goodsNewPriceSum = 0;
+        for(Map<String,String> map : phoneSetmealGoodsList){
+            int goodsNum = Integer.parseInt(map.get("goods_num"));
+            double goodsNewPrice = Double.valueOf(map.get("goods_new_price"));
+            goodsNumSum += goodsNum;
+            goodsNewPriceSum += goodsNum*goodsNewPrice;
+        }
+        phoneSetmeal.setSetmealGoodsNum(BigDecimal.valueOf(goodsNumSum));
+        phoneSetmeal.setSaveMoney(BigDecimal.valueOf(goodsNewPriceSum).subtract(phoneSetmeal.getSetmealPrice()));
+        phoneSetmeal.update();
+        //3、更新套餐详情信息
+        new PhoneSetmealDetail().batchUpdate(phoneSetmeal.getPhoneSetmealId(),phoneSetmealGoodsList);
+
+        this.renderJson(new ErrorVo(0,"修改手机套餐成功!"));
+        return true;
+    }
+
+    public Boolean updateFilesData() {
+        //0、接受上传的图片
+        UploadFile uploadFile = this.getFile("setmeal_preview_image",UPLOAD_IMAGES_OTHER_PATH);
+        //1、获取套餐基本信息和套餐详情信息
+        PhoneSetmeal phoneSetmeal = this.getModel(PhoneSetmeal.class);
+        //判断该手机类型该套餐是否已经存在
+        List<PhoneSetmeal> PhoneSetmealList = PhoneSetmeal.dao.getAllData(phoneSetmeal);
+        if(PhoneSetmealList.size()>0){
+            if(PhoneSetmealList.get(0).getPhoneSetmealId().compareTo(phoneSetmeal.getPhoneSetmealId())!=0){
+                this.renderJson(new ErrorVo(1,"该手机类型的该套餐已经存在了!"));
+                return false;
+            }
+        }
+        phoneSetmeal.setSetmealPreviewImage(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
         List<Map<String,String>> phoneSetmealGoodsList = this.getParaToList("phoneSetmealGoodsList");
         //2、解析信息更新套餐基本信息
         long goodsNumSum = 0;

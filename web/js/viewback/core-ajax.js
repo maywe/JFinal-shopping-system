@@ -72,7 +72,7 @@ $.fn.callLoad = function(service,parameter,success,openProgressLoad){
         }
         //判断登录是否超时
         var errorVo = '{"errorMessage":"请您先登录!","errorCode":99}';
-        if(response.substring(0,errorVo.length).indexOf('"errorCode":99')>-1){
+        if(response&&response.substring(0,errorVo.length).indexOf('"errorCode":99')>-1){
             toastr.info('登录超时!');
             window.location.href = getLocationUrl()+"/view/viewback/login.html";
         }else{

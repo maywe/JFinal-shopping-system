@@ -27,7 +27,7 @@ function initPaginationData(pageId,service,parentModelId){
             htmlStr += '<li class="j-num"><a onclick="pagination(\''+pageId+'\','+totalPage+','+i+',\''+service+'\',\''+parentModelId+'\')" href="javascript:;">'+i+'</a></li>';
         }
     }
-    if(pageNumber>1&&pageNumber<totalPage){
+    if(pageNumber>=1&&pageNumber<totalPage){
         htmlStr += '<li class="j-next"><a onclick="pagination(\''+pageId+'\','+totalPage+','+(pageNumber+1)+',\''+service+'\',\''+parentModelId+'\')" class="next" href="javascript:;">下一页<i class="glyphicon glyphicon-forward font-size12"></i></a></li>';
         htmlStr += '<li class="j-last"><a onclick="pagination(\''+pageId+'\','+totalPage+','+totalPage+',\''+service+'\',\''+parentModelId+'\')" class="last" href="javascript:;">末页<i class="glyphicon glyphicon-step-forward font-size12"></i></a></li>';
     }else if(pageNumber>=totalPage){
@@ -59,7 +59,7 @@ function pagination(pageId,totalPage,pageNumber,service,parentModelId){
     }
 
     var targetUrl = null;
-    if(service){
+    if(service!=undefined&&service!='undefined'&&service!=null&&service!='null'){
         targetUrl = service;
     }else{
         targetUrl = getTargetUrl(pageId);
@@ -71,7 +71,7 @@ function pagination(pageId,totalPage,pageNumber,service,parentModelId){
     }
     var param = pageObj.formToJson();
     pageObj.callLoad(targetUrl,param,function(){
-        if(service){
+        if(service!=undefined&&service!='undefined'&&service!=null&&service!='null'){
             showMyModel(parentModelId);
             initPaginationData(pageId,service,parentModelId);
         }else{

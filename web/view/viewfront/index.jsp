@@ -23,7 +23,7 @@
 <body class="myBody">
     <div class="div-center-width-1290">
         <%@ include file="./include/mi-topNavPage.jsp" %>
-        <div class="myContainer-context">
+        <div class="myContainer-context clearfix">
             <div class="carousel-left">&nbsp;</div>
             <div class="carousel-center">
                 <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
@@ -34,11 +34,17 @@
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                         <li data-target="#myCarousel" data-slide-to="3"></li>
                         <li data-target="#myCarousel" data-slide-to="4"></li>
+                        <li data-target="#myCarousel" data-slide-to="5"></li>
+                        <li data-target="#myCarousel" data-slide-to="6"></li>
                     </ol>
 
                     <!-- 轮播内容 -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
+                            <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mi5zx.jpg" alt="小米手机5 尊享版"></a>
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
                             <a href="#"><img src="${pageContext.request.contextPath}/images/front/carousel/mi-carousel-mi5.jpg" alt="小米手机5"></a>
                             <div class="carousel-caption"></div>
                         </div>

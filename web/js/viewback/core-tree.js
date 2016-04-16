@@ -30,7 +30,7 @@ $(function(){
                     if(jsonTreeData[i]["children"]){
                         if(option.checkBox){
                             //tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
-                            tmpStr = '<li><div class="checkbox checkbox-success checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            tmpStr = '<li><div class="checkbox checkbox-orange checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }else{
                             tmpStr = '<li><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }
@@ -39,7 +39,7 @@ $(function(){
                     }else{
                         if(option.checkBox){
                             //tmpStr = '<li><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
-                            tmpStr = '<li><div class="checkbox checkbox-success checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
+                            tmpStr = '<li><div class="checkbox checkbox-orange checkbox-inline"><input '+(jsonTreeData[i]['ischecked']==true?"checked":"")+' onclick="selectCheckBox(this)" name="menu_id" type="checkbox" value="'+jsonTreeData[i]['menu_id']+'"/><label></label></div><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }else {
                             tmpStr = '<li><a rel="'+jsonTreeData[i]['menu_url']+'"><i></i>&nbsp;&nbsp;<label>'+jsonTreeData[i]['menu_name']+'</label><span></span></a></li>';
                         }
@@ -175,7 +175,6 @@ function isChildrenExistChecked($ul){
     $ul.children('li').each(function(){
         if($(this).children('div.checkbox').children('input[name="menu_id"]:checkbox').is(':checked')){
             isExistChecked = true;
-
         }
     });
     return isExistChecked;

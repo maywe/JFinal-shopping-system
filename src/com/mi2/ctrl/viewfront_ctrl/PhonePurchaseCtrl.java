@@ -42,33 +42,29 @@ public class PhonePurchaseCtrl extends BaseViewFrontController {
 	public void initPhonePurchase(){
 		GoodsSmallType phoneSmallType = getModel(GoodsSmallType.class);
 		phoneSmallType = GoodsSmallType.dao.findById(phoneSmallType.getGoodsSmallTypeId());
-		if(null==phoneSmallType||null==phoneSmallType.getGoodsSmallTypeId()){
-			this.setAttr("errorMessage","你没有设置手机类型!");
+		if(null==phoneSmallType){
+			phoneSmallType = new GoodsSmallType();
+		}
+		//手机类型
+		phoneSmallType.setGoodsBigTypeId(BigDecimal.valueOf(1));
+		phoneSmallType.put("isUse",true);
+		this.setAttr("phoneSmallTypeList",GoodsSmallType.dao.getAllData(phoneSmallType));
+
+		if(null==phoneSmallType.getGoodsSmallTypeId()){
+			List<GoodsSmallType> phoneGoodsList = GoodsSmallType.dao.getPhoneTypeCarryLowPriceAllData(null);
+			this.setAttr("phoneGoodsList",phoneGoodsList);
 		}else{
-			//手机类型
-			phoneSmallType.setGoodsBigTypeId(BigDecimal.valueOf(1));
-			phoneSmallType.put("isUse",true);
-			this.setAttr("phoneSmallTypeList",GoodsSmallType.dao.getAllData(phoneSmallType));
 			//手机型号
 			PhoneModel phoneModel = new PhoneModel();
 			phoneModel.setGoodsSmallTypeId(phoneSmallType.getGoodsSmallTypeId());
 			List<PhoneModel> phoneModelList = PhoneModel.dao.getAllData(phoneModel);
 			this.setAttr("phoneModelList",phoneModelList);
-			//手机版本
-			PhoneGoodsView pgv = new PhoneGoodsView();
-			pgv.setGoodsSmallTypeId(phoneSmallType.getGoodsSmallTypeId());
-			List<PhoneGoodsView> phoneVersionList = PhoneGoodsView.dao.getAllData(pgv);
-			if(phoneVersionList.size()>0){
-				BigDecimal phoneLowPrice = phoneVersionList.get(0).getPhoneNowPrice();
-				for(PhoneGoodsView phoneGoodsView : phoneVersionList){
-					if(phoneLowPrice.compareTo(phoneGoodsView.getPhoneNowPrice())>0){
-						phoneLowPrice = phoneGoodsView.getPhoneNowPrice();
-					}
-				}
-				phoneSmallType.put("phone_low_price",phoneLowPrice);
-				phoneSmallType.put("phone_preview_image",phoneVersionList.get(0).getPhonePreviewImage());
-			}
 
+			//查找该类型手机的最低价格
+			List<GoodsSmallType> phoneSmallTypeList = GoodsSmallType.dao.getPhoneTypeCarryLowPriceAllData(phoneSmallType);
+			if(phoneSmallTypeList.size()>0){
+				phoneSmallType.put("phone_type_small_low_price",phoneSmallTypeList.get(0).get("phone_type_small_low_price"));
+			}
 			this.setAttr("phoneSmallType",phoneSmallType);
 		}
 		this.renderJsp(VIEW_FRONT_PATH+"/phonePurchase.jsp");

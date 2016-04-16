@@ -38,23 +38,4 @@ function getChildList(pidVal,pidName,idName,nameName,items,targetSelectId){
     $('#'+targetSelectId).empty().append(options);
 }
 
-/* 3、数量设置插件 start*/
-function minusDigital(obj){
-    var digital = $(obj).next('input').val();
-    if(isNaN(digital)){
-        $(obj).next('input').val(1);
-    }else{
-        digital = Number(digital);
-        $(obj).next('input').val(digital>1?digital-1:1);
-    }
-}
-function plusDigital(obj){
-    var digital = $(obj).prev('input').val();
-    if(isNaN(digital)){
-        $(obj).prev('input').val(1);
-    }else{
-        digital = Number(digital);
-        $(obj).prev('input').val(digital+1);
-    }
-}
-/* 数量设置插件 end*/
+

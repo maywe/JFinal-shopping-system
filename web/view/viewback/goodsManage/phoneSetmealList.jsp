@@ -43,6 +43,7 @@
                         <th>套餐商品总数(件)</th>
                         <th>套餐总价(￥)</th>
                         <th>节省金钱(￥)</th>
+                        <th>套餐预览图</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                             <td>${data.setmeal_goods_num}</td>
                             <td>${data.setmeal_price}</td>
                             <td>${data.save_money}</td>
+                            <td><img alt="套餐预览图" width="25" height="25" src="${pageContext.request.contextPath}${empty data.setmeal_preview_image?"/images/avatar-160.png":data.setmeal_preview_image}?width=25&height=25"/></td>
                             <td>
                                 <a data-backdrop="static" data-whatever="查看手机套餐" data-toggle="modal" href="${pageContext.request.contextPath}/phoneSetmealCtrl/showRequest.action?phoneSetmeal.phone_setmeal_id=${data.phone_setmeal_id}" data-target="#pop_modal" class="btn btn-xs btn-info">
                                     <i class="glyphicon glyphicon-share-alt font-size12"></i>

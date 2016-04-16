@@ -1,15 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ChenMW
-  Date: 2016-04-08
-  Time: 21:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,6 +12,7 @@
     <title>小米官网-手机购买</title>
     <link href="${pageContext.request.contextPath}/css/common/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/common/toastr.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-phonePurchase.css" type="text/css" rel="stylesheet">
@@ -27,12 +20,25 @@
 <body class="myBody">
     <div class="div-center-width-1290">
         <%@ include file="./include/mi-topNavPage.jsp" %>
-        <div class="myContainer-context-zIndex23 buy-choose-box">
+        <div class="myContainer-context buy-choose-box">
+            <div class="path-nav-box">
+                <div class="display-table">
+                    <div class="display-table-cell path-nav">
+                        <a href="${pageContext.request.contextPath}/" class="home">首页</a>
+                        <span>&gt;</span>
+                        <a href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action" class="goods-big-type">小米手机系列</a>
+                        <c:if test="${not empty phoneSmallType}">
+                            <span>&gt;</span>
+                            <a href="#" class="goods-small-type">${phoneSmallType.goods_small_type_name}</a>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
             <div class="hd">
                 <ul id="J_navBar" class="pro-nav-bar clearfix">
                     <c:forEach items="${phoneSmallTypeList}" var="pst">
                         <li class="${pst.goods_small_type_id==phoneSmallType.goods_small_type_id?'active':''}">
-                            <a href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action?goodsSmallType.goods_small_type_id=${pst.goods_small_type_id}">${pst.goods_small_type_name}</a>
+                            <a class="${pst.goods_small_type_id==phoneSmallType.goods_small_type_id?'orangeColor':''}" href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action?goodsSmallType.goods_small_type_id=${pst.goods_small_type_id}">${pst.goods_small_type_name}</a>
                         </li>
                     </c:forEach>
                     <c:if test="${fn:length(phoneSmallTypeList)<10}">
@@ -43,15 +49,44 @@
                 </ul>
             </div>
             <div class="bd">
-                <div id="J_chooseMain" class="pro-choose-main clearfix">
+                <c:if test="${empty phoneSmallType}">
+                    <div class="phone-goods-list-box clearfix">
+                        <ul class="goods-list">
+                            <c:forEach items="${phoneGoodsList}" var="pg">
+                                <li class="goods-item-box">
+                                    <div class="goods-item-img">
+                                        <a href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action?goodsSmallType.goods_small_type_id=${pg.goods_small_type_id}">
+                                            <img alt="${pg.goods_small_type_name}" src="${pageContext.request.contextPath}${pg.goods_small_type_image}?width=450&height=450">
+                                        </a>
+                                    </div>
+                                    <div class="row goods-item-other">
+                                        <div class="col-xs-7 goods-item-desc">
+                                            <div>
+                                                <span class="goods-item-name">${pg.goods_small_type_name}</span>
+                                                <span class="goods-item-price">${pg.phone_type_small_low_price}</span>
+                                                <span class="goods-item-price-desc">元起</span>
+                                            </div>
+                                            <span>${pg.goods_small_type_remark}</span>
+                                        </div>
+                                        <div class="col-xs-5 goods-item-btn">
+                                            <a class="btn btn-grey btn-lg" href="${pageContext.request.contextPath}/phonePurchaseCtrl/initPhonePurchase.action?goodsSmallType.goods_small_type_id=${pg.goods_small_type_id}" >立即购买</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </c:if>
+                <c:if test="${not empty phoneSmallType}">
+                    <div id="J_chooseMain" class="pro-choose-main clearfix">
                     <div class="pro-view">
-                        <img id="J_proImg" alt="小米Note" src="${pageContext.request.contextPath}${phoneSmallType.phone_preview_image}" style="height: 70%;">
+                        <img id="J_proImg" alt="手机图片预览" src="${pageContext.request.contextPath}${phoneSmallType.goods_small_type_image}" style="height: 70%;">
                     </div>
                     <div class="pro-info">
                         <div class="row pro-title clearfix margin0">
                             <div class="col-xs-8">
                                 <span class="pro-name">购买${phoneSmallType.goods_small_type_name}</span>
-                                <span class="pro-price">${phoneSmallType.phone_low_price}元起</span>
+                                <span class="pro-price">${phoneSmallType.phone_type_small_low_price}元起</span>
                             </div>
                             <div class="col-xs-4 pro-more">
                                 <a id="J_proMore" href="#">深入了解产品></a>
@@ -86,6 +121,7 @@
                         </div>
                         <div id="J_packageListBox" class="package-list hide">
                             <ul class="list clearfix">
+                                <%--
                                 <li class="item">
                                     <div class="item-img"><img alt="小米活塞耳机 基础版 银色" src=""></div>
                                     <div class="item-title">小米活塞耳机 基础版 银色</div>
@@ -93,6 +129,7 @@
                                         <span class="active" data-title="小米活塞耳机 基础版 银色" data-node-id="2161200005" data-img=""><img alt="" src=""></span>
                                     </div>
                                 </li>
+                                --%>
                             </ul>
                         </div>
                         <div id="J_chooseResultMsg" class="choose-result-msg">
@@ -107,33 +144,37 @@
                             </p>
                         </div>
                         <div id="J_chooseResult" class="pro-choose-result">
-                            <button disabled class="btn btn-lg btn-orange">立即购买</button>
+                            <button disabled class="btn btn-lg btn-orange">加入购物车</button>
                         </div>
                     </div>
                 </div>
+                    <form id="phonePurchaseForm" class="hide">
+                    <%--
+                        usersShoppingcar.phone_goods_id         手机商品id
+                        usersShoppingcar.goods_color_id         手机商品颜色id
+                        usersShoppingcar.phone_setmeal_id       手机套餐id
+                        phone_setmeal_goods_color_ids           手机套餐颜色id
+                    --%>
+                    <input type="hidden" name="usersShoppingcar.phone_goods_id">
+                    <input type="hidden" name="usersShoppingcar.goods_color_id">
+                    <input type="hidden" name="usersShoppingcar.phone_setmeal_id">
+                    <input type="hidden" name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds">
+                </form>
+                </c:if>
             </div>
-            <form id="phonePurchaseForm" class="hide">
-                <%--
-                    usersShoppingcar.phone_goods_id         手机商品id
-                    usersShoppingcar.goods_color_id         手机商品颜色id
-                    usersShoppingcar.phone_setmeal_id       手机套餐id
-                    phone_setmeal_goods_color_ids           手机套餐颜色id
-                --%>
-                <input type="hidden" name="usersShoppingcar.phone_goods_id">
-                <input type="hidden" name="usersShoppingcar.goods_color_id">
-                <input type="hidden" name="usersShoppingcar.phone_setmeal_id">
-                <input type="hidden" name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums">
-            </form>
         </div>
         <%@ include file="./include/mi-bottomPage.jsp" %>
     </div>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/toastr.min.js"></script>
 <!-- 浏览器兼容 bsie js 补丁只在IE6中才执行 -->
 <!--[if lte IE 6]>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap-ie.js"></script>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/html5shiv.min.js"></script>
 <![endif]-->
+
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/common.js"></script>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/viewfront/mi-common.js"></script>
 <script type="text/javascript">
     $(function(){
@@ -223,30 +264,37 @@
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealDetailList.action';
         var param = {"phoneSetmealDetail.phone_setmeal_id":phone_setmeal_id};
         $.post(targetUrl,param,function(data){
-            console.log(data);
             var packageListUl = $('#J_packageListBox>ul');
             var targetHtml;
             var goodsColorList;
-            var phoneSetmeal_goodsIds_goodsColorIds_goodsNums='';
+            var phoneSetmeal_goodsIds_goodsNums_goodsColorIds='';
             packageListUl.empty();
             for(var i in data){
-                targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+data[i].goods_preview_image+'"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
+                targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+data[i].goods_preview_image+'?width=100&height=100"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
                 goodsColorList = data[i].goodscolorlist;
+                if(goodsColorList.length==0){
+                    if(i==data.length-1){
+                        phoneSetmeal_goodsIds_goodsNums_goodsColorIds += data[i].goods_id+'_'+data[i].goods_num+'_';
+                    }else{
+                        phoneSetmeal_goodsIds_goodsNums_goodsColorIds += data[i].goods_id+'_'+data[i].goods_num+'_,';
+                    }
+                    targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+data[i].goods_preview_image+'?width=100&height=100"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions" data-node-id="'+data[i].goods_id+'_'+data[i].goods_num+'_">';
+                }
                 for(var j in goodsColorList){
                     if(j==0){
-                        targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
+                        targetHtml = '<li class="item"><div class="item-img"><img alt="'+data[i].goods_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'?width=100&height=100"></div><div class="item-title">'+data[i].goods_name+'</div><div class="item-versions">';
                         if(i==data.length-1){
-                            phoneSetmeal_goodsIds_goodsColorIds_goodsNums += goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num;
+                            phoneSetmeal_goodsIds_goodsNums_goodsColorIds += goodsColorList[j].goods_id+'_'+data[i].goods_num+'_'+goodsColorList[j].goods_color_id;
                         }else{
-                            phoneSetmeal_goodsIds_goodsColorIds_goodsNums += goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num+',';
+                            phoneSetmeal_goodsIds_goodsNums_goodsColorIds += goodsColorList[j].goods_id+'_'+data[i].goods_num+'_'+goodsColorList[j].goods_color_id+',';
                         }
                     }
-                    targetHtml += '<span onclick="selectPhoneSetmealImg(this)" class="'+(j==0?'active':'')+'" data-title="'+data[i].goods_name+' '+goodsColorList[j].goods_addribute_val_name+'" data-node-id="'+goodsColorList[j].goods_id+'_'+goodsColorList[j].goods_color_id+'_'+data[i].goods_num+'" data-img="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"><img alt="'+data[i].goods_name+'" "'+goodsColorList[j].goods_addribute_val_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'"></span>';
+                    targetHtml += '<span onclick="selectPhoneSetmealImg(this)" class="'+(j==0?'active':'')+'" data-title="'+data[i].goods_name+' '+goodsColorList[j].goods_addribute_val_name+'" data-node-id="'+goodsColorList[j].goods_id+'_'+data[i].goods_num+'_'+goodsColorList[j].goods_color_id+'" data-img="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'?width=100&height=100"><img alt="'+data[i].goods_name+'" "'+goodsColorList[j].goods_addribute_val_name+'" src="${pageContext.request.contextPath}'+goodsColorList[j].goods_color_img_url+'?width=14&height=14"></span>';
                 }
                 targetHtml += '</div></li>';
                 packageListUl.append(targetHtml);
             }
-            $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums"]').val(phoneSetmeal_goodsIds_goodsColorIds_goodsNums);
+            $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
         },'json');
     }
 
@@ -264,16 +312,25 @@
         itemTitleDiv.prev('div.item-img').children('img').attr('src',$(obj).data('img'));
         activeFun(obj,'active');
 
-        var phoneSetmeal_goodsIds_goodsColorIds_goodsNums='';
-        var spanActiveList = $('#J_packageListBox').find('span.active');
+        var phoneSetmeal_goodsIds_goodsNums_goodsColorIds='';
+        var spanActiveList = $('#J_packageListBox').find('div.item-versions');
         spanActiveList.each(function(i){
-            if(i==spanActiveList.length-1){
-                phoneSetmeal_goodsIds_goodsColorIds_goodsNums+=$(this).data('node-id');
+            var item_versions_id=$(this).data('node-id');
+            if(item_versions_id){
+                if(i==spanActiveList.length-1){
+                    phoneSetmeal_goodsIds_goodsNums_goodsColorIds+=item_versions_id;
+                }else{
+                    phoneSetmeal_goodsIds_goodsNums_goodsColorIds+=item_versions_id+',';
+                }
             }else{
-                phoneSetmeal_goodsIds_goodsColorIds_goodsNums+=$(this).data('node-id')+',';
+                if(i==spanActiveList.length-1){
+                    phoneSetmeal_goodsIds_goodsNums_goodsColorIds+=$(this).children('span.active').data('node-id');
+                }else{
+                    phoneSetmeal_goodsIds_goodsNums_goodsColorIds+=$(this).children('span.active').data('node-id')+',';
+                }
             }
         });
-        $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsColorIds_goodsNums"]').val(phoneSetmeal_goodsIds_goodsColorIds_goodsNums);
+        $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
     }
 </script>
 </body>

@@ -36,4 +36,20 @@ public abstract class BaseGoodsSmallType<M extends BaseGoodsSmallType<M>> extend
 		return get("GOODS_SMALL_TYPE_NAME");
 	}
 
+	public void setGoodsSmallTypeRemark(java.lang.String goodsSmallTypeRemark) {
+		set("GOODS_SMALL_TYPE_REMARK", goodsSmallTypeRemark);
+	}
+
+	public java.lang.String getGoodsSmallTypeRemark() {
+		return get("GOODS_SMALL_TYPE_REMARK");
+	}
+
+	public void setGoodsSmallTypeImage(java.lang.String goodsSmallTypeImage) {
+		set("GOODS_SMALL_TYPE_IMAGE", goodsSmallTypeImage);
+	}
+
+	public java.lang.String getGoodsSmallTypeImage() {
+		return get("GOODS_SMALL_TYPE_IMAGE");
+	}
+
 }

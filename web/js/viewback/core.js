@@ -72,47 +72,7 @@ function getLocationUrl() {
     //return protocol + '//' + host + projectName;
 }
 
-//5、获取层或表单组件的值并转换成json
-$.fn.formToJson = function() {
-    var values = {};
-    this.find('*[name]').each(function(index, element) {
-        var elementName = element.name;
-        if (element.name != undefined && element.name != '') {
-            elementName = element.name;
-            var type = element.type;
-            if (element.type == 'radio' || type == 'checkbox') {
-                if (element.checked) {
-                    if (values[elementName] == undefined || values[elementName] == '') {
-                        values[elementName] = element.value.trim();
-                    } else {
-                        values[elementName] = values[elementName] + ',' + element.value.trim();
-                    }
-                } else {
-                    if (values[elementName] == undefined || values[elementName] == '') {
-                        values[elementName] = '';
-                    }
-                }
-            } else {
-                if (values[elementName] == undefined) {
-                    if(element.type!='file'){
-                        if (typeof ($(this).attr('isDate')) != 'undefined') {
-                            values[elementName] = element.value.trim();
-                        } else if (typeof ($(this).attr('isNum')) != 'undefined') {
-                            values[elementName] = element.value.trim();
-                        } else {
-                            values[elementName] = element.value.trim();
-                        }
-                    }
-                } else {
-                    values[elementName] = values[elementName] + ',' + element.value.trim();
-                }
-            }
-        }
-    });
-    return values;
-};
-
-//6、获取目标URL的方法
+//5、获取目标URL的方法
 function getTargetUrl(pageId){
     var tabs_A_List = $('#'+initSeting.ids.tabsId).find('a');
     var targetTabText = '';
@@ -138,12 +98,12 @@ function getTargetUrl(pageId){
     return targetUrl;
 }
 
-//7、隐藏bootstarp模态框
+//6、隐藏bootstarp模态框
 function hideModal() {
     $('#' + initSeting.ids.popModalLg + ',#' + initSeting.ids.popModal + ',#' + initSeting.ids.popModalSm).modal('hide');
 }
 
-//8、隐藏与显示自定义的模态框
+//7、隐藏与显示自定义的模态框
 function showMyModel(parentModelId){
     $('#'+initSeting.ids.myPopModalLg).parent().parent().show();
     $('#'+initSeting.ids.myAlertBackground).show();

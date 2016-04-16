@@ -3,7 +3,7 @@ package com.mi2.ctrl.viewback_ctrl;
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseViewBackController;
 import com.base.util.DateUtils;
-import com.base.util.FileUtils;
+import com.base.util.ImageUtils;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.kit.PathKit;
@@ -51,7 +51,7 @@ public class SysUserCtrl extends BaseViewBackController {
     public Boolean addFilesData(){
         UploadFile uploadFile = this.getFile("usersBackstageImg",UPLOAD_IMAGES_USERS_BACK_PATH);
         UsersBackstage usersBackstage = getModel(UsersBackstage.class);
-        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
+        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_USERS_BACK_PATH + "/" + uploadFile.getFileName());
         usersBackstage.save();
         this.renderJson(new ErrorVo(0,"新增系统用户成功!"));
         return true;
@@ -80,7 +80,7 @@ public class SysUserCtrl extends BaseViewBackController {
     public Boolean updateFilesData(){
         UploadFile uploadFile = this.getFile("usersBackstageImg",UPLOAD_IMAGES_USERS_BACK_PATH);
         UsersBackstage usersBackstage = getModel(UsersBackstage.class);
-        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_OTHER_PATH + "/" + uploadFile.getFileName());
+        usersBackstage.setImg(UPLOAD_PATH + UPLOAD_IMAGES_USERS_BACK_PATH + "/" + uploadFile.getFileName());
         usersBackstage.update();
         this.renderJson(new ErrorVo(0,"更新系统用户成功!"));
         return true;
@@ -129,7 +129,7 @@ public class SysUserCtrl extends BaseViewBackController {
         String sysUserImageData = this.getPara("sysUserImageData");
         String imgPath = PathKit.getWebRootPath()+UPLOAD_PATH+UPLOAD_IMAGES_USERS_BACK_PATH;
         String imgName = "user_back_"+ DateUtils.thisTime().getTime()+".png";
-        File imgFile = FileUtils.saveToImgByBase64Str(sysUserImageData,imgPath,imgName);
+        File imgFile = ImageUtils.saveToImgByBase64Str(sysUserImageData,imgPath,imgName);
         if(null==imgFile){
             this.renderJson(new ErrorVo(1,"更新头像失败!"));
             return false;

@@ -6,15 +6,17 @@
   vertical-align: middle;
   position: relative;
   padding-left: 5px;
+  font-size: 15px;
 }
 .checkbox label::before {
   content: "";
   display: inline-block;
   position: absolute;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   left: 0;
   margin-left: -20px;
+  margin-top: 3px;
   border: 1px solid #cccccc;
   border-radius: 3px;
   background-color: #fff;
@@ -31,7 +33,7 @@
   top: 0;
   margin-left: -20px;
   padding-left: 3px;
-  padding-top: 1px;
+  padding-top: 4px;
   font-size: 11px;
   color: #555555;
 }
@@ -76,6 +78,16 @@
 }
 .checkbox.checkbox-inline {
   margin-top: 0;
+}
+
+.checkbox-orange input[type="checkbox"]:checked + label::before,
+.checkbox-orange input[type="radio"]:checked + label::before {
+  background-color: rgb(255,103,0);
+  border-color: rgb(255,103,0);
+}
+.checkbox-orange input[type="checkbox"]:checked + label::after,
+.checkbox-orange input[type="radio"]:checked + label::after {
+  color: #fff;
 }
 
 .checkbox-primary input[type="checkbox"]:checked + label::before,
@@ -126,6 +138,17 @@
 .checkbox-success input[type="checkbox"]:checked + label::after,
 .checkbox-success input[type="radio"]:checked + label::after {
   color: #fff;
+}
+
+.checkbox-orange input[type="checkbox"]:indeterminate + label::before,
+.checkbox-orange input[type="radio"]:indeterminate + label::before {
+  background-color: rgb(255,103,0);
+  border-color: rgb(255,103,0);
+}
+
+.checkbox-orange input[type="checkbox"]:indeterminate + label::after,
+.checkbox-orange input[type="radio"]:indeterminate + label::after {
+  background-color: #fff;
 }
 
 .checkbox-primary input[type="checkbox"]:indeterminate + label::before,

@@ -68,7 +68,7 @@
                         <div class="input-group">
                             <input id="goods_preview_image" name="goods_preview_image" type="file" class="form-control" placeholder="商品预览图" accept="image/*" required>
                             <span class="input-group-addon" style="padding: 1px 5px;">
-                                <img width="30" height="30" alt="商品颜色图片" src="${pageContext.request.contextPath}${empty goods.goods_preview_image?"/images/avatar-160.png":goods.goods_preview_image}">
+                                <img width="30" height="30" alt="商品颜色图片" src="${pageContext.request.contextPath}${empty goods.goods_preview_image?"/images/avatar-160.png":goods.goods_preview_image}?width=30&height=30">
                             </span>
                         </div>
                     </td>
@@ -93,27 +93,27 @@
                             <c:forEach items="${privateGoodsColorList}" var="pgc">
                                 <c:if test="${pgc.goods_addribute_val_id==gc.goods_addribute_val_id}">
                                     <c:set var="isExistColor" value="1"> </c:set>
-                                    <th style="width: 80px;background: ${gc.goods_color_code};">
-                                        <div class="checkbox checkbox-info checkbox-inline">
+                                    <th style="width: 80px;color: ${gc.goods_addribute_val_name=='白色'?'':gc.goods_color_code};">
+                                        <div class="checkbox checkbox-orange checkbox-inline">
                                             <input checked onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">
                                             <label>${gc.goods_addribute_val_name}</label>
                                         </div>
                                     </th>
                                     <!-- 该文件上传时，会把 goods_color_img_url(商品颜色图片)，和 goods_addribute_val_id(商品颜色id一起上传)-->
                                     <td><input disabled id="goods_color_img_url${gc.goods_addribute_val_id}" name="goods_color_img_url${gc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
-                                    <td><img width="35" height="35" alt="商品颜色图片" src="${pageContext.request.contextPath}${pgc.goods_color_img_url}"></td>
+                                    <td><img width="35" height="35" alt="商品颜色图片" src="${pageContext.request.contextPath}${pgc.goods_color_img_url}?width=35&height=35"></td>
                                 </c:if>
                             </c:forEach>
                             <c:if test="${isExistColor==0}">
-                                <th style="width: 80px;background: ${gc.goods_color_code};">
-                                    <div class="checkbox checkbox-info checkbox-inline">
+                                <th style="width: 80px;color: ${gc.goods_addribute_val_name=='白色'?'':gc.goods_color_code};">
+                                    <div class="checkbox checkbox-orange checkbox-inline">
                                         <input onclick="selectGoodsColor(this)" name="goods_addribute_val_id" type="checkbox" value="${gc.goods_addribute_val_id}">
                                         <label>${gc.goods_addribute_val_name}</label>
                                     </div>
                                 </th>
                                 <!-- 该文件上传时，会把 goods_color_img_url(商品颜色图片)，和 goods_addribute_val_id(商品颜色id一起上传)-->
                                 <td><input disabled id="goods_color_img_url${gc.goods_addribute_val_id}" name="goods_color_img_url${gc.goods_addribute_val_id}" type="file" class="form-control" accept="image/*" placeholder="商品颜色图片"></td>
-                                <td><img width="35" height="35" alt="商品颜色图片" src="${pageContext.request.contextPath}/images/avatar-160.png"></td>
+                                <td><img width="35" height="35" alt="商品颜色图片" src="${pageContext.request.contextPath}/images/avatar-160.png?width=35&height=35"></td>
                             </c:if>
                             <c:if test="${(status.count)%3==0||status.last}">
                                 </tr>
@@ -130,14 +130,14 @@
                         <c:forEach items="${privateGoodAdapterPhoneList}" var="pgp">
                             <c:if test="${pst.goods_small_type_id==pgp.goods_small_type_id}">
                                 <c:set var="isExistPhoneType" value="1"> </c:set>
-                                <div class="checkbox checkbox-info checkbox-inline">
+                                <div class="checkbox checkbox-orange checkbox-inline">
                                     <input checked onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">
                                     <label>${pst.goods_small_type_name}</label>
                                 </div>
                             </c:if>
                         </c:forEach>
                         <c:if test="${isExistPhoneType==0}">
-                            <div class="checkbox checkbox-info checkbox-inline">
+                            <div class="checkbox checkbox-orange checkbox-inline">
                                 <input onclick="phoneTypeSelect()" name="phone_small_type_ids" type="checkbox" value="${pst.goods_small_type_id}">
                                 <label>${pst.goods_small_type_name}</label>
                             </div>
