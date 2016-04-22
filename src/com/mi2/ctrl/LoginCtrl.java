@@ -65,10 +65,42 @@ public class LoginCtrl extends BaseController{
                 return;
             }
             this.setSessionAttr(LOGIN_FRONT_USER,usersFrontList.get(0));
-            this.forwardAction("/");
+            Object targetUrlObj = this.getSession().getAttribute(REQUEST_URL);
+            if(null==this.getSession()||null==targetUrlObj){
+                this.forwardAction("/");
+            }else{
+                this.getSession().setAttribute(REQUEST_URL,null);
+                this.redirect(targetUrlObj.toString());
+            }
         }else{
             this.setAttr("errorMessage","用户名或密码错误!");
             this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");
+        }
+    }
+
+    public void ajaxLoginInFront(){
+        UsersFront usersFront = this.getModel(UsersFront.class);
+        List<UsersFront> usersFrontList = UsersFront.dao.getAllData(usersFront);
+        if(usersFrontList.size()==0) {
+            this.renderJson(new ErrorVo(1,"用户名或密码错误!"));
+            return;
+        }
+        if(usersFrontList.get(0).getPassword().equals(usersFront.getPassword())){
+            if(!usersFrontList.get(0).getUserStatus().equals("0")){
+                this.renderJson(new ErrorVo(2,"您的账户已被冻结,请联系客服!"));
+                return;
+            }
+            this.setSessionAttr(LOGIN_FRONT_USER,usersFrontList.get(0));
+            String targetUrl = this.getPara(REQUEST_URL);
+            if(StrKit.notBlank(targetUrl)){
+                //this.redirect(targetUrl);
+                //this.forwardAction(targetUrl);
+                this.renderJson(new ErrorVo(100,targetUrl));
+                return;
+            }
+            this.renderJson(new ErrorVo(0,"登录成功!"));
+        }else{
+            this.renderJson(new ErrorVo(1,"用户名或密码错误!"));
         }
     }
 

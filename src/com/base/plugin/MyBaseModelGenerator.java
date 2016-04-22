@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Jfinal代码生成器插件，加入BaseModel方便扩展代码分享
+ * Jfinal代码生成器插件重写，加入BaseModel方便扩展代码分享
  *
  * @author ChenMW 2016-03-16 16:18
  */

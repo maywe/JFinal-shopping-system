@@ -43,7 +43,7 @@ public class DateUtils {
 
 
 	//将java.util.Date日期转换为固定格式的字符串
-	public static String UtilDateToStr(java.util.Date date,String pattern){
+	public static String utilDateToStr(java.util.Date date,String pattern){
 
 		//日期格式化类
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
@@ -52,23 +52,26 @@ public class DateUtils {
 
 	}
 
+	public static java.util.Date thisUtilTime(){
+		return strToUtilDate(utilDateToStr(thisTime(),DATE_TIME),DATE_TIME);
+	}
+
+	public static java.sql.Date thisSqlTime(){
+		return java.sql.Date.valueOf(DateUtils.utilDateToStr(thisTime(),DATE));
+	}
+
 
 	//将java.sql.Date日期转换为固定格式的字符串
-	public static String SqlDateToStr(java.sql.Date date,String pattern){
-
+	public static String sqlDateToStr(java.sql.Date date,String pattern){
 		//日期格式化类
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-
 		return sdf.format(date);
-
 	}
 
 
 	//将字符串转换strDate为java.util.Date类型
 	public static java.util.Date strToUtilDate(String strDate,String pattern){
-
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-
 		try {
 			//解析字符串的文本，生成 Date。
 			Date date = sdf.parse(strDate);
@@ -77,14 +80,12 @@ public class DateUtils {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 
 
 	//将字符串strDate转换为java.sql.Date类型
 	public static java.sql.Date strToSqlDate(String strDate,String pattern){
-
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 		try {
 			//util格式时间
@@ -95,32 +96,26 @@ public class DateUtils {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 
 
 	//将java.util.Date类型的日期转换为java.util.Date类型的日期
 	public static java.sql.Date utilDateToSqlDate(java.util.Date date,String pattern){
-
-		String str = UtilDateToStr(date,pattern);
-
+		String str = utilDateToStr(date,pattern);
 		return strToSqlDate(str,pattern);
 	}
 
 
 	//将java.sql.Date类型的日期转换为java.util.Date类型的日期
 	public static java.util.Date sqlDateToUtilDate(java.sql.Date date,String pattern){
-
-		String str = SqlDateToStr(date,pattern);
-
+		String str = sqlDateToStr(date,pattern);
 		return strToUtilDate(str,pattern);
 	}
 
 	public static java.util.Date thisTime(){
 		//获取当前系统时间
-		Date date=new Date();
-		return date;
+		return new Date();
 	}
 
 }

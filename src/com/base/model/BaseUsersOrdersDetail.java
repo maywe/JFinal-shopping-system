@@ -68,4 +68,20 @@ public abstract class BaseUsersOrdersDetail<M extends BaseUsersOrdersDetail<M>> 
 		return get("GOODS_COLOR_ID");
 	}
 
+	public void setAdaptPhoneTypeId(java.math.BigDecimal adaptPhoneTypeId) {
+		set("ADAPT_PHONE_TYPE_ID", adaptPhoneTypeId);
+	}
+
+	public java.math.BigDecimal getAdaptPhoneTypeId() {
+		return get("ADAPT_PHONE_TYPE_ID");
+	}
+
+	public void setPhoneSetmealId(java.math.BigDecimal phoneSetmealId) {
+		set("PHONE_SETMEAL_ID", phoneSetmealId);
+	}
+
+	public java.math.BigDecimal getPhoneSetmealId() {
+		return get("PHONE_SETMEAL_ID");
+	}
+
 }

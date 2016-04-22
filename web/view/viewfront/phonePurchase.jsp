@@ -144,22 +144,22 @@
                             </p>
                         </div>
                         <div id="J_chooseResult" class="pro-choose-result">
-                            <button disabled class="btn btn-lg btn-orange">加入购物车</button>
+                            <button onclick="addUserShoppingCart()" disabled class="btn btn-lg btn-orange">加入购物车</button>
                         </div>
                     </div>
                 </div>
-                    <form id="phonePurchaseForm" class="hide">
-                    <%--
-                        usersShoppingcar.phone_goods_id         手机商品id
-                        usersShoppingcar.goods_color_id         手机商品颜色id
-                        usersShoppingcar.phone_setmeal_id       手机套餐id
-                        phone_setmeal_goods_color_ids           手机套餐颜色id
-                    --%>
-                    <input type="hidden" name="usersShoppingcar.phone_goods_id">
-                    <input type="hidden" name="usersShoppingcar.goods_color_id">
-                    <input type="hidden" name="usersShoppingcar.phone_setmeal_id">
-                    <input type="hidden" name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds">
-                </form>
+                    <form id="phonePurchaseForm" class="hide" method="get" action="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action">
+                        <%--
+                            phone_goods_id         手机商品id
+                            goods_color_id         手机商品颜色id
+                            phone_setmeal_id       手机套餐id
+                            phone_setmeal_goods_color_ids           手机套餐颜色id
+                        --%>
+                        <input type="hidden" name="phone_goods_id">
+                        <input type="hidden" name="goods_color_id">
+                        <input type="hidden" name="phone_setmeal_id">
+                        <input type="hidden" name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds">
+                    </form>
                 </c:if>
             </div>
         </div>
@@ -178,6 +178,7 @@
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/viewfront/mi-common.js"></script>
 <script type="text/javascript">
     $(function(){
+        getCartSumGoodsNumShowCartBtn('${pageContext.request.contextPath}');
         var errorMessage = '${errorMessage}';
         if(errorMessage){
             toastr.info(errorMessage);
@@ -217,7 +218,7 @@
         activeFun(obj,'active');
 
         var phone_goods_id = $(obj).data('node-id');
-        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_goods_id"]').val(phone_goods_id);
+        $('#phonePurchaseForm').find('input[name="phone_goods_id"]').val(phone_goods_id);
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneColorList.action';
         var param = {"goodsColor.phone_goods_id":phone_goods_id};
@@ -238,7 +239,7 @@
         $('#J_chooseResult>button').attr('disabled',true);
         activeFun(obj,'active');
 
-        $('#phonePurchaseForm').find('input[name="usersShoppingcar.goods_color_id"]').val($(obj).data('node-id'));
+        $('#phonePurchaseForm').find('input[name="goods_color_id"]').val($(obj).data('node-id'));
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealList.action';
         var param = {"phoneSetmeal.goods_small_type_id":"${phoneSmallType.goods_small_type_id}"};
@@ -259,7 +260,7 @@
         activeFun(obj,'active');
 
         var phone_setmeal_id = $(obj).data('node-id');
-        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_setmeal_id"]').val(phone_setmeal_id);
+        $('#phonePurchaseForm').find('input[name="phone_setmeal_id"]').val(phone_setmeal_id);
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealDetailList.action';
         var param = {"phoneSetmealDetail.phone_setmeal_id":phone_setmeal_id};
@@ -303,7 +304,7 @@
         $('#J_chooseResultMsg').find('span.select-phone-setmeal').text('');
         $('#J_chooseResult>button').removeAttr('disabled');
         activeFun(obj,'active');
-        $('#phonePurchaseForm').find('input[name="usersShoppingcar.phone_setmeal_id"]').val($(obj).data('node-id'));
+        $('#phonePurchaseForm').find('input[name="phone_setmeal_id"]').val($(obj).data('node-id'));
     }
 
     function selectPhoneSetmealImg(obj){
@@ -331,6 +332,11 @@
             }
         });
         $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
+    }
+
+    //加入购物车
+    function addUserShoppingCart(){
+        $('#phonePurchaseForm').submit();
     }
 </script>
 </body>

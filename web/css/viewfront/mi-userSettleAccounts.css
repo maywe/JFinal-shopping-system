@@ -1,0 +1,165 @@
+.settle-accounts-head{
+    width: 100%;
+    padding: 15px 0;
+    background: white;
+}
+.settle-accounts-head .logo{
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.settle-accounts-head .logo-title{
+    display: inline-block;
+    margin-left: 30px;
+}
+.settle-accounts-head .logo-desc{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 13px;
+    color: #757575;
+}
+
+.settle-accounts-body{
+    padding: 40px;
+}
+.user-address-box{
+    margin-bottom: 30px;
+}
+.user-address-box .user-address-title{
+    font-size: 18px;
+    padding: 20px 0 10px 0;
+}
+.user-address-box .user-address-body{
+    width: 100%;
+}
+.user-address-body .user-address-item{
+    width: 24%;
+    height: 180px;
+    margin-right: 1%;
+    margin-bottom: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 15px 24px;
+    float: left;
+}
+.user-address-body .user-add-address{
+    width: 100%;
+    height: 150px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.user-address-body .user-add-address i{
+    font-size: 32px;
+    color: #e0e0e0;
+}
+.user-address-body .user-add-address span{
+    color: #e0e0e0;
+}
+
+.user-address-body .user-address-item:hover{
+    border-color: #b0b0b0;
+}
+.user-address-body .active{
+    border-color: rgb(255,103,0);
+}
+.user-address-body .active:hover{
+    border-color: rgb(255,74,0);
+}
+
+.user-address-item .user-name{
+    float: left;
+    font-size: 18px;
+}
+.user-address-item .user-address-tag{
+    float: right;
+    color:#e0e0e0;
+}
+.user-address-item dd{
+    color:#b0b0b0;
+    margin: 5px 0;
+}
+.user-address-item .actions .user-address-delete{
+    text-align: left;
+}
+.user-address-item .actions .user-address-update{
+    text-align: right;
+}
+.user-address-body .user-address-item:hover .user-add-address i,.user-address-body .user-address-item:hover .user-add-address span{
+    color: #b0b0b0;
+}
+
+
+.section-options{
+    border-bottom: 1px solid #e0e0e0;
+}
+.section-options>div{
+    height: 90px;
+}
+.section-options .section-body>span{
+    display: inline-block;
+    height: 40px;
+    width: 270px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #E0E0E0;
+}
+.section-options .active{
+    color:rgb(255,103,0);
+}
+.section-options .active>span{
+    border-color: rgb(255,103,0);
+    color:rgb(255,103,0);
+}
+
+.user-goods-box{
+    margin-top: 70px;
+}
+.user-goods-box .user-goods-title{
+    font-size: 18px;
+    padding: 20px 0 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.user-goods-body .user-goods-row{
+    border-bottom: 1px solid #e0e0e0;
+}
+.user-goods-body .user-goods-row>div{
+    height: 60px;
+}
+.user-goods-row .display-table-cell{
+    text-align: center;
+}
+
+.user-goods-accounts-box{
+    margin-top: 50px;
+}
+.user-goods-accounts-box .money-box{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.user-goods-accounts-box .money-box label{
+    color: #757575;
+    float: left;
+    font-weight:normal;
+}
+.user-goods-accounts-box .money-box span{
+    float: right;
+}
+.user-goods-accounts-box .money-box .total-price{
+    height: 45px;
+}
+.user-goods-accounts-box .money-box .total-price>label{
+    padding-top: 15px;
+}
+.user-goods-accounts-box .money-box .total-price>span{
+    font-size: 30px;
+}
+
+.settle-accounts-actions{
+    background: rgb(245,245,245);
+    height: 70px;
+}
+.settle-accounts-actions .section-right{
+    text-align: right;
+    padding: 12px 0;
+}
+.settle-accounts-actions .section-right>a,.settle-accounts-actions .section-right>button{
+    width: 150px;
+}

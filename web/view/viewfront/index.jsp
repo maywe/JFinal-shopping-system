@@ -16,6 +16,7 @@
     <title>小米官网-主页展示</title>
     <link href="${pageContext.request.contextPath}/css/common/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/common/animate.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-index.css" type="text/css" rel="stylesheet">
@@ -109,8 +110,14 @@
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap-ie.js"></script>
 <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/html5shiv.min.js"></script>
 <![endif]-->
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/viewfront/mi-common.js"></script>
+
 <script type="text/javascript">
     $(function(){
+        var isNotLogin = '${empty sessionScope.usersFront}';
+        if(isNotLogin=='false'){
+            getCartSumGoodsNumShowCartBtn('${pageContext.request.contextPath}');
+        }
         $('#goodsList').css('display','block');
         $('#myCarousel').carousel({interval: 4000});
     });

@@ -244,13 +244,14 @@
         //初始化导航树
         initNavTree();
         //初始化模态框
-        initModal();
+        initModal('#' + initSeting.ids.popModalLg + ',#' + initSeting.ids.popModal + ',#' + initSeting.ids.popModalSm);
     });
 
+    /*
     //初始化模态框
     function initModal(){
         var popModals = $('#' + initSeting.ids.popModalLg + ',#' + initSeting.ids.popModal + ',#' + initSeting.ids.popModalSm);
-        /*在模态框显示之前进行一系列操作*/
+        //在模态框显示之前进行一系列操作
         var recipient;
         popModals.on('show.bs.modal', function (e) {
             recipient = $(e.relatedTarget).data('whatever');
@@ -275,6 +276,7 @@
             $(this).removeData('bs.modal');
         });
     }
+    */
 
     //初始化导航树
     function initNavTree() {

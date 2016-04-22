@@ -80,3 +80,32 @@ $.fn.isOnScreen = function(){
     bounds.bottom = bounds.top + this.outerHeight();
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
+
+//初始化模态框
+function initModal(modalIds){
+    var popModals = $(modalIds);
+    /*在模态框显示之前进行一系列操作*/
+    var recipient;
+    popModals.on('show.bs.modal', function (e) {
+        recipient = $(e.relatedTarget).data('whatever');
+    });
+
+    //模态框异步数据加载完成之后进行的操作
+    popModals.on('loaded.bs.modal', function (e) {
+        var response = $(this).find('.modal-content').text();
+        //判断登录是否超时
+        var errorVo = '{"errorMessage":"请您先登录!","errorCode":99}';
+        if(response.substring(0,errorVo.length).indexOf('"errorCode":99')>-1){
+            toastr.info('登录超时!');
+            window.location.href = getLocationUrl()+"/view/viewback/login.html";
+        }
+
+        if(recipient==undefined){return;}
+        $(this).find('.modal-title').text(recipient);
+    });
+
+    //模态框隐藏后清理模态框中的数据
+    popModals.on('hidden.bs.modal', function (e) {
+        $(this).removeData('bs.modal');
+    });
+}

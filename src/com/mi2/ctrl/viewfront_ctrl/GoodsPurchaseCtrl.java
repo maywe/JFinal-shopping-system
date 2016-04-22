@@ -8,6 +8,7 @@ import com.mi2.model.GoodsSmallType;
 import com.mi2.model.OtherGoodsView;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 商品购买业务控制器
@@ -17,6 +18,7 @@ import java.math.BigDecimal;
 public class GoodsPurchaseCtrl extends BaseViewFrontController {
 
 	public void initGoodsPurchase(){
+		this.setAttr("command","initGoodsPurchase");
 		//手机类别
 		GoodsSmallType gst = new GoodsSmallType();
 		gst.put("isUse",true);
@@ -31,8 +33,15 @@ public class GoodsPurchaseCtrl extends BaseViewFrontController {
 		this.setAttr("miLifeTypeList",GoodsSmallType.dao.getAllData(gst));
 
 		//商品列表
-		OtherGoodsView ogv = new OtherGoodsView();
-		Page<OtherGoodsView> pageUtil = OtherGoodsView.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),ogv);
+		OtherGoodsView otherGoodsView = new OtherGoodsView();
+		otherGoodsView.put("filterGoodsSmallTypeId",this.getParaToBigDecimal("filterGoodsSmallTypeId"));
+		otherGoodsView.put("filterAdaptPhoneSmallTypeId",this.getParaToBigDecimal("filterAdaptPhoneSmallTypeId"));
+		otherGoodsView.put("filterGoodsDiscountPrice",this.getParaToBoolean("filterGoodsDiscountPrice",false));
+		otherGoodsView.put("filterGoodsExistSource",this.getParaToBoolean("filterGoodsExistSource",false));
+		otherGoodsView.put("orderBy",this.getPara("orderBy",""));
+		this.setAttr("otherGoodsView",otherGoodsView);
+
+		Page<OtherGoodsView> pageUtil = OtherGoodsView.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),otherGoodsView);
 		//查询商品颜色图片
 		for(int i=0,size=pageUtil.getList().size();i<size;i++){
 			GoodsColor gc = new GoodsColor();
@@ -40,6 +49,30 @@ public class GoodsPurchaseCtrl extends BaseViewFrontController {
 			pageUtil.getList().get(i).put("goodsColorList",GoodsColor.dao.getAllData(gc));
 		}
 		this.setAttr(PAGE_UTIL,pageUtil);
+		this.renderJsp(VIEW_FRONT_PATH+"/goodsPurchase.jsp");
+	}
+
+	public void showGoodsDetailPurchase(){
+		this.setAttr("command","showGoodsDetailPurchase");
+		//获取商品信息
+		BigDecimal goods_id = this.getParaToBigDecimal("goods_id");
+		if(null==goods_id){
+			this.renderJsp(VIEW_FRONT_PATH+"/goodsPurchase.jsp");
+			return;
+		}
+		OtherGoodsView ogv = new OtherGoodsView();
+		ogv.setGoodsId(goods_id);
+		ogv.setAdaptPhoneTypeId(this.getParaToBigDecimal("adapt_phone_type_id"));
+		List<OtherGoodsView> otherGoodsViewList = OtherGoodsView.dao.getAllData(ogv);
+		if(otherGoodsViewList.size()>0){
+			ogv = otherGoodsViewList.get(0);
+			ogv.put("goods_color_id",this.getParaToBigDecimal("goods_color_id"));
+			//获取商品颜色信息
+			GoodsColor gc = new GoodsColor();
+			gc.setGoodsId(goods_id);
+			ogv.put("goodsColorList",GoodsColor.dao.getAllData(gc));
+			this.setAttr("otherGoodsView",ogv);
+		}
 		this.renderJsp(VIEW_FRONT_PATH+"/goodsPurchase.jsp");
 	}
 }

@@ -25,9 +25,9 @@
 
         <div class="col-xs-2 display-table">
             <div class="display-table-cell search-cart">
-                <a class="btn btn-yellow btn-lg btn-cart" href="${pageContext.request.contextPath}" >
+                <a class="btn btn-yellow btn-lg btn-cart" href="${pageContext.request.contextPath}/userShoppingCartCtrl/initUserShoppingCart.action" >
                     <i class="fa fa-shopping-cart"></i>
-                    <span>购物车</span>
+                    <span id="cartSumGoodsNumShow">购物车</span>
                 </a>
             </div>
         </div>
@@ -36,7 +36,7 @@
     <nav class="col-xs-12 productList">
         <ul>
             <li>
-                <a href="#">&nbsp;&nbsp;&nbsp;全部商品分类</a>
+                <a href="${pageContext.request.contextPath}/goodsPurchaseCtrl/initGoodsPurchase.action">&nbsp;&nbsp;&nbsp;全部商品分类</a>
                 <span></span>
                 <ul id="goodsList" class="goodsList">
                     <li>

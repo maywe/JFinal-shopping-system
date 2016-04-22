@@ -5,6 +5,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.render.JsonRender;
 import org.apache.log4j.Logger;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 
@@ -12,6 +13,8 @@ import java.util.*;
  * 基础Controller
  */
 public abstract class BaseController extends Controller {
+
+	public static final String REQUEST_URL = "requestUrl";
 
 	//1、前后台视图路径
 	public static final String VIEW_BACK_PATH = "/view/viewback";
@@ -54,6 +57,16 @@ public abstract class BaseController extends Controller {
 		else{
 			this.render(new JsonRender(json));
 		}
+	}
+
+	protected BigDecimal getParaToBigDecimal(String name){
+		Long value = this.getParaToLong(name);
+		return null==value?null:BigDecimal.valueOf(value);
+	}
+
+	protected BigDecimal getParaToBigDecimal(String name,BigDecimal defaultValue){
+		BigDecimal value = this.getParaToBigDecimal(name);
+		return null==value?defaultValue:value;
 	}
 
 	protected Map<Integer,Map<String, String>> getParaToMapList(String name){

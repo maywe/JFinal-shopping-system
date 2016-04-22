@@ -1,15 +1,9 @@
 package com.mi2.handler;
 
 import com.base.handler.BaseHandler;
-import com.base.util.ImageUtils;
-import com.base.util.StringUtils;
-import com.jfinal.kit.PathKit;
-import com.jfinal.kit.StrKit;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * 静态资源处理器
@@ -22,6 +16,7 @@ public class StaticResHandler extends BaseHandler {
     private static final long MAX_AGE = 20000;
 
     public void doHandle(String target, HttpServletRequest request, HttpServletResponse response, boolean[] isHandled) {
+        /*
         String suffix = StringUtils.isExistEndWithMatches(target,".png",".jpg",".jpeg");
         if(null!=suffix){
             String imgWidth = request.getParameter("width");
@@ -48,6 +43,7 @@ public class StaticResHandler extends BaseHandler {
                 }
             }
         }
+        */
         next.handle(target, request, response, isHandled);
 
         /*

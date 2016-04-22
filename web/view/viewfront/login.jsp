@@ -25,7 +25,7 @@
     <div class="login-container whiteColor-0">
         <header class="login-header">
             <div class="login-logo">
-                <a class="logo" title="小米官网" href="//www.mi.com/index.html"></a>
+                <a class="logo" title="小米官网" href="${pageContext.request.contextPath}/"></a>
             </div>
             <div class="login-title">
                 <h2>小米帐号登录</h2>

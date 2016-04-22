@@ -12,7 +12,7 @@
 </div>
 <form id="goodsAddributeDialogFrom" class="form-horizontal" role="form" onsubmit="return goodsAddributeSubmit(this)">
     <div class="modal-body">
-       <input value="${goodsAddribute.goods_addribute_id}" name="goodsAddribute.goods_addribute_id" type="hidden">
+        <input value="${goodsAddribute.goods_addribute_id}" name="goodsAddribute.goods_addribute_id" type="hidden">
         <div class="tab-pane active">
             <table class="table dialog-table">
                 <tr>

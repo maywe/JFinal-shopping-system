@@ -60,4 +60,12 @@ public abstract class BaseUsersShopcarSetmealGoods<M extends BaseUsersShopcarSet
 		return get("STATUS");
 	}
 
+	public void setAdaptPhoneTypeId(java.math.BigDecimal adaptPhoneTypeId) {
+		set("ADAPT_PHONE_TYPE_ID", adaptPhoneTypeId);
+	}
+
+	public java.math.BigDecimal getAdaptPhoneTypeId() {
+		return get("ADAPT_PHONE_TYPE_ID");
+	}
+
 }

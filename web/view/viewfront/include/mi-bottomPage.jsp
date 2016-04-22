@@ -2,6 +2,43 @@
 <link href="${pageContext.request.contextPath}/css/viewfront/mi-bottomPage.css" type="text/css" rel="stylesheet">
 
 <div class="clearfix"></div>
+<div id="bottomHideArea" class="bottom-hide-area">
+    <!-- 登录框 start -->
+    <div class="login-min-box-hide animated bounceIn">
+        <div class="login-hide-action"><i onclick="ajaxLoginBoxHide()" class="glyphicon glyphicon-remove"></i></div>
+        <header class="login-header">
+            <div class="login-logo">
+                <a class="logo" title="小米官网" href="${pageContext.request.contextPath}/"></a>
+            </div>
+            <div class="login-title">
+                <h2>小米帐号登录</h2>
+            </div>
+        </header>
+        <div class="login-context">
+            <form onsubmit="return ajaxLogin(this)" class="form-login" role="form" method="post" action="${pageContext.request.contextPath}/loginCtrl/ajaxLoginInFront.action">
+                <div class="login-input">
+                    <input name="usersFront.login_name" type="email" class="form-control input-lg" placeholder="邮箱/手机号码/小米账号" required/>
+                </div>
+                <div class="login-input">
+                    <input name="usersFront.password" type="password" class="form-control input-lg" placeholder="密码"
+                           required="required" pattern="^.{6,20}$" oninvalid="setCustomValidity('请填写密码6-20位!');" oninput="setCustomValidity('');">
+                </div>
+                <div class="login-input" style="padding-top: 15px;">
+                    <input type="submit" class="btn btn-orange btn-lg" value="立即登录">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 登录框 end -->
+
+    <div id="pop_modal_sm" aria-labelledby="popModalSmLabel" class="modal animated fadeInRight bs-example-modal-sm" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+    <div class="content-box-shade"></div>
+</div>
 <div id="bottomSiteBox" class="bottom-site">
     <div class="site-footer">
         <div class="container-fluid myContainer-fluid">

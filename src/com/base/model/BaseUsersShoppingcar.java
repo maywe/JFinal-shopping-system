@@ -108,4 +108,12 @@ public abstract class BaseUsersShoppingcar<M extends BaseUsersShoppingcar<M>> ex
 		return get("LAST_UPDATE_DATE");
 	}
 
+	public void setAdaptPhoneTypeId(java.math.BigDecimal adaptPhoneTypeId) {
+		set("ADAPT_PHONE_TYPE_ID", adaptPhoneTypeId);
+	}
+
+	public java.math.BigDecimal getAdaptPhoneTypeId() {
+		return get("ADAPT_PHONE_TYPE_ID");
+	}
+
 }

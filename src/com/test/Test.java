@@ -40,13 +40,20 @@ public class Test {
         MyBaseModelGenerator m2 = new MyBaseModelGenerator("","","");
 */
         //getAllData(null);
-
+/*
         String str = "2";
         Goods g = new Goods();
         g.setGoodsName("fff");
         testStr(str,g);
         System.out.println(str);
         System.out.println(g.getGoodsName());
+*/
+        String str = "1,,2";
+        String strs[] = str.split(",");
+        for(String s : strs){
+            System.out.println(strs.length);
+            System.out.println(s);
+        }
     }
 
 
