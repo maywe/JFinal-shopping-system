@@ -31,6 +31,11 @@
     </div>
     <!-- 登录框 end -->
 
+    <div id="pop_modal_lg" aria-labelledby="popModalLgLabel" class="modal animated fadeInRight bs-example-modal-lg" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content themes-modal-content"></div>
+        </div>
+    </div>
     <div id="pop_modal_sm" aria-labelledby="popModalSmLabel" class="modal animated fadeInRight bs-example-modal-sm" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content"></div>

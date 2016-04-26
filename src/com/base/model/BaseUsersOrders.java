@@ -28,11 +28,11 @@ public abstract class BaseUsersOrders<M extends BaseUsersOrders<M>> extends Base
 		return get("USER_FRONT_ID");
 	}
 
-	public void setUserOrdersId(java.math.BigDecimal userOrdersId) {
+	public void setUserOrdersId(java.lang.String userOrdersId) {
 		set("USER_ORDERS_ID", userOrdersId);
 	}
 
-	public java.math.BigDecimal getUserOrdersId() {
+	public java.lang.String getUserOrdersId() {
 		return get("USER_ORDERS_ID");
 	}
 
@@ -114,6 +114,30 @@ public abstract class BaseUsersOrders<M extends BaseUsersOrders<M>> extends Base
 
 	public java.lang.String getName() {
 		return get("NAME");
+	}
+
+	public void setDcWay(java.lang.String dcWay) {
+		set("DC_WAY", dcWay);
+	}
+
+	public java.lang.String getDcWay() {
+		return get("DC_WAY");
+	}
+
+	public void setDcTime(java.lang.String dcTime) {
+		set("DC_TIME", dcTime);
+	}
+
+	public java.lang.String getDcTime() {
+		return get("DC_TIME");
+	}
+
+	public void setReceiptType(java.lang.String receiptType) {
+		set("RECEIPT_TYPE", receiptType);
+	}
+
+	public java.lang.String getReceiptType() {
+		return get("RECEIPT_TYPE");
 	}
 
 }

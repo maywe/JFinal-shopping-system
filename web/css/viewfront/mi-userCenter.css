@@ -1,0 +1,276 @@
+/* 个人中心主框架样式 start*/
+.uc-box{
+    background: rgb(245,245,245);
+}
+.uc-box .uc-nav-box{
+    float: left;
+    width: 20%;
+    padding: 30px 0 0 40px;
+    background: white;
+    margin-bottom: 12px;
+    height: 570px;
+}
+.uc-nav-box .uc-nav .nav-hd{
+    padding: 5px 0;
+}
+.uc-nav-box .uc-nav .nav-hd .title{
+    font-size: 18px;
+}
+.uc-nav-box .uc-nav .uc-nav-list>li{
+    padding: 5px 0;
+    cursor: pointer;
+    color: #757575;
+}
+.uc-nav-box .uc-nav .uc-nav-list .active{
+    color: rgb(255,103,0);
+}
+.uc-nav-box .uc-nav .uc-nav-list .active:hover{
+    color: rgb(255,103,0);
+}
+.uc-nav-box .uc-nav .uc-nav-list>li:hover{
+    color: rgb(51,51,51);
+}
+
+.uc-box .uc-content-box{
+    float: left;
+    width: 79%;
+    margin-left: 1%;
+    background: white;
+    padding: 0 30px;
+    margin-bottom: 12px;
+}
+/* 个人中心主框架样式 end*/
+
+
+/* 我的个人中心样式 start*/
+.user-person-center{
+    padding-bottom: 16px;
+}
+.user-person-center .user-account-box{
+    border-bottom: 1px solid #E0E0E0;
+}
+.user-account-box .display-table-cell{
+    height: 255px;
+}
+.user-account-box .user-img-box{
+    text-align: center;
+}
+.user-person-center .user-nickname-box{
+    padding-left: 15px;
+}
+.user-person-center .user-nickname-box .nickname{
+    color: #616161;
+}
+.user-person-center .user-nickname-box .tip{
+    color: #b0b0b0;
+    margin: 0 0 10px;
+}
+.user-person-center .user-actions-box .action-list{
+    padding-top: 15px;
+}
+.user-person-center .user-actions-box .action-list>li{
+    margin: 12px;
+    color: #757575;
+}
+.user-person-center .user-actions-box .action-list .level{
+    color: rgb(139,195,74);
+}
+
+.portal-box .display-table-cell{
+    height: 150px;
+}
+.portal-box .portal-img{
+    text-align: center;
+}
+.portal-box .portal-info .num{
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(255,103,0);
+}
+/* 我的个人中心样式 end*/
+
+
+
+/* 收货地址样式 start*/
+.user-address-box{
+    margin-bottom: 30px;
+}
+.user-address-box .user-address-title{
+    font-size: 24px;
+    padding: 40px 0 10px 0;
+    color: #757575;
+}
+.user-address-box .user-address-body{
+    width: 100%;
+}
+.user-address-body .user-address-item{
+    width: 32.3%;
+    height: 180px;
+    margin-right: 1%;
+    margin-bottom: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 15px 24px;
+    float: left;
+}
+.user-address-body .user-add-address{
+    width: 100%;
+    height: 150px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.user-address-body .user-add-address i{
+    font-size: 32px;
+    color: #e0e0e0;
+}
+.user-address-body .user-add-address span{
+    color: #e0e0e0;
+}
+
+.user-address-body .user-address-item:hover{
+    border-color: #b0b0b0;
+}
+.user-address-body .active{
+    border-color: rgb(255,103,0);
+}
+.user-address-body .active:hover{
+    border-color: rgb(255,74,0);
+}
+
+.user-address-item .user-name{
+    float: left;
+    font-size: 18px;
+}
+.user-address-item .user-address-tag{
+    float: right;
+    color:#e0e0e0;
+}
+.user-address-item dd{
+    color:#b0b0b0;
+    margin: 5px 0;
+}
+.user-address-item .actions .user-address-delete{
+    text-align: left;
+}
+.user-address-item .actions .user-address-update{
+    text-align: right;
+}
+.user-address-body .user-address-item:hover .user-add-address i,.user-address-body .user-address-item:hover .user-add-address span{
+    color: #b0b0b0;
+}
+/* 收货地址样式 end*/
+
+
+/* 个人信息样式 start*/
+.user-person-info{
+    padding-right: 50px;
+}
+.user-person-info .user-person-img-box{
+    height: 400px;
+}
+.user-person-info .user-person-img-box .display-table-cell{
+    text-align: center;
+}
+.user-person-info .user-person-img-box .edit-img{
+    display: block;
+    padding: 10px;
+    color: #4a90e3;
+}
+.user-person-info .user-person-info-box{
+    height: 400px;
+}
+.user-person-info .user-person-info-box .fdata{
+    border-bottom: 2px solid #E0E0E0;
+    margin-top: 10px;
+    padding-left:10px;
+}
+.user-person-info .user-person-info-box .edit{
+    color: #4a90e3;
+}
+/* 个人信息样式 end*/
+
+/* 我的订单样式 start*/
+.user-person-orders{
+    padding-top: 30px;
+}
+.user-person-orders .user-orders-header .title{
+    color: #757575;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 68px;
+    margin: 0;
+}
+.user-person-orders .user-orders-header .order-filter-box{
+    margin-top: 15px;
+}
+.user-person-orders .user-orders-header .order-filter-box .filter-list{
+    margin-top: 5px;
+    padding: 0;
+}
+.user-person-orders .user-orders-header .order-filter-box .filter-list li{
+    float: left;
+    width: 120px;
+    height: 25px;
+    border-right: 1px solid #E0E0E0;
+    padding-left: 20px;
+}
+.user-person-orders .user-orders-header .order-filter-box .filter-list li a{
+    color: #757575;
+    font-size: 16px;
+}
+.user-person-orders .user-orders-header .order-filter-box .filter-list li.active a{
+    color: rgb(255,103,0);
+}
+
+.user-person-orders .user-orders-body .orders-item{
+    border: 1px solid #d0d0d0;
+    margin: 10px 0;
+}
+.user-orders-body .orders-item .order-status{
+    padding: 20px 15px 0 15px;
+    font-size: 18px;
+    color: #757575;
+}
+.user-orders-body .orders-item .order-detail-head{
+    border-bottom: 1px solid #E0E0E0;
+    padding: 0 15px 5px 15px;
+}
+.user-orders-body .orders-item .order-detail-head .caption-info{
+    color: #757575;
+    font-weight: 400;
+    height: 36px;
+    line-height: 36px;
+}
+.user-orders-body .orders-item .order-detail-head .caption-price{
+    text-align: right;
+    color: #757575;
+    font-weight: 400;
+    height: 36px;
+    line-height: 36px;
+}
+.user-orders-body .orders-item .order-detail-head .caption-price .num{
+    color: rgb(255,103,0);
+    font-size: 24px;
+}
+.user-orders-body .orders-item .order-detail-body .order-detail-box{
+    position: relative;
+}
+.user-orders-body .orders-item .order-detail-body .order-detail-box .display-table-cell{
+    height: 100px;
+    padding: 10px;
+}
+.user-orders-body .orders-item .order-detail-body .order-detail-box .order-detail-img{
+    text-align: center;
+}
+.user-orders-body .orders-item .order-detail-body .order-detail-box .order-actions{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 150px;
+}
+.user-orders-body .orders-item .order-detail-body .order-detail-box .order-actions .btn{
+    width: 120px;
+    border-radius: 0;
+    margin-top: 5px;
+}
+
+/* 我的订单样式 end*/

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -13,7 +16,17 @@
     <link href="${pageContext.request.contextPath}/css/common/common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-userSettleAccounts.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/PCASClass.js"></script>
+    <!-- 浏览器兼容 bsie js 补丁只在IE6中才执行 -->
+    <!--[if lte IE 6]>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap-ie.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/html5shiv.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/common.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/viewfront/mi-common.js"></script>
 </head>
 <body class="myBody">
 <div class="div-center-width-1290">
@@ -49,7 +62,7 @@
                                     <a href="${pageContext.request.contextPath}/userSettleAccountsCtrl/deleteUserAddressData.action?usersDeliveryAddress.users_delivery_address_id=${uda.users_delivery_address_id}">删除</a>
                                 </div>
                                 <div class="col-xs-6 user-address-update">
-                                    <a data-backdrop="static" data-toggle="modal" href="${pageContext.request.contextPath}/userSettleAccountsCtrl/updateUserAddressRequest.action?usersDeliveryAddress.users_delivery_address_id=${uda.users_delivery_address_id}" data-target="#pop_modal_sm">修改</a>
+                                    <a data-whatever="修改收货地址" data-backdrop="static" data-toggle="modal" href="${pageContext.request.contextPath}/userSettleAccountsCtrl/updateUserAddressRequest.action?usersDeliveryAddress.users_delivery_address_id=${uda.users_delivery_address_id}" data-target="#pop_modal_sm">修改</a>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +70,7 @@
                     <div class="user-address-item">
                         <div class="user-add-address display-table">
                             <div class="display-table-cell text-center">
-                                <a data-backdrop="static" data-toggle="modal" href="${pageContext.request.contextPath}/userSettleAccountsCtrl/addUserAddressRequest.action" data-target="#pop_modal_sm">
+                                <a data-whatever="增加收货地址" data-backdrop="static" data-toggle="modal" href="${pageContext.request.contextPath}/userSettleAccountsCtrl/addUserAddressRequest.action" data-target="#pop_modal_sm">
                                     <i class="fa fa-plus-circle"></i><br>
                                     <span>添加新地址</span>
                                 </a>
@@ -106,17 +119,17 @@
                 <div class="col-xs-10 display-table">
                     <div onclick="selectDCTime(this)" class="display-table-cell section-body active">
                         <span>
-                            不限送货时间：周一至周日
+                            不限送货时间（周一至周日）
                         </span>
                     </div>
                     <div onclick="selectDCTime(this)" class="display-table-cell section-body">
                         <span>
-                            工作日送货：周一至周五
+                            工作日送货（周一至周五）
                         </span>
                     </div>
                     <div onclick="selectDCTime(this)" class="display-table-cell section-body">
                         <span>
-                            双休日、假日送货：周六至周日
+                            双休日、假日送货（周六至周日）
                         </span>
                     </div>
                 </div>
@@ -278,8 +291,11 @@
                     </div>
                 </div>
             </div>
-            <form id="userSettleAccountsForm" class="hide" method="post" action="">
+            <form id="userSettleAccountsForm" class="hide" method="post" action="${pageContext.request.contextPath}/userSettleAccountsCtrl/goSettleAccounts.action">
                 <input type="hidden" name="users_delivery_address_id" value="">
+                <input type="hidden" name="usersOrders.dc_way" value="快递配送">
+                <input type="hidden" name="usersOrders.dc_time" value="不限送货时间（周一至周日）">
+                <input type="hidden" name="usersOrders.receipt_type" value="电子发票（非纸质）">
                 <input type="hidden" name="usersOrders.goods_sum" value="${goodsNum}">
                 <input type="hidden" name="usersOrders.sum_money" value="${goodsSumMoney+discountAmount}">
                 <input type="hidden" name="usersOrders.discount_amount" value="${discountAmount}">
@@ -297,15 +313,6 @@
     </div>
     <%@ include file="./../include/mi-bottomPage.jsp" %>
 </div>
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap.min.js"></script>
-<!-- 浏览器兼容 bsie js 补丁只在IE6中才执行 -->
-<!--[if lte IE 6]>
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/bootstrap-ie.js"></script>
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/html5shiv.min.js"></script>
-<![endif]-->
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/common/common.js"></script>
-<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/viewfront/mi-common.js"></script>
 <script type="text/javascript">
     $(function(){
         initModal('#pop_modal_sm');
@@ -321,15 +328,23 @@
     //选择配送时间
     function selectDCTime(obj){
         activeFun(obj);
+        $('#userSettleAccountsForm').find('input[name="usersOrders.dc_time"]').val($(obj).children('span').text());
     }
     //选择发票类型
     function selectReceiptType(obj){
         activeFun(obj);
+        $('#userSettleAccountsForm').find('input[name="usersOrders.receipt_type"]').val($(obj).children('span').text());
     }
 
     //结算方法
     function goSettleAccounts(){
-
+        var $userSettleAccountsForm = $('#userSettleAccountsForm');
+        var users_delivery_address_id = $userSettleAccountsForm.find('input[name="users_delivery_address_id"]').val();
+        if(users_delivery_address_id==""||users_delivery_address_id==undefined){
+            toastr.info('请先选择你的收货地址!');
+        }else{
+            $userSettleAccountsForm.submit();
+        }
     }
 </script>
 </body>

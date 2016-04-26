@@ -15,8 +15,25 @@ import java.util.List;
 public class UsersShoppingcar extends BaseUsersShoppingcar<UsersShoppingcar> {
 	public static final UsersShoppingcar dao = new UsersShoppingcar();
 
-	public void deleteUserCartGoods(String users_shopping_id){
-		if(StrKit.isBlank(users_shopping_id)){
+	//删除用户购物车中已经支付成功的商品
+	public void deleteUserCartPayGoods(BigDecimal userFrontId){
+		if(null==userFrontId){
+			return;
+		}
+		String sql = "delete users_shoppingcar usc where usc.user_front_id=? and usc.is_select_pay='0' and usc.phone_setmeal_id is null";
+		Db.update(sql,userFrontId);
+
+		UsersShoppingcar usc = new UsersShoppingcar();
+		usc.setUserFrontId(userFrontId);
+		usc.setIsSelectPay("0");
+		List<UsersShoppingcar> uscList = this.getPhoneSetmealGoodsAllData(usc);
+		for(UsersShoppingcar u : uscList){
+			this.deleteUserCartGoodsById(u.getUsersShoppingId());
+		}
+	}
+
+	public void deleteUserCartGoodsById(BigDecimal users_shopping_id){
+		if(null==users_shopping_id){
 			return;
 		}
 		String sql = "delete users_shopcar_setmeal_goods ussg where ussg.users_shopping_id=?";
@@ -35,7 +52,7 @@ public class UsersShoppingcar extends BaseUsersShoppingcar<UsersShoppingcar> {
 	public BigDecimal getCartSumGoodsNum(BigDecimal userFrontId){
 		String sql = "select sum(usc.shopping_num) goods_sum from users_shoppingcar usc where usc.user_front_id=?";
 		UsersShoppingcar usc = this.findFirst(sql,userFrontId);
-		return usc.get("goods_sum",0);
+		return BigDecimal.valueOf(Long.valueOf(usc.get("goods_sum",0)+""));
 	}
 
 	public String saveOrUpdate(UsersShoppingcar t){

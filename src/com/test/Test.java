@@ -1,5 +1,6 @@
 package com.test;
 
+import com.base.util.IdGeneratorUtils;
 import com.mi2.model.Goods;
 
 import java.lang.reflect.Field;
@@ -48,12 +49,16 @@ public class Test {
         System.out.println(str);
         System.out.println(g.getGoodsName());
 */
+        /*
         String str = "1,,2";
         String strs[] = str.split(",");
         for(String s : strs){
             System.out.println(strs.length);
             System.out.println(s);
         }
+        */
+
+        System.out.println(IdGeneratorUtils.generatorOrderId());
     }
 
 

@@ -43,6 +43,7 @@ public class _MappingKit {
 		arp.addMapping("USERS_SHOPPINGCAR", "USERS_SHOPPING_ID", UsersShoppingcar.class);
 		arp.addMapping("OTHER_GOODS_VIEW", OtherGoodsView.class);
 		arp.addMapping("PHONE_GOODS_VIEW", PhoneGoodsView.class);
+		arp.addMapping("USERS_SETTLE_ACOUNTS_VIEW", UsersSettleAcountsView.class);
 	}
 }
 

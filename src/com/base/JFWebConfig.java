@@ -19,6 +19,10 @@ import com.mi2.interceptor.MyTxByMethodRegexInterceptor;
 import com.mi2.model._MappingKit;
 import org.apache.log4j.Logger;
 
+/**
+ * JFinal 框架配置类
+ * @author CMW
+ */
 public class JFWebConfig extends JFinalConfig {
 	private Logger log=Logger.getLogger(getClass());
 	private static Prop dbProp;

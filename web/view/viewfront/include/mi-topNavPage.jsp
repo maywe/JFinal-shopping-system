@@ -8,7 +8,7 @@
     <div class="col-xs-12 search">
         <div class="col-xs-5 display-table">
             <div class="display-table-cell">
-                <a class="search-logo" title="小米官网" href="${pageContext.request.contextPath}">
+                <a class="search-logo" title="小米官网" href="${pageContext.request.contextPath}/">
                     <img width="75" height="75" src="${pageContext.request.contextPath}/images/front/mi-logo-49.png"/>
                 </a>
             </div>

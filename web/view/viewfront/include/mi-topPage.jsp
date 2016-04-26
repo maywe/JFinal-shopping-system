@@ -33,11 +33,11 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation">
-                            <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyCenter">
+                            <a href="${pageContext.request.contextPath}/userCenterCtrl/initUserCenter.action?command=getMyPersonCenterPage">
                                 个人中心
                             </a>
                         </li>
-                        <li role="presentation"><a href="#">我的收藏</a></li>
+                        <li role="presentation"><a href="${pageContext.request.contextPath}/userCenterCtrl/initUserCenter.action?command=getMyCollectPage">我的收藏</a></li>
                         <li role="presentation">
                             <a href="${pageContext.request.contextPath}/loginCtrl/loginOutFront.action">
                                 退出登陆
@@ -46,13 +46,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyOrder">
+                    <a href="${pageContext.request.contextPath}/userCenterCtrl/initUserCenter.action?command=getMyOrdersPage">
                         我的订单
                     </a>
                 </li>
                 <li>
-                    <a class="p-r-0" href="${pageContext.request.contextPath}/servlet/UserCenterAction?command=myPersonCenter&loadCommand=getMyNewManage">
-                        我的小米账户
+                    <a class="p-r-0" href="${pageContext.request.contextPath}/userCenterCtrl/initUserCenter.action?command=getPersonInfoPage">
+                        小米账户
                     </a>
                 </li>
             </ul>

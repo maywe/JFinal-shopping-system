@@ -135,6 +135,7 @@ public class LoginCtrl extends BaseController{
             this.renderJsp(VIEW_FRONT_PATH+"/register.jsp");
             return false;
         }
+        usersFront.setEmail(usersFront.getLoginName());
         usersFront.save();
         this.setAttr("errorMessage","您的账户已注册成功,请登录!");
         this.renderJsp(VIEW_FRONT_PATH+"/login.jsp");

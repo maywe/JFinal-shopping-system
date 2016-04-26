@@ -4,46 +4,59 @@
     <bookmark url="file://$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" line="41" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="实现普通商品展示和完善购物车静态页面">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/base/model/BaseOtherGoodsView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/interceptor/LoginFrontInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/model/OtherGoodsView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-userSettleAccounts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/common/PCASClass.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" />
+    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="实现前台用户个人中心和后台用户中心和订单中心">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/i/portal-icon-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/i/portal-icon-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/i/portal-icon-3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/front/i/portal-icon-4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersSettleAcountsView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/base/util/IdGeneratorUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webOrderCtrl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webUserCtrl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserCenterCtrl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersSettleAcountsView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-userCenter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-userOrdersPay.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewback/usersManage/webUserDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewback/usersManage/webUserList.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userCenter.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userOrdersPay.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonCenter.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonImgDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfo.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfoDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrders.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonPasswordDialog.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userReceiptAddress.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/base/util/IdGeneraterUtils.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" afterPath="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/ctrl/BaseViewFrontController.java" afterPath="$PROJECT_DIR$/src/com/base/ctrl/BaseViewFrontController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/JFWebConfig.java" afterPath="$PROJECT_DIR$/src/com/base/JFWebConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/interceptor/BaseInterceptor.java" afterPath="$PROJECT_DIR$/src/com/base/interceptor/BaseInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrdersDetail.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrdersDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersShopcarSetmealGoods.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersShopcarSetmealGoods.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/plugin/MyBaseModelGenerator.java" afterPath="$PROJECT_DIR$/src/com/base/plugin/MyBaseModelGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/util/DateUtils.java" afterPath="$PROJECT_DIR$/src/com/base/util/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/util/ImageUtils.java" afterPath="$PROJECT_DIR$/src/com/base/util/ImageUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/GoodsPurchaseCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/GoodsPurchaseCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/IndexCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/IndexCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/handler/StaticResHandler.java" afterPath="$PROJECT_DIR$/src/com/mi2/handler/StaticResHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersDeliveryAddress.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersDeliveryAddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersShopcarSetmealGoods.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersShopcarSetmealGoods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/SysUserCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/SysUserCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersFront.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersFront.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersOrdersDetail.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersOrdersDetail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/test/Test.java" afterPath="$PROJECT_DIR$/src/com/test/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/common/common.css" afterPath="$PROJECT_DIR$/web/css/common/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-common.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-goodsPurchase.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-goodsPurchase.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/common/common.js" afterPath="$PROJECT_DIR$/web/js/common/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/viewfront/mi-common.js" afterPath="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/error/500.html" afterPath="$PROJECT_DIR$/web/view/error/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsAddributeDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsAddributeDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/main.html" afterPath="$PROJECT_DIR$/web/view/viewback/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/goodsPurchase.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/goodsPurchase.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/include/mi-topPage.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/include/mi-topPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/index.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/login.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/register.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,101 +95,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="userSettleAccounts.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.82857144">
-              <caret line="283" column="40" selection-start-line="283" selection-start-column="40" selection-end-line="283" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneratorUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/util/GeneratorUtils.java">
+      <file leaf-file-name="WebOrderCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_MappingKit.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2684729">
-              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+            <state vertical-scroll-proportion="-8.171429">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DateUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/util/DateUtils.java">
+      <file leaf-file-name="JFWebConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/base/JFWebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.321428">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8406466">
+              <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseUsersShoppingcar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSettleAccountsCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java">
+      <file leaf-file-name="WebUserCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebUserCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="500.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view/error/500.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.885714">
-              <caret line="29" column="94" selection-start-line="29" selection-start-column="94" selection-end-line="29" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/MainCtrl.java">
+      <file leaf-file-name="webOrderShowDialog.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <caret line="52" column="41" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/IndexCtrl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.357142">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersShoppingcar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java">
+      <file leaf-file-name="webOrderDialog.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+              <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webOrderList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="78" column="245" selection-start-line="78" selection-start-column="245" selection-end-line="78" selection-end-column="245" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webUserDialog.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/view/viewback/usersManage/webUserDialog.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -190,9 +183,9 @@
         <option value="Interface" />
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
         <option value="CSS File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -226,57 +219,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealList.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsLookupBackListDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/sysManage/sysUserDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/sysManage/sysUserList.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneGoodsDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/PhoneSetmeal.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/PhoneSetmealCtrl.java" />
-        <option value="$PROJECT_DIR$/web/js/viewback/core-pagination.js" />
-        <option value="$PROJECT_DIR$/web/js/viewback/core-ajax.js" />
-        <option value="$PROJECT_DIR$/src/com/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/GoodsCtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/OtherGoodsView.java" />
-        <option value="$PROJECT_DIR$/web/css/viewfront/mi-goodsPurchase.css" />
-        <option value="$PROJECT_DIR$/src/com/mi2/interceptor/LoginFrontInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/com/base/ctrl/BaseController.java" />
-        <option value="$PROJECT_DIR$/src/com/base/ctrl/BaseViewFrontController.java" />
-        <option value="$PROJECT_DIR$/src/com/base/model/BaseUsersShopcarSetmealGoods.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersShopcarSetmealGoods.java" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/login.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/GoodsPurchaseCtrl.java" />
-        <option value="$PROJECT_DIR$/web/view/viewback/goodsManage/goodsAddributeDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/index.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/goodsPurchase.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/goodsAddributeDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/css/common/common.css" />
-        <option value="$PROJECT_DIR$/web/css/viewfront/mi-common.css" />
-        <option value="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
-        <option value="$PROJECT_DIR$/web/js/common/common.js" />
-        <option value="$PROJECT_DIR$/web/view/viewback/main.html" />
-        <option value="$PROJECT_DIR$/web/js/common/PCASClass.js" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersDeliveryAddress.java" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp" />
-        <option value="$PROJECT_DIR$/web/css/viewfront/mi-userSettleAccounts.css" />
-        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp" />
-        <option value="$PROJECT_DIR$/web/js/common/ajaxfileupload.js" />
-        <option value="$PROJECT_DIR$/src/com/base/plugin/MyBaseModelGenerator.java" />
-        <option value="$PROJECT_DIR$/web/view/error/500.html" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/IndexCtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/handler/StaticResHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" />
-        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" />
         <option value="$PROJECT_DIR$/src/com/base/util/DateUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersDeliveryAddress.java" />
+        <option value="$PROJECT_DIR$/src/com/base/util/IdGeneraterUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/test/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/base/util/IdGeneratorUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java" />
+        <option value="$PROJECT_DIR$/src/com/base/model/BaseUsersOrdersDetail.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" />
         <option value="$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java" />
+        <option value="$PROJECT_DIR$/web/css/viewfront/mi-userOrdersPay.css" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java" />
+        <option value="$PROJECT_DIR$/web/css/viewfront/userCenter.css" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/register.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/login.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/index.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonCenter.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/LoginCtrl.java" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/com/base/util/ImageUtils.java" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonPasswordDialog.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfoDialog.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonImgDialog.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userReceiptAddress.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-topPage.jsp" />
+        <option value="$PROJECT_DIR$/web/css/viewfront/mi-userCenter.css" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp" />
+        <option value="$PROJECT_DIR$/web/js/viewfront/mi-common.js" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userOrdersPay.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserCenterCtrl.java" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userCenter.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrders.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersFront.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/SysUserCtrl.java" />
+        <option value="$PROJECT_DIR$/web/view/viewback/usersManage/webUserDialog.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webUserCtrl.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webOrderCtrl.java" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersOrdersDetail.java" />
+        <option value="$PROJECT_DIR$/web/view/viewback/ordersManage/webOrderList.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewback/usersManage/webUserList.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" />
+        <option value="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp" />
+        <option value="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp" />
+        <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java" />
+        <option value="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/base/JFWebConfig.java" />
       </list>
     </option>
   </component>
@@ -355,7 +348,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -385,6 +377,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,7 +472,113 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="error" />
+              <option name="myItemId" value="viewback" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usersManage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewback" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderManage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewback" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goodsManage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MI2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,62 +633,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mi2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mi2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interceptor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mi2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -638,36 +684,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -703,17 +724,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\js\common" />
+      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewback\orderManage" />
+      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewback\usersManage" />
+      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewback\ordersManage" />
+      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewback\OrdersManage" />
       <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewfront\userCenter" />
-      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\css\viewfront" />
-      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\view\viewfront\include" />
-      <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\images\front\carousel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mi2.ctrl.viewback_ctrl" />
       <recent name="com.mi2.ctrl.viewfront_ctrl" />
       <recent name="com.mi2.interceptor" />
       <recent name="com.base.ctrl" />
-      <recent name="com.mi2.ctrl.viewback_ctrl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\MySoftware\IntelliJIDEA15.0.1\workspace1\MI2\web\images\front\carousel" />
@@ -1415,7 +1436,10 @@
       <workItem from="1460873232431" duration="75117000" />
       <workItem from="1461050259668" duration="14864000" />
       <workItem from="1461120506337" duration="42518000" />
-      <workItem from="1461220609272" duration="18875000" />
+      <workItem from="1461220609272" duration="21323000" />
+      <workItem from="1461305976517" duration="31849000" />
+      <workItem from="1461378925412" duration="58189000" />
+      <workItem from="1461648800948" duration="3332000" />
     </task>
     <task id="LOCAL-00001" summary="我的web购物网站雏形">
       <created>1453388585979</created>
@@ -1537,11 +1561,17 @@
       <option name="project" value="LOCAL" />
       <updated>1460818730483</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="实现购物车功能和结算功能">
+      <created>1461297583152</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1461297583152</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1436616000" />
+    <option name="totallyTimeSpent" value="1532434000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1554,7 +1584,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50653595" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1562,24 +1592,23 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25816995" sideWeight="0.5431165" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16503268" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57679737" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37908497" sideWeight="0.48940998" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28921568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4493464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27941176" sideWeight="0.5060514" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.48366013" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22919819" sideWeight="0.48366013" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.50970876" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22058824" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5163399" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63235295" sideWeight="0.45688352" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19934641" sideWeight="0.45688352" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1587,6 +1616,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41666666" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2369281" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2859477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1620,7 +1650,9 @@
     <MESSAGE value="完善前台主页和开发手机商品购买功能" />
     <MESSAGE value="完善手机商品购买功能，完善购物车的数据模型" />
     <MESSAGE value="实现普通商品展示和完善购物车静态页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现普通商品展示和完善购物车静态页面" />
+    <MESSAGE value="实现购物车功能和结算功能" />
+    <MESSAGE value="实现前台用户个人中心和后台用户中心和订单中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现前台用户个人中心和后台用户中心和订单中心" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1642,7 +1674,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="334" />
+      <option name="time" value="363" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1651,373 +1683,109 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-userShoppingCar.css">
+    <entry file="file://$PROJECT_DIR$/src/com/base/util/ImageUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41269842">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30578512">
-          <caret line="182" column="25" selection-start-line="182" selection-start-column="25" selection-end-line="182" selection-end-column="25" />
-          <folding>
-            <marker date="1460997608480" expanded="true" signature="14630:14642" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1714287">
-          <caret line="119" column="9" selection-start-line="116" selection-start-column="8" selection-end-line="119" selection-end-column="9" />
+        <state vertical-scroll-proportion="1.1303602">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/goodsPurchase.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.692308">
-          <caret line="281" column="25" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/common/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3949367">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.914286">
-          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/common/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33261803">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/viewfront/mi-common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6695279">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/common/PCASClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8571428">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4013921">
-          <caret line="246" column="117" selection-start-line="246" selection-start-column="117" selection-end-line="246" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/goodsAddributeList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4825986">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/goodsManage/goodsAddributeDialog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.681592">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersDeliveryAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53174603">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-userSettleAccounts.css">
+    <entry file="file://$PROJECT_DIR$/web/js/viewback/core-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+          <caret line="114" column="18" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/viewback/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserImageUploadDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47113165">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserChangPasswordDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4803695">
+          <caret line="57" column="71" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonImgDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6857142">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp">
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userReceiptAddress.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="247" column="76" selection-start-line="247" selection-start-column="58" selection-end-line="247" selection-end-column="76" />
-          <folding>
-            <element signature="n#c:if#0;n#jsp:root#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/PhonePurchaseCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewfront/include/mi-bottomPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="94" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="94" />
+        <state vertical-scroll-proportion="-7.428571">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserDialog.jsp">
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonPasswordDialog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="170" selection-start-line="54" selection-start-column="170" selection-end-line="54" selection-end-column="327" />
+        <state vertical-scroll-proportion="-1.8425196">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userAddressDialog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.7506562">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/GoodsBigType.java">
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/include/mi-topPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6857142">
+          <caret line="39" column="153" selection-start-line="39" selection-start-column="153" selection-end-line="39" selection-end-column="153" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonCenter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9714286">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/ctrl/BaseViewFrontController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42024013">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/OtherGoodsView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/plugin/activerecord/Page.java">
+    <entry file="file://$PROJECT_DIR$/src/com/base/ctrl/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/plugin/activerecord/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="361" column="7" selection-start-line="361" selection-start-column="7" selection-end-line="361" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/viewback/core-pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/viewback/core-initui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/common/ajaxfileupload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserImageUploadDialog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.6285715">
-          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/interceptor/LoginBackInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/plugin/MyCaptchaRender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/util/ClassSearcherUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/plugin/MyRouteBind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/annotation/RouteBind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/plugin/MyBaseModelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/error/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.257143">
-          <caret line="29" column="94" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view/error/500.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.885714">
-          <caret line="29" column="94" selection-start-line="29" selection-start-column="94" selection-end-line="29" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/handler/StaticResHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1729324">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/interceptor/MyTxByMethodRegexInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4561404">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Injector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="28" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40052357">
-          <caret line="690" column="34" selection-start-line="690" selection-start-column="34" selection-end-line="690" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersShoppingcar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/plugin/activerecord/TableMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49056605">
-          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding>
-            <element signature="e#902#936#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/interceptor/LoginFrontInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/IndexCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.357142">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/MainCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0920396">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.3327616">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -2025,47 +1793,288 @@
     <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-          <folding />
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/util/DateUtils.java">
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.321428">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-2.2773724">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseUsersShoppingcar.java">
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserDialog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.33211678">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/viewfront/mi-userCenter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.742857">
+          <caret line="269" column="67" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/GoodsPurchaseCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23327616">
+          <caret line="43" column="152" selection-start-line="43" selection-start-column="152" selection-end-line="43" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/aop/Invocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57569295">
           <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfoDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.2">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/common/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0145278">
+          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userShoppingCar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9714286">
+          <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3809524">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userOrdersPay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.314285">
+          <caret line="99" column="60" selection-start-line="99" selection-start-column="60" selection-end-line="99" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.82857144">
-          <caret line="283" column="40" selection-start-line="283" selection-start-column="40" selection-end-line="283" selection-end-column="40" />
+        <state vertical-scroll-proportion="-12.363868">
+          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/util/GeneratorUtils.java">
+    <entry file="file://$PROJECT_DIR$/web/js/viewfront/mi-common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/_MappingKit.java">
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/goodsPurchase.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2684729">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+        <state vertical-scroll-proportion="-3.0">
+          <caret line="333" column="5" selection-start-line="329" selection-start-column="4" selection-end-line="333" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/include/mi-topNavPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.428572">
+          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userCenter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2285714">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="0" selection-start-line="39" selection-start-column="4" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserCenterCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4455206">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersBackstage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/SysUserCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6857142">
+          <caret line="33" column="145" selection-start-line="33" selection-start-column="113" selection-end-line="33" selection-end-column="145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersFront.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46655232">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersOrdersDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327616">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/sysManage/sysUserPersonDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.314285">
+          <caret line="74" column="11" selection-start-line="68" selection-start-column="7" selection-end-line="74" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49642006">
+          <caret line="83" column="158" selection-start-line="83" selection-start-column="139" selection-end-line="83" selection-end-column="158" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/usersManage/webUserList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31026253">
+          <caret line="23" column="184" selection-start-line="23" selection-start-column="184" selection-end-line="23" selection-end-column="184" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33259913">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33259913">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/usersManage/webUserDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="245" selection-start-line="78" selection-start-column="245" selection-end-line="78" selection-end-column="245" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6870229">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebUserCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.171429">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/JFWebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8406466">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding />
         </state>
       </provider>

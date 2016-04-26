@@ -43,7 +43,12 @@ public class SysUserCtrl extends BaseViewBackController {
 
     @Override
     public Boolean addData() {
-        new UsersBackstage()._setAttrs(this.getModel(UsersBackstage.class)).save();
+        UsersBackstage usersBackstage = this.getModel(UsersBackstage.class);
+        if(UsersBackstage.dao.getAllData(usersBackstage).size()>0){
+            this.renderJson(new ErrorVo(1,"该账户已被注册!"));
+            return false;
+        }
+        new UsersBackstage()._setAttrs(usersBackstage).save();
         this.renderJson(new ErrorVo(0,"新增系统用户成功!"));
         return true;
     }

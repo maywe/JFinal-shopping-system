@@ -1,0 +1,73 @@
+.orders-pay-head{
+    width: 100%;
+    padding: 15px 0;
+    background: white;
+}
+.orders-pay-head .logo{
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.orders-pay-head .logo-title{
+    display: inline-block;
+    margin-left: 30px;
+}
+.orders-pay-head .logo-desc{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 13px;
+    color: #757575;
+}
+
+.orders-pay-body{
+    padding: 40px;
+}
+.orders-pay-body .user-orders-pay-info-box{
+
+}
+.user-orders-pay-info-box .orders-info{
+
+}
+.orders-info .info-ok{
+    display: inline-block;
+    font-size: 128px;
+    color: #00B83F;
+}
+.orders-info .title{
+    font-size: 28px;
+}
+.orders-info .total{
+    color: #757575;
+    margin-top: 15px;
+}
+.orders-info .total .money{
+    color: rgb(255,103,0);
+}
+.orders-info .total .money>em{
+    font-size: 28px;
+}
+.orders-info>div.order-title,.orders-info>div.order-money{
+    height: 140px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.orders-details-info{
+    padding: 20px 0;
+}
+.orders-details-info .item{
+    padding: 5px 0;
+}
+.item .order-num{
+    color: rgb(255,103,0);
+}
+
+.orders-pay-actions{
+    background: rgb(245,245,245);
+    height: 70px;
+}
+.orders-pay-actions .section-right{
+    text-align: right;
+    padding: 12px 0;
+}
+.orders-pay-actions .section-right>a,.orders-pay-actions .section-right>button{
+    width: 150px;
+}

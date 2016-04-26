@@ -31,6 +31,10 @@ public class ImageUtils {
      * @return                      //返回图片文件
      */
     public static File saveToImgByBase64Str(String imgBase64Str, String imgPath, String imgName) {
+        File file = new File(imgPath);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
         //可以是任何图片格式.jpg,.png等
         File imgFile = new File(imgPath,imgName);
         if (StrKit.notBlank(imgBase64Str, imgPath, imgName)) {

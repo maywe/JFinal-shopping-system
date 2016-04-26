@@ -7,6 +7,7 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <i class="glyphicon glyphicon-remove font-size16"></i>
     </button>
+    <span class="modal-title font-size16">修改收货地址</span>
 </div>
 <form id="usersDeliveryAddressForm" class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/userSettleAccountsCtrl/addUserAddressData.action">
     <div class="modal-body border0" style="padding:0 20px">
@@ -55,6 +56,10 @@
             $('#usersDeliveryAddressForm').attr('action','${pageContext.request.contextPath}/userSettleAccountsCtrl/addUserAddressData.action');
         }else if(command=='updateUserAddressRequest'){
             $('#usersDeliveryAddressForm').attr('action','${pageContext.request.contextPath}/userSettleAccountsCtrl/updateUserAddressData.action');
+        }else if(command=='addUserAddressRequest_userCenter'){
+            $('#usersDeliveryAddressForm').attr('action','${pageContext.request.contextPath}/userCenterCtrl/addUserAddressData.action');
+        }else if(command=='updateUserAddressRequest_userCenter'){
+            $('#usersDeliveryAddressForm').attr('action','${pageContext.request.contextPath}/userCenterCtrl/updateUserAddressData.action');
         }
     });
 </script>

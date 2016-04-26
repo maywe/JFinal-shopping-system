@@ -48,7 +48,7 @@ public class UserShoppingCartCtrl extends BaseViewFrontController {
     }
 
     public Boolean deleteCartGoods(){
-        new UsersShoppingcar().deleteUserCartGoods(this.getPara("users_shopping_id"));
+        new UsersShoppingcar().deleteUserCartGoodsById(BigDecimal.valueOf(Long.valueOf(this.getPara("users_shopping_id"))));
         this.initUserShoppingCart();
         return true;
     }

@@ -2,9 +2,14 @@ package com.mi2.ctrl.viewfront_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseViewFrontController;
+import com.base.util.DateUtils;
+import com.base.util.IdGeneratorUtils;
 import com.jfinal.aop.Before;
+import com.jfinal.plugin.activerecord.tx.Tx;
 import com.mi2.interceptor.LoginFrontInterceptor;
 import com.mi2.model.UsersDeliveryAddress;
+import com.mi2.model.UsersOrders;
+import com.mi2.model.UsersOrdersDetail;
 import com.mi2.model.UsersShoppingcar;
 
 import java.math.BigDecimal;
@@ -65,8 +70,26 @@ public class UserSettleAccountsCtrl extends BaseViewFrontController {
     }
 
     //结算方法
+    @Before(Tx.class)
     public Boolean goSettleAccounts(){
+        //生成主订单信息
+        UsersDeliveryAddress uda = UsersDeliveryAddress.dao.findById(this.getParaToBigDecimal("users_delivery_address_id"));
+        UsersOrders usersOrders = this.getModel(UsersOrders.class);
+        usersOrders.setUserOrdersId(IdGeneratorUtils.generatorOrderId());
+        usersOrders.setUserFrontId(this.getLoginUserFront().getUserFrontId());
+        usersOrders.put("ORDERS_TIME", DateUtils.thisSqlTime());
+        usersOrders.setOrdersAddress(uda.getProvince()+" "+uda.getCity()+" "+uda.getCounty()+" "+uda.getStreet());
+        usersOrders.setName(uda.getName());
+        usersOrders.setTelephone(uda.getTelephone());
+        usersOrders.setOrdersStatus(BigDecimal.ONE);
+        usersOrders.save();
+        //生成订单商品详情
+        new UsersOrdersDetail().batchSaveOrdersDetail(usersOrders);
+        //删除用户的商品购物车的商品
+        new UsersShoppingcar().deleteUserCartPayGoods(usersOrders.getUserFrontId());
 
+        this.setAttr("usersOrders",usersOrders);
+        this.renderJsp(VIEW_FRONT_PATH+"/userCenter/userOrdersPay.jsp");
         return true;
     }
 }
