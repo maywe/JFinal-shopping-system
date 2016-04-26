@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" line="41" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="实现前台用户个人中心和后台用户中心和订单中心">
+    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="完善开源项目描述">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -80,8 +80,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5521064">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state vertical-scroll-proportion="1.1640798">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -1117,7 +1117,7 @@
       <workItem from="1461220609272" duration="21323000" />
       <workItem from="1461305976517" duration="31849000" />
       <workItem from="1461378925412" duration="58189000" />
-      <workItem from="1461648800948" duration="5374000" />
+      <workItem from="1461648800948" duration="5548000" />
     </task>
     <task id="LOCAL-00001" summary="我的web购物网站雏形">
       <created>1453388585979</created>
@@ -1251,11 +1251,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461684711770</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="完善开源项目描述">
+      <created>1461686861204</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1461686861204</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1534476000" />
+    <option name="totallyTimeSpent" value="1534650000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1336,7 +1342,8 @@
     <MESSAGE value="实现普通商品展示和完善购物车静态页面" />
     <MESSAGE value="实现购物车功能和结算功能" />
     <MESSAGE value="实现前台用户个人中心和后台用户中心和订单中心" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现前台用户个人中心和后台用户中心和订单中心" />
+    <MESSAGE value="完善开源项目描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善开源项目描述" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1767,8 +1774,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5521064">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state vertical-scroll-proportion="1.1640798">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>
