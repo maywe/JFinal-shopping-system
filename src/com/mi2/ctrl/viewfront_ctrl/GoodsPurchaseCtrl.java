@@ -34,6 +34,7 @@ public class GoodsPurchaseCtrl extends BaseViewFrontController {
 
 		//商品列表
 		OtherGoodsView otherGoodsView = new OtherGoodsView();
+		otherGoodsView.put("filterGoodsBigTypeId",this.getParaToBigDecimal("filterGoodsBigTypeId"));
 		otherGoodsView.put("filterGoodsSmallTypeId",this.getParaToBigDecimal("filterGoodsSmallTypeId"));
 		otherGoodsView.put("filterAdaptPhoneSmallTypeId",this.getParaToBigDecimal("filterAdaptPhoneSmallTypeId"));
 		otherGoodsView.put("filterGoodsDiscountPrice",this.getParaToBoolean("filterGoodsDiscountPrice",false));

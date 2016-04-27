@@ -50,6 +50,7 @@
                                             <div class="col-xs-2 filter-list-type">手机配件系列&gt;</div>
                                             <div class="col-xs-10 filter-list-item-box">
                                                 <ul id="filterPhoneAccessoryTypeBox" class="clearfix">
+                                                    <li onclick="selectFilterGoodsBigType(this,2)" class="filter-list-item ${otherGoodsView.filterGoodsBigTypeId==2?'active':''}">全部</li>
                                                     <c:forEach items="${phoneAccessoryTypeList}" var="pat">
                                                         <li onclick="selectFilterPhoneAccessorySmallType(this,'${pat.goods_small_type_id}')" class="filter-list-item ${otherGoodsView.filterGoodsSmallTypeId==pat.goods_small_type_id?'active':''}">${pat.goods_small_type_name}</li>
                                                     </c:forEach>
@@ -62,6 +63,7 @@
                                             <div class="col-xs-2 filter-list-type">小米生活系列&gt;</div>
                                             <div class="col-xs-10 filter-list-item-box">
                                                 <ul id="filterMiLifeTypeBox" class="clearfix">
+                                                    <li onclick="selectFilterGoodsBigType(this,3)" class="filter-list-item ${otherGoodsView.filterGoodsBigTypeId==3?'active':''}">全部</li>
                                                     <c:forEach items="${miLifeTypeList}" var="mlt">
                                                         <li onclick="selectFilterMiLifeSmallType(this,'${mlt.goods_small_type_id}')" class="filter-list-item ${otherGoodsView.filterGoodsSmallTypeId==mlt.goods_small_type_id?'active':''}">${mlt.goods_small_type_name}</li>
                                                     </c:forEach>
@@ -196,6 +198,7 @@
                     </div>
                 </div>
                 <form id="goodsHideForm" class="hide" method="get" action="${pageContext.request.contextPath}/goodsPurchaseCtrl/initGoodsPurchase.action">
+                    <input name="filterGoodsBigTypeId" type="hidden" value="${otherGoodsView.filterGoodsBigTypeId}">
                     <input name="filterGoodsSmallTypeId" type="hidden" value="${otherGoodsView.filterGoodsSmallTypeId}">
                     <input name="filterAdaptPhoneSmallTypeId" type="hidden" value="${otherGoodsView.filterAdaptPhoneSmallTypeId}">
                     <input name="orderBy" type="hidden" value="${empty otherGoodsView.orderBy?'default':otherGoodsView.orderBy}">
@@ -246,7 +249,12 @@
                                     </div>
                                 </div>
                                 <div class="action">
-                                    <a href="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id=${otherGoodsView.goods_id}&goods_color_id=${otherGoodsView.goods_color_id}&adapt_phone_type_id=${otherGoodsView.adapt_phone_type_id}" class="btn btn-orange btn-lg">加入购物车</a>
+                                    <c:if test="${otherGoodsView.goods_stock>0}">
+                                        <a href="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id=${otherGoodsView.goods_id}&goods_color_id=${otherGoodsView.goods_color_id}&adapt_phone_type_id=${otherGoodsView.adapt_phone_type_id}" class="btn btn-orange btn-lg">加入购物车</a>
+                                    </c:if>
+                                    <c:if test="${otherGoodsView.goods_stock<=0}">
+                                        <button disabled class="btn btn-orange btn-lg">暂时缺货</button>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="goods-info-footer">
@@ -308,15 +316,27 @@
     }
 
     //选择过滤商品类型
+    function selectFilterGoodsBigType(obj,goodsBigTypeId){
+        $('#filterMiLifeTypeBox,#filterPhoneAccessoryTypeBox').children().removeClass('active');
+        activeFun(obj,'active');
+        $('#goodsHideForm input[name="filterGoodsBigTypeId"]').val(goodsBigTypeId);
+        $('#goodsHideForm input[name="filterGoodsSmallTypeId"]').val('');
+        if(goodsBigTypeId==3){
+            $('#goodsHideForm input[name="filterAdaptPhoneSmallTypeId"]').val('');
+        }
+        $('#goodsHideForm').submit();
+    }
     function selectFilterPhoneAccessorySmallType(obj,goodsSmallTypeId){
         $('#filterMiLifeTypeBox,#filterPhoneAccessoryTypeBox').children().removeClass('active');
         activeFun(obj,'active');
+        $('#goodsHideForm input[name="filterGoodsBigTypeId"]').val('');
         $('#goodsHideForm input[name="filterGoodsSmallTypeId"]').val(goodsSmallTypeId);
         $('#goodsHideForm').submit();
     }
     function selectFilterMiLifeSmallType(obj,goodsSmallTypeId){
         $('#filterMiLifeTypeBox,#filterPhoneAccessoryTypeBox,#filterAdaptPhoneTypeBox').children().removeClass('active');
         activeFun(obj,'active');
+        $('#goodsHideForm input[name="filterGoodsBigTypeId"]').val('');
         $('#goodsHideForm input[name="filterGoodsSmallTypeId"]').val(goodsSmallTypeId);
         $('#goodsHideForm input[name="filterAdaptPhoneSmallTypeId"]').val('');
         $('#goodsHideForm').submit();

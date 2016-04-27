@@ -145,6 +145,7 @@
                         </div>
                         <div id="J_chooseResult" class="pro-choose-result">
                             <button onclick="addUserShoppingCart()" disabled class="btn btn-lg btn-orange">加入购物车</button>
+                            <a disabled href="javascript:;" class="btn btn-lg btn-orange hide">暂时缺货</a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +204,7 @@
             var chooseVersionUl = $('#J_chooseVersion>ul');
             chooseVersionUl.empty();
             for(var i in data){
-                chooseVersionUl.append('<li onclick="getPhoneColorList(this)" title="'+data[i].phone_version_name+'" data-node-id="'+data[i].phone_goods_id+'" data-phone-price="'+data[i].phone_now_price+'" data-index="2">'+data[i].phone_version_name+'</li>');
+                chooseVersionUl.append('<li onclick="getPhoneColorList(this)" title="'+data[i].phone_version_name+'" data-node-id="'+data[i].phone_goods_id+'" data-phone-stock="'+data[i].phone_stock+'" data-phone-price="'+data[i].phone_now_price+'" data-index="2">'+data[i].phone_version_name+'</li>');
             }
         },'json');
     }
@@ -214,7 +215,14 @@
         $('#J_packageListBox').addClass('hide');
         $('#J_chooseResultMsg').find('span.select-phone-version').text($(obj).text()+' ');
         $('#J_chooseResultMsg').find('span.select-phone-price').text($(obj).data('phone-price')+'元 ');
-        $('#J_chooseResult>button').attr('disabled',true);
+        if(parseInt($(obj).data('phone-stock'))>0){
+            $('#J_chooseResult>button').attr('disabled',true);
+            $('#J_chooseResult>button').removeClass('hide');
+            $('#J_chooseResult>a').addClass('hide');
+        }else{
+            $('#J_chooseResult>button').addClass('hide');
+            $('#J_chooseResult>a').removeClass('hide');
+        }
         activeFun(obj,'active');
 
         var phone_goods_id = $(obj).data('node-id');

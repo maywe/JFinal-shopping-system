@@ -47,6 +47,11 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 				values.add(t.getAdaptPhoneTypeId());
 			}
 
+			//筛选特定大类型的商品
+			if(null!=t.get("filterGoodsBigTypeId")){
+				sbSql.append(" and ogv.goods_big_type_id=?");
+				values.add(t.get("filterGoodsBigTypeId"));
+			}
 			//筛选特定类型的商品
 			if(null!=t.get("filterGoodsSmallTypeId")){
 				sbSql.append(" and ogv.goods_small_type_id=?");

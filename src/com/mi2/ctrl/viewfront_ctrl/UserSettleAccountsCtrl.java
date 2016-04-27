@@ -85,8 +85,11 @@ public class UserSettleAccountsCtrl extends BaseViewFrontController {
         usersOrders.save();
         //生成订单商品详情
         new UsersOrdersDetail().batchSaveOrdersDetail(usersOrders);
-        //删除用户的商品购物车的商品
-        new UsersShoppingcar().deleteUserCartPayGoods(usersOrders.getUserFrontId());
+        //更新商品的库存和已售数量
+        UsersShoppingcar usersShoppingcar = new UsersShoppingcar();
+        usersShoppingcar.updateGoodsStockAndSalesNum(usersOrders.getUserFrontId());
+        //删除用户购物车的已支付的商品
+        usersShoppingcar.deleteUserCartPayGoods(usersOrders.getUserFrontId());
 
         this.setAttr("usersOrders",usersOrders);
         this.renderJsp(VIEW_FRONT_PATH+"/userCenter/userOrdersPay.jsp");
