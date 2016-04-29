@@ -34,21 +34,20 @@ public class GoodsPurchaseCtrl extends BaseViewFrontController {
 
 		//商品列表
 		OtherGoodsView otherGoodsView = new OtherGoodsView();
+
+		//全局搜索 filterOverallKeys
+		otherGoodsView.put("filterOverallKeys",this.getPara("filterOverallKeys"));
+
 		otherGoodsView.put("filterGoodsBigTypeId",this.getParaToBigDecimal("filterGoodsBigTypeId"));
 		otherGoodsView.put("filterGoodsSmallTypeId",this.getParaToBigDecimal("filterGoodsSmallTypeId"));
+		otherGoodsView.put("filterGoodsSmallTypeIds",this.getPara("filterGoodsSmallTypeIds"));
 		otherGoodsView.put("filterAdaptPhoneSmallTypeId",this.getParaToBigDecimal("filterAdaptPhoneSmallTypeId"));
 		otherGoodsView.put("filterGoodsDiscountPrice",this.getParaToBoolean("filterGoodsDiscountPrice",false));
 		otherGoodsView.put("filterGoodsExistSource",this.getParaToBoolean("filterGoodsExistSource",false));
 		otherGoodsView.put("orderBy",this.getPara("orderBy",""));
 		this.setAttr("otherGoodsView",otherGoodsView);
 
-		Page<OtherGoodsView> pageUtil = OtherGoodsView.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),otherGoodsView);
-		//查询商品颜色图片
-		for(int i=0,size=pageUtil.getList().size();i<size;i++){
-			GoodsColor gc = new GoodsColor();
-			gc.setGoodsId(pageUtil.getList().get(i).getGoodsId());
-			pageUtil.getList().get(i).put("goodsColorList",GoodsColor.dao.getAllData(gc));
-		}
+		Page<OtherGoodsView> pageUtil = OtherGoodsView.dao.getAllDataByPageExistGoodsColor(this.getParaToInt("pageNumber",pageNumber),this.getParaToInt("pageSize",pageSize),otherGoodsView);
 		this.setAttr(PAGE_UTIL,pageUtil);
 		this.renderJsp(VIEW_FRONT_PATH+"/goodsPurchase.jsp");
 	}

@@ -11,8 +11,8 @@
         </div>
         <div class="col-xs-4 display-table">
             <div class="display-table-cell user-nickname-box">
-                <h3 class="nickname">月星流</h3>
-                <p class="tip">晚上好</p>
+                <h3 class="nickname">${empty sessionScope.usersFront.nickname?sessionScope.usersFront.name:sessionScope.usersFront.nickname}</h3>
+                <p class="tip">${gregorianCalendarStr}</p>
                 <a href="javascript:;" onclick="getTargetPage(null,'getPersonInfoPage')">修改个人信息&gt;</a>
             </div>
         </div>
@@ -43,8 +43,8 @@
         </div>
         <div class="col-xs-4 display-table">
             <div class="display-table-cell portal-info">
-                <h4>待支付的订单：<span class="num">2</span></h4>
-                <a href="javascript:;">查看待支付订单&gt;</a>
+                <h4>我的购物车商品：<span class="num">${userCartSumGoodsNum}</span></h4>
+                <a href="${pageContext.request.contextPath}/userShoppingCartCtrl/initUserShoppingCart.action">查看购物车商品&gt;</a>
             </div>
         </div>
         <div class="col-xs-2 display-table">
@@ -54,8 +54,8 @@
         </div>
         <div class="col-xs-4 display-table">
             <div class="display-table-cell portal-info">
-                <h4>待收货的订单：<span class="num">2</span></h4>
-                <a href="javascript:;">查看待收货订单&gt;</a>
+                <h4>待收货的订单：<span class="num">${userSumNotReceivedOrderNum}</span></h4>
+                <a href="javascript:;" onclick="getTargetPage(null,'getMyOrdersPage',{orders_status:'4'})">查看待收货订单&gt;</a>
             </div>
         </div>
     </div>

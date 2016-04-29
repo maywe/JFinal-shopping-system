@@ -32,6 +32,17 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 		return this.find(sbSql.toString(),values.toArray());
 	}
 
+	public Page<OtherGoodsView> getAllDataByPageExistGoodsColor(int pageNumber, int pageSize, OtherGoodsView t){
+		Page<OtherGoodsView> pageUtil = this.getAllDataByPage(pageNumber,pageSize,t);
+		//查询商品颜色图片
+		for(int i=0,size=pageUtil.getList().size();i<size;i++){
+			GoodsColor gc = new GoodsColor();
+			gc.setGoodsId(pageUtil.getList().get(i).getGoodsId());
+			pageUtil.getList().get(i).put("goodsColorList",GoodsColor.dao.getAllData(gc));
+		}
+		return pageUtil;
+	}
+
 	@Override
 	public Page<OtherGoodsView> getAllDataByPage(int pageNumber, int pageSize, OtherGoodsView t) {
 		StringBuilder sbSql = new StringBuilder();
@@ -46,6 +57,20 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 				sbSql.append(" and ogv.adapt_phone_type_id=?");
 				values.add(t.getAdaptPhoneTypeId());
 			}
+			if(t.get("adaptPhoneTypeIdIsNull",false)){
+				sbSql.append(" and ogv.adapt_phone_type_id is null");
+			}
+			if(t.get("adaptPhoneTypeIdIsNotNull",false)){
+				sbSql.append(" and ogv.adapt_phone_type_id is not null");
+			}
+
+			//筛选全局商品
+			String filterOverallKeys = t.get("filterOverallKeys");
+			if(StrKit.notBlank(filterOverallKeys)){
+				sbSql.append(" and (ogv.goods_small_type_name like ? or ogv.goods_name like ?)");
+				values.add("%"+filterOverallKeys+"%");
+				values.add("%"+filterOverallKeys+"%");
+			}
 
 			//筛选特定大类型的商品
 			if(null!=t.get("filterGoodsBigTypeId")){
@@ -56,6 +81,10 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 			if(null!=t.get("filterGoodsSmallTypeId")){
 				sbSql.append(" and ogv.goods_small_type_id=?");
 				values.add(t.get("filterGoodsSmallTypeId"));
+			}
+			//筛选特定几个类型的商品
+			if(null!=t.get("filterGoodsSmallTypeIds")){
+				sbSql.append(" and ogv.goods_small_type_id in ("+t.get("filterGoodsSmallTypeIds")+")");
 			}
 			//筛选匹配手机类型的商品
 			if(null!=t.get("filterAdaptPhoneSmallTypeId")){
@@ -72,7 +101,7 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 			}
 
 			//商品显示排序
-			String orderBy = t.get("orderBy").toString();
+			String orderBy = t.get("orderBy","").toString();
 			if(StrKit.notBlank(orderBy)&&!"default".equals(orderBy)){
 				if("newGoods".equals(orderBy)){
 					sbSql.append(" order by ogv.goods_id desc,ogv.adapter_all_phone");
@@ -80,6 +109,8 @@ public class OtherGoodsView extends BaseOtherGoodsView<OtherGoodsView> {
 					sbSql.append(" order by ogv.goods_new_price desc,ogv.adapter_all_phone");
 				}else if("priceDown".equals(orderBy)){
 					sbSql.append(" order by ogv.goods_new_price,ogv.adapter_all_phone");
+				}else if("salesNum".equals(orderBy)){
+					sbSql.append(" order by ogv.goods_sales_num desc");
 				}
 			}
 		}

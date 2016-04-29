@@ -17,6 +17,7 @@
     <link href="${pageContext.request.contextPath}/css/common/animate.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/common/common.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-common.css" type="text/css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/viewfront/mi-common-goods.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/viewfront/mi-goodsPurchase.css" type="text/css" rel="stylesheet">
 </head>
 <body class="myBody">
@@ -250,7 +251,7 @@
                                 </div>
                                 <div class="action">
                                     <c:if test="${otherGoodsView.goods_stock>0}">
-                                        <a href="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id=${otherGoodsView.goods_id}&goods_color_id=${otherGoodsView.goods_color_id}&adapt_phone_type_id=${otherGoodsView.adapt_phone_type_id}" class="btn btn-orange btn-lg">加入购物车</a>
+                                        <a href="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id=${otherGoodsView.goods_id}&goods_color_id=${empty otherGoodsView.goods_color_id?t_goods_color_id:otherGoodsView.goods_color_id}&adapt_phone_type_id=${otherGoodsView.adapt_phone_type_id}" class="btn btn-orange btn-lg">加入购物车</a>
                                     </c:if>
                                     <c:if test="${otherGoodsView.goods_stock<=0}">
                                         <button disabled class="btn btn-orange btn-lg">暂时缺货</button>
@@ -292,28 +293,16 @@
         }
 
         <c:if test="${command=='initGoodsPurchase'}">
+            /*
             $('.goods-item').hover(function(){
                 $(this).addClass('pulse');
             },function(){
                 $(this).removeClass('pulse');
             });
+            */
             $('#goodsPaginationBox').initPaginationData('selectPageNumber');
         </c:if>
     });
-
-    function selectGoodsColorImg(obj,goods_id,adapt_phone_type_id){
-        var $goodsItem = $(obj).parent().parent().parent();
-        $goodsItem.children('div.goods-preview-img').find('img').attr('src',$(obj).data('img'));
-        $goodsItem.children('h2.title').children('a').text($(obj).data('title'));
-        activeFun(obj,'active');
-
-        var targetUrl = '${pageContext.request.contextPath}/goodsPurchaseCtrl/showGoodsDetailPurchase.action?goods_id='+goods_id+'&goods_color_id='+$(obj).data('node-id')+'&adapt_phone_type_id='+adapt_phone_type_id;
-        $goodsItem.children('div.goods-preview-img').children('a').attr('href',targetUrl);
-        $goodsItem.children('h2.title').children('a').attr('href',targetUrl);
-
-        var addShoppingCartTargetUrl = '${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id='+goods_id+'&goods_color_id='+$(obj).data('node-id')+'&adapt_phone_type_id='+adapt_phone_type_id;
-        $goodsItem.children('div.actions').children('a.btn-buy').attr('targetUrl',addShoppingCartTargetUrl);
-    }
 
     //选择过滤商品类型
     function selectFilterGoodsBigType(obj,goodsBigTypeId){
@@ -396,6 +385,20 @@
         $(obj).parent().children('div.actions-info').slideToggle().delay(1200).slideToggle(function(){});
     }
 
+    //选择商品图片
+    function selectGoodsColorImg(obj,goods_id,adapt_phone_type_id){
+        var $goodsItem = $(obj).parent().parent().parent();
+        $goodsItem.children('div.goods-preview-img').find('img').attr('src',$(obj).data('img'));
+        $goodsItem.children('h2.title').children('a').text($(obj).data('title'));
+        activeFun(obj,'active');
+
+        var targetUrl = '${pageContext.request.contextPath}/goodsPurchaseCtrl/showGoodsDetailPurchase.action?goods_id='+goods_id+'&goods_color_id='+$(obj).data('node-id')+'&adapt_phone_type_id='+adapt_phone_type_id;
+        $goodsItem.children('div.goods-preview-img').children('a').attr('href',targetUrl);
+        $goodsItem.children('h2.title').children('a').attr('href',targetUrl);
+
+        var addShoppingCartTargetUrl = '${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action?goods_id='+goods_id+'&goods_color_id='+$(obj).data('node-id')+'&adapt_phone_type_id='+adapt_phone_type_id;
+        $goodsItem.children('div.actions').children('a.btn-buy').attr('targetUrl',addShoppingCartTargetUrl);
+    }
 
     //-----------------------------------------商品详细信息展示-------------------------------
     function selectGoodsColorImgDetail(obj,goods_id,adapt_phone_type_id){

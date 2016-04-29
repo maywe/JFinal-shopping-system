@@ -79,77 +79,77 @@
                 </c:if>
                 <c:if test="${not empty phoneSmallType}">
                     <div id="J_chooseMain" class="pro-choose-main clearfix">
-                    <div class="pro-view">
-                        <img id="J_proImg" alt="手机图片预览" src="${pageContext.request.contextPath}${phoneSmallType.goods_small_type_image}" style="height: 70%;">
-                    </div>
-                    <div class="pro-info">
-                        <div class="row pro-title clearfix margin0">
-                            <div class="col-xs-8">
-                                <span class="pro-name">购买${phoneSmallType.goods_small_type_name}</span>
-                                <span class="pro-price">${phoneSmallType.phone_type_small_low_price}元起</span>
-                            </div>
-                            <div class="col-xs-4 pro-more">
-                                <a id="J_proMore" href="#">深入了解产品></a>
-                            </div>
+                        <div class="pro-view">
+                            <img id="J_proImg" alt="手机图片预览" src="${pageContext.request.contextPath}${phoneSmallType.goods_small_type_image}" style="height: 70%;">
                         </div>
-                        <div id="J_proStep" class="show-package">
-                            <div id="J_chooseModel" class="pro-choose-step" data-index="1">
-                                <h4 class="step-title">1. 选择型号</h4>
-                                <ul class="step-list clearfix">
-                                    <c:forEach items="${phoneModelList}" var="pm">
-                                        <li onclick="getPhoneVersionList(this)" title="${pm.goods_addribute_val_name}" data-node-id="${pm.model_id}" data-index="1">${pm.goods_addribute_val_name}</li>
-                                    </c:forEach>
-                                </ul>
+                        <div class="pro-info">
+                            <div class="row pro-title clearfix margin0">
+                                <div class="col-xs-8">
+                                    <span class="pro-name">购买${phoneSmallType.goods_small_type_name}</span>
+                                    <span class="pro-price">${phoneSmallType.phone_type_small_low_price}元起</span>
+                                </div>
+                                <div class="col-xs-4 pro-more">
+                                    <a id="J_proMore" href="#">深入了解产品></a>
+                                </div>
                             </div>
-                            <div id="J_chooseVersion" class="pro-choose-step hide" data-index="2">
-                                <h4 class="step-title">2. 选择版本</h4>
-                                <ul class="step-list clearfix"></ul>
+                            <div id="J_proStep" class="show-package">
+                                <div id="J_chooseModel" class="pro-choose-step" data-index="1">
+                                    <h4 class="step-title">1. 选择型号</h4>
+                                    <ul class="step-list clearfix">
+                                        <c:forEach items="${phoneModelList}" var="pm">
+                                            <li onclick="getPhoneVersionList(this)" title="${pm.goods_addribute_val_name}" data-node-id="${pm.model_id}" data-index="1">${pm.goods_addribute_val_name}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                                <div id="J_chooseVersion" class="pro-choose-step hide" data-index="2">
+                                    <h4 class="step-title">2. 选择版本</h4>
+                                    <ul class="step-list clearfix"></ul>
+                                </div>
+                                <div id="J_chooseColor" class="pro-choose-step hide" data-index="3">
+                                    <h4 class="step-title">3. 选择颜色</h4>
+                                    <ul class="step-list clearfix"></ul>
+                                </div>
+                                <div id="J_choosePackage" class="pro-choose-step hide">
+                                    <h4 class="step-title">4. 添加特惠配件套装</h4>
+                                    <ul class="step-list clearfix">
+                                        <%--
+                                        <li onclick="getPhoneSetmealDetailList(this)" class="packageItem" title="必备套装 65元" data-node-id="1161400016">必备套装<br>65元<i>省32元</i></li>
+                                        <li onclick="hidePackageListBox(this)" class="packageItem">裸机<br><i>不享受优惠</i></li>
+                                        --%>
+                                    </ul>
+                                </div>
                             </div>
-                            <div id="J_chooseColor" class="pro-choose-step hide" data-index="3">
-                                <h4 class="step-title">3. 选择颜色</h4>
-                                <ul class="step-list clearfix"></ul>
-                            </div>
-                            <div id="J_choosePackage" class="pro-choose-step hide">
-                                <h4 class="step-title">4. 添加特惠配件套装</h4>
-                                <ul class="step-list clearfix">
+                            <div id="J_packageListBox" class="package-list hide">
+                                <ul class="list clearfix">
                                     <%--
-                                    <li onclick="getPhoneSetmealDetailList(this)" class="packageItem" title="必备套装 65元" data-node-id="1161400016">必备套装<br>65元<i>省32元</i></li>
-                                    <li onclick="hidePackageListBox(this)" class="packageItem">裸机<br><i>不享受优惠</i></li>
+                                    <li class="item">
+                                        <div class="item-img"><img alt="小米活塞耳机 基础版 银色" src=""></div>
+                                        <div class="item-title">小米活塞耳机 基础版 银色</div>
+                                        <div class="item-versions">
+                                            <span class="active" data-title="小米活塞耳机 基础版 银色" data-node-id="2161200005" data-img=""><img alt="" src=""></span>
+                                        </div>
+                                    </li>
                                     --%>
                                 </ul>
                             </div>
-                        </div>
-                        <div id="J_packageListBox" class="package-list hide">
-                            <ul class="list clearfix">
-                                <%--
-                                <li class="item">
-                                    <div class="item-img"><img alt="小米活塞耳机 基础版 银色" src=""></div>
-                                    <div class="item-title">小米活塞耳机 基础版 银色</div>
-                                    <div class="item-versions">
-                                        <span class="active" data-title="小米活塞耳机 基础版 银色" data-node-id="2161200005" data-img=""><img alt="" src=""></span>
-                                    </div>
-                                </li>
-                                --%>
-                            </ul>
-                        </div>
-                        <div id="J_chooseResultMsg" class="choose-result-msg">
-                            <span class="msg-tit">您选择了以下产品:</span>
-                            <p class="msg-bd">
-                                <span class="select-phone-type">${phoneSmallType.goods_small_type_name}</span>&nbsp;
-                                <span class="select-phone-model"></span>
-                                <span class="select-phone-version"></span>
-                                <span class="select-phone-color"></span>
-                                <span class="select-phone-setmeal"></span>
-                                <span class="select-phone-price orangeColor"></span>
-                            </p>
-                        </div>
-                        <div id="J_chooseResult" class="pro-choose-result">
-                            <button onclick="addUserShoppingCart()" disabled class="btn btn-lg btn-orange">加入购物车</button>
-                            <a disabled href="javascript:;" class="btn btn-lg btn-orange hide">暂时缺货</a>
+                            <div id="J_chooseResultMsg" class="choose-result-msg">
+                                <span class="msg-tit">您选择了以下产品:</span>
+                                <p class="msg-bd">
+                                    <span class="select-phone-type">${phoneSmallType.goods_small_type_name}</span>&nbsp;
+                                    <span class="select-phone-model"></span>
+                                    <span class="select-phone-version"></span>
+                                    <span class="select-phone-color"></span>
+                                    <span class="select-phone-setmeal"></span>
+                                    <span class="select-phone-price orangeColor"></span>
+                                </p>
+                            </div>
+                            <div id="J_chooseResult" class="pro-choose-result">
+                                <button onclick="addUserShoppingCart()" disabled class="btn btn-lg btn-orange">加入购物车</button>
+                                <a disabled href="javascript:;" class="btn btn-lg btn-orange hide">暂时缺货</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    <form id="phonePurchaseForm" class="hide" method="get" action="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action">
+                    <form id="goodsPurchaseForm" class="hide" method="get" action="${pageContext.request.contextPath}/userShoppingCartCtrl/addUserShoppingCart.action">
                         <%--
                             phone_goods_id         手机商品id
                             goods_color_id         手机商品颜色id
@@ -226,7 +226,7 @@
         activeFun(obj,'active');
 
         var phone_goods_id = $(obj).data('node-id');
-        $('#phonePurchaseForm').find('input[name="phone_goods_id"]').val(phone_goods_id);
+        $('#goodsPurchaseForm').find('input[name="phone_goods_id"]').val(phone_goods_id);
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneColorList.action';
         var param = {"goodsColor.phone_goods_id":phone_goods_id};
@@ -247,7 +247,7 @@
         $('#J_chooseResult>button').attr('disabled',true);
         activeFun(obj,'active');
 
-        $('#phonePurchaseForm').find('input[name="goods_color_id"]').val($(obj).data('node-id'));
+        $('#goodsPurchaseForm').find('input[name="goods_color_id"]').val($(obj).data('node-id'));
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealList.action';
         var param = {"phoneSetmeal.goods_small_type_id":"${phoneSmallType.goods_small_type_id}"};
@@ -268,7 +268,7 @@
         activeFun(obj,'active');
 
         var phone_setmeal_id = $(obj).data('node-id');
-        $('#phonePurchaseForm').find('input[name="phone_setmeal_id"]').val(phone_setmeal_id);
+        $('#goodsPurchaseForm').find('input[name="phone_setmeal_id"]').val(phone_setmeal_id);
 
         var targetUrl = '${pageContext.request.contextPath}/phonePurchaseCtrl/getPhoneSetmealDetailList.action';
         var param = {"phoneSetmealDetail.phone_setmeal_id":phone_setmeal_id};
@@ -303,7 +303,7 @@
                 targetHtml += '</div></li>';
                 packageListUl.append(targetHtml);
             }
-            $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
+            $('#goodsPurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
         },'json');
     }
 
@@ -312,7 +312,7 @@
         $('#J_chooseResultMsg').find('span.select-phone-setmeal').text('');
         $('#J_chooseResult>button').removeAttr('disabled');
         activeFun(obj,'active');
-        $('#phonePurchaseForm').find('input[name="phone_setmeal_id"]').val($(obj).data('node-id'));
+        $('#goodsPurchaseForm').find('input[name="phone_setmeal_id"]').val($(obj).data('node-id'));
     }
 
     function selectPhoneSetmealImg(obj){
@@ -339,12 +339,12 @@
                 }
             }
         });
-        $('#phonePurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
+        $('#goodsPurchaseForm').find('input[name="phoneSetmeal_goodsIds_goodsNums_goodsColorIds"]').val(phoneSetmeal_goodsIds_goodsNums_goodsColorIds);
     }
 
     //加入购物车
     function addUserShoppingCart(){
-        $('#phonePurchaseForm').submit();
+        $('#goodsPurchaseForm').submit();
     }
 </script>
 </body>

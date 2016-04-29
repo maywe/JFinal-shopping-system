@@ -3,6 +3,8 @@ package com.base.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * Util_Date.java: 日期格式转换工具类
  * @author CMW
@@ -118,6 +120,26 @@ public class DateUtils {
 		return new Date();
 	}
 
+	public static String getGregorianCalendarStr(){
+		int hours = thisTime().getHours();
+		if(hours>6&&hours<=9){
+			return "早上好";
+		}else if(hours>9&&hours<=12){
+			return "上午好";
+		}else if(hours>12&&hours<=18){
+			return "下午好";
+		}else{
+			return "晚上好";
+		}
+	}
+
+	public static void main(String args[]) {
+		//结果为“0”是上午 结果为“1”是下午
+		GregorianCalendar ca = new GregorianCalendar();
+		System.out.println(ca.get(GregorianCalendar.AM_PM));
+		System.out.println(thisTime().getHours());
+	}
 }
+
 
 

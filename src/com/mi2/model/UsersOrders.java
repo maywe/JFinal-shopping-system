@@ -5,6 +5,7 @@ import com.base.util.DateUtils;
 import com.jfinal.kit.StrKit;
 import com.jfinal.plugin.activerecord.Page;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,12 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class UsersOrders extends BaseUsersOrders<UsersOrders> {
 	public static final UsersOrders dao = new UsersOrders();
+
+	public BigDecimal getUserSumNotReceivedOrderNum(BigDecimal userFrontId){
+		String sql = "select count(uo.orders_id) order_sum from users_orders uo where uo.orders_status<>4 and uo.user_front_id=?";
+		UsersOrders uo = this.findFirst(sql,userFrontId);
+		return BigDecimal.valueOf(Long.valueOf(uo.get("order_sum",0)+""));
+	}
 
 	@Override
 	public List<UsersOrders> getAllData(UsersOrders t) {

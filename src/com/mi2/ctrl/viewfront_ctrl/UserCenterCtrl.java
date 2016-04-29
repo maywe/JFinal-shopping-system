@@ -12,6 +12,7 @@ import com.mi2.interceptor.LoginFrontInterceptor;
 import com.mi2.model.UsersDeliveryAddress;
 import com.mi2.model.UsersFront;
 import com.mi2.model.UsersOrders;
+import com.mi2.model.UsersShoppingcar;
 
 import java.io.File;
 
@@ -51,6 +52,9 @@ public class UserCenterCtrl extends BaseViewFrontController {
 
 	//我的个人中心
 	public void getMyPersonCenterPage(){
+		this.setAttr("gregorianCalendarStr",DateUtils.getGregorianCalendarStr());
+		this.setAttr("userCartSumGoodsNum", UsersShoppingcar.dao.getCartSumGoodsNum(this.getLoginUserFront().getUserFrontId()));
+		this.setAttr("userSumNotReceivedOrderNum", UsersOrders.dao.getUserSumNotReceivedOrderNum(this.getLoginUserFront().getUserFrontId()));
 		this.renderJsp(VIEW_FRONT_PATH+"/userCenter/userPersonCenter.jsp");
 	}
 

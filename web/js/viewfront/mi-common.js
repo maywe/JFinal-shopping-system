@@ -4,6 +4,15 @@
  *
  */
 
+//全局商品过滤
+function filterOverallGoods(obj){
+    if($(obj).prev('input').val()==''){
+        toastr.info('请输入查询关键字!');
+    }else{
+        $(obj).parent().parent('form').submit();
+    }
+}
+
 //激活函数、选中函数（专门用于ul+li的激活）
 function activeFun(obj,activeCss){
     if(!activeCss){

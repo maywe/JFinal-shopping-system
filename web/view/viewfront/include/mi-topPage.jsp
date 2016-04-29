@@ -6,7 +6,7 @@
 <header class="head clearfix">
     <div class="div-center-width-1290">
         <ul class="nav navbar-nav navbar-left head-left">
-            <li><a class="p-l-0" href="#">小米网</a></li>
+            <li><a class="p-l-0" href="${pageContext.request.contextPath}/">小米网</a></li>
             <li><a href="#">MIUI</a></li>
             <li><a href="#">米聊</a></li>
             <li><a href="#">游戏</a></li>

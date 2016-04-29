@@ -17,12 +17,11 @@ public class UsersShoppingcar extends BaseUsersShoppingcar<UsersShoppingcar> {
 
 	//更新商品的库存量和销售数量（oracle sql特有的写法）
 	public void updateGoodsStockAndSalesNum(BigDecimal userFrontId){
-		String updateOtherGoodsSql = "merge into goods g using users_settle_acounts_view usav on (g.goods_id=usav.goods_id and usav.phone_goods_id is null and usav.user_front_id=?)when matched then update set g.goods_stock=g.goods_stock-usav.cost_num,g.goods_sales_num=g.goods_sales_num+usav.cost_num";
-		String updatePhoneGoodsSql = "merge into phone_version pv using users_settle_acounts_view usav on (pv.phone_goods_id=usav.phone_goods_id and usav.goods_id is null and usav.user_front_id=?)when matched then update set pv.phone_stock=pv.phone_stock-usav.cost_num,pv.phone_sales_num=pv.phone_sales_num+usav.cost_num";
+		String updateOtherGoodsSql = "merge into goods g using (select usav1.goods_id,sum(usav1.cost_num) cost_num from users_settle_acounts_view usav1 where usav1.user_front_id=? and usav1.phone_goods_id is null group by usav1.goods_id)usav on (g.goods_id=usav.goods_id) when matched then update set g.goods_stock=g.goods_stock-usav.cost_num,g.goods_sales_num=g.goods_sales_num+usav.cost_num";
+		String updatePhoneGoodsSql = "merge into phone_version pv using (select usav1.phone_goods_id,sum(usav1.cost_num) cost_num from users_settle_acounts_view usav1 where usav1.user_front_id=? and usav1.goods_id is null group by usav1.phone_goods_id) usav on (pv.phone_goods_id=usav.phone_goods_id) when matched then update set pv.phone_stock=pv.phone_stock-usav.cost_num,pv.phone_sales_num=pv.phone_sales_num+usav.cost_num";
 		Db.update(updateOtherGoodsSql,userFrontId);
 		Db.update(updatePhoneGoodsSql,userFrontId);
 	}
-
 
 	//删除用户购物车中已经支付成功的商品
 	public void deleteUserCartPayGoods(BigDecimal userFrontId){
