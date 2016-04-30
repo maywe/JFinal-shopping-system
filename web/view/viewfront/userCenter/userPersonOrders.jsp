@@ -1,3 +1,5 @@
+<%@ page import="com.base.util.DateUtils" %>
+<%@ page import="com.mi2.model.UsersOrders" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,7 +16,7 @@
                         <a href="javascript:;" onclick="ordersSearchFormSubmit('')">全部有效订单</a>
                     </li>
                     <li class="${not empty usersOrders.orders_status?'active':''}" style="border-right: none;" onclick="activeFun(this)">
-                        <a href="javascript:;" onclick="ordersSearchFormSubmit('4')">待收货</a>
+                        <a href="javascript:;" onclick="ordersSearchFormSubmit('4')">待收货${empty userSumNotReceivedOrderNum?'':'('}${empty userSumNotReceivedOrderNum?'':userSumNotReceivedOrderNum}${empty userSumNotReceivedOrderNum?'':')'}</a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +33,7 @@
     </div>
     <div class="user-orders-body">
         <c:forEach items="${pageUtil.list}" var="data">
-            <div class="orders-item">
+            <div class="orders-item" style="${data.orders_status==4?'':'border: 1px solid rgb(255,103,0);'}">
                 <div class="order-status">
                     ${data.orders_status==1?"已付款":""}
                     ${data.orders_status==2?"正在配货":""}
@@ -40,12 +42,33 @@
                 </div>
                 <div class="row order-detail-head">
                     <div class="col-xs-8 caption-info">
-                        <fmt:formatDate value="${data.orders_time}" pattern="yyyy-MM-dd"/>
+                        <%--
+                        <fmt:formatDate value="${data.orders_time}" pattern="yyyy-mm-dd hh24:mi:ss"/>
+                         ${data.orders_time}
+                        --%>
+                        <%
+                            UsersOrders usersOrders_1= (UsersOrders)pageContext.getAttribute("data");
+                        %>
+                        <c:if test="${data.orders_status==0}">
+                            <%=DateUtils.oracleSqlTimestampToStr(usersOrders_1.get("orders_time"))%>
+                        </c:if>
+                        <c:if test="${data.orders_status==1}">
+                            <%=DateUtils.oracleSqlTimestampToStr(usersOrders_1.get("pay_time"))%>
+                        </c:if>
+                        <c:if test="${data.orders_status==2}">
+                            <%=DateUtils.oracleSqlTimestampToStr(usersOrders_1.get("prepare_goods_time"))%>
+                        </c:if>
+                        <c:if test="${data.orders_status==3}">
+                            <%=DateUtils.oracleSqlTimestampToStr(usersOrders_1.get("deliver_goods_time"))%>
+                        </c:if>
+                        <c:if test="${data.orders_status==4}">
+                            <%=DateUtils.oracleSqlTimestampToStr(usersOrders_1.get("take_goods_time"))%>
+                        </c:if>
                         <span class="sep">|</span>
                         ${data.name}
                         <span class="sep">|</span>
                         订单号：
-                        <a href="#">${data.user_orders_id}</a>
+                        <a onclick="getUserOrderDetailPage('${data.orders_id}')" href="javascript:;">${data.user_orders_id}</a>
                         <span class="sep">|</span>
                         在线支付
                     </div>
@@ -96,7 +119,7 @@
                             </div>
                         </c:forEach>
                         <div class="order-actions">
-                            <a class="btn btn-sm btn-orange" href="//order.mi.com/user/orderView/1150805530031699">订单详情</a>
+                            <a onclick="getUserOrderDetailPage('${data.orders_id}')" class="btn btn-sm btn-orange" href="javascript:;">订单详情</a>
                             <a class="btn btn-sm btn-grey" href="javascript:;">申请售后</a>
                         </div>
                     </div>
@@ -126,4 +149,10 @@
         getTargetPage(null,'getMyOrdersPage',param);
     }
 
+    //获取订单详情
+    function getUserOrderDetailPage(orders_id){
+        var param = {};
+        param.orders_id = orders_id;
+        getTargetPage(null,'getUserOrderDetailPage',param);
+    }
 </script>

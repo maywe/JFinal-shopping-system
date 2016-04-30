@@ -82,6 +82,13 @@
     text-align: center;
     vertical-align: middle !important;
 }
+.modal-content .modal-body .tab-detail-table th{
+    font-weight: bold;
+}
+.modal-content .modal-body .tab-detail-table th,.modal-content .modal-body .tab-detail-table td{
+    text-align: left;
+    vertical-align: middle !important;
+}
 .modal-content .modal-body .pageFooter{
     position: static;
 }

@@ -40,31 +40,36 @@
         $(function(){
             initModal('#pop_modal_sm,#pop_modal_lg');
             getTargetPage(null,'${command}');
+            var isNotLogin = '${empty sessionScope.usersFront}';
+            if(isNotLogin=='false'){
+                getCartSumGoodsNumShowCartBtn('${pageContext.request.contextPath}');
+            }
         });
 
         function getTargetPage(obj,command,param){
             var $ucNavBox = $('#ucNavBox');
             var $navSmallType = $('#navSmallType');
-            var isExistPage = false;
+            //var isExistPage = false;
             if(obj){
                 $ucNavBox.find('li').removeClass('active');
                 $(obj).addClass('active');
                 command = $(obj).attr('command');
                 $navSmallType.text($(obj).text());
-                isExistPage = true;
+                //isExistPage = true;
             }else{
                 $ucNavBox.find('li').each(function(){
                     if($(this).attr('command')==command){
                         $ucNavBox.find('li').removeClass('active');
                         $(this).addClass('active');
                         $navSmallType.text($(this).text());
-                        isExistPage = true;
+                        //isExistPage = true;
                         return false;
                     }
                 });
             }
 
-            if(command&&isExistPage){
+            //if(command&&isExistPage){
+            if(command){
                 if(!param){
                     param = {};
                 }

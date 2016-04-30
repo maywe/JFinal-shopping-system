@@ -58,6 +58,12 @@ public class DateUtils {
 		return strToUtilDate(utilDateToStr(thisTime(),DATE_TIME),DATE_TIME);
 	}
 
+	public static java.sql.Timestamp thisSqlTimestamp(){
+		return java.sql.Timestamp.valueOf(utilDateToStr(thisTime(),DATE_TIME));
+	}
+
+
+
 	public static java.sql.Date thisSqlTime(){
 		return java.sql.Date.valueOf(DateUtils.utilDateToStr(thisTime(),DATE));
 	}
@@ -70,6 +76,18 @@ public class DateUtils {
 		return sdf.format(date);
 	}
 
+	public static java.sql.Timestamp sqlTimestampToStr(java.sql.Timestamp date,String pattern){
+		return java.sql.Timestamp.valueOf(utilDateToStr(date,pattern));
+	}
+
+	public static String oracleSqlTimestampToStr(Object date){
+		if(null==date){
+			return "";
+		}
+		oracle.sql.TIMESTAMP timestamp = (oracle.sql.TIMESTAMP)date;
+		String str = timestamp.stringValue();
+		return str.substring(0,str.length()-2);
+	}
 
 	//将字符串转换strDate为java.util.Date类型
 	public static java.util.Date strToUtilDate(String strDate,String pattern){
@@ -138,6 +156,8 @@ public class DateUtils {
 		GregorianCalendar ca = new GregorianCalendar();
 		System.out.println(ca.get(GregorianCalendar.AM_PM));
 		System.out.println(thisTime().getHours());
+		System.out.println(thisSqlTime());
+		System.out.println(thisSqlTimestamp());
 	}
 }
 

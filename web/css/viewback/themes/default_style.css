@@ -1,0 +1,100 @@
+@charset "utf-8";
+.themes {
+  background: #2f4050;
+}
+.themes-nav {
+  background: #2f4050;
+}
+.themes-nav-header {
+  background: #263949;
+}
+.themes-nav-body ul.nav li div {
+  color: #337ab7;
+}
+.themes-content-head {
+  background-color: #263949;
+}
+.themes-content-head ul.nav > li {
+  border-right: 1px solid #ffa500;
+}
+.themes-content-head ul.nav > li > div {
+  color: #337ab7;
+}
+.themes-content-head h2.mi2-title {
+  color: #ffa500;
+}
+.themes-content-head ul.nav li > a:hover {
+  background: #2f4050;
+}
+.themes-myTree ul li > a:hover {
+  background: #263949;
+}
+.themes-content-body ul.nav li > a {
+  background: #f3f8fc;
+  color: #2f4050;
+  border-left: 1px solid #d9e7f2;
+  border-top: 1px solid #d9e7f2;
+  border-right: 1px solid #d9e7f2;
+}
+.themes-content-body ul {
+  border-bottom: 1px solid #d9e7f2;
+}
+.themes-content-body ul.nav li > a:hover {
+  background: #d9e7f2;
+}
+.themes-content-body ul.nav li.active > a {
+  background: #ffffff;
+  font-weight: bold;
+}
+.themes-content-body ul.nav li > button {
+  background: #f3f8fc;
+  color: #2f4050;
+  border: 1px solid #d9e7f2;
+  border-bottom: none;
+}
+.themes-content-body ul.nav li:hover > button {
+  background: #d9e7f2;
+  font-weight: bold;
+}
+.themes-my-tab-content {
+  /*
+    border-left: 1px solid @blue_color_3;
+    border-bottom: 1px solid @blue_color_3;
+    border-right: 1px solid @blue_color_3;
+    */
+}
+.themes-footer {
+  background: #2f4050;
+}
+.themes-footer label {
+  color: #ffffff;
+  font-weight: bold;
+}
+.themes-footer a {
+  color: #ffa500;
+  font-weight: bold;
+}
+/* 主容器样式 */
+.themes-portlet-title {
+  background: #dddddd;
+}
+.themes-portlet-box th {
+  background: #ebebeb;
+}
+.themes-pageFooter {
+  background: #dddddd;
+}
+/* 弹出框样式 */
+.themes-modal-content .modal-header {
+  background: url("../../../images/back/diatopbk.png") repeat;
+}
+.themes-modal-content .modal-header .close {
+  color: red;
+}
+.themes-modal-content .detail-table th,
+.themes-modal-content .tab-detail-table th {
+  background: #ebebeb;
+}
+.themes-modal-content .modal-body {
+  background: url("../../../images/back/diabk.png") repeat;
+}

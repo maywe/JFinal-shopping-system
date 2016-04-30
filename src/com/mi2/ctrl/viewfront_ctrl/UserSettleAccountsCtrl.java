@@ -77,7 +77,9 @@ public class UserSettleAccountsCtrl extends BaseViewFrontController {
         UsersOrders usersOrders = this.getModel(UsersOrders.class);
         usersOrders.setUserOrdersId(IdGeneratorUtils.generatorOrderId());
         usersOrders.setUserFrontId(this.getLoginUserFront().getUserFrontId());
-        usersOrders.put("ORDERS_TIME", DateUtils.thisSqlTime());
+        usersOrders.put("ORDERS_TIME", DateUtils.thisSqlTimestamp());
+        usersOrders.put("PAY_TIME", DateUtils.thisSqlTimestamp());
+        //usersOrders.setOrdersTime(DateUtils.utilDateToStr(DateUtils.thisTime(),DateUtils.DATE_TIME));
         usersOrders.setOrdersAddress(uda.getProvince()+" "+uda.getCity()+" "+uda.getCounty()+" "+uda.getStreet());
         usersOrders.setName(uda.getName());
         usersOrders.setTelephone(uda.getTelephone());

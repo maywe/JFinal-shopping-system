@@ -280,7 +280,7 @@
                                 <span class="orangeColor">-${discountAmount}元</span>
                             </li>
                             <li class="clearfix">
-                                <label>运费：</label>
+                                <label>运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：</label>
                                 <span class="orangeColor">${goodsSumMoney>100?0:10}元</span>
                             </li>
                             <li class="clearfix total-price">

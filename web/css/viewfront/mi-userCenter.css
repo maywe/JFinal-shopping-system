@@ -272,5 +272,139 @@
     border-radius: 0;
     margin-top: 5px;
 }
-
 /* 我的订单样式 end*/
+
+/* 我的订单详情样式 start*/
+.user-person-orders-detail{
+    padding-top: 30px;
+}
+.user-person-orders-detail .user-orders-detail-header .title {
+    color: #757575;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 68px;
+    margin: 0;
+}
+.user-person-orders-detail .user-orders-detail-header .more{
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+.user-person-orders-detail .user-orders-detail-header .more .subtitle{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+}
+.user-person-orders-detail .user-orders-detail-header .more .order-actions{
+    text-align: right;
+    padding: 5px 0;
+}
+.user-person-orders-detail .user-orders-detail-header .more .order-actions .btn{
+    width: 120px;
+    border-radius: 0;
+}
+
+.user-person-orders-detail .user-orders-detail-body .order-detail{
+    padding: 15px 0;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-status{
+    color: #b0b0b0;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list{
+    margin-bottom: 50px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step{
+    float: left;
+    width: 20%;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+    background: rgb(245,245,245);
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step .progress{
+    background: rgb(245,245,245);
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step .info{
+    font-size: 12px;
+    color: #757575;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-done .progress{
+    background: rgb(131,196,78);
+    border-radius: 0;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-done .progress .text{
+    color: #ffffff;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-active .progress{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-first {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-last {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-first .progress{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .progress-list .step-last .progress{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-goods-list>div.row{
+    border-bottom: 1px solid #E0E0E0;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-goods-list .display-table-cell{
+    height: 100px;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-goods-list .order-detail-img .display-table-cell{
+    text-align: center;
+}
+
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-detail-info{
+    padding-top: 5px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-detail-info .title{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 30px 0 15px 0;
+}
+.user-person-orders-detail .user-orders-detail-body .order-detail .order-detail-info .info>li{
+    color: #757575;
+    padding-bottom: 5px;
+}
+
+.order-detail-total{
+    margin-top: 50px;
+}
+.order-detail-total .money-box{
+    padding-left: 15px;
+}
+.order-detail-total .money-box label{
+    color: #757575;
+    float: left;
+    font-weight:normal;
+}
+.order-detail-total .money-box span{
+    float: right;
+}
+.order-detail-total .money-box .total-price{
+    height: 45px;
+}
+.order-detail-total .money-box .total-price>label{
+    padding-top: 15px;
+}
+.order-detail-total .money-box .total-price>span{
+    font-size: 30px;
+}
+/* 我的订单详情样式 end*/

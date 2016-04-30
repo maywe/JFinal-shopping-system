@@ -30,7 +30,7 @@ public class UserShoppingCartCtrl extends BaseViewFrontController {
         UsersShoppingcar usc = new UsersShoppingcar();
         usc.setUserFrontId(this.getLoginUserFront().getUserFrontId());
         //usc.setLastUpdateDate(new Date());
-        usc.put("LAST_UPDATE_DATE",DateUtils.thisSqlTime());
+        usc.set("LAST_UPDATE_DATE",DateUtils.thisSqlTime());
         if("updateSelectAllPay".equals(command)){
             usc.setIsSelectPay(this.getPara("is_select_pay"));
             usc.batchUpdateFrontUserCartGoods(usc);
@@ -68,7 +68,7 @@ public class UserShoppingCartCtrl extends BaseViewFrontController {
 
         UsersShoppingcar usc = new UsersShoppingcar();
         usc.setShoppingNum(BigDecimal.ONE);
-        usc.put("SHOPPING_TIME",DateUtils.thisSqlTime());
+        usc.set("SHOPPING_TIME",DateUtils.thisSqlTime());
         //usc.setShoppingTime(new Date());
         usc.setIsSelectPay("0");
         usc.setUserFrontId(this.getLoginUserFront().getUserFrontId());

@@ -18,10 +18,13 @@
                     <label>用户状态</label>
                     <select name="search_orders_status" class="form-control input-sm">
                         <option value="">所有</option>
-                        <option ${usersOrders.search_orders_status=="1"?"selected":""} value="1">已付款</option>
-                        <option ${usersOrders.search_orders_status=="2"?"selected":""} value="2">正在配货</option>
-                        <option ${usersOrders.search_orders_status=="3"?"selected":""} value="3">已发货</option>
-                        <option ${usersOrders.search_orders_status=="4"?"selected":""} value="4">交易成功</option>
+                        <%--
+                        <option ${usersOrders.search_orders_status==0?"selected":""} value="0">已下单</option>
+                        --%>
+                        <option ${usersOrders.search_orders_status==1?"selected":""} value="1">已付款</option>
+                        <option ${usersOrders.search_orders_status==2?"selected":""} value="2">正在配货</option>
+                        <option ${usersOrders.search_orders_status==3?"selected":""} value="3">已发货</option>
+                        <option ${usersOrders.search_orders_status==4?"selected":""} value="4">交易成功</option>
                     </select>
                     <label>订单时间</label>
                     <input name="search_orders_time1" value="${usersOrders.search_orders_time1}" type="text" class="form-control input-sm dateSelect" placeholder="开始时间"/>
@@ -40,7 +43,6 @@
                     <tr>
                         <th>序号</th>
                         <th>订单编号</th>
-                        <th>订单日期</th>
                         <th>收货人</th>
                         <th>联系电话</th>
                         <th>商品总件数</th>
@@ -57,7 +59,6 @@
                         <tr>
                             <td>${status.count}</td>
                             <td>${data.user_orders_id}</td>
-                            <td><fmt:formatDate value="${data.orders_time}" pattern="yyyy-MM-dd"/></td>
                             <td>${data.name}</td>
                             <td>${data.telephone}</td>
                             <td>${data.goods_sum}</td>

@@ -15,6 +15,7 @@ import com.mi2.model.UsersOrders;
 import com.mi2.model.UsersShoppingcar;
 
 import java.io.File;
+import java.util.List;
 
 @RouteBind(path="/userCenterCtrl")
 @Before(LoginFrontInterceptor.class)
@@ -43,7 +44,18 @@ public class UserCenterCtrl extends BaseViewFrontController {
 			}
 		}
 		this.setAttr(PAGE_UTIL,UsersOrders.dao.getAllDataByPage(this.getParaToInt("pageNumber",pageNumber),5,uo));
+		this.setAttr("userSumNotReceivedOrderNum", UsersOrders.dao.getUserSumNotReceivedOrderNum(this.getLoginUserFront().getUserFrontId()));
 		this.renderJsp(VIEW_FRONT_PATH+"/userCenter/userPersonOrders.jsp");
+	}
+
+	public void getUserOrderDetailPage(){
+		UsersOrders uo = new UsersOrders();
+		uo.setOrdersId(this.getParaToBigDecimal("orders_id"));
+		List<UsersOrders> usersOrdersList = UsersOrders.dao.getAllData(uo);
+		if(usersOrdersList.size()==1){
+			this.setAttr("usersOrders",UsersOrders.dao.getAllData(uo).get(0));
+		}
+		this.renderJsp(VIEW_FRONT_PATH+"/userCenter/userPersonOrdersDetail.jsp");
 	}
 
 	public void getGoodsAccessPage(){

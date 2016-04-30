@@ -20,10 +20,11 @@
                     <th><span class="must-msg">*&nbsp;</span>订单状态:</th>
                     <td>
                         <select name="usersOrders.orders_status" class="form-control">
-                            <option ${usersOrders.orders_status=="1"?"selected":""} value="1">已付款</option>
-                            <option ${usersOrders.orders_status=="2"?"selected":""} value="2">正在配货</option>
-                            <option ${usersOrders.orders_status=="3"?"selected":""} value="3">已发货</option>
-                            <option ${usersOrders.orders_status=="4"?"selected":""} value="4">交易成功</option>
+                            <option class="${usersOrders.orders_status==0 or usersOrders.orders_status+1==0?"":"hide"}" ${usersOrders.orders_status==0?"selected":""} value="0">已下单</option>
+                            <option class="${usersOrders.orders_status==1 or usersOrders.orders_status+1==1?"":"hide"}" ${usersOrders.orders_status==1?"selected":""} value="1">已付款</option>
+                            <option class="${usersOrders.orders_status==2 or usersOrders.orders_status+1==2?"":"hide"}" ${usersOrders.orders_status==2?"selected":""} value="2">正在配货</option>
+                            <option class="${usersOrders.orders_status==3 or usersOrders.orders_status+1==3?"":"hide"}" ${usersOrders.orders_status==3?"selected":""} value="3">已发货</option>
+                            <option class="${usersOrders.orders_status==4 or usersOrders.orders_status+1==4?"":"hide"}" ${usersOrders.orders_status==4?"selected":""} value="4">交易成功</option>
                         </select>
                     </td>
                 </tr>

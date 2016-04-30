@@ -95,7 +95,7 @@ public class UsersOrders extends BaseUsersOrders<UsersOrders> {
 				values.add(DateUtils.strToSqlDate(search_orders_time2,DateUtils.DATE));
 			}
 		}
-		sbSql.append(" order by uo.orders_id desc");
+		sbSql.append(" order by uo.orders_status,uo.orders_id desc");
 		Page<UsersOrders> pageUtil = this.paginate(pageNumber,pageSize,"select * ",sbSql.toString(),values.toArray());
 		for(int i=0,size=pageUtil.getList().size();i<size;i++){
 			UsersOrders uo = pageUtil.getList().get(i);

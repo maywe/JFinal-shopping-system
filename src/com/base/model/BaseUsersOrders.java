@@ -36,11 +36,11 @@ public abstract class BaseUsersOrders<M extends BaseUsersOrders<M>> extends Base
 		return get("USER_ORDERS_ID");
 	}
 
-	public void setOrdersTime(java.util.Date ordersTime) {
+	public void setOrdersTime(java.lang.String ordersTime) {
 		set("ORDERS_TIME", ordersTime);
 	}
 
-	public java.util.Date getOrdersTime() {
+	public java.lang.String getOrdersTime() {
 		return get("ORDERS_TIME");
 	}
 
@@ -138,6 +138,38 @@ public abstract class BaseUsersOrders<M extends BaseUsersOrders<M>> extends Base
 
 	public java.lang.String getReceiptType() {
 		return get("RECEIPT_TYPE");
+	}
+
+	public void setPayTime(java.lang.String payTime) {
+		set("PAY_TIME", payTime);
+	}
+
+	public java.lang.String getPayTime() {
+		return get("PAY_TIME");
+	}
+
+	public void setPrepareGoodsTime(java.lang.String prepareGoodsTime) {
+		set("PREPARE_GOODS_TIME", prepareGoodsTime);
+	}
+
+	public java.lang.String getPrepareGoodsTime() {
+		return get("PREPARE_GOODS_TIME");
+	}
+
+	public void setDeliverGoodsTime(java.lang.String deliverGoodsTime) {
+		set("DELIVER_GOODS_TIME", deliverGoodsTime);
+	}
+
+	public java.lang.String getDeliverGoodsTime() {
+		return get("DELIVER_GOODS_TIME");
+	}
+
+	public void setTakeGoodsTime(java.lang.String takeGoodsTime) {
+		set("TAKE_GOODS_TIME", takeGoodsTime);
+	}
+
+	public java.lang.String getTakeGoodsTime() {
+		return get("TAKE_GOODS_TIME");
 	}
 
 }
