@@ -4,25 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/web/view/viewback/goodsManage/phoneSetmealDialog.jsp" line="41" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="完善商品展示主页，优化商品搜索引擎，修改结算流程">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/viewback/themes/default_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrdersDetail.jsp" />
+    <list default="true" id="ee66f537-5dac-4746-95a3-84424ee39693" name="Default" comment="完善开源项目描述">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MI2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java" afterPath="$PROJECT_DIR$/src/com/base/model/BaseUsersOrders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/util/DateUtils.java" afterPath="$PROJECT_DIR$/src/com/base/util/DateUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserCenterCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserCenterCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserSettleAccountsCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewfront_ctrl/UserShoppingCartCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" afterPath="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewback/main.css" afterPath="$PROJECT_DIR$/web/css/viewback/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewback/themes/default_style.less" afterPath="$PROJECT_DIR$/web/css/viewback/themes/default_style.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/viewfront/mi-userCenter.css" afterPath="$PROJECT_DIR$/web/css/viewfront/mi-userCenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp" afterPath="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderShowDialog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userCenter.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userCenter.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrders.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userPersonOrders.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" afterPath="$PROJECT_DIR$/web/view/viewfront/userCenter/userSettleAccounts.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webOrderCtrl.java" afterPath="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/webOrderCtrl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -70,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webOrderList.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="webOrderList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44827586">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state vertical-scroll-proportion="-10.4">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -100,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebOrderCtrl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebOrderCtrl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="1.0">
               <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
               <folding />
             </state>
@@ -212,7 +198,6 @@
         <option value="$PROJECT_DIR$/web/view/viewback/usersManage/webUserList.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/base/JFWebConfig.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/web/css/viewfront/mi-common-goods.css" />
         <option value="$PROJECT_DIR$/web/css/viewfront/mi-goodsPurchase.css" />
         <option value="$PROJECT_DIR$/web/view/viewfront/phonePurchase.jsp" />
@@ -245,6 +230,7 @@
         <option value="$PROJECT_DIR$/src/com/mi2/model/UsersOrders.java" />
         <option value="$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java" />
         <option value="$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -701,28 +687,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MI2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -736,13 +700,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="D:\MySoftware\NodeJS\node.exe" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="102" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="101" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="189" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="187" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="136" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="134" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="865" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="870" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="119" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
@@ -1503,7 +1467,7 @@
       <workItem from="1461648800948" duration="5847000" />
       <workItem from="1461727064711" duration="16483000" />
       <workItem from="1461852713172" duration="44284000" />
-      <workItem from="1461986748956" duration="30053000" />
+      <workItem from="1461986748956" duration="32050000" />
     </task>
     <task id="LOCAL-00001" summary="我的web购物网站雏形">
       <created>1453388585979</created>
@@ -1661,11 +1625,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461949100649</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="完善商品订单详情，完善订单管理流程">
+      <created>1462021045491</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1462021045491</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1625769000" />
+    <option name="totallyTimeSpent" value="1627766000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1689,7 +1659,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4722222" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37908497" sideWeight="0.48940998" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4493464" sideWeight="0.48940998" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37091503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel remote servers log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27941176" sideWeight="0.5060514" order="13" side_tool="true" content_ui="tabs" />
@@ -1703,7 +1673,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5163399" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13725491" sideWeight="0.45688352" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1503268" sideWeight="0.45688352" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1749,8 +1719,10 @@
     <MESSAGE value="完善开源项目描述" />
     <MESSAGE value="优化系统购物流程" />
     <MESSAGE value="完善商品展示主页，优化商品搜索引擎，修改结算流程" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善商品展示主页，优化商品搜索引擎，修改结算流程" />
+    <MESSAGE value="完善商品订单详情，完善订单管理流程" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善商品订单详情，完善订单管理流程" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.56446993" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1780,24 +1752,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7204611">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/JFWebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1809,6 +1763,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2178,18 +2135,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java">
+    <entry file="file://$PROJECT_DIR$/MI2.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1691974">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/view/viewback/orderManage/webOrderList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44827586">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state vertical-scroll-proportion="-10.4">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mi2/ctrl/viewback_ctrl/WebOrderCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
           <folding />
         </state>
       </provider>

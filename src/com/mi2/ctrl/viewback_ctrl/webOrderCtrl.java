@@ -2,11 +2,14 @@ package com.mi2.ctrl.viewback_ctrl;
 
 import com.base.annotation.RouteBind;
 import com.base.ctrl.BaseViewBackController;
+import com.base.util.DateUtils;
 import com.base.vo.ErrorVo;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Page;
 import com.mi2.interceptor.LoginBackInterceptor;
 import com.mi2.model.UsersOrders;
+
+import java.math.BigDecimal;
 
 /**
  * 网站订单管理
@@ -44,7 +47,20 @@ public class WebOrderCtrl extends BaseViewBackController {
 
     @Override
     public Boolean updateData() {
-        this.getModel(UsersOrders.class).update();
+        UsersOrders uo = this.getModel(UsersOrders.class);
+        if(BigDecimal.valueOf(2).compareTo(uo.getOrdersStatus())==0){
+            //正在配货
+            uo.set("PREPARE_GOODS_TIME", DateUtils.thisSqlTimestamp()).update();
+        }else if(BigDecimal.valueOf(3).compareTo(uo.getOrdersStatus())==0){
+            //已出库
+            uo.set("DELIVER_GOODS_TIME", DateUtils.thisSqlTimestamp()).update();
+        }else if(BigDecimal.valueOf(4).compareTo(uo.getOrdersStatus())==0){
+            //已收货
+            uo.set("TAKE_GOODS_TIME", DateUtils.thisSqlTimestamp()).update();
+        }else{
+            this.renderJson(new ErrorVo(1,"您存在异常操作，系统不受理，请您注意!"));
+            return false;
+        }
         this.renderJson(new ErrorVo(0,"更新网站订单状态成功!"));
         return true;
     }
