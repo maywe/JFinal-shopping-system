@@ -4,6 +4,7 @@ import com.base.model.BaseUsersFront;
 import com.jfinal.kit.StrKit;
 import com.jfinal.plugin.activerecord.Page;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,13 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class UsersFront extends BaseUsersFront<UsersFront> {
 	public static final UsersFront dao = new UsersFront();
+
+	//获取网站用户总数
+	public BigDecimal getSumUserNum(){
+		String sql = "select count(uf.user_front_id) user_sum from users_front uf";
+		UsersFront usersFront = this.findFirst(sql);
+		return BigDecimal.valueOf(Long.valueOf(usersFront.get("user_sum",0)+""));
+	}
 
 	@Override
 	public Page<UsersFront> getAllDataByPage(int pageNumber, int pageSize, UsersFront t) {

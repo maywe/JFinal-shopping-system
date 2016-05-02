@@ -15,6 +15,23 @@ import java.util.List;
 public class Goods extends BaseGoods<Goods>{
 	public static final Goods dao = new Goods();
 
+	//获得缺货商品列表
+	public List<Goods> getOutStockGoods(){
+		String sql = "select g.*,gbt.goods_bigl_type_name,gst.goods_small_type_name,gst.goods_small_type_remark,gst.goods_small_type_image from goods_big_type gbt,goods_small_type gst,goods g where gbt.goods_big_type_id=gst.goods_big_type_id and gst.goods_small_type_id=g.goods_small_type_id and g.goods_stock<=10 order by g.goods_stock";
+		return this.find(sql);
+	}
+
+	//获取商品销量按照商品小类别汇总
+	public List<Goods> getGoodsSalesBySmallTypeSum(){
+		String sql = "select gst.goods_small_type_name,t.goods_sum_sales goods_small_type_stock from(select g.goods_small_type_id,sum(g.goods_sales_num) goods_sum_sales from goods g group by g.goods_small_type_id having sum(g.goods_sales_num)>0)t,goods_small_type gst where gst.goods_small_type_id = t.goods_small_type_id";
+		return this.find(sql);
+	}
+
+	//获取商品库存总量和销售总量
+	public Goods getSumGoodsStockAndSales(){
+		String sql = "select sum(g.goods_stock) goods_sum_stock,sum(g.goods_sales_num) goods_sum_sales from goods g";
+		return this.findFirst(sql);
+	}
 
 	//删除其他商品信息
 	public boolean deletePhoneGoods(Goods t){

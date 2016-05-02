@@ -16,6 +16,18 @@ import java.util.List;
 public class UsersOrders extends BaseUsersOrders<UsersOrders> {
 	public static final UsersOrders dao = new UsersOrders();
 
+	//获取订单量，按天统计
+	public List<UsersOrders> getOrderTurnoverByOrderTime(){
+		String sql = "select t.orders_time day_orders_times,count(t.orders_id) day_orders_nums from(select uo.orders_id,to_date(to_char(uo.orders_time,'yyyy-mm-dd'),'yyyy-mm-dd') orders_time from users_orders uo)t group by t.orders_time order by t.orders_time";
+		return this.find(sql);
+	}
+
+	//获取总订单数和成交总额
+	public UsersOrders getSumOrderNumAndMoney(){
+		String sql = "select count(uo.orders_id) order_sum,sum(uo.payment_money) order_sum_money from users_orders uo";
+		return this.findFirst(sql);
+	}
+
 	public BigDecimal getUserSumNotReceivedOrderNum(BigDecimal userFrontId){
 		String sql = "select count(uo.orders_id) order_sum from users_orders uo where uo.orders_status<>4 and uo.user_front_id=?";
 		UsersOrders uo = this.findFirst(sql,userFrontId);

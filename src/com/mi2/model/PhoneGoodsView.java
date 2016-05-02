@@ -14,6 +14,12 @@ import java.util.List;
 public class PhoneGoodsView extends BasePhoneGoodsView<PhoneGoodsView> {
 	public static final PhoneGoodsView dao = new PhoneGoodsView();
 
+	//获取缺货的手机商品信息
+	public List<PhoneGoodsView> getOutStockPhoneGoods(){
+		String sql = "select * from phone_goods_view pgv where pgv.phone_stock<=10 order by pgv.phone_stock";
+		return this.find(sql);
+	}
+
 	public boolean deletePhoneGoods(PhoneGoodsView t){
 		PhoneGoodsView phoneGoodsView = this.findById(t.getPhoneGoodsId());
 		//删除手机商品图片信息

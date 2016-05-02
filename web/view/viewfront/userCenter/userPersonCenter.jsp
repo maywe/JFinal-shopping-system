@@ -6,7 +6,7 @@
     <div class="row user-account-box">
         <div class="col-xs-2 display-table">
             <div class="display-table-cell user-img-box">
-                <img width="150" height="150" class="img-circle" src="${pageContext.request.contextPath}/images/logo_me.jpg">
+                <img width="150" height="150" class="img-circle" src="${pageContext.request.contextPath}${empty sessionScope.usersFront.img?'/images/avatar-160.png':sessionScope.usersFront.img}">
             </div>
         </div>
         <div class="col-xs-4 display-table">
@@ -21,15 +21,15 @@
                 <ul class="action-list">
                     <li>
                         账户安全：
-                        <span class="level">较高</span>
+                        <span class="level">${empty sessionScope.usersFront.telephone and empty sessionScope.usersFront.email?'较低':not empty sessionScope.usersFront.telephone and not empty sessionScope.usersFront.email?'较高':'中等'}</span>
                     </li>
                     <li>
                         绑定手机：
-                        <span class="tel">155********53</span>
+                        <span class="tel">${empty sessionScope.usersFront.telephone?'暂无':sessionScope.usersFront.telephone}</span>
                     </li>
                     <li>
                         绑定邮箱：
-                        <span class="tel">22******4@q*.com</span>
+                        <span class="tel">${empty sessionScope.usersFront.email?'暂无':sessionScope.usersFront.email}</span>
                     </li>
                 </ul>
             </div>
