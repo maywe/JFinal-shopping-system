@@ -4,7 +4,7 @@
 <%@ taglib  prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link href="${pageContext.request.contextPath}/css/viewfront/mi-topPage.css" type="text/css" rel="stylesheet">
 <header class="head clearfix">
-    <div class="div-center-width-1290">
+    <div class="div-center-width-1290" style="height: 39px;background: rgb(51,51,51)">
         <ul class="nav navbar-nav navbar-left head-left">
             <li><a class="p-l-0" href="${pageContext.request.contextPath}/">小米网</a></li>
             <li><a href="#">MIUI</a></li>
@@ -19,8 +19,8 @@
 
         <c:if test="${empty sessionScope.usersFront}">
             <ul class="nav navbar-nav navbar-right head-right">
-                <li><a href="${pageContext.request.contextPath}/view/viewfront/login.jsp">登陆</a></li>
-                <li><a class="p-r-0" href="${pageContext.request.contextPath}/view/viewfront/register.jsp">注册</a></li>
+                <li><a class="p-r-0" href="${pageContext.request.contextPath}/view/viewfront/login.jsp">登陆</a></li>
+                <li><a href="${pageContext.request.contextPath}/view/viewfront/register.jsp">注册</a></li>
             </ul>
         </c:if>
         <c:if test="${not empty sessionScope.usersFront}">

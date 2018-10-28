@@ -18,7 +18,17 @@
     padding: 10px;
 }
 .head>div>ul.head-right{
+    margin-top: 0;
     margin-right: 0;
+}
+.head>div>ul.head-left{
+    margin-top: 0;
+}
+.head>div>ul.head-left>li{
+    float: left;
+}
+.head>div>ul.head-right>li{
+    float: right;
 }
 ul.head-right>li.dropdown>ul{
     text-align: center;

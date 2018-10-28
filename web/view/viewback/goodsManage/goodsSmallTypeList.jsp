@@ -80,10 +80,10 @@
         <label>每页&nbsp;</label>
         <div class="select-pagesize">
             <select name="pageSize" onchange="paginationBreak('goodsSmallTypeListBox')">
-                <option ${pageUtil.pageSize==30?"selected":""} value="30">30</option>
-                <option ${pageUtil.pageSize==60?"selected":""} value="60">60</option>
-                <option ${pageUtil.pageSize==120?"selected":""} value="120">120</option>
-                <option ${pageUtil.pageSize==150?"selected":""} value="150">150</option>
+                <option ${pageUtil.pageSize==5?"selected":""} value="5">5</option>
+                <option ${pageUtil.pageSize==10?"selected":""} value="10">10</option>
+                <option ${pageUtil.pageSize==15?"selected":""} value="15">15</option>
+                <option ${pageUtil.pageSize==20?"selected":""} value="20">20</option>
             </select>
         </div>
         <label>&nbsp;条，共 ${pageUtil.totalRow} 条</label>

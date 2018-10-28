@@ -20,7 +20,7 @@
                 <table class="table dialog-table">
                     <tr>
                         <th style="width: 110px;"><span class="must-msg">*&nbsp;</span>所属手机类别:</th>
-                        <td>
+                        <td style="width: 210px;">
                             <select id="phoneSmallTypeId" name="phoneSetmeal.goods_small_type_id" class="form-control" required="required">
                                 <option value="">--请选择--</option>
                                 <c:forEach items="${goodsSmallTypeList}" var="gst">
